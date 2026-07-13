@@ -1,196 +1,196 @@
 {
   "schema_version": 1,
   "index": {
-    "name": "ondrej-winter/ritebook-shelf"
+    "name": "ondrej-winter-ritebook-shelf"
   },
-  "generated_at": "2026-07-09T18:45:26.149554Z",
+  "generated_at": "2026-07-13T19:24:56.397326Z",
   "skills_root": "skills",
   "skills": [
     {
       "name": "add-observability",
-      "path": "add-observability",
-      "skill_file": "add-observability/SKILL.md",
-      "title": "add-observability"
+      "path": "software-development/add-observability",
+      "skill_file": "software-development/add-observability/SKILL.md",
+      "description": "Add logs, metrics, traces, profiling, or operational notes for meaningful workflows without unsupported performance claims."
     },
     {
       "name": "api-and-interface-design",
-      "path": "api-and-interface-design",
-      "skill_file": "api-and-interface-design/SKILL.md",
-      "title": "api-and-interface-design"
+      "path": "software-development/api-and-interface-design",
+      "skill_file": "software-development/api-and-interface-design/SKILL.md",
+      "description": "Design stable APIs, module contracts, schemas, component boundaries, command interfaces, or other public integration surfaces that are predictable, documented, and hard to misuse."
     },
     {
       "name": "author-agent-skill",
-      "path": "author-agent-skill",
-      "skill_file": "author-agent-skill/SKILL.md",
-      "title": "author-agent-skill"
+      "path": "software-development/author-agent-skill",
+      "skill_file": "software-development/author-agent-skill/SKILL.md",
+      "description": "Create, update, or review Agent Skill directories and SKILL.md files for valid frontmatter, structure, portability, progressive disclosure, and validation readiness."
     },
     {
       "name": "browser-runtime-verification",
-      "path": "browser-runtime-verification",
-      "skill_file": "browser-runtime-verification/SKILL.md",
-      "title": "browser-runtime-verification"
+      "path": "software-development/browser-runtime-verification",
+      "skill_file": "software-development/browser-runtime-verification/SKILL.md",
+      "description": "Verify browser-facing changes in a real browser using visual checks, console output, network behavior, accessibility basics, and user-flow smoke tests. Use when building, debugging, or validating UI behavior beyond static code and unit tests."
     },
     {
       "name": "ci-cd-and-automation",
-      "path": "ci-cd-and-automation",
-      "skill_file": "ci-cd-and-automation/SKILL.md",
-      "title": "ci-cd-and-automation"
+      "path": "software-development/ci-cd-and-automation",
+      "skill_file": "software-development/ci-cd-and-automation/SKILL.md",
+      "description": "Design, review, or improve CI/CD and automation workflows for quality gates, deployment safety, rollback readiness, secrets handling, and feedback loops across any technology stack."
     },
     {
       "name": "code-review-and-quality",
-      "path": "code-review-and-quality",
-      "skill_file": "code-review-and-quality/SKILL.md",
-      "title": "code-review-and-quality"
+      "path": "software-development/code-review-and-quality",
+      "skill_file": "software-development/code-review-and-quality/SKILL.md",
+      "description": "Review code, tests, documentation, and configuration across correctness, readability, architecture, security, performance, maintainability, and verification before merging or handing off a change."
     },
     {
       "name": "code-simplification",
-      "path": "code-simplification",
-      "skill_file": "code-simplification/SKILL.md",
-      "title": "code-simplification"
+      "path": "software-development/code-simplification",
+      "skill_file": "software-development/code-simplification/SKILL.md",
+      "description": "Simplify working code without changing behavior by reducing unnecessary complexity, improving names and structure, preserving project conventions, and validating each refactoring step."
     },
     {
       "name": "context-engineering",
-      "path": "context-engineering",
-      "skill_file": "context-engineering/SKILL.md",
-      "title": "context-engineering"
+      "path": "software-development/context-engineering",
+      "skill_file": "software-development/context-engineering/SKILL.md",
+      "description": "Curate the right project, task, source, validation, and conversation context for agent work so outputs follow real conventions, avoid hallucinated assumptions, and remain focused."
     },
     {
       "name": "conventional-commits",
-      "path": "conventional-commits",
-      "skill_file": "conventional-commits/SKILL.md",
-      "title": "conventional-commits"
+      "path": "software-development/conventional-commits",
+      "skill_file": "software-development/conventional-commits/SKILL.md",
+      "description": "Write, review, and validate Conventional Commits v1.0.0 messages with correct type, scope, description, body, footer, and breaking-change syntax."
     },
     {
       "name": "debugging-and-error-recovery",
-      "path": "debugging-and-error-recovery",
-      "skill_file": "debugging-and-error-recovery/SKILL.md",
-      "title": "debugging-and-error-recovery"
+      "path": "software-development/debugging-and-error-recovery",
+      "skill_file": "software-development/debugging-and-error-recovery/SKILL.md",
+      "description": "Diagnose failures systematically by preserving evidence, reproducing the issue, localizing and reducing the cause, fixing the root problem, adding a guard, and verifying recovery."
     },
     {
       "name": "deprecation-and-migration",
-      "path": "deprecation-and-migration",
-      "skill_file": "deprecation-and-migration/SKILL.md",
-      "title": "deprecation-and-migration"
+      "path": "software-development/deprecation-and-migration",
+      "skill_file": "software-development/deprecation-and-migration/SKILL.md",
+      "description": "Plan and execute safe deprecations, migrations, replacements, and removals by measuring usage, supporting consumers, preserving compatibility, and verifying that old paths are no longer active."
     },
     {
       "name": "documentation-and-adrs",
-      "path": "documentation-and-adrs",
-      "skill_file": "documentation-and-adrs/SKILL.md",
-      "title": "documentation-and-adrs"
+      "path": "software-development/documentation-and-adrs",
+      "skill_file": "software-development/documentation-and-adrs/SKILL.md",
+      "description": "Decide whether durable documentation is needed, choose the right documentation artifact, and route ADR or project documentation work to the appropriate specialized skill."
     },
     {
       "name": "doubt-driven-development",
-      "path": "doubt-driven-development",
-      "skill_file": "doubt-driven-development/SKILL.md",
-      "title": "doubt-driven-development"
+      "path": "software-development/doubt-driven-development",
+      "skill_file": "software-development/doubt-driven-development/SKILL.md",
+      "description": "Cross-examine non-trivial decisions with a fresh, adversarial review loop before they stand, especially when correctness, safety, migration risk, or unfamiliar code makes overconfidence costly."
     },
     {
       "name": "frontend-ui-engineering",
-      "path": "frontend-ui-engineering",
-      "skill_file": "frontend-ui-engineering/SKILL.md",
-      "title": "frontend-ui-engineering"
+      "path": "software-development/frontend-ui-engineering",
+      "skill_file": "software-development/frontend-ui-engineering/SKILL.md",
+      "description": "Build, review, or refine browser-facing user interfaces so they are accessible, responsive, performant, visually coherent, and aligned with the project design system."
     },
     {
       "name": "git-workflow-and-versioning",
-      "path": "git-workflow-and-versioning",
-      "skill_file": "git-workflow-and-versioning/SKILL.md",
-      "title": "git-workflow-and-versioning"
+      "path": "software-development/git-workflow-and-versioning",
+      "skill_file": "software-development/git-workflow-and-versioning/SKILL.md",
+      "description": "Use version control intentionally with small changes, clear branches, atomic commits, safe history operations, useful summaries, and validation before merge or handoff."
     },
     {
       "name": "hexagonal-vertical-slices",
-      "path": "hexagonal-vertical-slices",
-      "skill_file": "hexagonal-vertical-slices/SKILL.md",
-      "title": "hexagonal-vertical-slices"
+      "path": "software-development/hexagonal-vertical-slices",
+      "skill_file": "software-development/hexagonal-vertical-slices/SKILL.md",
+      "description": "Design, review, or refactor systems that use hexagonal architecture organized by vertical feature slices, keeping business logic isolated from frameworks and infrastructure."
     },
     {
       "name": "idea-refine",
-      "path": "idea-refine",
-      "skill_file": "idea-refine/SKILL.md",
-      "title": "idea-refine"
+      "path": "software-development/idea-refine",
+      "skill_file": "software-development/idea-refine/SKILL.md",
+      "description": "Refine raw ideas into actionable concepts through divergent exploration, convergent evaluation, assumption testing, and a final one-page brief. Use when an idea is vague, over-scoped, solution-led, or needs pressure-testing before planning or implementation."
     },
     {
       "name": "incremental-implementation",
-      "path": "incremental-implementation",
-      "skill_file": "incremental-implementation/SKILL.md",
-      "title": "incremental-implementation"
+      "path": "software-development/incremental-implementation",
+      "skill_file": "software-development/incremental-implementation/SKILL.md",
+      "description": "Guide agents to deliver changes incrementally. Use when implementing a feature or change that touches more than one file, when a task feels too large to land in one step, or before writing a large amount of code at once."
     },
     {
       "name": "interview-me",
-      "path": "interview-me",
-      "skill_file": "interview-me/SKILL.md",
-      "title": "interview-me"
+      "path": "software-development/interview-me",
+      "skill_file": "software-development/interview-me/SKILL.md",
+      "description": "Extracts what the user actually wants instead of what they think they should want. Achieves this through one-question-at-a-time interview until ~95% confidence about the underlying intent. Use when an ask is underspecified (\"build me X\" without \"for whom\" or \"why now\"), when the user explicitly invokes (\"interview me\", \"grill me\", \"are we sure?\", \"stress-test my thinking\"), or when you catch yourself silently filling in ambiguous requirements before any plan, spec, or code exists."
     },
     {
       "name": "performance-optimization",
-      "path": "performance-optimization",
-      "skill_file": "performance-optimization/SKILL.md",
-      "title": "performance-optimization"
+      "path": "software-development/performance-optimization",
+      "skill_file": "software-development/performance-optimization/SKILL.md",
+      "description": "Optimizes software performance using measurement-driven diagnosis, targeted fixes, and regression guards. Use when performance requirements exist, users or monitoring report slow behavior, a regression is suspected, or profiling reveals bottlenecks that need fixing."
     },
     {
       "name": "planning-and-task-breakdown",
-      "path": "planning-and-task-breakdown",
-      "skill_file": "planning-and-task-breakdown/SKILL.md",
-      "title": "planning-and-task-breakdown"
+      "path": "software-development/planning-and-task-breakdown",
+      "skill_file": "software-development/planning-and-task-breakdown/SKILL.md",
+      "description": "Breaks work into ordered tasks. Use when you have a spec or clear requirements and need to break work into implementable tasks. Use when a task feels too large to start, when you need to estimate scope, or when parallel work is possible."
     },
     {
       "name": "review-implementation-plan",
-      "path": "review-implementation-plan",
-      "skill_file": "review-implementation-plan/SKILL.md",
-      "title": "review-implementation-plan"
+      "path": "software-development/review-implementation-plan",
+      "skill_file": "software-development/review-implementation-plan/SKILL.md",
+      "description": "Review an implementation plan for completeness, ambiguity, sequencing, risks, dependencies, validation, readiness labeling, and handoff before coding."
     },
     {
       "name": "run-local-quality-gate",
-      "path": "run-local-quality-gate",
-      "skill_file": "run-local-quality-gate/SKILL.md",
-      "title": "run-local-quality-gate"
+      "path": "software-development/run-local-quality-gate",
+      "skill_file": "software-development/run-local-quality-gate/SKILL.md",
+      "description": "Discover and run the project's local formatting, linting, static analysis, test, and build checks before handoff."
     },
     {
       "name": "security-and-hardening",
-      "path": "security-and-hardening",
-      "skill_file": "security-and-hardening/SKILL.md",
-      "title": "security-and-hardening"
+      "path": "software-development/security-and-hardening",
+      "skill_file": "software-development/security-and-hardening/SKILL.md",
+      "description": "Hardens software against vulnerabilities. Use when handling untrusted input, authentication, authorization, sensitive data, dependencies, or external integrations."
     },
     {
       "name": "shipping-and-launch",
-      "path": "shipping-and-launch",
-      "skill_file": "shipping-and-launch/SKILL.md",
-      "title": "shipping-and-launch"
+      "path": "software-development/shipping-and-launch",
+      "skill_file": "software-development/shipping-and-launch/SKILL.md",
+      "description": "Prepares production launches. Use when preparing to deploy to production. Use when you need a pre-launch checklist, when setting up monitoring, when planning a staged rollout, or when you need a rollback strategy."
     },
     {
       "name": "source-driven-development",
-      "path": "source-driven-development",
-      "skill_file": "source-driven-development/SKILL.md",
-      "title": "source-driven-development"
+      "path": "software-development/source-driven-development",
+      "skill_file": "software-development/source-driven-development/SKILL.md",
+      "description": "Grounds implementation decisions in authoritative sources. Use when building with external APIs, libraries, frameworks, platforms, standards, or tools where current documented behavior matters."
     },
     {
       "name": "spec-driven-development",
-      "path": "spec-driven-development",
-      "skill_file": "spec-driven-development/SKILL.md",
-      "title": "spec-driven-development"
+      "path": "software-development/spec-driven-development",
+      "skill_file": "software-development/spec-driven-development/SKILL.md",
+      "description": "Creates a specification before implementation. Use when starting a project, feature, integration, workflow, migration, or significant change with unclear or incomplete requirements."
     },
     {
       "name": "test-driven-development",
-      "path": "test-driven-development",
-      "skill_file": "test-driven-development/SKILL.md",
-      "title": "test-driven-development"
+      "path": "software-development/test-driven-development",
+      "skill_file": "software-development/test-driven-development/SKILL.md",
+      "description": "Drives development with tests. Use when implementing behavior, fixing bugs, changing existing functionality, or proving that a change works and is guarded against regression."
     },
     {
       "name": "update-project-docs",
-      "path": "update-project-docs",
-      "skill_file": "update-project-docs/SKILL.md",
-      "title": "update-project-docs"
+      "path": "software-development/update-project-docs",
+      "skill_file": "software-development/update-project-docs/SKILL.md",
+      "description": "Update project-facing documentation after a user-visible behavior, configuration, operation, or workflow change."
     },
     {
       "name": "using-agent-skills",
-      "path": "using-agent-skills",
-      "skill_file": "using-agent-skills/SKILL.md",
-      "title": "using-agent-skills"
+      "path": "software-development/using-agent-skills",
+      "skill_file": "software-development/using-agent-skills/SKILL.md",
+      "description": "Discovers and invokes agent skills. Use when starting a session or when you need to discover which skill applies to the current task. This is the meta-skill that governs how all other skills are discovered and invoked."
     },
     {
       "name": "write-adr",
-      "path": "write-adr",
-      "skill_file": "write-adr/SKILL.md",
-      "title": "write-adr"
+      "path": "software-development/write-adr",
+      "skill_file": "software-development/write-adr/SKILL.md",
+      "description": "Create an Architecture Decision Record with the next sequential number, a clear title, and documented consequences when asked to record an architectural decision."
     }
   ]
 }
