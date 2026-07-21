@@ -1,4 +1,4 @@
-RITEBOOK ?= uv run ritebook
+RITEBOOK ?= uvx ritebook@latest
 SKILLS_ROOT ?= skills
 INDEX_NAME ?= ondrej-winter-ritebook-shelf
 
