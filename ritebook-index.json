@@ -3,7 +3,7 @@
   "index": {
     "name": "ondrej-winter-ritebook-shelf"
   },
-  "generated_at": "2026-07-23T17:53:45.987423Z",
+  "generated_at": "2026-07-23T18:05:51.762359Z",
   "skills_root": "skills",
   "skills": [
     {
@@ -181,16 +181,94 @@
       "description": "Update project-facing documentation after a user-visible behavior, configuration, operation, or workflow change."
     },
     {
-      "name": "using-agent-skills",
-      "path": "agnostic-software-development/using-agent-skills",
-      "skill_file": "agnostic-software-development/using-agent-skills/SKILL.md",
-      "description": "Discovers and invokes agent skills. Use when starting a session or when you need to discover which skill applies to the current task. This is the meta-skill that governs how all other skills are discovered and invoked."
+      "name": "using-agnostic-software-development-skills",
+      "path": "agnostic-software-development/using-agnostic-software-development-skills",
+      "skill_file": "agnostic-software-development/using-agnostic-software-development-skills/SKILL.md",
+      "description": "Discover and invoke technology-agnostic software development skills. Use when starting general engineering work or deciding which reusable workflow skill applies to a task."
     },
     {
       "name": "write-adr",
       "path": "agnostic-software-development/write-adr",
       "skill_file": "agnostic-software-development/write-adr/SKILL.md",
       "description": "Create an Architecture Decision Record with the next sequential number, a clear title, and documented consequences when asked to record an architectural decision."
+    },
+    {
+      "name": "add-hexagonal-feature",
+      "path": "python-software-development/add-hexagonal-feature",
+      "skill_file": "python-software-development/add-hexagonal-feature/SKILL.md",
+      "description": "Implement a new vertical feature slice or use case in a Python hexagonal project, including domain modeling, ports, application service, adapters when needed, and tests."
+    },
+    {
+      "name": "bootstrap-python-app",
+      "path": "python-software-development/bootstrap-python-app",
+      "skill_file": "python-software-development/bootstrap-python-app/SKILL.md",
+      "description": "Initialize a new Python project with a hexagonal vertical-slice architecture layout, core tooling, and quality checks."
+    },
+    {
+      "name": "format-python-code",
+      "path": "python-software-development/format-python-code",
+      "skill_file": "python-software-development/format-python-code/SKILL.md",
+      "description": "Format Python code with ruff and apply safe auto-fixes when a Python project needs consistent style before linting, testing, or handoff."
+    },
+    {
+      "name": "lint-python-code",
+      "path": "python-software-development/lint-python-code",
+      "skill_file": "python-software-development/lint-python-code/SKILL.md",
+      "description": "Run Python linting and type checking with ruff and mypy when a project uses uv-managed development tooling."
+    },
+    {
+      "name": "python-add-adapter",
+      "path": "python-software-development/python-add-adapter",
+      "skill_file": "python-software-development/python-add-adapter/SKILL.md",
+      "description": "Add an inbound or outbound adapter to the owning vertical slice in a Python hexagonal project while keeping business logic in the application layer."
+    },
+    {
+      "name": "python-add-env-settings-adapter",
+      "path": "python-software-development/python-add-env-settings-adapter",
+      "skill_file": "python-software-development/python-add-env-settings-adapter/SKILL.md",
+      "description": "Add an environment-backed runtime settings adapter to a Python hexagonal vertical-slice app or library, using a configuration slice, application-owned settings DTOs, pydantic-settings adapter validation, and focused tests."
+    },
+    {
+      "name": "python-add-port",
+      "path": "python-software-development/python-add-port",
+      "skill_file": "python-software-development/python-add-port/SKILL.md",
+      "description": "Add a technology-agnostic inbound or outbound application port interface to the owning vertical slice in a Python hexagonal project for a new use case or dependency."
+    },
+    {
+      "name": "run-python-quality-gate",
+      "path": "python-software-development/run-python-quality-gate",
+      "skill_file": "python-software-development/run-python-quality-gate/SKILL.md",
+      "description": "Run the full local Python quality gate with formatting, linting, type checking, and tests before handoff or a pull request."
+    },
+    {
+      "name": "run-python-tests",
+      "path": "python-software-development/run-python-tests",
+      "skill_file": "python-software-development/run-python-tests/SKILL.md",
+      "description": "Runs automated tests for a Python project using pytest."
+    },
+    {
+      "name": "split-python-module",
+      "path": "python-software-development/split-python-module",
+      "skill_file": "python-software-development/split-python-module/SKILL.md",
+      "description": "Split a growing Python module or package while preserving behavior, boundaries, imports, public APIs, and reviewability when code has mixed responsibilities or needs clearer ownership."
+    },
+    {
+      "name": "using-python-software-development-skills",
+      "path": "python-software-development/using-python-software-development-skills",
+      "skill_file": "python-software-development/using-python-software-development-skills/SKILL.md",
+      "description": "Discover and invoke Python software development skills. Use when starting Python work or deciding which Python-specific implementation, validation, testing, or documentation skill applies."
+    },
+    {
+      "name": "write-pytest-tests",
+      "path": "python-software-development/write-pytest-tests",
+      "skill_file": "python-software-development/write-pytest-tests/SKILL.md",
+      "description": "Write or refactor Python tests when pytest-native style, focused scenarios, and deterministic setup are needed."
+    },
+    {
+      "name": "write-python-docstrings",
+      "path": "python-software-development/write-python-docstrings",
+      "skill_file": "python-software-development/write-python-docstrings/SKILL.md",
+      "description": "Write concise Google-style Python docstrings and inline comments that explain contracts, invariants, and non-obvious behavior."
     }
   ]
 }

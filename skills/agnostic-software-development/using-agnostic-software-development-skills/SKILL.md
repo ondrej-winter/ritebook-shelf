@@ -1,8 +1,8 @@
 ---
-name: using-agent-skills
-description: Discovers and invokes agent skills. Use when starting a session or when you need to discover which skill applies to the current task. This is the meta-skill that governs how all other skills are discovered and invoked.
+name: using-agnostic-software-development-skills
+description: Discover and invoke technology-agnostic software development skills. Use when starting general engineering work or deciding which reusable workflow skill applies to a task.
 metadata:
-  version: "1.1.0"
+  version: "2.0.0"
   dependencies:
     tools: []
     skills:
@@ -98,11 +98,15 @@ metadata:
         required: false
 ---
 
-# Using Agent Skills
+# Using Agnostic Software Development Skills
 
 ## Overview
 
-Agent Skills is a collection of engineering workflow skills organized by development phase. Each skill encodes a specific process that senior engineers follow. This meta-skill helps you discover and apply the right skill for your current task.
+The agnostic software development collection contains reusable engineering
+workflow skills organized by development phase. This catalog helps you discover
+and apply the right technology-independent skill for the current task. Use a
+technology-specific collection catalog alongside this one when the task also
+needs language or platform mechanics.
 
 ## Steps
 
