@@ -2,10 +2,16 @@
 name: add-hexagonal-feature
 description: Implement a new vertical feature slice or use case in a Python hexagonal project, including domain modeling, ports, application service, adapters when needed, and tests.
 metadata:
-  version: "1.0.0"
+  version: "1.1.0"
   dependencies:
     tools: []
-    skills: []
+    skills:
+      - name: python-add-port
+        purpose: Define a required inbound or outbound application port.
+        required: false
+      - name: python-add-adapter
+        purpose: Implement a required inbound or outbound adapter.
+        required: false
 ---
 
 # Add a Hexagonal Vertical Feature Slice
@@ -135,6 +141,19 @@ implementation is fine and often preferable.
 - Prefer a hand-written fake for outbound ports. Use `MagicMock` only when a
   narrow interaction assertion is clearer than asserting on fake state.
 - Cover the happy path and at least one failure or edge case.
+
+### 6. Validate the feature slice
+
+Run the target project's narrowest relevant test command for the changed domain
+and application modules. Then run any available architecture checks, type checks,
+linting, and broader test suite required by the project.
+
+Before handoff, confirm:
+
+- the feature's happy path and important failure or edge cases pass
+- dependency-direction or architecture checks pass when the project provides them
+- the application service has no direct adapter or infrastructure dependencies
+- any skipped validation is reported with the reason
 
 ## Dependency direction reminder
 

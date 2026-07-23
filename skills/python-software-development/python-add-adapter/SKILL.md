@@ -2,10 +2,22 @@
 name: python-add-adapter
 description: Add an inbound or outbound adapter to the owning vertical slice in a Python hexagonal project while keeping business logic in the application layer.
 metadata:
-  version: "1.0.0"
+  version: "1.0.1"
   dependencies:
     tools: []
-    skills: []
+    skills:
+      - name: python-add-port
+        purpose: Define the application boundary before implementing an adapter when the required port does not exist.
+        required: false
+      - name: python-add-env-settings-adapter
+        purpose: Follow the dedicated workflow for an environment-backed settings adapter.
+        required: false
+      - name: add-hexagonal-feature
+        purpose: Implement a complete feature slice when the change extends beyond adapter work.
+        required: false
+      - name: run-python-quality-gate
+        purpose: Run the full project-configured Python validation pass before handoff.
+        required: false
 ---
 
 # Add an Adapter

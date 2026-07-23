@@ -1,10 +1,13 @@
 ---
 name: bootstrap-python-app
-description: Initialize a new Python project with a hexagonal vertical-slice architecture layout, core tooling, and quality checks.
+description: Initialize a new Python project with a hexagonal vertical-slice architecture layout, core tooling, and quality checks when starting a Python application from scratch.
 metadata:
-  version: "1.0.0"
+  version: "1.0.1"
   dependencies:
-    tools: []
+    tools:
+      - name: uv
+        purpose: Initialize the project, manage dependencies, and run development tools.
+        required: true
     skills: []
 ---
 

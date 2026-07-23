@@ -2,7 +2,7 @@
 name: using-python-software-development-skills
 description: Discover and invoke Python software development skills. Use when starting Python work or deciding which Python-specific implementation, validation, testing, or documentation skill applies.
 metadata:
-  version: "2.0.0"
+  version: "2.0.1"
   dependencies:
     tools: []
     skills:
@@ -35,6 +35,9 @@ metadata:
         required: false
       - name: split-python-module
         purpose: Route Python module or package splitting while preserving boundaries.
+        required: false
+      - name: using-agnostic-software-development-skills
+        purpose: Route technology-independent software development workflows used alongside this catalog.
         required: false
       - name: write-pytest-tests
         purpose: Route pytest test creation and refactoring.

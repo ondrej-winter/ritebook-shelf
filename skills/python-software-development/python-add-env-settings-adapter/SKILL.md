@@ -2,10 +2,40 @@
 name: python-add-env-settings-adapter
 description: Add an environment-backed runtime settings adapter to a Python hexagonal vertical-slice app or library, using a configuration slice, application-owned settings DTOs, pydantic-settings adapter validation, and focused tests.
 metadata:
-  version: "1.0.0"
+  version: "1.0.1"
   dependencies:
-    tools: []
-    skills: []
+    tools:
+      - name: python
+        purpose: Implement and validate the Python settings adapter and templates.
+        required: true
+      - name: pydantic-settings
+        purpose: Parse and validate environment-backed runtime settings.
+        required: true
+      - name: pytest
+        purpose: Run the supplied settings DTO and adapter test patterns.
+        required: true
+      - name: uv
+        purpose: Run project-managed Python quality commands when available.
+        required: false
+      - name: ruff
+        purpose: Lint the resulting Python implementation when available.
+        required: false
+      - name: mypy
+        purpose: Type-check the resulting Python implementation when available.
+        required: false
+    skills:
+      - name: python-add-adapter
+        purpose: Add an adapter when the configuration boundary already exists.
+        required: false
+      - name: run-python-quality-gate
+        purpose: Run the full Python validation pass when available.
+        required: false
+      - name: update-project-docs
+        purpose: Update user-facing and operator-facing configuration documentation.
+        required: false
+      - name: write-adr
+        purpose: Record a durable configuration architecture decision.
+        required: false
 ---
 
 # Add an Environment Settings Adapter

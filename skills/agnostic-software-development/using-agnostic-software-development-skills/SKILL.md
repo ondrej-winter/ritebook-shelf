@@ -2,7 +2,7 @@
 name: using-agnostic-software-development-skills
 description: Discover and invoke technology-agnostic software development skills. Use when starting general engineering work or deciding which reusable workflow skill applies to a task.
 metadata:
-  version: "2.0.0"
+  version: "2.1.0"
   dependencies:
     tools: []
     skills:
@@ -110,12 +110,17 @@ needs language or platform mechanics.
 
 ## Steps
 
-At the start of a task, identify the development phase and apply the corresponding skill.
+At the start of a task, identify the development phase and apply the corresponding
+skill.
 
 1. Classify the task by the user's current need.
 2. Select the primary skill that matches the first applicable phase.
 3. Add secondary skills only when their trigger is directly present.
-4. Follow each selected skill's steps, including verification.
+4. Confirm that each selected skill is available in the current environment. If it
+   is unavailable, report that limitation instead of inventing its instructions.
+5. Follow each selected skill's steps, including verification.
+6. Report the selected skills, validation evidence, and any remaining limitations
+   in the task handoff.
 
 Use this routing guide:
 

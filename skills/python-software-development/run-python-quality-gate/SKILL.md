@@ -2,9 +2,21 @@
 name: run-python-quality-gate
 description: Run the full local Python quality gate with formatting, linting, type checking, and tests before handoff or a pull request.
 metadata:
-  version: "2.0.0"
+  version: "2.1.0"
   dependencies:
-    tools: []
+    tools:
+      - name: uv
+        purpose: Run the project's development tools in its managed environment.
+        required: true
+      - name: ruff
+        purpose: Apply formatting and safe fixes, then verify Python lint rules.
+        required: true
+      - name: mypy
+        purpose: Perform static type checking.
+        required: true
+      - name: pytest
+        purpose: Run the automated test suite.
+        required: true
     skills:
       - name: format-python-code
         purpose: Apply project-configured Python formatting and safe auto-fixes.
@@ -40,6 +52,12 @@ Use the `lint-python-code` skill to perform linting and type checking.
 ### 3. Run automated tests
 
 Use the `run-python-tests` skill to execute all automated tests.
+
+### 4. Verify and report the result
+
+After resolving any failures, run the complete quality gate again. Report the
+commands and targets used, whether each check passed, and any check that could not
+run with the reason.
 
 ## When a step fails
 
