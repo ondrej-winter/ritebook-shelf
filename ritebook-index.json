@@ -3,7 +3,7 @@
   "index": {
     "name": "ondrej-winter-ritebook-shelf"
   },
-  "generated_at": "2026-08-10T12:57:27.665497Z",
+  "generated_at": "2026-08-10T19:25:13.260156Z",
   "skills_root": "skills",
   "skills": [
     {
@@ -202,7 +202,7 @@
       "name": "bootstrap-python-app",
       "path": "python-software-development/bootstrap-python-app",
       "skill_file": "python-software-development/bootstrap-python-app/SKILL.md",
-      "description": "Initialize a new Python project with a hexagonal vertical-slice architecture layout, core tooling, and quality checks when starting a Python application from scratch."
+      "description": "Initialize a new Python project with a hexagonal vertical-slice architecture layout, core tooling, quality checks, and GitHub Actions CI/CD when starting a Python application from scratch."
     },
     {
       "name": "format-python-code",
