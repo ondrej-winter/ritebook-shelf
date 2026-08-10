@@ -3,14 +3,14 @@
   "index": {
     "name": "ondrej-winter-ritebook-shelf"
   },
-  "generated_at": "2026-07-23T18:14:45.525761Z",
+  "generated_at": "2026-08-10T12:57:27.665497Z",
   "skills_root": "skills",
   "skills": [
     {
       "name": "add-observability",
       "path": "agnostic-software-development/add-observability",
       "skill_file": "agnostic-software-development/add-observability/SKILL.md",
-      "description": "Add logs, metrics, traces, profiling, or operational notes for meaningful workflows without unsupported performance claims."
+      "description": "Add logs, metrics, traces, profiling, or operational notes when a workflow needs better runtime visibility or measurable evidence without unsupported performance claims."
     },
     {
       "name": "api-and-interface-design",
@@ -52,7 +52,7 @@
       "name": "context-engineering",
       "path": "agnostic-software-development/context-engineering",
       "skill_file": "agnostic-software-development/context-engineering/SKILL.md",
-      "description": "Curate the right project, task, source, validation, and conversation context for agent work so outputs follow real conventions, avoid hallucinated assumptions, and remain focused."
+      "description": "Curate project, task, source, validation, and conversation context so agent work follows real conventions and stays focused. Use when starting or switching tasks, resolving stale or conflicting assumptions, or recovering from poor output."
     },
     {
       "name": "conventional-commits",
@@ -64,7 +64,7 @@
       "name": "debugging-and-error-recovery",
       "path": "agnostic-software-development/debugging-and-error-recovery",
       "skill_file": "agnostic-software-development/debugging-and-error-recovery/SKILL.md",
-      "description": "Diagnose failures systematically by preserving evidence, reproducing the issue, localizing and reducing the cause, fixing the root problem, adding a guard, and verifying recovery."
+      "description": "Diagnose failures systematically by preserving evidence, reproducing the issue, localizing and reducing the cause, fixing the root problem, adding a guard, and verifying recovery. Use when tests, builds, runtime behavior, or recovery attempts fail or behave unexpectedly."
     },
     {
       "name": "deprecation-and-migration",
@@ -118,7 +118,7 @@
       "name": "interview-me",
       "path": "agnostic-software-development/interview-me",
       "skill_file": "agnostic-software-development/interview-me/SKILL.md",
-      "description": "Extracts what the user actually wants instead of what they think they should want. Achieves this through one-question-at-a-time interview until ~95% confidence about the underlying intent. Use when an ask is underspecified (\"build me X\" without \"for whom\" or \"why now\"), when the user explicitly invokes (\"interview me\", \"grill me\", \"are we sure?\", \"stress-test my thinking\"), or when you catch yourself silently filling in ambiguous requirements before any plan, spec, or code exists."
+      "description": "Uncover what the user actually wants instead of what they think they should want by interviewing them one question at a time until reaching about 95% confidence in the underlying intent. Use when an ask is underspecified (\"build me X\" without \"for whom\" or \"why now\"), when the user explicitly asks to be interviewed or have their thinking stress-tested, or when you catch yourself silently filling in ambiguous requirements before any plan, spec, or code exists."
     },
     {
       "name": "performance-optimization",
@@ -178,7 +178,7 @@
       "name": "update-project-docs",
       "path": "agnostic-software-development/update-project-docs",
       "skill_file": "agnostic-software-development/update-project-docs/SKILL.md",
-      "description": "Update project-facing documentation after a user-visible behavior, configuration, operation, or workflow change."
+      "description": "Update project-facing documentation after a reader-visible behavior, configuration, operation, or developer workflow change."
     },
     {
       "name": "using-agnostic-software-development-skills",
@@ -202,7 +202,7 @@
       "name": "bootstrap-python-app",
       "path": "python-software-development/bootstrap-python-app",
       "skill_file": "python-software-development/bootstrap-python-app/SKILL.md",
-      "description": "Initialize a new Python project with a hexagonal vertical-slice architecture layout, core tooling, and quality checks."
+      "description": "Initialize a new Python project with a hexagonal vertical-slice architecture layout, core tooling, and quality checks when starting a Python application from scratch."
     },
     {
       "name": "format-python-code",
@@ -214,7 +214,7 @@
       "name": "lint-python-code",
       "path": "python-software-development/lint-python-code",
       "skill_file": "python-software-development/lint-python-code/SKILL.md",
-      "description": "Run Python linting and type checking with ruff and mypy when a project uses uv-managed development tooling."
+      "description": "Run project-configured Python linting and type checking with Ruff and mypy when a project uses uv-managed development tooling."
     },
     {
       "name": "python-add-adapter",
@@ -244,7 +244,7 @@
       "name": "run-python-tests",
       "path": "python-software-development/run-python-tests",
       "skill_file": "python-software-development/run-python-tests/SKILL.md",
-      "description": "Runs automated tests for a Python project using pytest."
+      "description": "Run pytest-based automated tests when a Python project uses uv-managed development tooling."
     },
     {
       "name": "split-python-module",
@@ -268,7 +268,7 @@
       "name": "write-python-docstrings",
       "path": "python-software-development/write-python-docstrings",
       "skill_file": "python-software-development/write-python-docstrings/SKILL.md",
-      "description": "Write concise Google-style Python docstrings and inline comments that explain contracts, invariants, and non-obvious behavior."
+      "description": "Write or revise concise Google-style Python docstrings and inline comments when contracts, invariants, or non-obvious behavior need explanation."
     }
   ]
 }
