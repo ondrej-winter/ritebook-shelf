@@ -3,7 +3,7 @@
   "index": {
     "name": "ondrej-winter-ritebook-shelf"
   },
-  "generated_at": "2026-08-10T19:25:13.260156Z",
+  "generated_at": "2026-08-19T19:27:21.679376Z",
   "skills_root": "skills",
   "skills": [
     {
@@ -233,6 +233,12 @@
       "path": "python-software-development/python-add-port",
       "skill_file": "python-software-development/python-add-port/SKILL.md",
       "description": "Add a technology-agnostic inbound or outbound application port interface to the owning vertical slice in a Python hexagonal project for a new use case or dependency."
+    },
+    {
+      "name": "python-build-extensible-cli",
+      "path": "python-software-development/python-build-extensible-cli",
+      "skill_file": "python-software-development/python-build-extensible-cli/SKILL.md",
+      "description": "Build or refactor an extensible product CLI for a Python hexagonal vertical-slice project, with a feature-neutral shell, feature-owned command contributions, bootstrap-owned composition, stable exit semantics, and tests. Use when multiple feature slices need to contribute commands without leaking parser or process concerns into application or domain code."
     },
     {
       "name": "run-python-quality-gate",
