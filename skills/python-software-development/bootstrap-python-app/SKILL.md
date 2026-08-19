@@ -184,7 +184,7 @@ if __name__ == "__main__":
 
 ### 3. Configure pyproject.toml
 
-Create or update `pyproject.toml` from `assets/pyproject.template.toml`.
+Create or update `pyproject.toml` from `assets/pyproject.toml.template`.
 Replace `<app_name>`, `<python_version>`, `<python_version_nodot>`,
 `<repository_url>`, and `<coverage_fail_under>`. Keep the values `uv init`
 already set for `name`, `version`, and `requires-python` unless the user asked
@@ -228,7 +228,7 @@ uv run pre-commit install
 ```
 
 Create `.pre-commit-config.yaml` from
-`assets/pre-commit-config.template.yaml`. Replace `<python_version>` with the
+`assets/pre-commit-config.yaml.template`. Replace `<python_version>` with the
 selected Python version, for example `3.13`, so the generated value is
 `python3.13`.
 
@@ -255,7 +255,7 @@ temporary audit files out of version control.
 
 ### 7. Add GitHub Actions CI/CD
 
-Create `.github/workflows/ci-cd.yaml` from `assets/ci-cd.template.yaml`.
+Create `.github/workflows/ci-cd.yaml` from `assets/ci-cd.yaml.template`.
 Replace `<app_name>`, `<python_version>`, and `<default_branch>`.
 
 The workflow mirrors the local quality gate and release behavior:
