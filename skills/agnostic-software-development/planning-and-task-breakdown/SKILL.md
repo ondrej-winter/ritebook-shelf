@@ -2,7 +2,7 @@
 name: planning-and-task-breakdown
 description: Breaks work into ordered tasks. Use when you have a spec or clear requirements and need to break work into implementable tasks. Use when a task feels too large to start, when you need to estimate scope, or when parallel work is possible.
 metadata:
-  version: "1.4.0"
+  version: "1.4.1"
   dependencies:
     tools: []
     skills:
@@ -116,18 +116,22 @@ Each task follows this structure:
 ```markdown
 ### Task [N]: [Short descriptive title]
 
+**Task completion:**
+
+- [ ] `T<N>` — All required acceptance and verification items are resolved
+
 **Description:** One paragraph explaining what this task accomplishes.
 
 **Acceptance criteria:**
 
-- [ ] [Specific, testable condition]
-- [ ] [Specific, testable condition]
+- [ ] `T<N>-AC1` — [Specific, testable condition]
+- [ ] `T<N>-AC2` — [Specific, testable condition]
 
 **Verification:**
 
-- [ ] Focused check: `<confirmed_test_or_check_command>`
-- [ ] Build, static, or integration check when applicable: `<confirmed_command>`
-- [ ] Manual check when applicable: [description of what to verify]
+- [ ] `T<N>-V1` — Focused check: `<confirmed_test_or_check_command>`
+- [ ] `T<N>-V2` — Build, static, or integration check when applicable: `<confirmed_command>`
+- [ ] `T<N>-V3` — Manual check when applicable: [description of what to verify]
 
 Use only commands confirmed from repository documentation or configuration. If a
 needed command is not yet known, write `Unknown — discover before implementation`.
@@ -141,7 +145,7 @@ a command. Distinguish focused iteration checks from final handoff checks.
 - `<module_path>`
 - `<test_path>`
 
-**Estimated scope:** [XS: 1 file | Small: 2 files | Medium: 3-5 files | Large: 6-8 files | XL: 9+ files]
+**Estimated scope:** [XS: 1 file | S: 1-2 files | M: 3-5 files | L: 6-8 files | XL: 9+ files]
 ```
 
 ### Step 5: Order and checkpoint
