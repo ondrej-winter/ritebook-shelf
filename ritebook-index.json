@@ -3,7 +3,7 @@
   "index": {
     "name": "ondrej-winter-ritebook-shelf"
   },
-  "generated_at": "2026-08-26T18:42:23.270242Z",
+  "generated_at": "2026-08-26T18:51:05.128447Z",
   "skills_root": "skills",
   "skills": [
     {
@@ -136,7 +136,7 @@
       "name": "review-implementation-plan",
       "path": "agnostic-software-development/review-implementation-plan",
       "skill_file": "agnostic-software-development/review-implementation-plan/SKILL.md",
-      "description": "Review an implementation plan for completeness, ambiguity, sequencing, risks, dependencies, validation, readiness labeling, and handoff before coding."
+      "description": "Review and update an existing implementation plan for completeness, ambiguity, sequencing, risks, dependencies, validation, readiness labeling, and handoff before coding."
     },
     {
       "name": "run-local-quality-gate",
