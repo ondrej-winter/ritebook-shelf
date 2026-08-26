@@ -2,7 +2,7 @@
 name: spec-driven-development
 description: Creates and confirms the canonical specification that defines requirements, constraints, boundaries, and success criteria before implementation planning. Use when starting a project, feature, integration, workflow, migration, or significant change with unclear or incomplete requirements.
 metadata:
-  version: "1.4.0"
+  version: "1.5.0"
   dependencies:
     tools: []
     skills:
@@ -101,26 +101,31 @@ experience, data, security, operations, compatibility, or architecture.
 Cover these areas at the appropriate level of detail:
 
 1. Objective: what is being built, who it is for, and why it matters.
-2. Current context: relevant existing behavior, files, workflows, constraints, and
+2. Status: whether the spec is a draft, accepted, or superseded, plus acceptance
+   and revision details when applicable.
+3. Current context: relevant existing behavior, files, workflows, constraints, and
    dependencies.
-3. Assumptions: unconfirmed beliefs that affect requirements or implementation.
-4. Desired behavior: user-visible behavior, interfaces, data changes,
+4. Assumptions: unconfirmed beliefs that affect requirements or implementation.
+5. Desired behavior: user-visible behavior, interfaces, data changes,
    operational behavior, or workflow changes.
-5. Commands and validation: exact build, test, lint, documentation, migration, or
+6. Scope: required capabilities and related work intentionally excluded.
+7. Commands and validation: exact build, test, lint, documentation, migration, or
    manual verification commands where known.
-6. Project structure: where implementation, tests, docs, and configuration belong.
-7. Style and conventions: naming, formatting, error handling, logging, API,
+8. Project structure: where implementation, tests, docs, and configuration belong.
+9. Style and conventions: naming, formatting, error handling, logging, API,
    accessibility, security, or platform conventions that matter for the change.
-8. Testing strategy: which test levels or checks prove the behavior works.
-9. Boundaries: what to always do, ask before doing, and never do.
-10. Success criteria: specific, testable conditions for completion.
-11. Open questions: unresolved decisions that need user input.
+10. Testing strategy: which test levels or checks prove the behavior works.
+11. Execution boundaries: what to always do, ask before doing, and never do.
+12. Success criteria: specific, testable conditions for completion.
+13. Open questions: unresolved decisions, their impact, owner, and whether they
+    block acceptance or implementation.
 
 ### Specification template
 
 Use `assets/specification-template.md` as the starting structure. Adapt its level
 of detail to the change, but preserve the sections that communicate requirements,
-constraints, boundaries, success criteria, assumptions, and unresolved questions.
+status, scope, constraints, boundaries, success criteria, assumptions, and
+unresolved questions.
 
 Remove placeholder text from the resulting specification. Do not silently remove
 a section because its answer is unknown; record the unknown as an assumption or
@@ -151,10 +156,18 @@ Before handoff, ask the user to accept or correct the specification. Acceptance
 may cover the complete spec in one review; it does not require separate approval
 of every section when no material ambiguity remains.
 
-If blocking questions remain, keep the specification labeled as a draft and do
-not describe it as ready for implementation planning. If no live user is
-available, record the missing decision, its impact, and any safe options without
-choosing one silently.
+Record the result in the specification's status section so later sessions can
+distinguish a draft from an accepted or superseded revision. For an accepted
+specification, record the accepting person or role and acceptance date when
+known. Do not infer acceptance from the absence of questions or from subsequent
+implementation activity.
+
+Classify every unresolved question as blocking or non-blocking. If a blocking
+question remains, keep the specification labeled as a draft and do not describe
+it as ready for implementation planning. A non-blocking question may remain in
+an accepted specification only when its permitted impact is explicit. If no live
+user is available, record the missing decision, its impact, owner when known,
+and any safe options without choosing one silently.
 
 ## Handoff to planning
 
@@ -210,10 +223,13 @@ If a plan conflicts with the specification:
 Before handing the spec to planning, confirm:
 
 - [ ] assumptions and open questions are visible
+- [ ] every open question records its impact and blocking status
 - [ ] blocking questions are resolved
 - [ ] the spec defines objective, desired behavior, constraints, and boundaries
+- [ ] in-scope and out-of-scope work are explicit
 - [ ] success criteria are specific and testable
 - [ ] validation commands or manual checks are recorded where known
 - [ ] the spec is identified as the canonical source for downstream work
+- [ ] the spec status and acceptance details are recorded durably
 - [ ] the user has accepted the spec, or it is explicitly labeled as an
       unconfirmed draft that is not ready for implementation planning

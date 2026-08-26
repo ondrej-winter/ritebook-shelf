@@ -1,5 +1,13 @@
 # Specification: [Project or Feature Name]
 
+## Status
+
+- State: Draft
+- Accepted by: Not applicable until accepted
+- Accepted on: Not applicable until accepted
+- Revision: [Optional revision identifier.]
+- Supersedes: Not applicable
+
 ## Objective
 
 [Describe what is being built, for whom, and why it matters.]
@@ -19,12 +27,26 @@ and dependencies.]
 [Define the required functional, operational, data, interface, or workflow
 behavior. Include observable outcomes and important failure behavior.]
 
+## Scope
+
+### In Scope
+
+- [Required capability, affected workflow, or deliverable.]
+
+### Out of Scope
+
+- [Related behavior or work intentionally excluded from this specification.]
+
 ## Commands and Validation
 
-- Build: `<confirmed_build_command>`
-- Test: `<confirmed_test_command>`
-- Lint or static checks: `<confirmed_lint_or_check_command>`
-- Manual verification: [Describe the manual check when applicable.]
+| Check | Command or procedure | Applicability |
+| --- | --- | --- |
+| Build | `<confirmed_build_command>` | Required |
+| Tests | `<confirmed_test_command>` | Required |
+| Lint or static analysis | `<confirmed_lint_or_check_command>` | Required |
+| Documentation | `<confirmed_docs_command>` | [Required, unknown, or not applicable.] |
+| Migration or compatibility | `<confirmed_migration_command>` | [Required, unknown, or not applicable.] |
+| Manual acceptance | [Describe the manual check.] | [Required or not applicable.] |
 
 Use `Not applicable` when a validation category genuinely does not apply. Keep an
 unknown command visible as an open question rather than inventing one.
@@ -48,7 +70,7 @@ project evidence or user confirmation.]
 [Describe the test levels, fixtures, edge cases, failure cases, and acceptance
 checks that will demonstrate conformance with this specification.]
 
-## Boundaries
+## Execution Boundaries
 
 - Always: [Required practices or invariants.]
 - Ask first: [Scope-expanding, destructive, costly, or risky actions.]
@@ -60,5 +82,6 @@ checks that will demonstrate conformance with this specification.]
 
 ## Open Questions
 
-- [Record an unresolved decision, its impact, and the person or evidence needed
-  to resolve it when known.]
+| Question | Impact | Blocking? | Owner | Resolution |
+| --- | --- | --- | --- | --- |
+| [Unresolved decision.] | [Affected requirement or workflow.] | Yes or No | [Person, role, or evidence source.] | Unresolved |
