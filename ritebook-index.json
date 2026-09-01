@@ -3,7 +3,7 @@
   "index": {
     "name": "ondrej-winter-ritebook-shelf"
   },
-  "generated_at": "2026-09-01T10:25:54.231107Z",
+  "generated_at": "2026-09-01T17:44:02.329290Z",
   "skills_root": "skills",
   "skills": [
     {
@@ -275,6 +275,12 @@
       "path": "python-software-development/write-python-docstrings",
       "skill_file": "python-software-development/write-python-docstrings/SKILL.md",
       "description": "Write or revise concise Google-style Python docstrings and inline comments when contracts, invariants, or non-obvious behavior need explanation."
+    },
+    {
+      "name": "condensed-prose-refactor",
+      "path": "writing-and-editing/condensed-prose-refactor",
+      "skill_file": "writing-and-editing/condensed-prose-refactor/SKILL.md",
+      "description": "Refactor, rewrite, condense, or sharpen supplied text into precise, compact, intellectually forceful prose while preserving meaning, factual claims, uncertainty, register, audience, and useful detail. Use when the user asks to refactor, rewrite, condense, sharpen, simplify, make more intelligent, make aphoristic, or improve prose."
     }
   ]
 }
