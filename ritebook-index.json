@@ -3,7 +3,7 @@
   "index": {
     "name": "ondrej-winter-ritebook-shelf"
   },
-  "generated_at": "2026-08-27T20:36:52.687054Z",
+  "generated_at": "2026-09-01T10:25:54.231107Z",
   "skills_root": "skills",
   "skills": [
     {
@@ -118,7 +118,7 @@
       "name": "interview-me",
       "path": "agnostic-software-development/interview-me",
       "skill_file": "agnostic-software-development/interview-me/SKILL.md",
-      "description": "Uncover what the user actually wants instead of what they think they should want by interviewing them one question at a time until reaching about 95% confidence in the underlying intent. Use when an ask is underspecified (\"build me X\" without \"for whom\" or \"why now\"), when the user explicitly asks to be interviewed or have their thinking stress-tested, or when you catch yourself silently filling in ambiguous requirements before any plan, spec, or code exists."
+      "description": "Reduce uncertainty about a user's underlying intent through a formal XY-problem gate plus a hypothesis, confidence, evidence, and information-gain interview loop. Use when an ask is underspecified, solution-led, or has material unresolved trade-offs before idea refinement, specification, planning, or implementation."
     },
     {
       "name": "performance-optimization",
