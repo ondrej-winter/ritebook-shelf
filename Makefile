@@ -11,3 +11,6 @@ cline-skills:
 
 cline-skills-dry-run:
 	uv run tools/cline-skill-workflow/run_cline_skill_workflow.py --dry-run --review-only
+
+update-indexes:
+	$(RITEBOOK) indexes update --all
