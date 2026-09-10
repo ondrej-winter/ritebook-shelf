@@ -3,7 +3,7 @@
   "index": {
     "name": "ondrej-winter-ritebook-shelf"
   },
-  "generated_at": "2026-09-10T18:14:30.020298Z",
+  "generated_at": "2026-09-10T18:29:13.855900Z",
   "skills_root": "skills",
   "skills": [
     {
@@ -166,7 +166,7 @@
       "name": "spec-driven-development",
       "path": "agnostic-software-development/spec-driven-development",
       "skill_file": "agnostic-software-development/spec-driven-development/SKILL.md",
-      "description": "Creates and confirms the canonical specification that defines requirements, constraints, boundaries, and success criteria before implementation planning. Use when starting a project, feature, integration, workflow, migration, or significant change with unclear or incomplete requirements."
+      "description": "Create, review, or revise a canonical specification with observable requirements, scope boundaries, acceptance checks, and explicit unresolved decisions. Use when requirements are incomplete, conflicting, spread across sources, or need a durable agreement before planning or changing implementation."
     },
     {
       "name": "test-driven-development",
