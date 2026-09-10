@@ -3,7 +3,7 @@
   "index": {
     "name": "ondrej-winter-ritebook-shelf"
   },
-  "generated_at": "2026-09-10T18:29:13.855900Z",
+  "generated_at": "2026-09-10T18:50:43.998275Z",
   "skills_root": "skills",
   "skills": [
     {
@@ -130,7 +130,7 @@
       "name": "planning-and-task-breakdown",
       "path": "agnostic-software-development/planning-and-task-breakdown",
       "skill_file": "agnostic-software-development/planning-and-task-breakdown/SKILL.md",
-      "description": "Breaks work into ordered tasks. Use when you have a spec or clear requirements and need to break work into implementable tasks. Use when a task feels too large to start, when you need to estimate scope, or when parallel work is possible."
+      "description": "Create or revise an implementation plan from clear requirements, with ordered tasks, acceptance criteria, dependencies, verification, and progress tracking. Use when scope needs decomposition, sequencing is uncertain, or work must be coordinated across agents or sessions."
     },
     {
       "name": "review-implementation-plan",
