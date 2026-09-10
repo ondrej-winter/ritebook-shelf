@@ -98,12 +98,12 @@ Confidence means confidence that the intent statement is sufficient for the next
 downstream decision. It is not a claim of psychological certainty or a substitute
 for user confirmation.
 
-| Confidence | Meaning | Required action |
-| --- | --- | --- |
-| 0-39% | Primary user, problem, or outcome is unclear. | Test the core interpretation before discussing solutions. |
-| 40-69% | A direction is plausible, but material success, scope, or constraints are unresolved. | Ask the highest-information-gain question. |
-| 70-89% | Intent is mostly clear; boundaries, success, or ownership still need confirmation. | Resolve or explicitly record remaining material unknowns. |
-| 90-100% | The intent model is sufficient to restate for confirmation. | Present the intent artifact and request confirmation. |
+| Confidence | Meaning                                                                               | Required action                                           |
+| ---------- | ------------------------------------------------------------------------------------- | --------------------------------------------------------- |
+| 0-39%      | Primary user, problem, or outcome is unclear.                                         | Test the core interpretation before discussing solutions. |
+| 40-69%     | A direction is plausible, but material success, scope, or constraints are unresolved. | Ask the highest-information-gain question.                |
+| 70-89%     | Intent is mostly clear; boundaries, success, or ownership still need confirmation.    | Resolve or explicitly record remaining material unknowns. |
+| 90-100%    | The intent model is sufficient to restate for confirmation.                           | Present the intent artifact and request confirmation.     |
 
 Do not increase confidence merely because more words were exchanged. Increase it
 only when evidence resolves, bounds, or explicitly accepts a high-impact unknown.
