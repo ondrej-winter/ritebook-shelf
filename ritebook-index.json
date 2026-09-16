@@ -3,7 +3,7 @@
   "index": {
     "name": "ondrej-winter-ritebook-shelf"
   },
-  "generated_at": "2026-09-10T18:50:43.998275Z",
+  "generated_at": "2026-09-16T12:07:51.682457Z",
   "skills_root": "skills",
   "skills": [
     {
@@ -23,6 +23,12 @@
       "path": "agnostic-software-development/author-agent-skill",
       "skill_file": "agnostic-software-development/author-agent-skill/SKILL.md",
       "description": "Create, update, or review Agent Skill directories and SKILL.md files for valid frontmatter, structure, portability, progressive disclosure, and validation readiness."
+    },
+    {
+      "name": "author-agents-config",
+      "path": "agnostic-software-development/author-agents-config",
+      "skill_file": "agnostic-software-development/author-agents-config/SKILL.md",
+      "description": "Initialize, audit, update, or synchronize a repository's coding-agent instructions and client adapters. Use for AGENTS.md, scoped instructions, CLAUDE.md, .clinerules, .cline/rules, Copilot instructions, or migrations between agent configuration layouts. Keep shared policy canonical and adapters minimal. Not for authoring reusable SKILL.md capabilities, defining agent personas, ordinary application changes, or configuring runtime permissions."
     },
     {
       "name": "browser-runtime-verification",
