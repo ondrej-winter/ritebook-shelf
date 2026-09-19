@@ -3,7 +3,7 @@
   "index": {
     "name": "ondrej-winter-ritebook-shelf"
   },
-  "generated_at": "2026-09-16T12:41:30.804371Z",
+  "generated_at": "2026-09-19T18:20:08.514155Z",
   "skills_root": "skills",
   "skills": [
     {
@@ -16,7 +16,7 @@
       "name": "api-and-interface-design",
       "path": "agnostic-software-development/api-and-interface-design",
       "skill_file": "agnostic-software-development/api-and-interface-design/SKILL.md",
-      "description": "Design stable APIs, module contracts, schemas, component boundaries, command interfaces, or other public integration surfaces that are predictable, documented, and hard to misuse."
+      "description": "Design or review stable APIs and interfaces that are explicit, compatible, and hard to misuse. Use when creating or changing HTTP, event, library, module, CLI, component, schema, configuration, plugin, or other durable integration contracts."
     },
     {
       "name": "author-agent-skill",
