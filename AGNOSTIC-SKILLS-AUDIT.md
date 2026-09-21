@@ -113,46 +113,6 @@ workflow.
 - Keep each routed skill's activation rules authoritative when they are narrower
   than the catalog summary.
 
-### F-02 — Medium: Incremental implementation contradicts vertical slicing and TDD
-
-**Location**
-
-- `skills/agnostic-software-development/incremental-implementation/SKILL.md`
-  lines 13-90 and 186-214
-
-**Evidence**
-
-The core cycle is:
-
-```text
-Implement -> Test -> Verify -> Checkpoint -> Next slice
-```
-
-That order conflicts with `test-driven-development`, which requires `RED` before
-`GREEN`. The incremental skill does allow adding a test when coverage is missing,
-but only after the implementation step.
-
-The skill also defines a preferred vertical slice as complete end-to-end behavior,
-then gives an agent-directing example that implements storage and an external
-interface while explicitly deferring the user-facing surface. That example is a
-horizontal layer increment unless it is clearly labeled as contract-first or
-risk-first work.
-
-**Impact**
-
-The skill can lead agents away from both test-first execution and its own preferred
-vertical-slice strategy.
-
-**Recommendation**
-
-- Use a composable cycle such as `Define behavior -> Red when applicable ->
-  Implement -> Verify -> Checkpoint`.
-- State how the cycle changes for non-behavioral work where TDD does not apply.
-- Rewrite the agent example as the smallest complete path that provides observable
-  value.
-- Label intentionally incomplete producer, consumer, infrastructure, or discovery
-  work as contract-first or risk-first rather than as a vertical slice.
-
 ### F-03 — Medium: Capability metadata does not consistently expose required capabilities
 
 **Locations**
@@ -437,9 +397,9 @@ summaries, detailed workflows, tables, and examples drift independently.
 
 ## Recommended remediation order
 
-1. **Reconcile orchestration and implementation order.** Resolve F-01 and F-02
-   together so the catalog, incremental implementation, and TDD workflows define
-   one compatible execution model.
+1. **Reconcile catalog orchestration order.** Resolve F-01 so the catalog routes
+   specification, incremental implementation, and TDD workflows through one
+   compatible execution model.
 2. **Normalize dependency semantics.** Address F-03 before adding more skills or
    building automation that relies on capability metadata.
 3. **Restore the collection boundary.** Move the Python tool preference described
