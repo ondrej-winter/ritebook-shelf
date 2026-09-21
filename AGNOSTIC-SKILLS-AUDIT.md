@@ -195,39 +195,6 @@ catalog or target project.
   the applicable Python versions, project constraints, and verification source
   there.
 
-### F-05 — Medium: Deprecation requires proof of zero active usage before removal
-
-**Location**
-
-- `skills/agnostic-software-development/deprecation-and-migration/SKILL.md`
-  lines 149-172
-
-**Evidence**
-
-The workflow says to remove an old path only after zero active usage and treats
-removal before metrics, logs, or dependency checks show zero usage as a red flag.
-Zero usage can be demonstrated for fully controlled and observable consumers, but
-not always for public APIs, offline clients, externally owned integrations,
-distributed installations, or systems without complete telemetry.
-
-The same skill supports compulsory deprecation with deadlines and exception
-processes, but its removal gate does not provide an evidence-based alternative
-when complete usage measurement is impossible.
-
-**Impact**
-
-Legitimate removals can become impossible to complete, or maintainers may claim
-stronger usage evidence than they actually possess.
-
-**Recommendation**
-
-- Require zero measured usage when the consumer population is controlled and
-  measurement is sufficiently complete.
-- Otherwise allow removal after a documented support window, migration notice,
-  replacement readiness, owner approval, and explicit residual-risk acceptance.
-- Distinguish `proven zero usage`, `no known active consumers`, and `remaining
-  usage cannot be observed` in the removal decision.
-
 ### F-06 — Low: Mutable Core Web Vitals data lacks source context
 
 **Location**
@@ -404,8 +371,7 @@ summaries, detailed workflows, tables, and examples drift independently.
    building automation that relies on capability metadata.
 3. **Restore the collection boundary.** Move the Python tool preference described
    in F-04 to the Python collection.
-4. **Clarify lifecycle exits.** Fix the deprecation removal evidence model in F-05
-   and risk-qualify launch examples in F-07.
+4. **Clarify lifecycle exits.** Risk-qualify the launch examples in F-07.
 5. **Strengthen maintenance controls.** Add the validation target from F-09.
 6. **Reduce future drift.** Add source context for mutable guidance in F-06 and
    apply progressive disclosure selectively under F-10.

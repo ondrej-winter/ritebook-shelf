@@ -3,7 +3,7 @@
   "index": {
     "name": "ondrej-winter-ritebook-shelf"
   },
-  "generated_at": "2026-09-21T15:17:05.060067Z",
+  "generated_at": "2026-09-21T18:12:38.089728Z",
   "skills_root": "skills",
   "skills": [
     {
@@ -76,7 +76,7 @@
       "name": "deprecation-and-migration",
       "path": "agnostic-software-development/deprecation-and-migration",
       "skill_file": "agnostic-software-development/deprecation-and-migration/SKILL.md",
-      "description": "Plan and execute safe deprecations, migrations, replacements, and removals by measuring usage, supporting consumers, preserving compatibility, and verifying that old paths are no longer active."
+      "description": "Plan and execute safe deprecations, migrations, replacements, and removals by measuring usage, supporting consumers, preserving compatibility, and making evidence-based removal decisions."
     },
     {
       "name": "documentation-and-adrs",
