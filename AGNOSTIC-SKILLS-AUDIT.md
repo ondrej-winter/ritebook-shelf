@@ -190,42 +190,6 @@ specification and no substantive mismatch was found:
 
 - [Conventional Commits 1.0.0](https://www.conventionalcommits.org/en/v1.0.0/)
 
-### F-07 — Low: Launch examples contain unqualified universal rules and numeric defaults
-
-**Location**
-
-- `skills/agnostic-software-development/shipping-and-launch/SKILL.md`
-  lines 22-59 and 154-162
-- `skills/agnostic-software-development/shipping-and-launch/references/launch-planning-examples.md`
-
-**Evidence**
-
-The skill correctly requires a recovery strategy and allows rollback,
-disablement, roll-forward, or compensation. Its example then supplies fixed
-triggers and recovery-time targets, including twice-baseline error rate and
-one-, five-, and fifteen-minute recovery targets, without labeling them as purely
-illustrative project-specific values.
-
-The rationalization table also says every feature benefits from a kill switch.
-Feature flags and disablement are valuable when they reduce risk, but they also add
-state, branching, cleanup, and operational complexity. Static, very small,
-irreversible, or already compartmentalized changes may need another recovery
-strategy instead.
-
-**Impact**
-
-Agents can copy arbitrary operational targets or add feature flags mechanically
-rather than deriving controls from release risk and system capabilities.
-
-**Recommendation**
-
-- Replace example numbers with placeholders or label them prominently as examples
-  that must be replaced.
-- Make feature flags and kill switches risk-based rather than universal.
-- Preserve the requirement for an explicit recovery strategy while allowing the
-  project to choose rollback, roll-forward, compensation, disablement, or
-  documented irreversibility.
-
 ### F-09 — Low: Skill validation is not a first-class reproducible repository gate
 
 **Locations**
@@ -297,9 +261,8 @@ changes can be checked by different Ritebook versions at different times.
    compatible execution model.
 2. **Restore the collection boundary.** Move the Python tool preference described
    in F-04 to the Python collection.
-3. **Clarify lifecycle exits.** Risk-qualify the launch examples in F-07.
-4. **Strengthen maintenance controls.** Add the validation target from F-09.
-5. **Reduce future drift.** Add source context for mutable guidance in F-06.
+3. **Strengthen maintenance controls.** Add the validation target from F-09.
+4. **Reduce future drift.** Add source context for mutable guidance in F-06.
 
 Each behavioral skill change should increment that skill's semantic version and
 be synchronized through the repository's normal Ritebook workflow rather than by
@@ -335,6 +298,16 @@ The F-03 remediation on 2026-09-22 additionally confirmed:
   degraded fallback
 - every non-empty agnostic skill dependency has a valid relationship
 - all catalog dependencies use `relationship: route`
+
+The F-07 remediation on 2026-09-22 additionally confirmed:
+
+- `shipping-and-launch` version 1.6.0 makes runtime release controls conditional
+  on release risk, safe isolation, and net operational value
+- rollout and recovery examples use project-derived placeholders instead of fixed
+  numeric defaults
+- recovery guidance allows rollback, disablement, roll-forward, compensation, or
+  documented irreversibility with explicit risk acceptance and containment
+- canonical and installed `shipping-and-launch` files remain byte-identical
 
 ## Limitations
 

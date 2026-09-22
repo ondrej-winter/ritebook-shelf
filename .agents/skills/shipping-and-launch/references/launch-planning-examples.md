@@ -1,94 +1,97 @@
 # Launch Planning Examples
 
-Use these examples to draft release-specific rollout and recovery plans. Replace
-all cohorts, windows, thresholds, commands, and time targets with values justified
-by the release risk and operating environment.
+These are illustrative structures, not operational defaults. Replace every
+cohort, window, threshold, command, and time target with a value justified by the
+release risk, service objectives, observed baseline, traffic, detection delay,
+and recovery capability. Remove any step or control that does not apply.
 
-## Example Rollout Sequence
+## Example rollout sequence
 
 Tailor cohort sizes and observation windows to traffic volume, release risk,
-time-to-detection, and how quickly recovery can complete. Do not advance merely
-because an example time window elapsed; advance when the defined evidence is
-sufficient.
+time-to-detection, and how quickly recovery can complete. Use runtime release
+controls only when they materially improve safety. Do not advance merely because
+an observation window elapsed; advance when the defined evidence is sufficient.
 
-1. Deploy to staging.
-   - Run the full test suite in the staging environment.
-   - Manually smoke test critical flows.
-2. Deploy to production with the feature flag off.
-   - Verify deployment succeeded with a health check.
-   - Check error monitoring for new errors.
-3. Enable for the team with the flag on for internal users.
-   - Have the team use the feature in production.
-   - Observe for a risk-appropriate period.
-4. Start a canary rollout with the flag on for 5% of users.
-   - Monitor error rates, latency, and user behavior.
-   - Compare canary metrics against baseline metrics.
-   - Observe long enough to collect representative evidence.
-   - Advance only if all thresholds pass.
-5. Gradually increase from 25% to 50% to 100%.
-   - Repeat the same monitoring at each step.
-   - Keep the ability to roll back to the previous percentage at any point.
-6. Complete the full rollout with the flag on for all users.
-   - Continue monitoring through the agreed stabilization period.
-   - Clean up the feature flag after the stabilization period succeeds.
+1. Verify the release in the most production-like pre-production environment.
+   - Run the applicable automated checks.
+   - Smoke test critical flows.
+2. Deploy to the smallest safe production exposure: `<initial_exposure>`.
+   - Apply the chosen runtime control only if the release plan requires one.
+   - Verify deployment health and the release-specific signals.
+3. Expand to `<internal_or_canary_cohort>` when that cohort provides useful evidence.
+   - Observe for `<representative_observation_window>`.
+   - Compare rollout signals against the pre-launch baseline.
+4. Increase exposure through `<cohort_sequence>`.
+   - Repeat the same monitoring and decision process at each stage.
+   - Retain the selected recovery or containment capability while risk remains.
+5. Complete the rollout when `<stabilization_criteria>` pass.
+   - Continue monitoring through `<stabilization_window>`.
+   - Remove temporary release controls according to `<cleanup_owner_and_deadline>`.
 
-## Example Rollout Decision Thresholds
+## Rollout decision threshold template
 
-Replace these example values with release-specific thresholds, then use them to
-decide whether to advance, hold, or execute the recovery plan at each stage:
+Define conditions from project evidence before launch, then decide whether to
+advance, hold, or execute the recovery strategy at each stage:
 
-| Metric                      | Advance (green)        | Hold and investigate (yellow) | Roll back (red)     |
-| --------------------------- | ---------------------- | ----------------------------- | ------------------- |
-| Error rate                  | Within 10% of baseline | 10-100% above baseline        | >2x baseline        |
-| P95 latency                 | Within 20% of baseline | 20-50% above baseline         | >50% above baseline |
-| New failure modes           | No new severe types    | Low-volume non-severe types   | Severe or growing   |
-| Product or business metrics | Neutral or positive    | Decline <5% or unclear signal | Decline >5%         |
+| Signal                      | Advance condition              | Hold condition              | Recovery condition              |
+| --------------------------- | ------------------------------ | --------------------------- | ------------------------------- |
+| Error or failure rate       | `<advance_error_condition>`    | `<hold_error_condition>`    | `<recover_error_condition>`     |
+| Latency or processing time  | `<advance_latency_condition>`  | `<hold_latency_condition>`  | `<recover_latency_condition>`   |
+| New failure modes           | `<advance_failure_condition>`  | `<hold_failure_condition>`  | `<recover_failure_condition>`   |
+| Product or workflow outcome | `<advance_outcome_condition>`  | `<hold_outcome_condition>`  | `<recover_outcome_condition>`   |
+| Data or security signal     | `<advance_safety_condition>`   | `<hold_safety_condition>`   | `<recover_safety_condition>`    |
 
-## When to Roll Back
+Execute the recovery strategy when any defined recovery condition is met. Include
+immediate triggers for unacceptable data-integrity or security impact even when
+traffic is too low for statistical thresholds.
 
-Roll back immediately if:
+## Recovery strategy template
 
-- Error rate increases by more than 2x baseline
-- P95 latency increases by more than 50%
-- User-reported issues spike
-- Data integrity issues detected
-- Security vulnerability discovered
-
-## Recovery plan example
-
-Every deployment needs a recovery plan before it happens. Use rollback or
-disablement when safe; otherwise define roll-forward or compensation steps:
+Every deployment needs an explicit recovery strategy before it happens. Select
+rollback, disablement, roll-forward, compensation, or documented irreversibility
+according to the release risk and system capabilities.
 
 ```markdown
-## Recovery Plan for [Feature/Release]
+## Recovery Strategy for <feature_or_release>
+
+### Chosen Strategy
+
+- Strategy: <rollback | disablement | roll-forward | compensation | documented irreversibility>
+- Rationale: <why this strategy fits the change and operating environment>
+- Decision owner: <role_or_owner>
+- Recovery or containment target: <project_derived_target>
 
 ### Trigger Conditions
 
-- Error rate > 2x baseline
-- P95 latency > [X]ms
-- User reports of [specific issue]
+- Error or failure condition: <release_specific_condition>
+- Latency or capacity condition: <release_specific_condition>
+- Product or workflow condition: <release_specific_condition>
+- Data-integrity or security condition: <release_specific_condition>
 
-### Rollback Steps
+### Execution Steps
 
-1. Disable feature flag (if applicable)
-   OR
-1. Deploy or restore the previous known-good version: `<rollback_command>`
-1. Verify rollback: health check, error monitoring
-1. Communicate: notify team of rollback
-
-### Alternative Recovery Steps
-
-- If rollback is unsafe or impossible, disable exposure, roll forward, or execute
-  the tested compensation procedure: `<recovery_command_or_runbook>`
+1. Confirm the trigger using <signal_or_dashboard>.
+2. Execute <recovery_command_or_runbook>.
+3. Verify <health_and_user_outcome_checks>.
+4. Communicate through <incident_or_release_channel>.
 
 ### Data and State Considerations
 
-- Migration, schema change, configuration change, or state transition [X] has a tested rollback or compensation plan
-- Data written by the release is [preserved / migrated back / cleaned up / reconciled]
+- State affected by the release: <data_schema_configuration_or_workflow_state>
+- Preservation, restoration, reconciliation, or compensation plan: <plan_or_runbook>
+- Verification after recovery or containment: <checks>
 
-### Recovery Time Targets
+### If the Change Is Irreversible
 
-- Feature flag: < 1 minute
-- Redeploy previous version: < 5 minutes
-- Database rollback: < 15 minutes
+- Reason reversal is impossible or riskier than proceeding: <reason>
+- Risk accepted by: <owner_or_governance_process>
+- Blast-radius limits and safeguards: <limits_and_controls>
+- Preserved evidence, backup, checkpoint, or audit trail: <artifact_or_not_applicable_with_reason>
+- Containment, repair, and communication path: <runbook>
+
+### Timing Targets
+
+- Detection target: <project_derived_target>
+- Decision target: <project_derived_target>
+- Recovery or containment target: <project_derived_target>
 ```

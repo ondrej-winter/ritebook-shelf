@@ -1,8 +1,8 @@
 ---
 name: shipping-and-launch
-description: Prepares production launches. Use when preparing to deploy to production. Use when you need a pre-launch checklist, when setting up monitoring, when planning a staged rollout, or when you need a rollback strategy.
+description: Prepare production launches with risk-based readiness checks, staged rollout, monitoring, and an explicit recovery strategy. Use before deploying a feature, migration, or other production change.
 metadata:
-  version: "1.5.0"
+  version: "1.6.0"
   dependencies:
     tools: []
     skills:
@@ -27,8 +27,9 @@ metadata:
 Ship with confidence. The goal is not just to deploy, but to deploy safely, with
 monitoring in place, a recovery plan ready, and a clear understanding of what
 success looks like. Make each launch observable and incremental when the system
-allows it. Define a rollback, disablement, roll-forward, or compensation path for
-changes that cannot be directly reversed.
+allows it. Define an explicit recovery strategy: rollback, disablement,
+roll-forward, compensation, or documented irreversibility with accepted risk and
+containment measures when no technical reversal is possible.
 
 ## When to Use
 
@@ -52,8 +53,7 @@ active failure that needs root-cause repair.
 3. Use the supporting reference checklists for deeper security, performance, or
    accessibility verification when those risks apply.
 4. Define the rollout sequence, monitoring thresholds, recovery triggers, and
-   recovery path
-   before changing production state.
+   recovery path before changing production state.
 5. Deploy incrementally, verify post-launch signals, and hold or execute the
    recovery plan when thresholds are missed.
 6. Record launch evidence, accepted residual risks, cleanup owners, and any
@@ -75,25 +75,29 @@ checklist and monitoring categories. Use the focused security, performance, and
 accessibility references when those risks apply. Record skipped checks, reasons,
 accepted risk, and owners.
 
-## Feature Flag Strategy
+## Runtime release control strategy
 
-When the change can be controlled safely at runtime, ship behind a feature flag
-or equivalent release control to decouple deployment from release:
+Use a feature flag, kill switch, or equivalent release control when release risk
+justifies runtime control and the change can be isolated safely. Confirm that the
+control reduces risk enough to justify its added state, branching, testing,
+cleanup, and operational complexity. For static, very small, irreversible, or
+already compartmentalized changes, use another explicit recovery strategy when a
+runtime control would not materially improve safety.
 
-### Feature Flag Lifecycle
+### Release control lifecycle
 
-1. Deploy with flag off: code is in production but inactive.
-2. Enable for team or beta users: internal testing happens in the production environment.
-3. Gradually roll out: increase exposure through risk-appropriate stages.
-4. Monitor at each stage: watch error rates, performance, and user feedback.
-5. Clean up: remove the flag and dead code path after full rollout.
+1. Deploy with the control in its safest initial state.
+2. Enable for an internal, beta, or canary cohort when that provides useful evidence.
+3. Gradually roll out through risk-appropriate exposure stages.
+4. Monitor release-specific health and user-outcome signals at each stage.
+5. Remove the temporary control and dead branch after stabilization criteria pass.
 
-### Feature Flag Rules
+### Release control rules
 
-- Every feature flag has an owner and an expiration date
-- Clean up flags within the agreed post-rollout cleanup window
-- Do not nest feature flags because doing so creates exponential combinations
-- Test both flag states (on and off) in CI
+- Give each release control an owner and a removal condition or review date.
+- Clean up temporary controls and dead branches after the stabilization criteria pass.
+- Avoid nested controls unless the interaction is necessary, understood, and tested.
+- Test each supported control state and transition at the level justified by its risk.
 
 ## Staged rollout
 
@@ -140,11 +144,15 @@ During the initial post-launch observation window:
 
 ## Recovery strategy
 
-Every deployment needs a recovery plan before it happens. Use rollback or
-disablement when safe; otherwise define roll-forward or compensation steps.
-Document triggers, decision ownership, commands or runbooks, data and state
-handling, verification, communication, and recovery-time targets. Dry-run the
-mechanism when practical. For a reusable example, see
+Every deployment needs an explicit recovery strategy before it happens. Choose
+rollback, disablement, roll-forward, compensation, or documented irreversibility
+according to the release risk and system capabilities. If reversal is impossible,
+record why, who accepts the risk, how exposure is limited, what state is preserved,
+and how operators will contain or repair harm.
+
+Document project-derived triggers, decision ownership, commands or runbooks, data
+and state handling, verification, communication, and recovery or containment time
+targets. Dry-run the mechanism when practical. For a reusable template, see
 `references/launch-planning-examples.md`.
 
 ## See Also
@@ -158,20 +166,20 @@ mechanism when practical. For a reusable example, see
 
 ## Common Rationalizations
 
-| Rationalization                                   | Reality                                                                                       |
-| ------------------------------------------------- | --------------------------------------------------------------------------------------------- |
-| "It works in staging, it will work in production" | Production has different data, traffic patterns, and edge cases. Monitor after deploy.        |
-| "We do not need feature flags for this"           | Every feature benefits from a kill switch. Even "simple" changes can break things.            |
-| "Monitoring is overhead"                          | Not having monitoring means you discover problems from user complaints instead of dashboards. |
-| "We will add monitoring later"                    | Add it before launch. You cannot debug what you cannot see.                                   |
-| "Rolling back is admitting failure"               | Rolling back is responsible engineering. Shipping a broken feature is the failure.            |
+| Rationalization                                   | Reality                                                                                                        |
+| ------------------------------------------------- | -------------------------------------------------------------------------------------------------------------- |
+| "It works in staging, it will work in production" | Production has different data, traffic patterns, and edge cases. Monitor after deploy.                         |
+| "We do not need feature flags for this"           | Assess the risk. Use a runtime control when it materially improves safety; otherwise document another strategy. |
+| "Monitoring is overhead"                          | Without monitoring, users may discover problems before operators do.                                           |
+| "We will add monitoring later"                    | Add release-relevant signals before launch so the team can detect and diagnose regressions.                    |
+| "Rolling back is admitting failure"               | Executing the chosen recovery strategy is responsible engineering; leaving a harmful release active is not.    |
 
 ## Red Flags
 
-- Deploying without a rollback plan
+- Deploying without an explicit recovery strategy
 - No monitoring or error reporting in production
 - Big-bang releases (everything at once, no staging)
-- Feature flags with no expiration or owner
+- Temporary release controls with no owner or removal condition
 - No one monitoring the deploy during the initial observation window
 - Production environment configuration done by memory, not code
 - "It is Friday afternoon, let us ship it"
@@ -181,8 +189,8 @@ mechanism when practical. For a reusable example, see
 Before deploying:
 
 - [ ] Applicable pre-launch checklist sections completed
-- [ ] Feature flag configured (if applicable)
-- [ ] Recovery plan documented
+- [ ] Runtime release control configured (if applicable)
+- [ ] Recovery strategy documented
 - [ ] Monitoring views and alerts set up
 - [ ] Team notified of deployment
 

@@ -3,7 +3,7 @@
   "index": {
     "name": "ondrej-winter-ritebook-shelf"
   },
-  "generated_at": "2026-09-22T11:14:40.534172Z",
+  "generated_at": "2026-09-22T11:25:44.541836Z",
   "skills_root": "skills",
   "skills": [
     {
@@ -160,7 +160,7 @@
       "name": "shipping-and-launch",
       "path": "agnostic-software-development/shipping-and-launch",
       "skill_file": "agnostic-software-development/shipping-and-launch/SKILL.md",
-      "description": "Prepares production launches. Use when preparing to deploy to production. Use when you need a pre-launch checklist, when setting up monitoring, when planning a staged rollout, or when you need a rollback strategy."
+      "description": "Prepare production launches with risk-based readiness checks, staged rollout, monitoring, and an explicit recovery strategy. Use before deploying a feature, migration, or other production change."
     },
     {
       "name": "source-driven-development",
