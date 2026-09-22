@@ -9,30 +9,49 @@ activate only the workflows whose own triggers are present. Other skill-to-skill
 relationships are classified as `handoff`, `verification`, or `awareness` in the
 owning skill metadata.
 
-## Lifecycle Sequence
+## Conditional Lifecycle Composition
 
-For a complete feature, the typical skill sequence is:
+There is no universal ordered lifecycle. Compose only the branches whose triggers
+are present, and let each routed skill's narrower activation rules override this
+summary. A complete feature can move through this graph:
 
 ```
-1.  interview-me: Extract what the user actually wants
-2.  idea-refine: Refine vague ideas
-3.  spec-driven-development: Define what we're building
-4.  planning-and-task-breakdown: Break into verifiable chunks
-5.  context-engineering: Load the right context
-6.  source-driven-development: Verify against official docs
-7.  incremental-implementation: Build slice by slice
-8.  doubt-driven-development: Cross-examine non-trivial decisions in-flight
-9.  test-driven-development: Prove each slice works
-10. code-review-and-quality: Review before merge
-11. code-simplification: Reduce unnecessary complexity while preserving behavior
-12. git-workflow-and-versioning: Clean commit history
-13. conventional-commits: Write or review Conventional Commits messages when used
-14. documentation-and-adrs: Document decisions
-15. deprecation-and-migration: Retire old systems and move users safely when needed
-16. shipping-and-launch: Deploy safely
+Clarify only when needed
+  unclear intent -> interview-me
+  rough or undecided concept -> idea-refine
+
+Define only when requirements need durable agreement
+  incomplete, conflicting, or scattered requirements -> spec-driven-development
+  precise fix or small edit with clear acceptance criteria -> continue from request
+
+Plan when the work benefits from decomposition
+  planning-and-task-breakdown -> optional review-implementation-plan
+
+Prepare according to the task's evidence needs
+  missing context -> context-engineering
+  source-sensitive decision -> source-driven-development
+  high-stakes or unfamiliar decision -> doubt-driven-development in-flight
+
+Implement
+  multi-file or non-minimal work -> incremental-implementation
+    for each behavior slice that automated tests can verify:
+      test-driven-development RED -> smallest implementation -> GREEN -> REFACTOR -> verify
+    for non-behavioral slices:
+      edit -> relevant parser, schema, lint, build, or review check
+  minimal testable behavior change -> test-driven-development directly
+  apply specialized architecture, UI, API, security, or performance workflows only when triggered
+
+Review and ship only as needed
+  focused review -> code-review-and-quality
+  unnecessary complexity -> code-simplification
+  project documentation or durable decisions -> documentation-and-adrs
+  version-control, CI/CD, migration, or release work -> the matching shipping workflow
 ```
 
-Not every task needs every skill. A bug fix might only need `debugging-and-error-recovery`, then `test-driven-development`, then `code-review-and-quality`.
+`test-driven-development` is not a phase after implementation. When activated, its
+RED-GREEN-REFACTOR cycle governs the implementation portion of each relevant
+slice. A focused bug fix might use `debugging-and-error-recovery` to reproduce and
+localize the failure, then use TDD inside the smallest fix slice before review.
 
 ## Quick Reference
 
@@ -40,17 +59,17 @@ Not every task needs every skill. A bug fix might only need `debugging-and-error
 | ------ | ---------------------------- | ---------------------------------------------------------------------------------------------------- |
 | Define | interview-me                 | Surface what the user actually wants before any plan, spec, or code exists                           |
 | Define | idea-refine                  | Refine ideas through structured divergent and convergent thinking                                    |
-| Define | spec-driven-development      | Requirements and acceptance criteria before code                                                     |
+| Define | spec-driven-development      | Durable requirements and acceptance criteria when the task needs a specification                      |
 | Plan   | planning-and-task-breakdown  | Decompose into small, verifiable tasks                                                               |
 | Plan   | review-implementation-plan   | Review a plan for gaps, risks, sequencing, dependencies, and validation readiness                    |
-| Build  | incremental-implementation   | Thin vertical slices, test each before expanding                                                     |
+| Build  | incremental-implementation   | Thin verifiable slices, with TDD inside behavior changes that automated tests can verify                           |
 | Build  | source-driven-development    | Verify against official docs before implementing                                                     |
 | Build  | doubt-driven-development     | Adversarial fresh-context review of every non-trivial decision                                       |
 | Build  | context-engineering          | Right context at the right time                                                                      |
 | Build  | frontend-ui-engineering      | Production-quality UI with accessibility                                                             |
 | Build  | api-and-interface-design     | Stable interfaces with clear contracts                                                               |
 | Build  | hexagonal-vertical-slices    | Hexagonal architecture with business-owned vertical feature slices                                   |
-| Verify | test-driven-development      | Failing test first, then make it pass                                                                |
+| Build  | test-driven-development      | RED-GREEN-REFACTOR execution discipline inside each relevant implementation slice                    |
 | Verify | browser-runtime-verification | Real-browser verification of UI behavior, console output, network activity, and accessibility basics |
 | Verify | run-local-quality-gate       | Discover and run local formatting, linting, static analysis, test, and build checks                  |
 | Verify | debugging-and-error-recovery | Reproduce, localize, fix, and guard                                                                  |

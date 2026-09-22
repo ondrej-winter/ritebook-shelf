@@ -62,60 +62,15 @@ skill headers, the catalog covers every constituent skill, supporting resources
 resolve, and canonical files match their installed copies. No high-severity issue
 was found.
 
-The main remaining weakness is cross-skill coherence rather than individual skill
-quality. The catalog and implementation workflows sometimes describe incompatible
-order of operations, and two agnostic validation skills contain a Python-specific
-tool preference. These issues are fixable without redesigning the collection.
+The main remaining weakness is the collection boundary rather than individual skill
+quality. Two agnostic validation skills contain a Python-specific tool preference
+that belongs in the separate Python collection. This issue is fixable without
+redesigning the collection.
 
-**Verdict:** pass with follow-up. Address the medium findings before treating the
-catalog as a fully coherent orchestration contract.
+**Verdict:** pass with follow-up. Address the remaining medium finding before
+treating the catalog as fully technology-agnostic.
 
 ## Findings
-
-### F-01 — Medium: Catalog routing conflicts with the workflows it routes
-
-**Locations**
-
-- `skills/agnostic-software-development/using-agnostic-software-development-skills/SKILL.md`
-  lines 162-197 and 310-318
-- `skills/agnostic-software-development/using-agnostic-software-development-skills/references/catalog-reference.md`
-  lines 12-35
-- `skills/agnostic-software-development/spec-driven-development/SKILL.md`
-  lines 34-43
-- `skills/agnostic-software-development/test-driven-development/SKILL.md`
-  lines 17-58
-
-**Evidence**
-
-The catalog routes every "new project, feature, or change" to
-`spec-driven-development` and says to start with a spec whenever a non-trivial task
-has none. The specification skill is more selective: it says a precise fix or
-small edit with clear acceptance criteria should work directly from the request.
-
-The catalog's typical lifecycle also places `incremental-implementation` before
-`test-driven-development`. The TDD skill requires a failing test before the code
-that makes it pass. Read as an ordered sequence, the catalog therefore tells an
-agent to start implementation before applying the test-first workflow.
-
-The catalog correctly notes that not every task needs every skill, but the primary
-routing tree and numbered lifecycle remain more absolute than the routed skills.
-
-**Impact**
-
-Agents following the catalog literally can create unnecessary specifications or
-implement behavior before writing the failing test required by the selected TDD
-workflow.
-
-**Recommendation**
-
-- Qualify the specification route to exclude small changes with clear acceptance
-  criteria.
-- Describe TDD as an execution discipline applied inside implementation slices,
-  not as a later lifecycle phase.
-- Replace the numbered universal lifecycle with a conditional graph or label it
-  explicitly as one possible composition.
-- Keep each routed skill's activation rules authoritative when they are narrower
-  than the catalog summary.
 
 ### F-04 — Medium: Python-specific tool policy leaks into the agnostic collection
 
@@ -219,12 +174,9 @@ changes can be checked by different Ritebook versions at different times.
 
 ## Recommended remediation order
 
-1. **Reconcile catalog orchestration order.** Resolve F-01 so the catalog routes
-   specification, incremental implementation, and TDD workflows through one
-   compatible execution model.
-2. **Restore the collection boundary.** Move the Python tool preference described
+1. **Restore the collection boundary.** Move the Python tool preference described
    in F-04 to the Python collection.
-3. **Strengthen maintenance controls.** Add the validation target from F-09.
+2. **Strengthen maintenance controls.** Add the validation target from F-09.
 
 Each behavioral skill change should increment that skill's semantic version and
 be synchronized through the repository's normal Ritebook workflow rather than by
@@ -251,6 +203,20 @@ Additional read-only checks confirmed:
 - no unmentioned supporting file
 - no broken supporting-file reference
 - valid shell syntax for `idea-refine/scripts/idea-refine.sh`
+
+The F-01 remediation on 2026-09-22 additionally confirmed:
+
+- `using-agnostic-software-development-skills` version 2.5.0 routes
+  `spec-driven-development` only when requirements need clarification,
+  consolidation, or durable agreement, and explicitly bypasses a separate spec for
+  precise fixes or small edits with clear acceptance criteria
+- the numbered universal lifecycle was replaced with a conditional composition
+  graph whose routed skills retain authority over their narrower activation rules
+- `test-driven-development` is applied inside each behavior change that automated tests can verify
+  before implementation rather than after `incremental-implementation`
+- minimal behavior changes can invoke TDD directly without forcing the incremental
+  workflow outside its own activation rules
+- canonical and installed catalog skill files remain byte-identical
 
 The F-03 remediation on 2026-09-22 additionally confirmed:
 

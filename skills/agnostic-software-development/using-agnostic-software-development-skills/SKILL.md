@@ -2,7 +2,7 @@
 name: using-agnostic-software-development-skills
 description: Discover and invoke technology-agnostic software development skills. Use when starting general engineering work or deciding which reusable workflow skill applies to a task.
 metadata:
-  version: "2.4.0"
+  version: "2.5.0"
   dependencies:
     tools: []
     skills:
@@ -165,19 +165,21 @@ Use this routing guide:
 Task arrives
 - User does not know what they want yet: interview-me
 - Have a rough concept and need variants: idea-refine
-- New project, feature, or change: spec-driven-development
-- Have a spec and need tasks: planning-and-task-breakdown
+- Requirements are incomplete, conflicting, scattered, or need durable agreement: spec-driven-development
+- Precise fix or small edit with clear acceptance criteria: work directly from the request
+- Have settled requirements and need tasks: planning-and-task-breakdown
   - Need plan review before coding: review-implementation-plan
-- Implementing code: incremental-implementation
+- Implementing a multi-file or non-minimal change: incremental-implementation
+  - For each behavior change that automated tests can verify, apply test-driven-development inside the slice before implementation
   - Hexagonal architecture or vertical-slice boundary work: hexagonal-vertical-slices
   - UI work: frontend-ui-engineering
   - API work: api-and-interface-design
   - Need better context: context-engineering
   - Need doc-verified code: source-driven-development
   - Stakes high or unfamiliar code: doubt-driven-development
-- Writing or running tests: test-driven-development
-  - Browser-based testing: browser-runtime-verification
-  - Need full local quality checks: run-local-quality-gate
+- Implementing a minimal testable behavior change or regression fix: test-driven-development directly
+- Need browser runtime evidence: browser-runtime-verification
+- Need full local quality checks: run-local-quality-gate
 - Adding logs, metrics, traces, profiling, or dashboards: add-observability
 - Something broke: debugging-and-error-recovery
 - Reviewing code: code-review-and-quality
@@ -304,7 +306,7 @@ These are the subtle errors that look like productivity but create problems:
 6. Overcomplicating code and APIs
 7. Modifying code or comments orthogonal to the task
 8. Removing things you don't fully understand
-9. Building without a spec because "it's obvious"
+9. Skipping needed requirements clarification or specification because "it's obvious"
 10. Skipping verification because "it looks right"
 
 ## Skill Rules
@@ -313,12 +315,12 @@ These are the subtle errors that look like productivity but create problems:
 
 2. **Skills are workflows, not suggestions.** Follow the steps in order. Don't skip verification steps.
 
-3. **Multiple skills can apply.** A feature implementation might involve `idea-refine`, then `spec-driven-development`, then `planning-and-task-breakdown`, then `incremental-implementation`, then `test-driven-development`, then `code-review-and-quality`, then `code-simplification`, then `shipping-and-launch`.
+3. **Multiple skills can apply.** A feature implementation might use `idea-refine`, then `spec-driven-development` if requirements need durable agreement, then `planning-and-task-breakdown`, and then `incremental-implementation`. Within each behavior slice that automated tests can verify, apply `test-driven-development` before writing the implementation. Follow with only the review, simplification, documentation, version-control, or launch workflows whose triggers are present.
 
-4. **When in doubt, start with a spec.** If the task is non-trivial and there's no spec, begin with `spec-driven-development`.
+4. **The routed skill's activation rules are authoritative.** Use `spec-driven-development` when requirements are incomplete, conflicting, scattered, or need a durable agreement. For a precise fix or small edit with clear acceptance criteria, work directly from the request. Do not activate a skill merely because it appears in a catalog example.
 
 ## Lifecycle and catalog reference
 
 Not every task needs every skill. Compose only the workflows whose triggers are
-present. For a typical end-to-end lifecycle and the full phase-by-phase skill
+present. For a conditional lifecycle graph and the full phase-by-phase skill
 table, see `references/catalog-reference.md`.
