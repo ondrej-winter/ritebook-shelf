@@ -2,7 +2,7 @@
 name: code-review-and-quality
 description: Review code, tests, documentation, and configuration across correctness, readability, architecture, security, performance, maintainability, and verification before merging or handing off a change.
 metadata:
-  version: "1.1.3"
+  version: "1.2.0"
   dependencies:
     tools: []
     skills:
@@ -244,46 +244,11 @@ End the review with a clear outcome:
 
 Include the validation evidence you considered and any accepted risks.
 
-## Review checklist
+## Review artifact
 
-```md
-## Review: <change title>
-
-### Context
-
-- [ ] I understand what this change does and why
-- [ ] Affected boundaries, workflows, or interfaces are clear
-
-### Correctness
-
-- [ ] Change matches requirements
-- [ ] Edge cases and error paths are handled
-- [ ] Tests or examples cover changed behavior
-
-### Readability and architecture
-
-- [ ] Names and structure follow project conventions
-- [ ] No unnecessary complexity or coupling
-- [ ] Public interfaces remain compatible or have a migration plan
-
-### Security and performance
-
-- [ ] Trust boundaries and secrets are handled safely
-- [ ] External data is validated before use
-- [ ] Hot paths and data-volume risks are bounded
-
-### Verification
-
-- [ ] Relevant validation was run
-- [ ] Skipped validation is explained
-- [ ] Manual evidence is included when needed
-
-### Verdict
-
-- [ ] Approve
-- [ ] Request changes
-- [ ] Need more context
-```
+Record the review in a concise artifact containing context, findings grouped by
+severity, validation evidence, accepted risks, and an explicit verdict. For a
+reusable Markdown template, see `references/review-template.md`.
 
 ## See also
 

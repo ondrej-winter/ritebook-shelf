@@ -75,7 +75,9 @@ catalog as a fully coherent orchestration contract.
 **Locations**
 
 - `skills/agnostic-software-development/using-agnostic-software-development-skills/SKILL.md`
-  lines 128-162 and 251-281
+  lines 128-162 and 251-259
+- `skills/agnostic-software-development/using-agnostic-software-development-skills/references/catalog-reference.md`
+  lines 6-29
 - `skills/agnostic-software-development/spec-driven-development/SKILL.md`
   lines 25-39
 - `skills/agnostic-software-development/test-driven-development/SKILL.md`
@@ -199,8 +201,8 @@ catalog or target project.
 
 **Location**
 
-- `skills/agnostic-software-development/performance-optimization/SKILL.md`
-  lines 275-286
+- `skills/agnostic-software-development/performance-optimization/references/web-performance.md`
+  lines 6-15
 
 **Evidence**
 
@@ -237,7 +239,8 @@ specification and no substantive mismatch was found:
 **Location**
 
 - `skills/agnostic-software-development/shipping-and-launch/SKILL.md`
-  lines 22-58 and 243-306
+  lines 22-59 and 154-162
+- `skills/agnostic-software-development/shipping-and-launch/references/launch-planning-examples.md`
 
 **Evidence**
 
@@ -297,44 +300,6 @@ changes can be checked by different Ritebook versions at different times.
   installed-target drift.
 - Run the aggregate gate in CI if this repository is published from CI.
 
-### F-10 — Low: Progressive disclosure can be improved in the longest skills
-
-**Locations**
-
-- `skills/agnostic-software-development/code-review-and-quality/SKILL.md`
-- `skills/agnostic-software-development/interview-me/SKILL.md`
-- `skills/agnostic-software-development/performance-optimization/SKILL.md`
-- `skills/agnostic-software-development/shipping-and-launch/SKILL.md`
-- `skills/agnostic-software-development/using-agnostic-software-development-skills/SKILL.md`
-
-**Evidence**
-
-Five main skill files exceed 300 lines. The collection catalog carries routing,
-global behavioral policy, failure modes, lifecycle guidance, and a full reference
-table in one always-loaded file. Several long skills already use supporting
-references successfully, showing that the collection supports progressive
-disclosure.
-
-Length alone is not a defect, and some workflows need substantial context. The
-maintenance concern is repeated or secondary material in the main activation
-surface rather than a numeric line limit.
-
-**Impact**
-
-Long always-loaded skills consume more context and increase the chance that routing
-summaries, detailed workflows, tables, and examples drift independently.
-
-**Recommendation**
-
-- Keep activation rules, the core workflow, red flags, and completion criteria in
-  `SKILL.md`.
-- Move long examples, domain-specific tables, and secondary checklists into
-  referenced files when the main workflow remains self-contained.
-- Start with the collection catalog because it combines the most distinct
-  responsibilities.
-- Do not split content mechanically or create supporting files that agents must
-  always load to understand the basic workflow.
-
 ## Positive findings
 
 - Ritebook validated all 32 skills in the agnostic collection.
@@ -373,8 +338,7 @@ summaries, detailed workflows, tables, and examples drift independently.
    in F-04 to the Python collection.
 4. **Clarify lifecycle exits.** Risk-qualify the launch examples in F-07.
 5. **Strengthen maintenance controls.** Add the validation target from F-09.
-6. **Reduce future drift.** Add source context for mutable guidance in F-06 and
-   apply progressive disclosure selectively under F-10.
+6. **Reduce future drift.** Add source context for mutable guidance in F-06.
 
 Each behavioral skill change should increment that skill's semantic version and
 be synchronized through the repository's normal Ritebook workflow rather than by

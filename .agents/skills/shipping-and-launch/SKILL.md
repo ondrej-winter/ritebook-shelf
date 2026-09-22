@@ -2,7 +2,7 @@
 name: shipping-and-launch
 description: Prepares production launches. Use when preparing to deploy to production. Use when you need a pre-launch checklist, when setting up monitoring, when planning a staged rollout, or when you need a rollback strategy.
 metadata:
-  version: "1.3.0"
+  version: "1.4.0"
   dependencies:
     tools: []
     skills:
@@ -56,74 +56,26 @@ active failure that needs root-cause repair.
 6. Record launch evidence, accepted residual risks, cleanup owners, and any
    follow-up work after the release.
 
-## The Pre-Launch Checklist
+## Pre-launch readiness
 
-### Code Quality
+Before changing production state, confirm that:
 
-- [ ] Required tests pass, including unit, integration, contract, workflow, or end-to-end checks where relevant
-- [ ] Build, package, migration, or deployment artifact generation succeeds with no unexpected warnings
-- [ ] Static analysis, linting, schema checks, or type checks pass where used
-- [ ] Code reviewed and approved
-- [ ] No TODO comments, temporary flags, or debug-only paths that should be resolved before launch
-- [ ] No ad hoc debugging output, sensitive logging, or noisy diagnostics left in production paths
-- [ ] Error handling covers expected failure modes
+- required tests, builds, static checks, artifact generation, and review pass
+- temporary code, debug output, sensitive logging, and known blocking failures are resolved
+- configuration, secrets, migrations, infrastructure, networking, and artifacts are ready
+- health checks, telemetry, dashboards, alerts, and ownership are in place
+- user, operator, API, integration, runbook, changelog, and decision documentation is current where relevant
+- security, performance, and accessibility checks are complete when those risks apply
 
-### Security
-
-- [ ] No secrets in code or version control
-- [ ] Dependency, image, package, or artifact checks show no unacceptable release-blocking vulnerabilities
-- [ ] Input validation covers user-facing, partner-facing, batch, and integration entry points
-- [ ] Authentication and authorization checks are in place where identity or permissions are involved
-- [ ] Transport, browser, API, and platform security controls are configured where relevant
-- [ ] Abuse controls, rate limits, quotas, or backpressure are configured for sensitive operations
-- [ ] Cross-origin, network, and integration access is restricted to intended consumers
-
-### Performance
-
-- [ ] User-facing responsiveness, request latency, or job processing time meets launch targets
-- [ ] Critical paths avoid repeated, unbounded, or unexpectedly expensive work
-- [ ] Payloads, assets, artifacts, and transferred data stay within release budgets
-- [ ] Data access paths, indexes, partitions, or storage patterns are ready for expected production volume
-- [ ] Caching, batching, pagination, or queueing behavior is configured where relevant
-- [ ] Resource use and saturation limits are understood for expected traffic or data volume
-
-### Accessibility
-
-- [ ] Keyboard or non-pointer navigation works for interactive surfaces where applicable
-- [ ] Assistive technologies can convey content, structure, and state for user interfaces
-- [ ] Text, icons, and meaningful visual states meet contrast and non-color communication expectations
-- [ ] Focus management works for dialogs, dynamic content, and workflow transitions
-- [ ] Errors and recovery instructions are descriptive and connected to the affected action or input
-- [ ] Automated or manual accessibility checks have no unresolved launch-blocking findings
-
-### Infrastructure
-
-- [ ] Production configuration, environment variables, and secrets are set through the approved mechanism
-- [ ] Data migrations, schema changes, or infrastructure changes are applied or ready to apply safely
-- [ ] Routing, networking, certificate, and access configuration are ready where relevant
-- [ ] Static assets, packages, images, or deployment artifacts are published and cache behavior is understood
-- [ ] Logging, metrics, tracing, and error reporting are configured
-- [ ] Health, readiness, smoke, or equivalent verification checks exist and respond
-
-### Documentation
-
-- [ ] README updated with any new setup requirements
-- [ ] User, operator, API, integration, or runbook documentation is current where relevant
-- [ ] ADRs or decision records written for durable architectural or operational decisions
-- [ ] Changelog updated
-- [ ] User-facing documentation updated (if applicable)
+Use `references/launch-readiness-checklist.md` for the full cross-cutting
+checklist and monitoring categories. Use the focused security, performance, and
+accessibility references when those risks apply. Record skipped checks, reasons,
+accepted risk, and owners.
 
 ## Feature Flag Strategy
 
 When the change can be controlled safely at runtime, ship behind a feature flag
 or equivalent release control to decouple deployment from release:
-
-```text
-if release_control_enabled("new_capability", actor_or_context):
-    use_new_behavior()
-else:
-    use_existing_behavior()
-```
 
 ### Feature Flag Lifecycle
 
@@ -140,84 +92,27 @@ else:
 - Do not nest feature flags because doing so creates exponential combinations
 - Test both flag states (on and off) in CI
 
-## Staged Rollout
+## Staged rollout
 
-### Example Rollout Sequence
+Define release-specific cohorts, observation windows, and advance, hold, or
+recovery thresholds before launch. A common sequence is staging, production with
+release control off, internal exposure, a small canary, increasing cohorts, and
+full rollout. Advance only when representative evidence satisfies the defined
+thresholds, and retain the ability to stop or reduce exposure at every stage.
 
-Tailor cohort sizes and observation windows to traffic volume, release risk,
-time-to-detection, and how quickly recovery can complete. Do not advance merely
-because an example time window elapsed; advance when the defined evidence is
-sufficient.
-
-1. Deploy to staging.
-   - Run the full test suite in the staging environment.
-   - Manually smoke test critical flows.
-2. Deploy to production with the feature flag off.
-   - Verify deployment succeeded with a health check.
-   - Check error monitoring for new errors.
-3. Enable for the team with the flag on for internal users.
-   - Have the team use the feature in production.
-   - Observe for a risk-appropriate period.
-4. Start a canary rollout with the flag on for 5% of users.
-   - Monitor error rates, latency, and user behavior.
-   - Compare canary metrics against baseline metrics.
-   - Observe long enough to collect representative evidence.
-   - Advance only if all thresholds pass.
-5. Gradually increase from 25% to 50% to 100%.
-   - Repeat the same monitoring at each step.
-   - Keep the ability to roll back to the previous percentage at any point.
-6. Complete the full rollout with the flag on for all users.
-   - Continue monitoring through the agreed stabilization period.
-   - Clean up the feature flag after the stabilization period succeeds.
-
-### Example Rollout Decision Thresholds
-
-Replace these example values with release-specific thresholds, then use them to
-decide whether to advance, hold, or execute the recovery plan at each stage:
-
-| Metric                      | Advance (green)        | Hold and investigate (yellow) | Roll back (red)     |
-| --------------------------- | ---------------------- | ----------------------------- | ------------------- |
-| Error rate                  | Within 10% of baseline | 10-100% above baseline        | >2x baseline        |
-| P95 latency                 | Within 20% of baseline | 20-50% above baseline         | >50% above baseline |
-| New failure modes           | No new severe types    | Low-volume non-severe types   | Severe or growing   |
-| Product or business metrics | Neutral or positive    | Decline <5% or unclear signal | Decline >5%         |
-
-### When to Roll Back
-
-Roll back immediately if:
-
-- Error rate increases by more than 2x baseline
-- P95 latency increases by more than 50%
-- User-reported issues spike
-- Data integrity issues detected
-- Security vulnerability discovered
+Execute the recovery plan when a release-specific threshold is missed or a new
+severe failure, data-integrity risk, or security issue appears. For a worked rollout
+sequence and example decision table, see
+`references/launch-planning-examples.md`.
 
 ## Monitoring and Observability
 
-### What to Monitor
+### What to monitor
 
-Application metrics:
-
-- Error rate (total and by endpoint)
-- Response time (p50, p95, p99)
-- Request volume
-- Active users
-- Key business metrics (conversion, engagement)
-
-Infrastructure metrics:
-
-- CPU and memory utilization
-- Database connection pool usage
-- Disk space
-- Network latency
-- Queue depth (if applicable)
-
-Client metrics:
-
-- Frontend responsiveness or page load time, for browser-facing products
-- Client-side, device-side, or edge errors
-- API, integration, or synchronization failures from the consumer perspective
-- Accessibility, usability, or workflow completion signals where relevant
+Monitor signals that show user outcomes and system health: release-specific
+business or workflow measures, errors, latency, traffic, resource saturation,
+queue or dependency health, and client-side failures where relevant. Compare them
+with the pre-launch baseline and the rollout thresholds.
 
 ### Error Reporting
 
@@ -240,50 +135,23 @@ During the initial post-launch observation window:
 5. Verify logs are flowing and readable.
 6. Confirm the recovery mechanism works, using a dry run if possible.
 
-## Recovery Strategy
+## Recovery strategy
 
 Every deployment needs a recovery plan before it happens. Use rollback or
-disablement when safe; otherwise define roll-forward or compensation steps:
-
-```markdown
-## Recovery Plan for [Feature/Release]
-
-### Trigger Conditions
-
-- Error rate > 2x baseline
-- P95 latency > [X]ms
-- User reports of [specific issue]
-
-### Rollback Steps
-
-1. Disable feature flag (if applicable)
-   OR
-1. Deploy or restore the previous known-good version: `<rollback_command>`
-1. Verify rollback: health check, error monitoring
-1. Communicate: notify team of rollback
-
-### Alternative Recovery Steps
-
-- If rollback is unsafe or impossible, disable exposure, roll forward, or execute
-  the tested compensation procedure: `<recovery_command_or_runbook>`
-
-### Data and State Considerations
-
-- Migration, schema change, configuration change, or state transition [X] has a tested rollback or compensation plan
-- Data written by the release is [preserved / migrated back / cleaned up / reconciled]
-
-### Recovery Time Targets
-
-- Feature flag: < 1 minute
-- Redeploy previous version: < 5 minutes
-- Database rollback: < 15 minutes
-```
+disablement when safe; otherwise define roll-forward or compensation steps.
+Document triggers, decision ownership, commands or runbooks, data and state
+handling, verification, communication, and recovery-time targets. Dry-run the
+mechanism when practical. For a reusable example, see
+`references/launch-planning-examples.md`.
 
 ## See Also
 
+- For the detailed cross-cutting readiness checklist, see
+  `references/launch-readiness-checklist.md`
 - For security pre-launch checks, see `references/security-checklist.md`
 - For performance pre-launch checklist, see `references/performance-checklist.md`
 - For accessibility verification before launch, see `references/accessibility-checklist.md`
+- For worked rollout and recovery examples, see `references/launch-planning-examples.md`
 
 ## Common Rationalizations
 
