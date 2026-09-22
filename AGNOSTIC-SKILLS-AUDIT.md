@@ -153,43 +153,6 @@ catalog or target project.
   the applicable Python versions, project constraints, and verification source
   there.
 
-### F-06 — Low: Mutable Core Web Vitals data lacks source context
-
-**Location**
-
-- `skills/agnostic-software-development/performance-optimization/references/web-performance.md`
-  lines 6-15
-
-**Evidence**
-
-The embedded LCP, INP, and CLS thresholds matched the official Web Vitals guidance
-checked on 2026-09-19. The official guidance evaluates Core Web Vitals at the 75th
-percentile of page loads, segmented by mobile and desktop. The skill includes the
-threshold values but omits that assessment context and does not link or date the
-mutable external guidance.
-
-Authoritative source:
-
-- [Web Vitals](https://web.dev/articles/vitals), last updated 2024-10-31 when
-  checked for this audit
-
-**Impact**
-
-Maintainers can apply correct numbers with incomplete semantics, and future metric
-changes may leave the embedded table stale.
-
-**Recommendation**
-
-- Add the percentile and device-segmentation qualification.
-- Link the authoritative reference and record a verification date.
-- Consider moving mutable thresholds to a focused reference file that instructs
-  agents to reverify them before making current-policy claims.
-
-The separate Conventional Commits v1.0.0 guidance was checked against the official
-specification and no substantive mismatch was found:
-
-- [Conventional Commits 1.0.0](https://www.conventionalcommits.org/en/v1.0.0/)
-
 ### F-09 — Low: Skill validation is not a first-class reproducible repository gate
 
 **Locations**
@@ -262,7 +225,6 @@ changes can be checked by different Ritebook versions at different times.
 2. **Restore the collection boundary.** Move the Python tool preference described
    in F-04 to the Python collection.
 3. **Strengthen maintenance controls.** Add the validation target from F-09.
-4. **Reduce future drift.** Add source context for mutable guidance in F-06.
 
 Each behavioral skill change should increment that skill's semantic version and
 be synchronized through the repository's normal Ritebook workflow rather than by
@@ -298,6 +260,17 @@ The F-03 remediation on 2026-09-22 additionally confirmed:
   degraded fallback
 - every non-empty agnostic skill dependency has a valid relationship
 - all catalog dependencies use `relationship: route`
+
+The F-06 remediation on 2026-09-22 additionally confirmed:
+
+- `performance-optimization` version 1.4.1 qualifies the embedded Core Web Vitals
+  thresholds with the 75th-percentile assessment and mobile/desktop segmentation
+- the focused web-performance reference links the official Web Vitals guidance,
+  records both the verification date and source-page update date, and requires
+  reverification before the thresholds are presented as current policy
+- the current official thresholds remain LCP at 2.5/4.0 seconds, INP at 200/500
+  milliseconds, and CLS at 0.1/0.25 for good/poor boundaries
+- canonical and installed `performance-optimization` files remain byte-identical
 
 The F-07 remediation on 2026-09-22 additionally confirmed:
 
