@@ -2,7 +2,7 @@
 name: run-local-quality-gate
 description: Discover and run the project's local formatting, linting, static analysis, test, and build checks before handoff.
 metadata:
-  version: "1.3.0"
+  version: "1.4.0"
   dependencies:
     tools:
       - name: shell-execution
@@ -34,12 +34,13 @@ Prefer documented aggregate commands when they exist. Also identify narrower
 checks for the files or behavior changed so iteration can start with fast,
 relevant feedback before expanding to the full gate.
 
-For Python projects, use the project's configured `ty` command for type checking
-when present. If type checking is required but the project has not selected a
-tool, prefer `ty` rather than `mypy`, and expose it through the project's normal
-package, task, or environment runner instead of assuming a global installation.
-Do not silently replace an established project command as part of unrelated work;
-report the mismatch and keep migration explicit.
+Use the project's configured type, schema, or contract-check command when present,
+and invoke it through the project's normal package, task, or environment runner
+instead of assuming a global installation. If a required check has no selected
+tool or command, require an explicit project- or technology-specific decision
+rather than choosing tooling in this generic workflow. Do not silently replace an
+established project command as part of unrelated work; report the mismatch and
+keep migration explicit.
 
 Do not install dependencies, update lockfiles, or modify the runtime environment
 unless the project documents that step as part of the local gate or the user has

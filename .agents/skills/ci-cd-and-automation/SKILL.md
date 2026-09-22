@@ -2,7 +2,7 @@
 name: ci-cd-and-automation
 description: Design, review, or improve CI/CD and automation workflows for quality gates, deployment safety, rollback readiness, secrets handling, and feedback loops across any technology stack.
 metadata:
-  version: "1.5.0"
+  version: "1.6.0"
   dependencies:
     tools: []
     skills: []
@@ -84,11 +84,11 @@ Common gates include:
 
 Order fast deterministic checks before slower or environment-heavy checks.
 
-For Python type-checking gates, use the project's configured `ty` command when
-present. If the target project has not selected a type checker and the workflow
-must introduce one, prefer `ty` rather than `mypy`. Run it through the project's
-declared dependency and command mechanism so local and CI execution use the same
-version; do not assume a globally installed executable. Treat replacement of an
+Use the project's configured type, schema, or contract checker. Run it through
+the project's declared dependency and command mechanism so local and CI execution
+use the same version; do not assume a globally installed executable. If a required
+checker has not been selected, require an explicit project- or technology-specific
+tooling decision before making the gate executable. Treat replacement of an
 established checker as an explicit migration rather than incidental CI cleanup.
 
 ### 3. Keep provider configuration portable

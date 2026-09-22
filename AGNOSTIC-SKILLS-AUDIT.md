@@ -62,51 +62,15 @@ skill headers, the catalog covers every constituent skill, supporting resources
 resolve, and canonical files match their installed copies. No high-severity issue
 was found.
 
-The main remaining weakness is the collection boundary rather than individual skill
-quality. Two agnostic validation skills contain a Python-specific tool preference
-that belongs in the separate Python collection. This issue is fixable without
-redesigning the collection.
+The collection boundary is now technology-agnostic: general CI and local quality
+workflows defer tool selection to the target project or a technology-specific
+workflow. The remaining finding is a lower-severity maintenance-control gap around
+a reproducible repository validation gate.
 
-**Verdict:** pass with follow-up. Address the remaining medium finding before
-treating the catalog as fully technology-agnostic.
+**Verdict:** pass with low-priority follow-up. The remaining finding affects
+maintenance reproducibility rather than skill workflow correctness or portability.
 
 ## Findings
-
-### F-04 — Medium: Python-specific tool policy leaks into the agnostic collection
-
-**Locations**
-
-- `skills/agnostic-software-development/ci-cd-and-automation/SKILL.md`
-  lines 66-90
-- `skills/agnostic-software-development/run-local-quality-gate/SKILL.md`
-  lines 22-42
-
-**Evidence**
-
-Both skills instruct maintainers to prefer `ty` over `mypy` when a Python project
-requires a newly selected type checker. This is a prescriptive technology choice,
-not merely a portable example. The repository already has a separate
-`python-software-development` collection that can own Python tool selection.
-
-Other language-specific examples in the agnostic collection are generally labeled
-as examples and do not prescribe repository tooling. These two passages directly
-choose between competing Python tools.
-
-**Impact**
-
-The collection is less technology-agnostic than advertised, and its general CI and
-quality-gate workflows can override a decision that belongs to a language-specific
-catalog or target project.
-
-**Recommendation**
-
-- Keep the agnostic rule at "use the project's configured type or contract
-  checker."
-- If no tool is configured, require an explicit project or technology-specific
-  selection rather than choosing one in the generic workflow.
-- Move any `ty` versus `mypy` recommendation to the Python collection and declare
-  the applicable Python versions, project constraints, and verification source
-  there.
 
 ### F-09 — Low: Skill validation is not a first-class reproducible repository gate
 
@@ -174,9 +138,7 @@ changes can be checked by different Ritebook versions at different times.
 
 ## Recommended remediation order
 
-1. **Restore the collection boundary.** Move the Python tool preference described
-   in F-04 to the Python collection.
-2. **Strengthen maintenance controls.** Add the validation target from F-09.
+1. **Strengthen maintenance controls.** Add the validation target from F-09.
 
 Each behavioral skill change should increment that skill's semantic version and
 be synchronized through the repository's normal Ritebook workflow rather than by
@@ -203,6 +165,15 @@ Additional read-only checks confirmed:
 - no unmentioned supporting file
 - no broken supporting-file reference
 - valid shell syntax for `idea-refine/scripts/idea-refine.sh`
+
+The F-04 remediation on 2026-09-22 additionally confirmed:
+
+- `ci-cd-and-automation` version 1.6.0 and `run-local-quality-gate` version 1.4.0
+  use the target project's configured type, schema, or contract-check tooling
+- when required tooling is not configured, both workflows require an explicit
+  project- or technology-specific selection rather than making a generic choice
+- the agnostic collection no longer names or selects competing Python type checkers
+- canonical and installed copies of both changed skills remain byte-identical
 
 The F-01 remediation on 2026-09-22 additionally confirmed:
 
