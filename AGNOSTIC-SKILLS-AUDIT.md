@@ -74,14 +74,14 @@ cross-client portability, or current adapter guidance.
 
 ## Findings summary
 
-| ID | Severity | Category | Summary | Status |
-| --- | --- | --- | --- | --- |
-| F-01 | High | Collection-internal | Mandatory execution capabilities are absent from several skill declarations | Open |
-| F-02 | High | Agent Skills portability | Nested dependency metadata is not portable as structured Agent Skills metadata | Open |
-| F-03 | Medium | Collection-internal | The five-name capability vocabulary cannot represent important operational access | Open |
-| F-04 | Medium | External-client guidance | Claude Code guidance presents `AGENTS.md` as import-only rather than natively supported | Open |
-| F-05 | Medium | External-client guidance | Cline's two documented rule directories are described as a documentation discrepancy | Open |
-| F-06 | Medium | Repository integration | The root README links to a missing repository tool | Open |
+| ID   | Severity | Category                 | Summary                                                                                 | Status |
+| ---- | -------- | ------------------------ | --------------------------------------------------------------------------------------- | ------ |
+| F-01 | High     | Collection-internal      | Mandatory execution capabilities are absent from several skill declarations             | Open   |
+| F-02 | High     | Agent Skills portability | Nested dependency metadata is not portable as structured Agent Skills metadata          | Open   |
+| F-03 | Medium   | Collection-internal      | The five-name capability vocabulary cannot represent important operational access       | Open   |
+| F-04 | Medium   | External-client guidance | Claude Code guidance presents `AGENTS.md` as import-only rather than natively supported | Open   |
+| F-05 | Medium   | External-client guidance | Cline's two documented rule directories are described as a documentation discrepancy    | Open   |
+| F-06 | Medium   | Repository integration   | The root README links to a missing repository tool                                      | Open   |
 
 ## Collection-internal defects
 
@@ -563,40 +563,40 @@ Legend:
 - `delegated`: owned by a separately activated skill
 - `—`: no direct declaration needed
 
-| Skill | Shell execution | Version control | Browser runtime | Source retrieval | Independent review |
-| --- | --- | --- | --- | --- | --- |
-| `add-observability` | `+O` | — | — | — | — |
-| `api-and-interface-design` | `+O` | — | — | — | — |
-| `author-agent-skill` | `+O` | — | — | `+O` | — |
-| `author-agents-config` | — | `O` | — | `O` | — |
-| `browser-runtime-verification` | `+O` | — | `R` | — | — |
-| `ci-cd-and-automation` | `+O` | — | — | `+O` | — |
-| `code-review-and-quality` | — | `+O` | — | — | — |
-| `code-simplification` | `+R` | — | — | — | — |
-| `context-engineering` | — | — | — | — | — |
-| `conventional-commits` | — | `O` | — | — | — |
-| `debugging-and-error-recovery` | `+O` | — | — | — | — |
-| `deprecation-and-migration` | `+O` | — | — | — | — |
-| `documentation-and-adrs` | — | — | — | — | — |
-| `doubt-driven-development` | — | — | — | — | `O` |
-| `frontend-ui-engineering` | `+O` | — | `+R` | — | — |
-| `git-workflow-and-versioning` | — | `R` | — | — | — |
-| `hexagonal-vertical-slices` | `+O` | — | — | — | — |
-| `idea-refine` | `O` | — | — | — | — |
-| `incremental-implementation` | `+R` | `+O` | — | — | — |
-| `interview-me` | — | — | — | — | — |
-| `performance-optimization` | `+O` | — | `+O` | — | — |
-| `planning-and-task-breakdown` | — | — | — | — | — |
-| `review-implementation-plan` | — | — | — | — | — |
-| `run-local-quality-gate` | `R` | — | — | — | — |
-| `security-and-hardening` | `+O` | `+O` | — | — | — |
-| `shipping-and-launch` | `+O` | — | `+O` | — | — |
-| `source-driven-development` | — | — | — | `R` | — |
-| `spec-driven-development` | — | — | — | — | — |
-| `test-driven-development` | `+R` | — | `delegated` | — | `+O` |
-| `update-project-docs` | `+O` | — | — | — | — |
-| `using-agnostic-software-development-skills` | — | — | — | — | — |
-| `write-adr` | — | — | — | — | — |
+| Skill                                        | Shell execution | Version control | Browser runtime | Source retrieval | Independent review |
+| -------------------------------------------- | --------------- | --------------- | --------------- | ---------------- | ------------------ |
+| `add-observability`                          | `+O`            | —               | —               | —                | —                  |
+| `api-and-interface-design`                   | `+O`            | —               | —               | —                | —                  |
+| `author-agent-skill`                         | `+O`            | —               | —               | `+O`             | —                  |
+| `author-agents-config`                       | —               | `O`             | —               | `O`              | —                  |
+| `browser-runtime-verification`               | `+O`            | —               | `R`             | —                | —                  |
+| `ci-cd-and-automation`                       | `+O`            | —               | —               | `+O`             | —                  |
+| `code-review-and-quality`                    | —               | `+O`            | —               | —                | —                  |
+| `code-simplification`                        | `+R`            | —               | —               | —                | —                  |
+| `context-engineering`                        | —               | —               | —               | —                | —                  |
+| `conventional-commits`                       | —               | `O`             | —               | —                | —                  |
+| `debugging-and-error-recovery`               | `+O`            | —               | —               | —                | —                  |
+| `deprecation-and-migration`                  | `+O`            | —               | —               | —                | —                  |
+| `documentation-and-adrs`                     | —               | —               | —               | —                | —                  |
+| `doubt-driven-development`                   | —               | —               | —               | —                | `O`                |
+| `frontend-ui-engineering`                    | `+O`            | —               | `+R`            | —                | —                  |
+| `git-workflow-and-versioning`                | —               | `R`             | —               | —                | —                  |
+| `hexagonal-vertical-slices`                  | `+O`            | —               | —               | —                | —                  |
+| `idea-refine`                                | `O`             | —               | —               | —                | —                  |
+| `incremental-implementation`                 | `+R`            | `+O`            | —               | —                | —                  |
+| `interview-me`                               | —               | —               | —               | —                | —                  |
+| `performance-optimization`                   | `+O`            | —               | `+O`            | —                | —                  |
+| `planning-and-task-breakdown`                | —               | —               | —               | —                | —                  |
+| `review-implementation-plan`                 | —               | —               | —               | —                | —                  |
+| `run-local-quality-gate`                     | `R`             | —               | —               | —                | —                  |
+| `security-and-hardening`                     | `+O`            | `+O`            | —               | —                | —                  |
+| `shipping-and-launch`                        | `+O`            | —               | `+O`            | —                | —                  |
+| `source-driven-development`                  | —               | —               | —               | `R`              | —                  |
+| `spec-driven-development`                    | —               | —               | —               | —                | —                  |
+| `test-driven-development`                    | `+R`            | —               | `delegated`     | —                | `+O`               |
+| `update-project-docs`                        | `+O`            | —               | —               | —                | —                  |
+| `using-agnostic-software-development-skills` | —               | —               | —               | —                | —                  |
+| `write-adr`                                  | —               | —               | —               | —                | —                  |
 
 Only the `+R` entries are unequivocal activation blockers. The `+O` entries are
 conditional capabilities expected by some workflow modes. Under the collection's
