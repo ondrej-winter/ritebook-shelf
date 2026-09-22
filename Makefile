@@ -7,12 +7,6 @@ FABRICA ?= uvx fabrica@latest
 publish-index:
 	$(RITEBOOK) indexes publish --skills-root $(SKILLS_ROOT) --index-name $(INDEX_NAME)
 
-cline-skills:
-	uv run tools/cline-skill-workflow/run_cline_skill_workflow.py
-
-cline-skills-dry-run:
-	uv run tools/cline-skill-workflow/run_cline_skill_workflow.py --dry-run --review-only
-
 update-indexes:
 	$(RITEBOOK) indexes update --all
 
