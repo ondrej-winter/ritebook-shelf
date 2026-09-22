@@ -2,25 +2,30 @@
 name: interview-me
 description: Reduce uncertainty about a user's underlying intent through a formal XY-problem gate plus a hypothesis, confidence, evidence, and information-gain interview loop. Use when an ask is underspecified, solution-led, or has material unresolved trade-offs before idea refinement, specification, planning, or implementation.
 metadata:
-  version: "1.4.0"
+  version: "1.5.0"
   dependencies:
     tools: []
     skills:
       - name: idea-refine
         purpose: Refine confirmed intent when the outcome is known but concept, options, or MVP boundary remain uncertain.
         required: false
+        relationship: handoff
       - name: spec-driven-development
         purpose: Convert confirmed intent into concrete requirements, scope, and acceptance criteria.
         required: false
+        relationship: handoff
       - name: planning-and-task-breakdown
         purpose: Break accepted requirements into ordered implementation tasks after specification.
         required: false
+        relationship: handoff
       - name: doubt-driven-development
         purpose: Adversarially review a decision or downstream artifact after intent has been established.
         required: false
+        relationship: verification
       - name: source-driven-development
         purpose: Verify external, framework, or version-specific facts that affect a clarified decision.
         required: false
+        relationship: verification
 ---
 
 # Interview Me

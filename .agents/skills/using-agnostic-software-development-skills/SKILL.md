@@ -2,103 +2,134 @@
 name: using-agnostic-software-development-skills
 description: Discover and invoke technology-agnostic software development skills. Use when starting general engineering work or deciding which reusable workflow skill applies to a task.
 metadata:
-  version: "2.3.0"
+  version: "2.4.0"
   dependencies:
     tools: []
     skills:
       - name: add-observability
         purpose: Route observability, logging, metrics, tracing, profiling, and dashboard work.
         required: false
+        relationship: route
       - name: api-and-interface-design
         purpose: Route API and interface contract design work.
         required: false
+        relationship: route
       - name: author-agent-skill
         purpose: Route Agent Skill creation, update, and review work.
         required: false
+        relationship: route
       - name: author-agents-config
         purpose: Route repository coding-agent instructions, scoped policy, client adapters, and configuration migration work.
         required: false
+        relationship: route
       - name: browser-runtime-verification
         purpose: Route browser-based verification of UI behavior.
         required: false
+        relationship: route
       - name: ci-cd-and-automation
         purpose: Route CI/CD pipeline and automation work.
         required: false
+        relationship: route
       - name: code-review-and-quality
         purpose: Route code review and quality gate work.
         required: false
+        relationship: route
       - name: code-simplification
         purpose: Route behavior-preserving complexity reduction work.
         required: false
+        relationship: route
       - name: conventional-commits
         purpose: Route Conventional Commits message writing, review, and validation work.
         required: false
+        relationship: route
       - name: context-engineering
         purpose: Route work that needs better task context before implementation.
         required: false
+        relationship: route
       - name: debugging-and-error-recovery
         purpose: Route broken behavior, error recovery, and root-cause analysis work.
         required: false
+        relationship: route
       - name: deprecation-and-migration
         purpose: Route deprecation, migration, and old-system removal work.
         required: false
+        relationship: route
       - name: documentation-and-adrs
         purpose: Route documentation and architecture decision work.
         required: false
+        relationship: route
       - name: doubt-driven-development
         purpose: Route high-stakes or unfamiliar implementation decisions for adversarial review.
         required: false
+        relationship: route
       - name: frontend-ui-engineering
         purpose: Route browser-facing UI implementation and refinement work.
         required: false
+        relationship: route
       - name: git-workflow-and-versioning
         purpose: Route branch, commit, and version-control workflow work.
         required: false
+        relationship: route
       - name: hexagonal-vertical-slices
         purpose: Route architecture design, review, or refactoring work involving hexagonal architecture and vertical feature slices.
         required: false
+        relationship: route
       - name: idea-refine
         purpose: Route rough concepts that need structured refinement.
         required: false
+        relationship: route
       - name: incremental-implementation
         purpose: Route implementation work that should be built and verified in slices.
         required: false
+        relationship: route
       - name: interview-me
         purpose: Route unclear user intent that needs discovery before planning.
         required: false
+        relationship: route
       - name: performance-optimization
         purpose: Route measurement-driven performance investigation and optimization work.
         required: false
+        relationship: route
       - name: planning-and-task-breakdown
         purpose: Route work that needs decomposition into verifiable tasks.
         required: false
+        relationship: route
       - name: review-implementation-plan
         purpose: Route implementation plan review work.
         required: false
+        relationship: route
       - name: run-local-quality-gate
         purpose: Route local formatting, linting, static analysis, test, and build validation work.
         required: false
+        relationship: route
       - name: security-and-hardening
         purpose: Route security review and hardening work.
         required: false
+        relationship: route
       - name: shipping-and-launch
         purpose: Route deployment, launch, monitoring, and rollback-readiness work.
         required: false
+        relationship: route
       - name: source-driven-development
         purpose: Route implementation that needs verification against authoritative sources.
         required: false
+        relationship: route
       - name: spec-driven-development
         purpose: Route requirements and acceptance criteria definition before code.
         required: false
+        relationship: route
       - name: test-driven-development
         purpose: Route work that should be driven by tests or test additions.
         required: false
+        relationship: route
       - name: update-project-docs
         purpose: Route project documentation updates.
         required: false
+        relationship: route
       - name: write-adr
         purpose: Route architecture decision record creation and updates.
         required: false
+        relationship: route
 ---
 
 # Using Agnostic Software Development Skills
@@ -121,9 +152,12 @@ skill.
 3. Add secondary skills only when their trigger is directly present.
 4. Confirm that each selected skill is available in the current environment. If it
    is unavailable, report that limitation instead of inventing its instructions.
-5. Follow each selected skill's steps, including verification.
-6. Report the selected skills, validation evidence, and any remaining limitations
-   in the task handoff.
+5. Check each selected skill's declared capabilities before activation. Stop when
+   a required capability is unavailable. When an optional capability is unavailable,
+   use only the skill's documented fallback and label the execution as degraded.
+6. Follow each selected skill's steps, including verification.
+7. Report the selected skills, validation evidence, degraded fallbacks, and any
+   remaining limitations in the task handoff.
 
 Use this routing guide:
 
@@ -161,6 +195,31 @@ Task arrives
 - Creating, auditing, or synchronizing repository agent instructions and client adapters: author-agents-config
 - Deploying or launching: shipping-and-launch
 ```
+
+## Dependency metadata contract
+
+Use these canonical capability names in this collection:
+
+- `shell-execution`: run local commands or scripts
+- `version-control`: inspect or modify repository history and state
+- `browser-runtime`: observe behavior in a real browser
+- `source-retrieval`: access authoritative local or remote sources
+- `independent-review`: obtain a fresh-context or independent review
+
+Set `required: true` when the skill cannot produce its stated outcome without the
+capability or dependency. Set `required: false` only when the dependency is
+conditional or the skill documents a usable fallback.
+
+Classify each referenced skill with one `relationship`:
+
+- `route`: select the skill when its own activation trigger matches the task
+- `handoff`: transfer a defined part of the workflow when the current skill says to
+- `verification`: use the skill to gather evidence for an outcome
+- `awareness`: coordinate with its constraints without activating it automatically
+
+Optional related skills are not recursively activated merely because they are
+listed. Activate them only when their own trigger is present or an explicit
+handoff step requires them.
 
 ## Core Operating Behaviors
 

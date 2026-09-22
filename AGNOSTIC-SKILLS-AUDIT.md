@@ -2,6 +2,8 @@
 
 Date: 2026-09-19
 
+Last remediation update: 2026-09-22
+
 ## Purpose
 
 This report audits the reusable Agent Skills in
@@ -10,7 +12,7 @@ consistency, workflow compatibility, portability, progressive disclosure,
 dependency metadata, supporting-file integrity, and validation readiness.
 
 The intended readers are maintainers of the skill catalog. The report records
-evidence and prioritized follow-up work without changing the audited skills.
+evidence, remediation updates, and prioritized follow-up work.
 
 ## Scope
 
@@ -18,7 +20,7 @@ The audit covered:
 
 - all 32 canonical `SKILL.md` files in
   `skills/agnostic-software-development/`
-- all 25 supporting files under those skill directories, for 57 canonical files
+- all 32 supporting files under those skill directories, for 64 canonical files
   in total
 - the collection catalog in
   `using-agnostic-software-development-skills/SKILL.md`
@@ -28,8 +30,9 @@ The audit covered:
 - generated catalog coverage in `ritebook-index.json`
 - repository validation and maintenance entry points
 
-The audit did not modify skill behavior, metadata, generated indexes, or installed
-copies.
+The initial audit did not modify skill behavior, metadata, generated indexes, or
+installed copies. Later remediation updates revise this report as findings are
+addressed.
 
 ## Method
 
@@ -59,10 +62,9 @@ skill headers, the catalog covers every constituent skill, supporting resources
 resolve, and canonical files match their installed copies. No high-severity issue
 was found.
 
-The main weakness is cross-skill coherence rather than individual skill quality.
-The catalog and implementation workflows sometimes describe incompatible order of
-operations, capability dependencies are not modeled consistently enough to support
-availability checks, and two agnostic validation skills contain a Python-specific
+The main remaining weakness is cross-skill coherence rather than individual skill
+quality. The catalog and implementation workflows sometimes describe incompatible
+order of operations, and two agnostic validation skills contain a Python-specific
 tool preference. These issues are fixable without redesigning the collection.
 
 **Verdict:** pass with follow-up. Address the medium findings before treating the
@@ -75,13 +77,13 @@ catalog as a fully coherent orchestration contract.
 **Locations**
 
 - `skills/agnostic-software-development/using-agnostic-software-development-skills/SKILL.md`
-  lines 128-162 and 251-259
+  lines 162-197 and 310-318
 - `skills/agnostic-software-development/using-agnostic-software-development-skills/references/catalog-reference.md`
-  lines 6-29
+  lines 12-35
 - `skills/agnostic-software-development/spec-driven-development/SKILL.md`
-  lines 25-39
+  lines 34-43
 - `skills/agnostic-software-development/test-driven-development/SKILL.md`
-  lines 16-58
+  lines 17-58
 
 **Evidence**
 
@@ -114,52 +116,6 @@ workflow.
   explicitly as one possible composition.
 - Keep each routed skill's activation rules authoritative when they are narrower
   than the catalog summary.
-
-### F-03 — Medium: Capability metadata does not consistently expose required capabilities
-
-**Locations**
-
-- `skills/agnostic-software-development/source-driven-development/SKILL.md`
-- `skills/agnostic-software-development/doubt-driven-development/SKILL.md`
-- `skills/agnostic-software-development/using-agnostic-software-development-skills/SKILL.md`
-- dependency metadata throughout the collection
-
-**Evidence**
-
-The catalog instructs agents to confirm that selected skills are available before
-using them. The metadata cannot consistently support that check:
-
-- `source-driven-development` declares no tools even though its workflow may need
-  access to official web documentation, local dependency source, command help, or
-  another authoritative source.
-- `doubt-driven-development` declares no capability for the fresh-context or
-  independent review that defines its preferred workflow. It documents a degraded
-  self-review fallback, but the metadata does not expose when degradation is
-  necessary.
-- Similar capabilities use different levels of abstraction, including `shell`,
-  `sh`, `web access`, and `browser runtime`.
-- Optional skill dependencies can mean routing, escalation, awareness, or an
-  executable handoff; metadata does not distinguish those relationships.
-
-Ritebook validates the metadata's shape, but shape validity does not prove that the
-declared capabilities are complete or semantically consistent.
-
-**Impact**
-
-An orchestrator cannot reliably determine whether a skill can run as written,
-whether it must use a degraded fallback, or whether a referenced skill should be
-activated automatically.
-
-**Recommendation**
-
-- Define and document a small capability vocabulary for shell execution, version
-  control, browser runtime, source retrieval, and independent review.
-- Declare optional capabilities when a documented fallback exists and required
-  capabilities when the stated outcome cannot otherwise be produced.
-- Define dependency relationship semantics, such as `route`, `handoff`,
-  `verification`, or `awareness`, if the skill format permits it.
-- State explicitly that optional related skills are not recursively activated
-  unless their trigger is present.
 
 ### F-04 — Medium: Python-specific tool policy leaks into the agnostic collection
 
@@ -304,7 +260,7 @@ changes can be checked by different Ritebook versions at different times.
 
 - Ritebook validated all 32 skills in the agnostic collection.
 - Ritebook validated all 47 canonical skills under `skills/`.
-- All 57 canonical collection files have byte-identical installed counterparts
+- All 64 canonical collection files have byte-identical installed counterparts
   under `.agents/skills/`.
 - `ritebook-index.json` includes every one of the 32 canonical agnostic skills and
   contains no unexpected skill for that collection.
@@ -319,6 +275,13 @@ changes can be checked by different Ritebook versions at different times.
 - No metadata dependency names point to missing skills.
 - The catalog declares all 31 other skills as optional dependencies and mentions
   every constituent skill in its body.
+- Capability dependencies use the canonical `shell-execution`, `version-control`,
+  `browser-runtime`, `source-retrieval`, and `independent-review` vocabulary.
+- Required capabilities stop activation when unavailable; optional capabilities
+  are reserved for conditional use or documented degraded fallbacks.
+- Every agnostic skill dependency is classified as `route`, `handoff`,
+  `verification`, or `awareness`, and optional dependencies are explicitly
+  non-recursive unless their own trigger or an explicit handoff is present.
 - Security, performance, and accessibility references are tailored to review,
   implementation, or release audiences rather than being accidental duplicate
   files.
@@ -332,13 +295,11 @@ changes can be checked by different Ritebook versions at different times.
 1. **Reconcile catalog orchestration order.** Resolve F-01 so the catalog routes
    specification, incremental implementation, and TDD workflows through one
    compatible execution model.
-2. **Normalize dependency semantics.** Address F-03 before adding more skills or
-   building automation that relies on capability metadata.
-3. **Restore the collection boundary.** Move the Python tool preference described
+2. **Restore the collection boundary.** Move the Python tool preference described
    in F-04 to the Python collection.
-4. **Clarify lifecycle exits.** Risk-qualify the launch examples in F-07.
-5. **Strengthen maintenance controls.** Add the validation target from F-09.
-6. **Reduce future drift.** Add source context for mutable guidance in F-06.
+3. **Clarify lifecycle exits.** Risk-qualify the launch examples in F-07.
+4. **Strengthen maintenance controls.** Add the validation target from F-09.
+5. **Reduce future drift.** Add source context for mutable guidance in F-06.
 
 Each behavioral skill change should increment that skill's semantic version and
 be synchronized through the repository's normal Ritebook workflow rather than by
@@ -359,12 +320,21 @@ Validated 47 skill(s)
 Additional read-only checks confirmed:
 
 - 32 canonical agnostic `SKILL.md` files
-- 57 total canonical files in the collection
-- no missing or changed installed counterpart among those 57 files
+- 64 total canonical files in the collection
+- no missing or changed installed counterpart among those 64 files
 - no missing or extra agnostic skill in `ritebook-index.json`
 - no unmentioned supporting file
 - no broken supporting-file reference
 - valid shell syntax for `idea-refine/scripts/idea-refine.sh`
+
+The F-03 remediation on 2026-09-22 additionally confirmed:
+
+- every declared agnostic capability uses the documented five-name vocabulary
+- `source-driven-development` requires `source-retrieval`
+- `doubt-driven-development` declares optional `independent-review` and its
+  degraded fallback
+- every non-empty agnostic skill dependency has a valid relationship
+- all catalog dependencies use `relationship: route`
 
 ## Limitations
 

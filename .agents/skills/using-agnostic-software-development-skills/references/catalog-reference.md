@@ -3,6 +3,12 @@
 Use this reference after the main routing guide when a task needs lifecycle
 composition guidance or a full catalog scan.
 
+Dependency entries in the catalog use `relationship: route`; they advertise
+available destinations rather than activating all listed skills. A task should
+activate only the workflows whose own triggers are present. Other skill-to-skill
+relationships are classified as `handoff`, `verification`, or `awareness` in the
+owning skill metadata.
+
 ## Lifecycle Sequence
 
 For a complete feature, the typical skill sequence is:

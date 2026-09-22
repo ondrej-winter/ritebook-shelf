@@ -2,19 +2,22 @@
 name: code-review-and-quality
 description: Review code, tests, documentation, and configuration across correctness, readability, architecture, security, performance, maintainability, and verification before merging or handing off a change.
 metadata:
-  version: "1.2.0"
+  version: "1.3.0"
   dependencies:
     tools: []
     skills:
       - name: security-and-hardening
         purpose: Review security-sensitive changes involving untrusted input, secrets, permissions, or attack surface.
         required: false
+        relationship: verification
       - name: performance-optimization
         purpose: Review performance-sensitive changes that need measurement, profiling, or scalability analysis.
         required: false
+        relationship: verification
       - name: code-simplification
         purpose: Reduce unnecessary complexity found during review without changing behavior.
         required: false
+        relationship: handoff
 ---
 
 # Code Review and Quality

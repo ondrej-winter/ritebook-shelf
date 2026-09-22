@@ -2,19 +2,22 @@
 name: performance-optimization
 description: Optimizes software performance using measurement-driven diagnosis, targeted fixes, and regression guards. Use when performance requirements exist, users or monitoring report slow behavior, a regression is suspected, or profiling reveals bottlenecks that need fixing.
 metadata:
-  version: "1.3.0"
+  version: "1.4.0"
   dependencies:
     tools: []
     skills:
       - name: add-observability
         purpose: Add measurement, profiling, metrics, tracing, or logs needed to diagnose and verify performance changes.
         required: false
+        relationship: handoff
       - name: debugging-and-error-recovery
         purpose: Reproduce and root-cause performance regressions that present as failures or broken behavior.
         required: false
+        relationship: handoff
       - name: shipping-and-launch
         purpose: Plan safe rollout, monitoring, and rollback for performance-sensitive changes.
         required: false
+        relationship: awareness
 ---
 
 # Performance Optimization
