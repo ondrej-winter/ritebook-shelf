@@ -14,5 +14,5 @@ commit:
 	$(FABRICA) commit \
 		--skill conventional-commits \
 		--skill-root .agents/skills \
-		--model gpt-5.6-luna \
+		--model gpt-6-luna \
 		--reasoning-effort low
