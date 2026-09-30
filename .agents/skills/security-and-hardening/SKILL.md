@@ -2,10 +2,7 @@
 name: security-and-hardening
 description: Hardens software against vulnerabilities. Use when handling untrusted input, authentication, authorization, sensitive data, dependencies, or external integrations.
 metadata:
-  version: "1.1.5"
-  dependencies:
-    tools: []
-    skills: []
+  version: "1.1.6"
 ---
 
 # Security and Hardening

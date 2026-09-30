@@ -3,9 +3,11 @@ SKILLS_ROOT ?= skills
 INDEX_NAME ?= ondrej-winter-ritebook-shelf
 FABRICA ?= uvx fabrica@latest
 
-.PHONY: publish-index cline-skills cline-skills-dry-run
+.PHONY: publish publish-index update-indexes commit
+publish: publish-index
+
 publish-index:
-	$(RITEBOOK) indexes publish --skills-root $(SKILLS_ROOT) --index-name $(INDEX_NAME)
+	$(RITEBOOK) indexes publish --skills-root $(SKILLS_ROOT) --name $(INDEX_NAME)
 
 update-indexes:
 	$(RITEBOOK) indexes update --all

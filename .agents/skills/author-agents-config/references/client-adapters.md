@@ -119,8 +119,10 @@ of creating an independently maintained copy.
 ## Format source
 
 The Agent Skills specification requires `name` and `description`; this shelf also
-uses version and dependency metadata for local lifecycle and routing checks.
-Supporting `references/` and `assets/` remain portable, and tool-specific
-pre-approval frontmatter is intentionally not required by the core package.
+uses string-valued version metadata for local lifecycle checks. Runtime
+requirements belong in `compatibility` or the instructions, while skill routing
+and composition belong in catalog or workflow prose. Supporting `references/`
+and `assets/` remain portable, and tool-specific pre-approval frontmatter is
+intentionally not required by the core package.
 
 - [Agent Skills specification](https://agentskills.io/specification)

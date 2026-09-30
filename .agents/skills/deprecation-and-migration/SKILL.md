@@ -2,10 +2,7 @@
 name: deprecation-and-migration
 description: Plan and execute safe deprecations, migrations, replacements, and removals by measuring usage, supporting consumers, preserving compatibility, and making evidence-based removal decisions.
 metadata:
-  version: "1.2.0"
-  dependencies:
-    tools: []
-    skills: []
+  version: "1.2.1"
 ---
 
 # Deprecation and Migration

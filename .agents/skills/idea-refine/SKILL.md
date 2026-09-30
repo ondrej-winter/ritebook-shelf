@@ -2,21 +2,7 @@
 name: idea-refine
 description: Refine raw ideas into actionable concepts through divergent exploration, convergent evaluation, assumption testing, and a final one-page brief. Use when an idea is vague, over-scoped, solution-led, or needs pressure-testing before planning or implementation.
 metadata:
-  version: "1.1.0"
-  dependencies:
-    tools:
-      - name: shell-execution
-        purpose: Run the optional local idea refinement helper script when available.
-        required: false
-    skills:
-      - name: interview-me
-        purpose: Clarify unclear user intent before refining rough concepts into options.
-        required: false
-        relationship: handoff
-      - name: spec-driven-development
-        purpose: Convert a refined direction into concrete requirements and acceptance criteria.
-        required: false
-        relationship: handoff
+  version: "1.1.1"
 ---
 
 # Idea Refine
