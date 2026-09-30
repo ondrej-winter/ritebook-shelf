@@ -2,16 +2,7 @@
 name: python-add-port
 description: Add a technology-agnostic inbound or outbound application port interface to the owning vertical slice in a Python hexagonal project for a new use case or dependency.
 metadata:
-  version: "1.0.1"
-  dependencies:
-    tools: []
-    skills:
-      - name: add-hexagonal-feature
-        purpose: Coordinate complete end-to-end feature work that includes a port.
-        required: false
-      - name: python-add-adapter
-        purpose: Implement an adapter for the port when the change requires one.
-        required: false
+  version: "1.0.2"
 ---
 
 # Add a Port

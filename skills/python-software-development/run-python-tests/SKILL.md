@@ -2,16 +2,7 @@
 name: run-python-tests
 description: Run pytest-based automated tests when a Python project uses uv-managed development tooling.
 metadata:
-  version: "1.1.0"
-  dependencies:
-    tools:
-      - name: uv
-        purpose: Run the project's test tooling in its managed environment.
-        required: true
-      - name: pytest
-        purpose: Run the automated Python test suite.
-        required: true
-    skills: []
+  version: "1.1.1"
 ---
 
 # Skill: Run Python Tests

@@ -2,52 +2,7 @@
 name: using-python-software-development-skills
 description: Discover and invoke Python software development skills. Use when starting Python work or deciding which Python-specific implementation, validation, testing, or documentation skill applies.
 metadata:
-  version: "2.1.0"
-  dependencies:
-    tools: []
-    skills:
-      - name: add-hexagonal-feature
-        purpose: Route end-to-end feature work in Python hexagonal vertical-slice projects.
-        required: false
-      - name: bootstrap-python-app
-        purpose: Route new Python app initialization with uv, tooling, and hexagonal layout.
-        required: false
-      - name: format-python-code
-        purpose: Route Python formatting and safe Ruff auto-fix work.
-        required: false
-      - name: lint-python-code
-        purpose: Route Python linting, static analysis, and type checking work.
-        required: false
-      - name: python-add-adapter
-        purpose: Route inbound or outbound adapter implementation in a Python hexagonal project.
-        required: false
-      - name: python-add-env-settings-adapter
-        purpose: Route environment-backed settings adapter work for Python applications.
-        required: false
-      - name: python-add-port
-        purpose: Route technology-agnostic application port creation in Python hexagonal projects.
-        required: false
-      - name: python-build-extensible-cli
-        purpose: Route shared product CLI shell and multi-feature command contribution work.
-        required: false
-      - name: run-python-quality-gate
-        purpose: Route the complete Python formatting, linting, type-checking, and test quality gate.
-        required: false
-      - name: run-python-tests
-        purpose: Route Python pytest execution work.
-        required: false
-      - name: split-python-module
-        purpose: Route Python module or package splitting while preserving boundaries.
-        required: false
-      - name: using-agnostic-software-development-skills
-        purpose: Route technology-independent software development workflows used alongside this catalog.
-        required: false
-      - name: write-pytest-tests
-        purpose: Route pytest test creation and refactoring.
-        required: false
-      - name: write-python-docstrings
-        purpose: Route Python docstring and explanatory comment work.
-        required: false
+  version: "2.1.1"
 ---
 
 # Using Python Software Development Skills

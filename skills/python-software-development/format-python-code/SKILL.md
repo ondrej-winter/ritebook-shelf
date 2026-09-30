@@ -2,19 +2,7 @@
 name: format-python-code
 description: Format Python code with ruff and apply safe auto-fixes when a Python project needs consistent style before linting, testing, or handoff.
 metadata:
-  version: "1.1.0"
-  dependencies:
-    tools:
-      - name: uv
-        purpose: Run the project-managed Ruff installation.
-        required: true
-      - name: ruff
-        purpose: Apply Python lint fixes and formatting.
-        required: true
-    skills:
-      - name: lint-python-code
-        purpose: Continue with linting and type checking when required.
-        required: false
+  version: "1.1.1"
 ---
 
 # Format Python Code

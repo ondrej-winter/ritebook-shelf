@@ -2,10 +2,7 @@
 name: author-agent-skill
 description: Create, update, or review Agent Skill directories and SKILL.md files for valid frontmatter, structure, portability, progressive disclosure, and validation readiness.
 metadata:
-  version: "1.3.0"
-  dependencies:
-    tools: []
-    skills: []
+  version: "1.3.1"
 ---
 
 # Author Agent Skill
@@ -58,11 +55,12 @@ The name must:
 Prefer action-oriented names such as `write-adr`, `run-local-quality-gate`, or
 `author-agent-skill`.
 
-### 3. Add required header and metadata
+### 3. Add the skill header
 
 `SKILL.md` must start on the first line with YAML frontmatter. Treat this
-frontmatter as the skill header. Include `name`, `description`, `metadata`,
-`metadata.version`, and dependency metadata for tools and referenced skills.
+frontmatter as the skill header. The Agent Skills format requires `name` and
+`description`. This shelf also requires a string-valued `metadata.version` for
+skill lifecycle tracking.
 
 Use this required shape:
 
@@ -72,9 +70,6 @@ name: skill-name
 description: Brief description of what the skill does and when to use it.
 metadata:
   version: "1.0.0"
-  dependencies:
-    tools: []
-    skills: []
 ---
 ```
 
@@ -95,68 +90,47 @@ change. Prefer semantic versioning:
 - major for breaking changes to when or how the skill should be used, required
   structure, or expected outputs
 
-### 4. Declare dependencies and tool access
+### 4. Document requirements and tool access portably
 
-Every skill must declare its dependencies in `metadata.dependencies`, even when a
-dependency list is empty. Use dependency metadata to make hidden assumptions
-visible before an agent follows the skill.
+Do not put nested objects or sequences under `metadata`. The Agent Skills format
+defines `metadata` as a map from string keys to string values, so structures such
+as `metadata.dependencies.tools` and `metadata.dependencies.skills` are not
+portable.
 
-Document tool dependencies as runtime capabilities. Include required command-line
-execution, version control, browser access, source retrieval, independent review,
-external services, permissions, or other capabilities the skill expects. Use the
-owning catalog's canonical capability vocabulary when one exists. Prefer a list
-of objects when details matter:
+Use `compatibility` for concise environment requirements that matter before the
+skill is selected:
 
 ```md
-metadata:
-  version: "1.0.0"
-  dependencies:
-    tools:
-      - name: version-control
-        purpose: Inspect repository history and changed files.
-        required: false
-      - name: shell-execution
-        purpose: Run local validation scripts.
-        required: false
-    skills:
-      - name: run-local-quality-gate
-        purpose: Validate formatting, linting, tests, and builds before handoff.
-        required: false
-        relationship: verification
+compatibility: Requires Git and permission to run local validation commands.
 ```
 
-Use `metadata.dependencies.tools: []` when the skill has no known tool, command,
-permission, service, or runtime dependency.
+Describe detailed runtime capabilities, permissions, external services, fallback
+behavior, and related-skill handoffs in the instructions. Keep requirements near
+the step that needs them so an agent can distinguish mandatory execution from a
+conditional enhancement.
 
-Set `required: true` when the skill cannot produce its stated outcome without the
-dependency. Set it to `false` only for a conditional dependency or when the skill
-documents a usable fallback.
-
-Document referenced skills under `metadata.dependencies.skills` when the skill
-routes to, hands off to, verifies with, or expects awareness of another skill. The
-referenced skill name should match that skill's frontmatter `name`. When the
-owning catalog defines relationship semantics, add its supported relationship
-field. This collection uses:
+When the skill participates in a catalog, express workflow relationships in the
+catalog's routing or composition guidance. This collection uses these relationship
+terms in prose:
 
 - `route`: select the referenced skill when its own trigger matches
 - `handoff`: transfer a defined part of the workflow when instructed
 - `verification`: use the referenced skill to gather evidence
 - `awareness`: coordinate with its constraints without automatic activation
 
-An optional referenced skill is not recursively activated merely because it is
-listed. Its trigger or an explicit handoff must be present. Use an empty list when
-there are no referenced skills.
+An optional related skill is not recursively activated merely because a catalog
+mentions it. Its trigger or an explicit handoff must be present.
 
 If the target agent format supports pre-approved tool declarations, add
-`allowed-tools` as a top-level frontmatter field and keep it consistent with
-`metadata.dependencies.tools`. Use `metadata.dependencies.tools` for portable
-dependency documentation and `allowed-tools` for target-specific tool allowlists.
+`allowed-tools` as a top-level frontmatter field. Treat it as an experimental
+space-separated string and keep it consistent with the tool usage documented in
+the instructions.
 
 ### 5. Use only supported optional frontmatter fields
 
 Add optional fields only when they are useful and supported by the skill format.
-For this skill format, required metadata includes `metadata.version` and
-`metadata.dependencies`; additional metadata keys remain optional.
+For this shelf, required metadata includes the string-valued `metadata.version`;
+additional metadata keys remain optional and must also have string values.
 
 Supported optional top-level fields are:
 
@@ -169,8 +143,8 @@ specification. Use `compatibility` only for meaningful environment requirements,
 `allowed-tools` only when tool pre-approval is supported by the target
 environment.
 
-Additional keys under required `metadata` are optional. Include them only when
-they provide useful key-value metadata supported by the target environment.
+Additional keys under `metadata` are optional. Include them only when they provide
+useful string-valued metadata supported by the target environment.
 
 Do not add custom frontmatter fields unless the target skill system or repository
 tooling explicitly requires them.
@@ -188,9 +162,6 @@ name: skill-name
 description: Brief description of what the skill does and when to use it.
 metadata:
   version: "1.0.0"
-  dependencies:
-    tools: []
-    skills: []
 ---
 
 # Skill Name
@@ -265,22 +236,17 @@ commands passed, and any validation that was skipped with the reason.
 
 - `SKILL.md` exists in the skill directory
 - frontmatter starts at the first line
-- frontmatter includes `name`, `description`, `metadata`, `metadata.version`,
-  and `metadata.dependencies`
+- frontmatter includes `name`, `description`, `metadata`, and `metadata.version`
 - `name` matches the parent directory exactly
 - `name` is valid kebab-case
 - `description` explains both what the skill does and when to use it
 - `metadata.version` is present, quoted, and increased when the skill changed
-- `metadata.dependencies.tools` is present and lists tool dependencies or an
-  empty list
-- `metadata.dependencies.skills` is present and lists referenced skills or an
-  empty list
-- dependency `required` values distinguish mandatory execution from conditional
-  use or a documented fallback
-- when the owning catalog defines relationship semantics, each referenced skill
-  declares a valid relationship and optional references are not treated as
-  recursively activated
-- `allowed-tools`, when present, is consistent with documented tool dependencies
+- every `metadata` key and value is a string; nested objects and sequences are
+  absent
+- environment requirements use `compatibility` or clear instructions when needed
+- related-skill routing and handoffs are explained in catalog or body guidance
+- `allowed-tools`, when present, is a space-separated string consistent with the
+  documented tool usage
 - unsupported frontmatter fields are absent
 - supported optional frontmatter fields are correctly shaped and necessary
 - exactly one top-level heading follows the frontmatter

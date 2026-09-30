@@ -2,10 +2,7 @@
 name: ci-cd-and-automation
 description: Design, review, or improve CI/CD and automation workflows for quality gates, deployment safety, rollback readiness, secrets handling, and feedback loops across any technology stack.
 metadata:
-  version: "1.6.0"
-  dependencies:
-    tools: []
-    skills: []
+  version: "1.6.1"
 ---
 
 # CI/CD and Automation

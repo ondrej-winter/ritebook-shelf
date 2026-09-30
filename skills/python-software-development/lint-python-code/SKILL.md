@@ -2,19 +2,7 @@
 name: lint-python-code
 description: Run project-configured Python linting and type checking with Ruff and mypy when a project uses uv-managed development tooling.
 metadata:
-  version: "1.1.0"
-  dependencies:
-    tools:
-      - name: uv
-        purpose: Run the project's development tools in its managed environment.
-        required: true
-      - name: ruff
-        purpose: Check Python code for lint violations.
-        required: true
-      - name: mypy
-        purpose: Perform static type checking.
-        required: true
-    skills: []
+  version: "1.1.1"
 ---
 
 # Lint Python Code

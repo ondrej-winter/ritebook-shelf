@@ -2,49 +2,7 @@
 name: bootstrap-python-app
 description: Initialize a new Python project with a hexagonal vertical-slice architecture layout, core tooling, quality checks, and GitHub Actions CI/CD when starting a Python application from scratch.
 metadata:
-  version: "1.3.0"
-  dependencies:
-    tools:
-      - name: uv
-        purpose: Initialize the project, manage dependencies, and run development tools.
-        required: true
-      - name: ruff
-        purpose: Format Python code, lint code, and organize imports through the project environment.
-        required: true
-      - name: ty
-        purpose: Type-check the generated source and test tree through the project environment.
-        required: true
-      - name: pytest
-        purpose: Run the generated test suite through the project environment.
-        required: true
-      - name: import-linter
-        purpose: Enforce hexagonal vertical-slice dependency boundaries through the project environment.
-        required: true
-      - name: python-semantic-release
-        purpose: Create automated patch releases in CI/CD after the quality gate passes.
-        required: true
-      - name: pre-commit
-        purpose: Install optional local hooks that run the same project quality checks before commits.
-        required: false
-      - name: GitHub Actions
-        purpose: Run reproducible CI quality checks, build artifacts, create semantic patch releases, and publish to PyPI.
-        required: true
-      - name: PyPI trusted publishing
-        purpose: Publish release artifacts from GitHub Actions without committing PyPI tokens.
-        required: true
-    skills:
-      - name: add-hexagonal-feature
-        purpose: Add the first real vertical feature slice after the project scaffold exists.
-        required: false
-      - name: ci-cd-and-automation
-        purpose: Review CI/CD trigger, permission, artifact, release, and publishing safety.
-        required: false
-      - name: run-local-quality-gate
-        purpose: Run the full configured quality gate before handoff.
-        required: false
-      - name: update-project-docs
-        purpose: Update project-facing documentation when bootstrap behavior, usage, or configuration changes.
-        required: false
+  version: "1.3.1"
 ---
 
 # Bootstrap a Python Hexagonal Vertical-Slice Application

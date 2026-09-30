@@ -2,16 +2,7 @@
 name: write-pytest-tests
 description: Write or refactor Python tests when pytest-native style, focused scenarios, and deterministic setup are needed.
 metadata:
-  version: "1.1.0"
-  dependencies:
-    tools:
-      - name: pytest
-        purpose: Collect and run the affected Python tests.
-        required: true
-    skills:
-      - name: run-python-tests
-        purpose: Discover and run the project-specific pytest commands.
-        required: false
+  version: "1.1.1"
 ---
 
 # Write Pytest Tests

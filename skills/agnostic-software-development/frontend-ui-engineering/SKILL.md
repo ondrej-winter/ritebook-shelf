@@ -2,14 +2,7 @@
 name: frontend-ui-engineering
 description: Build, review, or refine browser-facing user interfaces so they are accessible, responsive, performant, visually coherent, and aligned with the project design system.
 metadata:
-  version: "1.3.0"
-  dependencies:
-    tools: []
-    skills:
-      - name: browser-runtime-verification
-        purpose: Verify browser-facing rendering, interaction, focus, accessibility, network behavior, and visual layout.
-        required: false
-        relationship: verification
+  version: "1.3.1"
 ---
 
 # Frontend UI Engineering

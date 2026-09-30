@@ -2,14 +2,7 @@
 name: test-driven-development
 description: Drives development with tests. Use when implementing behavior, fixing bugs, changing existing functionality, or proving that a change works and is guarded against regression.
 metadata:
-  version: "1.3.0"
-  dependencies:
-    tools: []
-    skills:
-      - name: browser-runtime-verification
-        purpose: Verify browser-facing changes in a real browser when TDD alone is insufficient.
-        required: false
-        relationship: verification
+  version: "1.3.1"
 ---
 
 # Test-Driven Development

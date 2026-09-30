@@ -2,13 +2,7 @@
 name: doubt-driven-development
 description: Cross-examine non-trivial decisions with a fresh, adversarial review loop before they stand, especially when correctness, safety, migration risk, or unfamiliar code makes overconfidence costly.
 metadata:
-  version: "1.2.0"
-  dependencies:
-    tools:
-      - name: independent-review
-        purpose: Obtain a fresh-context or independent adversarial review of the isolated artifact and contract.
-        required: false
-    skills: []
+  version: "1.2.1"
 ---
 
 # Doubt-Driven Development

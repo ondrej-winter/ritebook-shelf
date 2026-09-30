@@ -2,16 +2,7 @@
 name: add-hexagonal-feature
 description: Implement a new vertical feature slice or use case in a Python hexagonal project, including domain modeling, ports, application service, adapters when needed, and tests.
 metadata:
-  version: "1.1.0"
-  dependencies:
-    tools: []
-    skills:
-      - name: python-add-port
-        purpose: Define a required inbound or outbound application port.
-        required: false
-      - name: python-add-adapter
-        purpose: Implement a required inbound or outbound adapter.
-        required: false
+  version: "1.1.1"
 ---
 
 # Add a Hexagonal Vertical Feature Slice

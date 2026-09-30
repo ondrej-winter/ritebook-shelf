@@ -2,34 +2,7 @@
 name: python-build-extensible-cli
 description: Build or refactor an extensible product CLI for a Python hexagonal vertical-slice project, with a feature-neutral shell, feature-owned command contributions, bootstrap-owned composition, stable exit semantics, and tests. Use when multiple feature slices need to contribute commands without leaking parser or process concerns into application or domain code.
 metadata:
-  version: "1.1.0"
-  dependencies:
-    tools:
-      - name: uv
-        purpose: Run the project's configured formatting, type-checking, test, and entrypoint checks.
-        required: false
-      - name: import-linter
-        purpose: Verify CLI-shell and feature-boundary import contracts when configured.
-        required: false
-    skills:
-      - name: python-add-adapter
-        purpose: Add individual feature-owned inbound CLI adapters that call application ports.
-        required: false
-      - name: python-add-port
-        purpose: Define missing application inbound ports before exposing a use case through the CLI.
-        required: false
-      - name: api-and-interface-design
-        purpose: Design stable command names, flags, outputs, errors, and extension contracts.
-        required: false
-      - name: write-pytest-tests
-        purpose: Add focused unit, integration, and process-entrypoint tests for CLI behavior.
-        required: false
-      - name: write-adr
-        purpose: Document intentional adapter-to-adapter extension-surface exceptions or other architecture decisions.
-        required: false
-      - name: run-python-quality-gate
-        purpose: Run formatting, linting, type checking, and tests before handoff.
-        required: false
+  version: "1.1.1"
 ---
 
 # Build an Extensible Python CLI
