@@ -86,9 +86,21 @@ claiming conformance with the open format, and resolve F-03 through F-05 before
 treating the catalog metadata and client integration guidance as a dependable
 orchestration contract.
 
+**Post-audit update (2026-09-30):** F-01 and F-02 are resolved. The verdict above
+is retained as the conclusion for the audited revision; F-03 through F-05 remain
+outside the scope of this update.
+
 ## Findings
 
 ### F-01 — High: 28 of 32 skills fail the Agent Skills reference validator
+
+**Resolution status — resolved after the audited revision on 2026-09-30.** The
+skill headers were migrated to string-valued metadata without inline empty
+sequences or nested dependency objects. `skills-ref` 0.1.1 now accepts all 32
+agnostic skills and all 47 canonical skills. Ritebook 0.1.48 also accepts all 47
+canonical skills. The original finding and evidence below are retained because
+they accurately describe audited revision
+`6796d13c92bc2616de7913eec680755d3d151550`.
 
 **Locations**
 
@@ -161,6 +173,13 @@ empty sequence in its actual frontmatter. The examples inside
    describing the directories as generally portable.
 
 ### F-02 — Medium: All skills use metadata that conflicts with the open specification
+
+**Resolution status — resolved after the audited revision on 2026-09-30.** All
+47 canonical skills now use string-valued `metadata.version` without nested
+`metadata.dependencies`. Both Ritebook 0.1.48 and `skills-ref` 0.1.1 accept the
+resulting headers. Detailed capability requirements and skill relationships were
+moved to compatibility, workflow, or catalog prose where applicable. The
+original finding and evidence below are retained for audit traceability.
 
 **Locations**
 
