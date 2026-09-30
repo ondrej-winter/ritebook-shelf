@@ -13,6 +13,13 @@
 
 {{Non-obvious shared obligations supported by project decisions or existing policy.}}
 
+## Git and external actions
+
+Local inspection, editing, and validation are allowed within the current task.
+Require explicit user authorization before creating commits, pushing, publishing,
+mutating remote systems, or running destructive commands. Preserve any stricter
+existing project policy.
+
 ## Required context
 
 {{Conditional reading obligations: before changing X, read the existing source Y.}}

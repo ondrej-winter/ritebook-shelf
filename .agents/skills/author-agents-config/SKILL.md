@@ -2,7 +2,7 @@
 name: author-agents-config
 description: Initialize, audit, update, or synchronize a repository's coding-agent instructions and client adapters. Use for AGENTS.md, scoped instructions, CLAUDE.md, .clinerules, .cline/rules, Copilot instructions, or migrations between agent configuration layouts. Keep shared policy canonical and adapters minimal. Not for authoring reusable SKILL.md capabilities, defining agent personas, ordinary application changes, or configuring runtime permissions.
 metadata:
-  version: "1.1.1"
+  version: "1.2.0"
 ---
 
 # Author agents config
@@ -32,6 +32,8 @@ Paths below are relative to this skill's directory, not the target repository.
 - Read [validation.md](references/validation.md) before final verification.
 - Use files in `assets/` only as scaffolds for new files, never as replacements
   for existing content. Omit unsupported sections and resolve all placeholders.
+  The files in `assets/clinerules/` are an exact fresh-project scaffold: copy
+  them byte-for-byte only when the corresponding target files are absent.
 
 ## 1. Establish intent and scope
 
@@ -53,6 +55,15 @@ For a fresh setup with no selected clients, establish only shared configuration
 and report that client selection remains unspecified. Do not scaffold every
 known client. Where uncertainty affects only one adapter, leave it unchanged
 and continue with independent, well-supported work.
+
+For a fresh setup with Cline selected and no established instruction or skill
+ownership, use root `AGENTS.md` for shared policy, `.agents/skills/` for reusable
+task procedures, and the three files in [assets/clinerules](assets/clinerules/)
+for Cline-only operating mechanics. Copy those files unchanged into root
+`.clinerules/`, and merge `.tmp/cline/` into `.gitignore` without replacing
+existing ignore rules. Treat the setup as fresh only when the destination files
+are absent. If `AGENTS.md`, either Cline rules layout, or another canonical skill
+root already exists, reconcile it under the preservation rules instead.
 
 ## 2. Inspect before editing
 
@@ -108,6 +119,12 @@ Use [agents.md.template](assets/agents.md.template) and, when needed,
 [scoped-agents.md.template](assets/scoped-agents.md.template) as section prompts.
 Remove empty sections, unsupported claims, and template placeholders.
 
+For a fresh Cline setup, include an explicit Git and external-action boundary in
+root `AGENTS.md`. The bundled template defaults to local inspection, editing, and
+validation while requiring user authorization for commits, pushes, publication,
+remote mutation, and destructive commands. Preserve stricter existing policy and
+do not weaken a repository's established authorization model.
+
 Do not insert generic personas, lengthy tutorials, a full skill catalog, task
 logs, or speculative rules. Important policy must remain available independently
 of optional skill activation.
@@ -131,19 +148,26 @@ A plain instruction to "read AGENTS.md" is a behavioral fallback, not a proven
 native import. Use it only when acceptable and report its limitations. Preserve
 scope: do not inject every nested policy into the global context for convenience.
 
-For confirmed Claude Code support, the root adapter can use
-[claude-adapter.md.template](assets/claude-adapter.md.template). Do not assume
-that root importing also exposes every nested `AGENTS.md`.
+For Claude Code, test native `AGENTS.md` discovery first when the installed
+version, session, settings, and applicable `CLAUDE.md` files permit it. Add the
+[claude-adapter.md.template](assets/claude-adapter.md.template) import only as a
+fallback. Do not assume either native root loading or a root import also exposes
+every nested `AGENTS.md`.
 
-Keep existing `.clinerules` layouts unless migration is requested and target
-support is verified. Do not migrate to `.cline/rules` solely because one page
-uses the newer path. Do not create a Cline rules file when native discovery
-already supplies the required shared policy and no client-only content exists.
+For a fresh Cline setup, install the exact `assets/clinerules/` scaffold for
+Cline-only mechanics even though Cline can also read shared `AGENTS.md` policy.
+For an existing project, preserve `.clinerules/` and `.cline/rules/`; both are
+supported and searched when present. Do not copy rules into both layouts or
+overwrite existing files merely to match the scaffold.
 
 Do not move skills out of the target repository's established canonical source
 unless migration is explicitly requested and verified. Add discovery wiring only
 where needed; check for duplicate discovery, broken relative resources, symlink
 support, and portability. A directory link is not universally supported.
+Current Cline implementation scans project `.agents/skills/`; use that existing
+canonical source directly when target behavior is verified instead of creating a
+second Cline skill tree. Consult the dated client reference because public Cline
+documentation may lag implementation behavior.
 
 Preserve client-specific content and unrelated user changes. Before deleting a
 legacy rule, account for every retained obligation and verify replacement scope

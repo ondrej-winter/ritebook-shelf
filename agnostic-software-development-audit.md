@@ -86,9 +86,9 @@ claiming conformance with the open format, and resolve F-03 through F-05 before
 treating the catalog metadata and client integration guidance as a dependable
 orchestration contract.
 
-**Post-audit update (2026-09-30):** F-01 and F-02 are resolved. The verdict above
-is retained as the conclusion for the audited revision; F-03 through F-05 remain
-outside the scope of this update.
+**Post-audit update (2026-09-30):** F-01 through F-03 are resolved. The verdict
+above is retained as the conclusion for the audited revision; F-04 and F-05
+remain unresolved in that range.
 
 ## Findings
 
@@ -238,6 +238,35 @@ External source:
 - [Agent Skills specification](https://agentskills.io/specification)
 
 ### F-03 — Medium: Client-adapter guidance has drifted from current official behavior
+
+**Resolution status — resolved after the audited revision on 2026-09-30.**
+`author-agents-config` 1.2.0 now makes conditional native Claude Code
+`AGENTS.md` loading the first candidate and keeps `@AGENTS.md` as a fallback;
+records both supported Cline rule layouts; lists current documented Cline and
+Copilot skill roots; and records Cline's source-backed `.agents/skills/` scan at
+revision `457be3d2fdc7bea65ac2a0dea883ec355d890ace` without claiming it as
+documented or runtime-observed behavior.
+
+The remediation also adds an event-driven freshness rule, exact fresh-project
+Cline bootstrap assets, duplicate-prevention and existing-project preservation
+cases, and this shelf's own root `AGENTS.md` plus `.tmp/cline/` ignore coverage.
+The packaged Cline rules are byte-identical to the root `.clinerules/` source and
+the full package is byte-identical to its installed `.agents/skills/` copy.
+
+Validation performed after the change:
+
+- Ritebook 0.1.48 accepted all 32 agnostic skills and all 47 canonical skills.
+- `skills-ref` 0.1.1 accepted all 47 canonical skills.
+- The generated index covered all 47 canonical skills with no missing or extra
+  entries; `ritebook.lock` remained unchanged.
+- Package parity, three-way Cline scaffold parity, relative-link checks, stale
+  compatibility-text checks, and `git diff --check` passed.
+
+No live target-client session was run, so Claude, Cline, Copilot, and Codex
+runtime discovery remains documented or source-backed rather than runtime
+observed. The original finding and evidence below are retained because they
+accurately describe audited revision
+`6796d13c92bc2616de7913eec680755d3d151550`.
 
 **Location**
 

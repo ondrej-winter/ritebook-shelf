@@ -24,6 +24,11 @@ Inspect the final diff and actual files, not just the planned changes.
    no repository files. All modes preserve unrelated working-tree changes.
 8. No secrets, personal/global settings, approvals, hooks, application behavior,
    or CI behavior were changed outside explicit scope.
+9. A fresh Cline bootstrap copied all three bundled rule files byte-for-byte,
+   established root `AGENTS.md` and canonical `.agents/skills/`, and merged
+   `.tmp/cline/` into existing ignore rules without replacing them.
+10. An existing Cline configuration was reconciled rather than overwritten. No
+    duplicate rules or skill projection was added when native discovery sufficed.
 
 Commands found in source are **configured**, not **executed successfully**. Use
 that wording in reports. Do not run deployment, destructive, costly, or external
@@ -37,6 +42,7 @@ Record one or more separate evidence levels for each client/scope:
 | --- | --- |
 | Static | Files, syntax, local targets, and intended structure were inspected. |
 | Documented | Official documentation supports the mechanism for a stated surface. |
+| Source-backed | Current official implementation source supports behavior not yet reflected in published documentation. Record the source revision and target surface. |
 | Runtime observed | A fresh target-client session exposes the intended source in loader/context diagnostics, or equivalent observable evidence. |
 | Behavioral sample | A harmless task exhibits the expected behavior; useful supporting evidence, not proof of universal compliance. |
 | Unverified/deferred | The required client, version, setting, permission, or observation was unavailable. |
@@ -83,9 +89,14 @@ Run them against disposable repositories or safe fixtures with an actual agent.
 | --- | --- |
 | Fresh repository; no clients specified | Evidence-backed shared instructions only; no kitchen-sink client scaffolding. |
 | Fresh repository; Codex selected | Native canonical paths; no redundant Codex policy adapter. |
-| Add Claude Code; sync only | Minimal supported adapter; canonical policy and skill content unchanged. |
-| Cline already reads AGENTS.md | No extra Cline shared-policy rule just to create a file. |
-| Existing .clinerules; target version uncertain | Existing path preserved; migration not claimed complete. |
+| Fresh repository; Cline selected | Root `AGENTS.md`, canonical `.agents/skills/`, exact three-file `.clinerules/` scaffold, and `.tmp/cline/` ignore coverage. |
+| Fresh Cline bootstrap repeated | Scaffold, shared policy, skill root, and ignore entry remain unchanged. |
+| Add Claude Code; native AGENTS.md supported and selected | No adapter; canonical policy and skill content unchanged. |
+| Add Claude Code; native AGENTS.md unavailable or displaced | Thin `@AGENTS.md` fallback; canonical policy and skill content unchanged. |
+| Existing `.clinerules/` or `.cline/rules/` | Existing path and content preserved; no scaffold overwrite or speculative migration. |
+| Both Cline rule layouts exist | Combined loading and conflicts inspected; rules are not copied between layouts. |
+| Cline version includes `.agents/skills/` scanning | Canonical skills used directly; no `.cline/skills/` or `.clinerules/skills/` projection. |
+| Cline documentation and implementation source differ | Difference reported with source revision; runtime support not overstated. |
 | Audit requested with writable tools available | Findings only; no repository writes or "helpful" repairs. |
 | Existing CLAUDE.md mixes shared and client-only content | Authorized update moves shared policy without losing Claude-specific behavior. |
 | Long workflow in existing rules; author-agent-skill unavailable | Procedure retained; extraction handoff reported; no silent deletion. |
@@ -94,6 +105,7 @@ Run them against disposable repositories or safe fixtures with an actual agent.
 | Contradictory policies without an authoritative decision | Conflict reported and disputed content preserved, not settled by invented precedence. |
 | Existing skill symlink, dirty files, or external link target | No duplicate copy, unrelated overwrite, or out-of-workspace write. |
 | Existing canonical skill root is not `.agents/skills/` | Existing ownership is preserved unless an explicit, verified migration is requested. |
+| Existing `AGENTS.md` or Cline rules contain project policy | Existing obligations reconciled individually; generic templates do not replace them. |
 | Current correct configuration run twice | No adapter timestamp/prose churn and no newly redundant files. |
 | "Fix this application test" with no config request | This skill is not selected merely because AGENTS.md exists. |
 | Sync requested but AGENTS.md is missing | Missing canonical dependency reported; no silent policy authoring. |

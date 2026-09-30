@@ -28,6 +28,13 @@ Client discovery locations may be projections of that source; their existence
 does not make each projection independently authoritative. For a fresh setup,
 choose a source from explicit project intent and verified selected-client support.
 
+When Cline is selected for a genuinely fresh project with no existing ownership
+decision, this package defaults to root `AGENTS.md`, canonical `.agents/skills/`,
+and the exact bundled `.clinerules/` scaffold. `AGENTS.md` owns shared repository
+policy; `.clinerules/` owns only Cline-specific operating mechanics. The bundled
+scaffold is a derived distribution asset, not an additional policy authority.
+After initialization, the target repository owns its copied files.
+
 ## Placement test
 
 | Question | Owner |
@@ -38,6 +45,11 @@ choose a source from explicit project intent and verified selected-client suppor
 | What is different specifically because this client is being used? | Client adapter or client-only instructions |
 | What must be executed or enforced mechanically? | Tooling/runtime configuration, scripts, CI |
 | What is the objective or current state of this one task? | Task prompt, issue, or working plan |
+
+The fresh Cline scaffold depends on root `AGENTS.md` containing an explicit Git
+and external-action authorization boundary and on `.tmp/cline/` being ignored.
+These prerequisites belong to shared policy and repository ignore configuration,
+not to duplicated project rules inside `.clinerules/`.
 
 A subject can appear in multiple layers with different responsibilities. For
 example: a policy requires regression evidence; a skill describes investigation;
@@ -99,6 +111,11 @@ Do not delete a procedural rule before its destination exists and the requested
 migration has accounted for discovery. Without `author-agent-skill`, preserve the
 procedure and provide an extraction brief: intended trigger, destination concept,
 source location, and obligations that must remain ambient.
+
+Do not apply the fresh Cline scaffold over an existing `AGENTS.md`, `.clinerules/`,
+or `.cline/rules/` tree. Reconcile each existing file, preserve client-specific
+content, and require an explicit migration decision before changing layout or
+canonical skill ownership.
 
 Avoid turning an uncertain migration into another permanent active policy copy.
 Where replacement loading cannot be established, keep the existing path and

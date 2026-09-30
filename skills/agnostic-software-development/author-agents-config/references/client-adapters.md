@@ -1,21 +1,23 @@
 # Client adapters
 
-Documentation checked: **2026-09-16**. These are documentation-backed starting
-points, not observations of the user's installed clients. Recheck the relevant
-sources when introducing a client, migrating a layout, or encountering an
-unknown version/surface. Preserve working configuration when evidence is unclear.
+Sources checked: **2026-09-30**. These are documentation- or source-backed
+starting points, not observations of the user's installed clients. Recheck every
+affected official source when changing compatibility guidance, introducing a
+client, migrating a layout, or encountering behavior that conflicts with this
+reference. Preserve working configuration when evidence is unclear.
 
 Keep compatibility facts here, not duplicated throughout `SKILL.md` or every
-repository's always-on instructions. Do not refresh dates or files on a no-op sync.
+repository's always-on instructions. Advance the review date only after a real
+compatibility review; do not refresh dates or files on a no-op sync.
 
 ## Starting points
 
 | Client/surface | Shared instructions | Canonical skill exposure |
 | --- | --- | --- |
 | Codex | Native `AGENTS.md`; inspect startup scope and overrides. | Native `.agents/skills/` discovery. |
-| Claude Code | `CLAUDE.md` can import adjacent `AGENTS.md`. | Documented project location is `.claude/skills/`; per-skill directory symlinks are documented. |
-| Cline | `AGENTS.md` is a documented rule source; verify it is enabled. | `.cline/skills/` is documented; do not infer `.agents/skills/` support from format compatibility alone. |
-| GitHub Copilot | Depends on the exact IDE/feature. VS Code chat supports `AGENTS.md`; other surfaces differ. | Check the selected surface's skill documentation; do not assume instruction support proves skill support. |
+| Claude Code | Native `AGENTS.md` when version, session, settings, and applicable `CLAUDE.md` files permit; import fallback otherwise. | Documented project location is `.claude/skills/`; per-skill directory symlinks are documented. |
+| Cline | Native `AGENTS.md`; exact `.clinerules/` bootstrap adds Cline-only mechanics for fresh projects. | Current implementation scans `.agents/skills/`; published docs also list `.clinerules/skills/`, `.cline/skills/`, and `.claude/skills/`. |
+| GitHub Copilot | Depends on the exact IDE/feature. VS Code chat supports `AGENTS.md`; other surfaces differ. | Documented project roots include `.github/skills/`, `.claude/skills/`, and `.agents/skills/`; confirm the selected surface. |
 
 Sources and qualifications follow. The design preference is native discovery,
 then actual import, then supported projection, then managed generated content.
@@ -40,10 +42,21 @@ Sources:
 
 ## Claude Code
 
-Claude Code documents importing `AGENTS.md` from `CLAUDE.md` using `@AGENTS.md`.
-Use the bundled adapter template next to the canonical source. Root import does
-not itself import every descendant instruction file: expose scoped files through
-appropriate scoped adapters where needed and test actual loading.
+Claude Code 2.1.277 and later can load `AGENTS.md` directly. Before 2.1.281,
+some sessions such as Amazon Bedrock or telemetry-disabled sessions could not use
+that support, so verify the actual version and session. Native loading is the
+first candidate when no `CLAUDE.md`, `.claude/CLAUDE.md`, or `CLAUDE.local.md`
+exists in the working directory or above it. Inspect `/config`: the default
+`claude-md-or-agents-md` selects `AGENTS.md` only in that absence, while
+`claude-md-and-agents-md` loads both families. `claude-md` and `managed-only` do
+not load project `AGENTS.md` directly.
+
+Use `/memory` to inspect loaded instruction paths where the installed version
+supports that display. If direct loading is unavailable, or an applicable
+`CLAUDE.md` is retained under `claude-md-or-agents-md` or `claude-md`, use the
+bundled `@AGENTS.md` adapter as a fallback. `managed-only` excludes that project
+adapter too. Neither native root loading nor root import itself loads every
+descendant instruction file; test scoped behavior separately.
 
 Project skills are documented under `.claude/skills/`. Per-skill symlinked
 directories are supported in the documented project location. Keep authored
@@ -65,20 +78,25 @@ The Rules documentation lists `AGENTS.md` as a supported source and describes
 rule toggles. Prefer verified native loading instead of another shared-policy
 file. Root support alone does not establish nested scope semantics.
 
-There is a documentation discrepancy: the Rules page describes `.clinerules/`,
-while the Config page describes `.cline/rules/`. Retain existing `.clinerules`
-unless migration is requested and the actual target client/version supports the
-new layout. Do not create both locations as a speculative fallback.
+Workspace rules can live in `.clinerules/` or `.cline/rules/`. VS Code, Desktop,
+and CLI support both layouts, and Cline searches and combines both when present.
+Preserve the project's existing choice; do not duplicate rules between the two
+directories. For a genuinely fresh Cline project, this package installs the
+exact `.clinerules/` scaffold for client-only mechanics while shared policy
+remains in `AGENTS.md`.
 
-The Config/Skills documentation provides `.cline/skills/` as a client location.
-Confirm discovery in the installed surface before choosing a link or other
-projection from the canonical source. Preserve the canonical tree and check
-whether another compatible location already exposes the same skill.
+The published Skills page lists `.clinerules/skills/`, `.cline/skills/`, and
+`.claude/skills/` as project roots. Current official implementation source at
+revision `457be3d2fdc7bea65ac2a0dea883ec355d890ace` also scans project
+`.agents/skills/` and global `~/.agents/skills/`, after the other project roots.
+Treat this as source-backed behavior that may not apply to older releases or
+every surface. When verified for the target, use canonical `.agents/skills/`
+directly and do not add a duplicate Cline projection.
 
 Sources:
 - [Cline Rules](https://docs.cline.bot/customization/cline-rules)
-- [Cline Config](https://docs.cline.bot/getting-started/config)
 - [Cline Skills](https://docs.cline.bot/customization/skills)
+- [Cline skill directory implementation](https://github.com/cline/cline/blob/457be3d2fdc7bea65ac2a0dea883ec355d890ace/apps/vscode/src/core/storage/skill-directories.ts)
 
 ## GitHub Copilot
 
@@ -93,8 +111,14 @@ available reference/import semantics; do not use Claude's `@` syntax as a generi
 cross-client import. A plain link or reading instruction must be labelled a
 behavioral fallback unless the specific implementation documents stronger behavior.
 
-Source:
+GitHub documents project agent skills under `.github/skills/`, `.claude/skills/`,
+and `.agents/skills/` across supported surfaces. If the selected surface already
+discovers canonical `.agents/skills/`, do not create another projection. Agent
+skill support varies by IDE and surface, and some entries remain in preview.
+
+Sources:
 - [Copilot support by surface](https://docs.github.com/en/copilot/reference/custom-instructions-support)
+- [Copilot customization cheat sheet](https://docs.github.com/en/copilot/reference/customization-cheat-sheet)
 - [VS Code custom instructions](https://code.visualstudio.com/docs/agent-customization/custom-instructions)
 
 ## Projections and generated copies

@@ -3,6 +3,9 @@
 Sibling of `author-agent-skill` for authoring shared repository instructions and
 maintaining minimal client adapters. It preserves the target repository's
 established canonical skill source instead of imposing a client-specific layout.
+For a fresh Cline project with no established ownership, it can bootstrap root
+`AGENTS.md`, canonical `.agents/skills/`, and a small exact `.clinerules/`
+scaffold while keeping shared policy out of client-only files.
 
 ## Install
 
@@ -55,11 +58,18 @@ The agent infers init, update, sync, or audit from intent.
 - `references/ownership.md`: policy/procedure/adapter placement and migration rules.
 - `references/client-adapters.md`: dated official-source compatibility notes.
 - `references/validation.md`: verification levels and behavioral acceptance cases.
-- `assets/*.template`: section prompts and the minimal Claude import adapter.
+- `assets/*.template`: section prompts and the fallback Claude import adapter.
+- `assets/clinerules/`: three exact Cline operating files for fresh projects.
+
+For a fresh Cline project, copy the three bundled files unchanged into root
+`.clinerules/`, create a project-specific root `AGENTS.md`, use
+`.agents/skills/` as the canonical skill root, and merge `.tmp/cline/` into the
+project's ignore rules. If any corresponding project configuration already
+exists, reconcile it instead of overwriting it with the scaffold.
 
 No automatic installer, runtime configuration, third-party dependencies, or
 cross-client generator is included. The core task needs repository-specific
-judgment; static adapters do not justify a separate framework.
+judgment; the static scaffold does not justify a separate framework.
 
 ## Validation status
 
