@@ -86,9 +86,10 @@ claiming conformance with the open format, and resolve F-03 through F-05 before
 treating the catalog metadata and client integration guidance as a dependable
 orchestration contract.
 
-**Post-audit update (2026-10-01):** F-01 through F-05 are resolved. The verdict
-above is retained as the conclusion for the audited revision; the resolution
-notes under each finding describe the later remediation and its evidence.
+**Post-audit update (2026-10-01):** F-01 through F-05 and F-08 are resolved. The
+verdict above is retained as the conclusion for the audited revision; the
+resolution notes under each finding describe the later remediation and its
+evidence.
 
 ## Findings
 
@@ -605,6 +606,22 @@ maintenance entry point is broken.
 - Include link existence in documentation validation.
 
 ### F-08 — Low: `interview-me` encourages false precision and excessive ceremony
+
+**Resolution status — resolved after the audited revision on 2026-10-01.**
+`interview-me` 2.0.0 replaces numeric confidence and the 90% completion threshold
+with the ordinal states `exploring`, `narrowing`, and `ready-for-confirmation`.
+The skill now defaults to a light path for one or two ordinary ambiguities and
+uses the full operating model for explicit interview requests, high XY-risk, or
+interacting material unknowns. Completion depends on decision sufficiency,
+explicit disposition of material unknowns, and direct user confirmation.
+
+The supporting examples now define normative short-, medium-, and high-ambiguity
+scenarios. Manual dry-runs confirmed that the short scenario remains light, the
+medium scenario escalates when a second user and outcome emerge, and an explicit
+interview starts in full mode with ordinal readiness. Ritebook 0.1.48 accepts all
+32 agnostic skills, `skills-ref` 0.1.1 accepts the revised skill, and the canonical
+and installed `interview-me` directories are byte-identical. This is documented
+scenario validation, not an automated agent-behavior evaluation.
 
 **Location**
 

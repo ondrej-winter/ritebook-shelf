@@ -3,7 +3,7 @@
   "index": {
     "name": "ondrej-winter-ritebook-shelf"
   },
-  "generated_at": "2026-10-01T07:31:58.038080Z",
+  "generated_at": "2026-10-01T19:22:40.407455Z",
   "skills_root": "skills",
   "skills": [
     {
@@ -124,7 +124,7 @@
       "name": "interview-me",
       "path": "agnostic-software-development/interview-me",
       "skill_file": "agnostic-software-development/interview-me/SKILL.md",
-      "description": "Reduce uncertainty about a user's underlying intent through a formal XY-problem gate plus a hypothesis, confidence, evidence, and information-gain interview loop. Use when an ask is underspecified, solution-led, or has material unresolved trade-offs before idea refinement, specification, planning, or implementation."
+      "description": "Reduce uncertainty about a user's underlying intent through an adaptive XY-problem interview that scales from concise clarification to a full evidence-based model. Use when an ask is underspecified, solution-led, has material unresolved trade-offs, or the user explicitly requests an interview before idea refinement, specification, planning, or implementation."
     },
     {
       "name": "performance-optimization",
