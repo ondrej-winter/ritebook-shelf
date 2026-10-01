@@ -1,3 +1,4 @@
-.cline-logs/
 .DS_Store
+.cline-logs/
 .tmp/cline/
+__pycache__/
