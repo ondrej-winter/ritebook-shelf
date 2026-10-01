@@ -86,9 +86,9 @@ claiming conformance with the open format, and resolve F-03 through F-05 before
 treating the catalog metadata and client integration guidance as a dependable
 orchestration contract.
 
-**Post-audit update (2026-09-30):** F-01 through F-03 are resolved. The verdict
-above is retained as the conclusion for the audited revision; F-04 and F-05
-remain unresolved in that range.
+**Post-audit update (2026-10-01):** F-01 through F-04 are resolved. The verdict
+above is retained as the conclusion for the audited revision; F-05 remains
+unresolved in that range.
 
 ## Findings
 
@@ -327,6 +327,61 @@ External sources:
 - [GitHub Copilot customization cheat sheet](https://docs.github.com/en/copilot/reference/customization-cheat-sheet)
 
 ### F-04 — Medium: Execution-heavy workflows under-declare runtime capabilities
+
+**Resolution status — resolved after the audited revision on 2026-10-01.** A
+review of all 32 agnostic skills found no current Ritebook or client consumer for
+machine-readable capability negotiation. The remediation therefore removed the
+catalog's unsupported instruction to inspect declared capabilities instead of
+introducing another repository-specific metadata format after F-01 and F-02.
+
+The catalog now requires agents to read execution requirements in the selected
+workflow, confirm needed access before execution-dependent steps, and choose one
+truthful status: fully executed and verified; a documented, independently useful
+design- or review-only artifact labeled runtime-unverified; or blocked. Missing
+required execution never counts as successful verification.
+
+The same completion boundary was made explicit in the 11 workflows where the
+32-skill review found a real ambiguity:
+
+- `add-observability`
+- `ci-cd-and-automation`
+- `code-simplification`
+- `debugging-and-error-recovery`
+- `deprecation-and-migration`
+- `frontend-ui-engineering`
+- `incremental-implementation`
+- `performance-optimization`
+- `security-and-hardening`
+- `shipping-and-launch`
+- `test-driven-development`
+
+The other 20 skills did not need F-04 edits because their output is a reasoning
+or documentation artifact, their runtime contract is inherent and already
+bounded, or their unavailable-evidence behavior was already explicit.
+`author-agent-skill` already directs authors to keep mandatory execution,
+conditional enhancements, and fallbacks near the workflow step that needs them.
+No capability sidecar, encoded metadata, custom frontmatter, index schema, or
+Ritebook orchestration feature was added. The original finding and evidence below
+are retained because they accurately describe audited revision
+`6796d13c92bc2616de7913eec680755d3d151550`.
+
+Post-remediation validation on 2026-10-01 confirmed:
+
+```text
+uvx ritebook@latest skills lint --root skills/agnostic-software-development
+Checked 32 skill(s)
+
+uvx ritebook@latest skills lint --root skills
+Checked 47 skill(s)
+
+uvx --from skills-ref agentskills validate <each-canonical-skill-directory>
+passed: 47
+failed: 0
+```
+
+Focused checks also confirmed byte-identical canonical and installed copies for
+all 32 agnostic skills, no F-04 change to `ritebook-index.json` or `ritebook.lock`,
+and no remaining current-workflow instruction to inspect declared capabilities.
 
 **Locations**
 
@@ -573,11 +628,13 @@ Implement -> Verify -> Checkpoint`, distinguishes non-behavioral work, and label
 contract-first and risk-first increments instead of describing incomplete layers
 as vertical slices.
 
-### Partially resolved: capability and relationship semantics
+### Resolved after this audit: runtime execution and fallback semantics
 
-The collection now defines canonical capability names and adds `route`, `handoff`,
-`verification`, and `awareness` relationships. F-04 remains because actual
-capability declarations are incomplete for many execution-heavy skills.
+The collection retains `route`, `handoff`, `verification`, and `awareness` as
+prose relationship terms. On 2026-10-01, F-04 was resolved without a capability
+metadata protocol: the catalog stopped promising automatic declared-capability
+preflight, and ambiguous execution-heavy workflows gained explicit full,
+runtime-unverified bounded-artifact, and blocked outcomes.
 
 ### Resolved: Python-specific type-checker policy in agnostic workflows
 
@@ -652,8 +709,9 @@ activation cost and cohesion, not a mechanical line limit.
    validators.
 2. **Refresh client compatibility.** Resolve F-03 before using
    `author-agents-config` for new multi-client setup or migration work.
-3. **Complete capability metadata.** Resolve F-04 so catalog preflight checks can
-   operate as documented.
+3. **Clarify runtime completion contracts.** Resolve F-04 without speculative
+   orchestration metadata: remove unsupported preflight claims and distinguish
+   verified execution, bounded runtime-unverified artifacts, and blocked work.
 4. **Restore reproducible provenance.** Refresh and verify `ritebook.lock` under
    F-05.
 5. **Create a pinned aggregate gate.** Address F-06, then use that gate to prevent
@@ -710,8 +768,8 @@ Additional read-only checks confirmed:
 ## Limitations
 
 - The audit did not execute every workflow against representative target projects.
-  Workflow findings are based on written contracts, composition, and declared
-  capabilities.
+  Workflow findings are based on written contracts, composition, and the runtime
+  evidence each workflow requires.
 - The audit did not run `ritebook install --force` or regenerate the lock because
   those commands can change repository state; F-05 is based on direct provenance
   comparison.

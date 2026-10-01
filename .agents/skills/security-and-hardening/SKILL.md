@@ -2,7 +2,7 @@
 name: security-and-hardening
 description: Hardens software against vulnerabilities. Use when handling untrusted input, authentication, authorization, sensitive data, dependencies, or external integrations.
 metadata:
-  version: "1.1.6"
+  version: "1.1.7"
 ---
 
 # Security and Hardening
@@ -14,6 +14,17 @@ required check on every protected operation.
 Security is not a final phase. It is a constraint on design, implementation,
 testing, deployment, and maintenance wherever a system touches users, data,
 credentials, networks, files, subprocesses, or third-party services.
+
+## Execution boundary
+
+A security design or review can identify trust boundaries, required controls,
+findings, and verification work without modifying the system; label that result
+design- or review-only and runtime-unverified where checks could not run. A
+completed hardening change requires implementing the controls and running the
+applicable tests, scans, builds, and configuration checks. If implementation was
+requested but required repository, tool, environment, or credential access is
+unavailable, report the hardening work as blocked. Never treat skipped required
+security checks as evidence that the system is hardened.
 
 ## Steps
 
@@ -270,3 +281,6 @@ After implementing security-relevant code:
 - Manually inspect configuration and staged changes for secrets or insecure defaults.
 - Document any deferred vulnerability or accepted risk with an owner and review date.
 - Confirm final handoff notes include which security checks passed, failed, or were skipped.
+- State whether the result is implemented and verified, design- or review-only
+  and runtime-unverified, or blocked; do not report skipped required checks as a
+  completed hardening outcome.

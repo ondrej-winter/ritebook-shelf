@@ -2,7 +2,7 @@
 name: ci-cd-and-automation
 description: Design, review, or improve CI/CD and automation workflows for quality gates, deployment safety, rollback readiness, secrets handling, and feedback loops across any technology stack.
 metadata:
-  version: "1.6.1"
+  version: "1.6.2"
 ---
 
 # CI/CD and Automation
@@ -14,6 +14,17 @@ verification repeatable, failures actionable, and releases reversible.
 CI/CD should enforce the project’s quality expectations without assuming a
 specific language, package manager, repository host, CI provider, deployment
 platform, or test framework.
+
+## Execution boundary
+
+A design-only automation artifact may define triggers, jobs, commands,
+permissions, failure handling, and recovery without provider access. Label that
+result design-only and runtime-unverified, and keep unknown commands or provider
+details as explicit placeholders. Fully implemented automation requires editing
+the canonical configuration and validating syntax plus intended behavior in the
+applicable project or provider environment. If the request requires working
+automation and that execution is unavailable, report the workflow as blocked;
+do not claim that a proposed or merely parsed workflow runs correctly.
 
 ## When to use this skill
 
@@ -240,3 +251,5 @@ Confirm:
 - deployment workflows include health checks and rollback guidance
 - maintenance automation has review and recovery paths
 - validation was run or skipped validation is documented
+- the result is labeled implemented and verified, design-only and
+  runtime-unverified, or blocked; a design is not reported as working automation

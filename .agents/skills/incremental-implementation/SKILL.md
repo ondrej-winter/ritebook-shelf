@@ -2,7 +2,7 @@
 name: incremental-implementation
 description: Guide agents to deliver changes incrementally. Use when implementing a feature or change that touches more than one file, when a task feels too large to land in one step, or before writing a large amount of code at once.
 metadata:
-  version: "2.1.1"
+  version: "2.1.2"
 ---
 
 # Incremental Implementation
@@ -10,6 +10,13 @@ metadata:
 ## Overview
 
 Build in thin, independently verifiable increments. Prefer complete vertical slices that produce an observable outcome through the relevant path. For behavior-changing slices, apply test-first execution inside the increment: define one behavior, observe the focused test fail, implement the smallest passing change, then verify before expanding. Use contract-first or risk-first increments only when a complete vertical path is not yet the right unit, and label them explicitly. Each increment should leave the system in a working state.
+
+Completing an increment requires access to make its changes and gather its named
+verification evidence. If that execution is unavailable, return a bounded slice
+proposal only when it is independently useful, label it design-only and
+runtime-unverified, and leave the increment incomplete. If the request requires
+implemented work, report the affected increment as blocked. Do not treat a
+proposed slice, skipped command, or unobserved boundary as a completed increment.
 
 ## When to use
 
@@ -248,6 +255,8 @@ After each increment, verify:
 - [ ] Linting or static analysis passes when applicable (`<lint_command>`)
 - [ ] The declared outcome or evidence was observed through the relevant boundary
 - [ ] The change is checkpointed with a descriptive message or handoff note
+- [ ] Any unavailable required execution leaves the increment incomplete; a useful
+      proposal is labeled design-only and runtime-unverified, otherwise blocked
 
 **Note:** Run each verification command after a change that could affect it. After a successful run, don't repeat the same command unless the code has changed since — re-running on unchanged code adds no information.
 
@@ -300,3 +309,4 @@ After completing all increments for a task:
 - [ ] The build is clean when the project has an applicable build step
 - [ ] The feature works end-to-end as specified
 - [ ] The final handoff clearly explains validation evidence and any uncommitted or uncheckpointed changes
+- [ ] No design-only or runtime-unverified increment is reported as implemented or complete

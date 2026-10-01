@@ -2,7 +2,7 @@
 name: add-observability
 description: Add logs, metrics, traces, profiling, or operational notes when a workflow needs better runtime visibility or measurable evidence without unsupported performance claims.
 metadata:
-  version: "1.3.1"
+  version: "1.3.2"
 ---
 
 # Add Observability
@@ -10,6 +10,16 @@ metadata:
 Use this skill to make runtime behavior diagnosable and operationally useful with
 the smallest safe set of logs, metrics, traces, profiles, dashboards, alerts, or
 runbook notes.
+
+## Execution boundary
+
+A completed observability change requires access to the relevant source or
+configuration plus representative runtime evidence showing that the signal is
+emitted, exported, queryable, safe, and operationally useful. Without that access,
+an observability contract or review may still be independently useful; label it
+design- or review-only and runtime-unverified, and do not implement speculative
+instrumentation or claim end-to-end validation. If the request requires working
+signals rather than a proposal, report the workflow as blocked.
 
 ## When to use this skill
 
@@ -206,3 +216,5 @@ otherwise describe the result as improved visibility.
 - dashboards, alerts, runbooks, and ownership were updated when needed
 - success, failure, correlation, export, and degradation behavior were validated
 - measurement claims include comparable evidence and limitations
+- the result is labeled implemented and verified, design- or review-only and
+  runtime-unverified, or blocked; a proposed signal is not reported as operational

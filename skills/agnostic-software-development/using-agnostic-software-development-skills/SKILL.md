@@ -2,7 +2,7 @@
 name: using-agnostic-software-development-skills
 description: Discover and invoke technology-agnostic software development skills. Use when starting general engineering work or deciding which reusable workflow skill applies to a task.
 metadata:
-  version: "2.5.1"
+  version: "2.5.2"
 ---
 
 # Using Agnostic Software Development Skills
@@ -25,12 +25,16 @@ skill.
 3. Add secondary skills only when their trigger is directly present.
 4. Confirm that each selected skill is available in the current environment. If it
    is unavailable, report that limitation instead of inventing its instructions.
-5. Check each selected skill's declared capabilities before activation. Stop when
-   a required capability is unavailable. When an optional capability is unavailable,
-   use only the skill's documented fallback and label the execution as degraded.
-6. Follow each selected skill's steps, including verification.
-7. Report the selected skills, validation evidence, degraded fallbacks, and any
-   remaining limitations in the task handoff.
+5. Read the selected skill's execution requirements and fallbacks where they
+   appear in its workflow. Before an execution-dependent step, confirm that the
+   required repository, command, runtime, service, or review access is available.
+6. If required execution is unavailable, return a clearly labeled design- or
+   review-only artifact only when the skill documents one that is independently
+   useful. Otherwise report the workflow as blocked. Never count skipped required
+   execution as successful verification.
+7. Follow each selected skill's remaining steps, including verification.
+8. Report the selected skills, execution status, validation evidence, bounded
+   fallbacks, blockers, and remaining limitations in the task handoff.
 
 Use this routing guide:
 
@@ -71,19 +75,14 @@ Task arrives
 - Deploying or launching: shipping-and-launch
 ```
 
-## Workflow capability and relationship contract
+## Workflow execution and relationship contract
 
-Use these canonical capability names when instructions discuss runtime needs:
-
-- `shell-execution`: run local commands or scripts
-- `version-control`: inspect or modify repository history and state
-- `browser-runtime`: observe behavior in a real browser
-- `source-retrieval`: access authoritative local or remote sources
-- `independent-review`: obtain a fresh-context or independent review
-
-State directly whether a capability is mandatory, conditional, or has a usable
-fallback. Put that information in the relevant workflow step or compatibility
-guidance rather than nested frontmatter metadata.
+State runtime requirements in ordinary workflow prose near the step that needs
+them. Distinguish mandatory evidence from conditional enhancements. When required
+execution is unavailable, use only a documented bounded fallback and label it as
+design- or review-only and runtime-unverified. If no independently useful fallback
+exists, stop the affected workflow as blocked. Missing execution never proves an
+execution or verification acceptance criterion.
 
 Use one of these relationship terms when catalog or workflow prose composes
 skills:

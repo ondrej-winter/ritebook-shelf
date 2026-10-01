@@ -2,7 +2,7 @@
 name: performance-optimization
 description: Optimizes software performance using measurement-driven diagnosis, targeted fixes, and regression guards. Use when performance requirements exist, users or monitoring report slow behavior, a regression is suspected, or profiling reveals bottlenecks that need fixing.
 metadata:
-  version: "1.4.2"
+  version: "1.4.3"
 ---
 
 # Performance Optimization
@@ -18,6 +18,16 @@ return.
 Use concrete technology guidance only after identifying the system type and the
 metric that matters. A web page, batch job, API, database query, command-line
 tool, and embedded service can all be "slow" for different reasons.
+
+## Execution boundary
+
+A completed optimization requires a representative baseline, evidence identifying
+the bottleneck, a targeted change, a comparable after-measurement, and relevant
+correctness checks. If the required runtime, workload, profiler, benchmark, or
+telemetry is unavailable, return a measurement or optimization proposal only when
+it is independently useful. Label it design-only and runtime-unverified, and do
+not implement or claim an improvement from inspection alone. If the request
+requires a verified performance fix, report the workflow as blocked.
 
 ## When to use this skill
 
@@ -250,3 +260,5 @@ After any performance-related change:
 - [ ] Trade-offs and remaining risks were documented.
 - [ ] Regression guards were added or the reason for skipping them was recorded.
 - [ ] Existing correctness checks still pass.
+- [ ] Any proposal produced without runtime measurement is labeled design-only and
+      runtime-unverified and makes no performance-improvement claim.

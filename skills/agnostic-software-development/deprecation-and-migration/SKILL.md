@@ -2,7 +2,7 @@
 name: deprecation-and-migration
 description: Plan and execute safe deprecations, migrations, replacements, and removals by measuring usage, supporting consumers, preserving compatibility, and making evidence-based removal decisions.
 metadata:
-  version: "1.2.1"
+  version: "1.2.2"
 ---
 
 # Deprecation and Migration
@@ -15,6 +15,16 @@ active consumers or breaking compatibility-sensitive paths.
 Deprecation is the decision and communication process. Migration is the work of
 moving consumers safely from the old path to the new one. Removal happens only
 after usage evidence, observation limits, and residual risk have been evaluated.
+
+This workflow has distinct completion states. A deprecation or migration plan may
+be complete when it records evidence gaps, owners, support windows, migration
+steps, removal gates, and verification methods; label it planning-only and not
+executed. An executed migration requires changing each in-scope consumer and
+verifying compatibility. A removal requires the applicable evidence, approvals,
+cleanup, and post-removal validation. If execution was requested but the required
+repository, telemetry, consumer, or approval access is unavailable, report the
+affected phase as blocked. Never report a plan as a completed migration or
+removal.
 
 ## When to use this skill
 
@@ -203,6 +213,8 @@ Retain any durable migration or historical notice that consumers still need.
 
 ## Output checklist
 
+- result status and completed phase are explicit: planning-only, migration
+  executed and verified, removal executed and verified, or blocked
 - deprecation rationale and scope are explicit
 - active usage, ownership, measurement coverage, and blind spots were assessed
 - removal owner and decision maker are known
@@ -215,3 +227,5 @@ Retain any durable migration or historical notice that consumers still need.
 - proven zero usage is required where consumers and measurement are controlled;
   otherwise the support window, notice, approval, and residual-risk gates are met
 - old code, tests, docs, configuration, and notices are cleaned up
+- planning-only results identify required execution and evidence without claiming
+  that consumers migrated or the old surface was removed

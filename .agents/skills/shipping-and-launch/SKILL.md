@@ -2,7 +2,7 @@
 name: shipping-and-launch
 description: Prepare production launches with risk-based readiness checks, staged rollout, monitoring, and an explicit recovery strategy. Use before deploying a feature, migration, or other production change.
 metadata:
-  version: "1.6.1"
+  version: "1.6.2"
 ---
 
 # Shipping and Launch
@@ -15,6 +15,15 @@ success looks like. Make each launch observable and incremental when the system
 allows it. Define an explicit recovery strategy: rollback, disablement,
 roll-forward, compensation, or documented irreversibility with accepted risk and
 containment measures when no technical reversal is possible.
+
+This workflow has two distinct outcomes. A launch plan can be completed without
+changing production state when it records readiness gaps, rollout stages,
+monitoring thresholds, decision owners, and recovery procedures; label it
+planning-only and not deployed. An executed launch requires explicit
+authorization and production access, followed by deployment and observed
+post-launch evidence. If deployment was requested but authorization, access, or
+required monitoring is unavailable, report the launch as blocked. Never present
+a launch plan or pre-launch review as a completed deployment.
 
 ## When to Use
 
@@ -171,7 +180,13 @@ targets. Dry-run the mechanism when practical. For a reusable template, see
 
 ## Verification
 
-Before deploying:
+For a planning-only result:
+
+- [ ] Result is labeled planning-only and not deployed
+- [ ] Readiness gaps, owners, rollout thresholds, and recovery strategy are recorded
+- [ ] Required production access and post-launch evidence are identified
+
+Before an executed deployment:
 
 - [ ] Applicable pre-launch checklist sections completed
 - [ ] Runtime release control configured (if applicable)
@@ -187,3 +202,5 @@ After deploying:
 - [ ] Critical user flow works
 - [ ] Logs are flowing
 - [ ] Recovery mechanism tested or verified ready
+- [ ] Final status says deployed and verified, held, recovered, or blocked rather
+      than treating an incomplete launch as successful
