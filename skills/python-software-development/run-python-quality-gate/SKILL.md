@@ -2,7 +2,8 @@
 name: run-python-quality-gate
 description: Run the full local Python quality gate with formatting, linting, type checking, and tests before handoff or a pull request.
 metadata:
-  version: "2.1.1"
+  version: "2.1.2"
+  last-verified: "2026-09-30T20:31:51+02:00"
 ---
 
 # Run Python Quality Gate

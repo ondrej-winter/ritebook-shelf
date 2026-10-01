@@ -2,7 +2,8 @@
 name: planning-and-task-breakdown
 description: Create or revise an implementation plan from clear requirements, with ordered tasks, acceptance criteria, dependencies, verification, and progress tracking. Use when scope needs decomposition, sequencing is uncertain, or work must be coordinated across agents or sessions.
 metadata:
-  version: "2.2.1"
+  version: "2.2.2"
+  last-verified: "2026-09-30T20:31:51+02:00"
 ---
 
 # Planning and Task Breakdown

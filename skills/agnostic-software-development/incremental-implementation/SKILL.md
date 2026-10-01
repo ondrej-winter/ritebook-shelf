@@ -2,7 +2,8 @@
 name: incremental-implementation
 description: Guide agents to deliver changes incrementally. Use when implementing a feature or change that touches more than one file, when a task feels too large to land in one step, or before writing a large amount of code at once.
 metadata:
-  version: "2.1.2"
+  version: "2.1.3"
+  last-verified: "2026-10-01T09:34:17+02:00"
 ---
 
 # Incremental Implementation

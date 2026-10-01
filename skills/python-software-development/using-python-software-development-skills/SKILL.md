@@ -2,7 +2,8 @@
 name: using-python-software-development-skills
 description: Discover and invoke Python software development skills. Use when starting Python work or deciding which Python-specific implementation, validation, testing, or documentation skill applies.
 metadata:
-  version: "2.1.1"
+  version: "2.1.2"
+  last-verified: "2026-09-30T20:31:51+02:00"
 ---
 
 # Using Python Software Development Skills

@@ -2,7 +2,8 @@
 name: conventional-commits
 description: Write, review, and validate Conventional Commits v1.0.0 messages with correct type, scope, description, body, footer, and breaking-change syntax.
 metadata:
-  version: "1.1.1"
+  version: "1.1.2"
+  last-verified: "2026-09-30T20:31:51+02:00"
 ---
 
 # Conventional Commits

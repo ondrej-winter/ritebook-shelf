@@ -2,7 +2,8 @@
 name: debugging-and-error-recovery
 description: Diagnose failures systematically by preserving evidence, reproducing the issue, localizing and reducing the cause, fixing the root problem, adding a guard, and verifying recovery. Use when tests, builds, runtime behavior, or recovery attempts fail or behave unexpectedly.
 metadata:
-  version: "1.2.2"
+  version: "1.2.3"
+  last-verified: "2026-10-01T09:34:17+02:00"
 ---
 
 # Debugging and Error Recovery

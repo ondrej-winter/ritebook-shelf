@@ -2,7 +2,8 @@
 name: shipping-and-launch
 description: Prepare production launches with risk-based readiness checks, staged rollout, monitoring, and an explicit recovery strategy. Use before deploying a feature, migration, or other production change.
 metadata:
-  version: "1.6.2"
+  version: "1.6.3"
+  last-verified: "2026-10-01T09:34:17+02:00"
 ---
 
 # Shipping and Launch

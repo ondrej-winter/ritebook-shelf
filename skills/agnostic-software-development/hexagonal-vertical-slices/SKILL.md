@@ -2,7 +2,8 @@
 name: hexagonal-vertical-slices
 description: Design, review, or refactor systems that use hexagonal architecture organized by vertical feature slices, keeping business logic isolated from frameworks and infrastructure.
 metadata:
-  version: "1.2.0"
+  version: "1.2.1"
+  last-verified: "2026-10-01T22:08:01+02:00"
 ---
 
 # Hexagonal Vertical Slices

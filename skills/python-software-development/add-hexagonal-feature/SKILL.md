@@ -2,7 +2,8 @@
 name: add-hexagonal-feature
 description: Implement a new vertical feature slice or use case in a Python hexagonal project, including domain modeling, ports, application service, adapters when needed, and tests.
 metadata:
-  version: "1.1.1"
+  version: "1.1.2"
+  last-verified: "2026-09-30T20:31:51+02:00"
 ---
 
 # Add a Hexagonal Vertical Feature Slice

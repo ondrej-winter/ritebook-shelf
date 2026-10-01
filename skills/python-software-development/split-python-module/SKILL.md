@@ -2,7 +2,8 @@
 name: split-python-module
 description: Split a growing Python module or package while preserving behavior, boundaries, imports, public APIs, and reviewability when code has mixed responsibilities or needs clearer ownership.
 metadata:
-  version: "1.1.1"
+  version: "1.1.2"
+  last-verified: "2026-09-30T20:31:51+02:00"
 ---
 
 # Split a Python Module

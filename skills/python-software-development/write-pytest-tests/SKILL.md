@@ -2,7 +2,8 @@
 name: write-pytest-tests
 description: Write or refactor Python tests when pytest-native style, focused scenarios, and deterministic setup are needed.
 metadata:
-  version: "1.1.1"
+  version: "1.1.2"
+  last-verified: "2026-09-30T20:31:51+02:00"
 ---
 
 # Write Pytest Tests

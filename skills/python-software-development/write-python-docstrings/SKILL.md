@@ -2,7 +2,8 @@
 name: write-python-docstrings
 description: Write or revise concise Google-style Python docstrings and inline comments when contracts, invariants, or non-obvious behavior need explanation.
 metadata:
-  version: "1.1.1"
+  version: "1.1.2"
+  last-verified: "2026-09-30T20:31:51+02:00"
 ---
 
 # Write Python Docstrings

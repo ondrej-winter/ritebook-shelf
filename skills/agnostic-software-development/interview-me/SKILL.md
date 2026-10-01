@@ -2,7 +2,8 @@
 name: interview-me
 description: Reduce uncertainty about a user's underlying intent through an adaptive XY-problem interview that scales from concise clarification to a full evidence-based model. Use when an ask is underspecified, solution-led, has material unresolved trade-offs, or the user explicitly requests an interview before idea refinement, specification, planning, or implementation.
 metadata:
-  version: "2.0.0"
+  version: "2.0.1"
+  last-verified: "2026-10-01T21:27:59+02:00"
 ---
 
 # Interview Me

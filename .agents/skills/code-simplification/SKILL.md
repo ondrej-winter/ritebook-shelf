@@ -2,7 +2,8 @@
 name: code-simplification
 description: Simplify working code without changing behavior by reducing unnecessary complexity, improving names and structure, preserving project conventions, and validating each refactoring step.
 metadata:
-  version: "1.1.4"
+  version: "1.1.5"
+  last-verified: "2026-10-01T09:34:17+02:00"
 ---
 
 # Code Simplification

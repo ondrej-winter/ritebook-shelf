@@ -2,7 +2,8 @@
 name: review-implementation-plan
 description: Review and update an existing implementation plan for completeness, ambiguity, sequencing, risks, dependencies, validation, readiness labeling, and handoff before coding.
 metadata:
-  version: "1.3.1"
+  version: "1.3.2"
+  last-verified: "2026-09-30T20:31:51+02:00"
 ---
 
 # Review Implementation Plan

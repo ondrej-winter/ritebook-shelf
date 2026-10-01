@@ -2,7 +2,8 @@
 name: python-add-port
 description: Add a technology-agnostic inbound or outbound application port interface to the owning vertical slice in a Python hexagonal project for a new use case or dependency.
 metadata:
-  version: "1.0.2"
+  version: "1.0.3"
+  last-verified: "2026-09-30T20:31:51+02:00"
 ---
 
 # Add a Port

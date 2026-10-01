@@ -2,7 +2,8 @@
 name: author-agent-skill
 description: Create, update, or review Agent Skill directories and SKILL.md files for valid frontmatter, structure, portability, progressive disclosure, and validation readiness.
 metadata:
-  version: "1.3.1"
+  version: "2.0.0"
+  last-verified: "2026-09-30T20:31:51+02:00"
 ---
 
 # Author Agent Skill
@@ -59,8 +60,9 @@ Prefer action-oriented names such as `write-adr`, `run-local-quality-gate`, or
 
 `SKILL.md` must start on the first line with YAML frontmatter. Treat this
 frontmatter as the skill header. The Agent Skills format requires `name` and
-`description`. This shelf also requires a string-valued `metadata.version` for
-skill lifecycle tracking.
+`description`. This shelf also requires string-valued `metadata.version` for
+skill lifecycle tracking and `metadata.last-verified` for verification
+freshness.
 
 Use this required shape:
 
@@ -70,6 +72,7 @@ name: skill-name
 description: Brief description of what the skill does and when to use it.
 metadata:
   version: "1.0.0"
+  last-verified: "2026-10-01T20:08:01Z"
 ---
 ```
 
@@ -89,6 +92,16 @@ change. Prefer semantic versioning:
   backward-compatible workflow improvements
 - major for breaking changes to when or how the skill should be used, required
   structure, or expected outputs
+
+Use `metadata.last-verified` to record when the skill instructions and
+supporting files were most recently checked for internal consistency,
+portability, and validation readiness. Store it as a quoted ISO 8601
+timestamp with an explicit timezone, for example
+`"2026-10-01T20:08:01Z"`. Advance it only when that verification was
+actually performed; an ordinary edit or version bump does not by itself
+prove verification. When introducing the field to an existing collection with
+no prior verification record, a documented one-time migration may seed it from
+the most recent commit timestamp for each `SKILL.md`.
 
 ### 4. Document requirements and tool access portably
 
@@ -129,8 +142,9 @@ the instructions.
 ### 5. Use only supported optional frontmatter fields
 
 Add optional fields only when they are useful and supported by the skill format.
-For this shelf, required metadata includes the string-valued `metadata.version`;
-additional metadata keys remain optional and must also have string values.
+For this shelf, required metadata includes string-valued `metadata.version` and
+`metadata.last-verified`; additional metadata keys remain optional and must
+also have string values.
 
 Supported optional top-level fields are:
 
@@ -162,6 +176,7 @@ name: skill-name
 description: Brief description of what the skill does and when to use it.
 metadata:
   version: "1.0.0"
+  last-verified: "2026-10-01T20:08:01Z"
 ---
 
 # Skill Name
@@ -236,11 +251,14 @@ commands passed, and any validation that was skipped with the reason.
 
 - `SKILL.md` exists in the skill directory
 - frontmatter starts at the first line
-- frontmatter includes `name`, `description`, `metadata`, and `metadata.version`
+- frontmatter includes `name`, `description`, `metadata`, `metadata.version`,
+  and `metadata.last-verified`
 - `name` matches the parent directory exactly
 - `name` is valid kebab-case
 - `description` explains both what the skill does and when to use it
 - `metadata.version` is present, quoted, and increased when the skill changed
+- `metadata.last-verified` is present, quoted, includes an ISO 8601 timezone,
+  and advances only when verification was actually performed
 - every `metadata` key and value is a string; nested objects and sequences are
   absent
 - environment requirements use `compatibility` or clear instructions when needed

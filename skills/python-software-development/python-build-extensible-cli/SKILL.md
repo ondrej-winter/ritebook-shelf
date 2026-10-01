@@ -2,7 +2,8 @@
 name: python-build-extensible-cli
 description: Build or refactor an extensible product CLI for a Python hexagonal vertical-slice project, with a feature-neutral shell, feature-owned command contributions, bootstrap-owned composition, stable exit semantics, and tests. Use when multiple feature slices need to contribute commands without leaking parser or process concerns into application or domain code.
 metadata:
-  version: "1.1.1"
+  version: "1.1.2"
+  last-verified: "2026-09-30T20:31:51+02:00"
 ---
 
 # Build an Extensible Python CLI

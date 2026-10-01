@@ -2,7 +2,8 @@
 name: lint-python-code
 description: Run project-configured Python linting and type checking with Ruff and mypy when a project uses uv-managed development tooling.
 metadata:
-  version: "1.1.1"
+  version: "1.1.2"
+  last-verified: "2026-09-30T20:31:51+02:00"
 ---
 
 # Lint Python Code

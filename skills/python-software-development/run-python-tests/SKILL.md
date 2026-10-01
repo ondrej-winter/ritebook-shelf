@@ -2,7 +2,8 @@
 name: run-python-tests
 description: Run pytest-based automated tests when a Python project uses uv-managed development tooling.
 metadata:
-  version: "1.1.1"
+  version: "1.1.2"
+  last-verified: "2026-09-30T20:31:51+02:00"
 ---
 
 # Skill: Run Python Tests

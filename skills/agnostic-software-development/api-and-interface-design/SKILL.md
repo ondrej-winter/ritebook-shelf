@@ -2,7 +2,8 @@
 name: api-and-interface-design
 description: Design or review stable APIs and interfaces that are explicit, compatible, and hard to misuse. Use when creating or changing HTTP, event, library, module, CLI, component, schema, configuration, plugin, or other durable integration contracts.
 metadata:
-  version: "1.3.1"
+  version: "1.3.2"
+  last-verified: "2026-09-30T20:31:51+02:00"
 ---
 
 # API and Interface Design

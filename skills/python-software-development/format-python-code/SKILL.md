@@ -2,7 +2,8 @@
 name: format-python-code
 description: Format Python code with ruff and apply safe auto-fixes when a Python project needs consistent style before linting, testing, or handoff.
 metadata:
-  version: "1.1.1"
+  version: "1.1.2"
+  last-verified: "2026-09-30T20:31:51+02:00"
 ---
 
 # Format Python Code

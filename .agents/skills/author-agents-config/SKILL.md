@@ -2,7 +2,8 @@
 name: author-agents-config
 description: Initialize, audit, update, or synchronize a repository's coding-agent instructions and client adapters. Use for AGENTS.md, scoped instructions, CLAUDE.md, .clinerules, .cline/rules, Copilot instructions, or migrations between agent configuration layouts. Keep shared policy canonical and adapters minimal. Not for authoring reusable SKILL.md capabilities, defining agent personas, ordinary application changes, or configuring runtime permissions.
 metadata:
-  version: "1.2.0"
+  version: "1.2.1"
+  last-verified: "2026-09-30T21:31:34+02:00"
 ---
 
 # Author agents config

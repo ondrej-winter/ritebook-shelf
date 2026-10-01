@@ -2,7 +2,8 @@
 name: update-project-docs
 description: Update project-facing documentation after a reader-visible behavior, configuration, operation, or developer workflow change.
 metadata:
-  version: "1.3.1"
+  version: "1.3.2"
+  last-verified: "2026-09-30T20:31:51+02:00"
 ---
 
 # Update Project Docs

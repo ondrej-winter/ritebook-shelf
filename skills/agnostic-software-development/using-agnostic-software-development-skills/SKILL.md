@@ -2,7 +2,8 @@
 name: using-agnostic-software-development-skills
 description: Discover and invoke technology-agnostic software development skills. Use when starting general engineering work or deciding which reusable workflow skill applies to a task.
 metadata:
-  version: "2.5.2"
+  version: "2.5.3"
+  last-verified: "2026-10-01T09:34:17+02:00"
 ---
 
 # Using Agnostic Software Development Skills

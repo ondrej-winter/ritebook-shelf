@@ -2,7 +2,8 @@
 name: frontend-ui-engineering
 description: Build, review, or refine browser-facing user interfaces so they are accessible, responsive, performant, visually coherent, and aligned with the project design system.
 metadata:
-  version: "1.3.2"
+  version: "1.3.3"
+  last-verified: "2026-10-01T09:34:17+02:00"
 ---
 
 # Frontend UI Engineering

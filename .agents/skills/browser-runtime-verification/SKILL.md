@@ -2,7 +2,8 @@
 name: browser-runtime-verification
 description: Verify browser-facing changes in a real browser using visual checks, console output, network behavior, accessibility basics, and user-flow smoke tests. Use when building, debugging, or validating UI behavior beyond static code and unit tests.
 metadata:
-  version: "1.1.1"
+  version: "1.1.2"
+  last-verified: "2026-09-30T20:31:51+02:00"
 ---
 
 # Browser Runtime Verification

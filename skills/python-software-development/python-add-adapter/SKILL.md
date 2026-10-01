@@ -2,7 +2,8 @@
 name: python-add-adapter
 description: Add an inbound or outbound adapter to the owning vertical slice in a Python hexagonal project while keeping business logic in the application layer.
 metadata:
-  version: "1.0.2"
+  version: "1.0.3"
+  last-verified: "2026-09-30T20:31:51+02:00"
 ---
 
 # Add an Adapter

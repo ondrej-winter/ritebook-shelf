@@ -2,7 +2,8 @@
 name: condensed-prose-refactor
 description: Refactor supplied prose for precision, compression, and force while preserving meaning, uncertainty, and voice. Use when asked to rewrite, condense, sharpen, simplify, make more intelligent, or aphorize existing text.
 metadata:
-  version: "1.1.1"
+  version: "1.1.2"
+  last-verified: "2026-09-30T20:31:51+02:00"
 ---
 
 # Condensed Prose Refactor

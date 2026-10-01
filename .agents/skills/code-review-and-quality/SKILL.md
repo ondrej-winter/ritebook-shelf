@@ -2,7 +2,8 @@
 name: code-review-and-quality
 description: Review code, tests, documentation, and configuration across correctness, readability, architecture, security, performance, maintainability, and verification before merging or handing off a change.
 metadata:
-  version: "1.3.1"
+  version: "1.3.2"
+  last-verified: "2026-09-30T20:31:51+02:00"
 ---
 
 # Code Review and Quality

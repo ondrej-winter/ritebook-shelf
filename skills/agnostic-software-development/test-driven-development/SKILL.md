@@ -2,7 +2,8 @@
 name: test-driven-development
 description: Drives development with tests. Use when implementing behavior, fixing bugs, changing existing functionality, or proving that a change works and is guarded against regression.
 metadata:
-  version: "1.3.2"
+  version: "1.3.3"
+  last-verified: "2026-10-01T09:34:17+02:00"
 ---
 
 # Test-Driven Development

@@ -2,7 +2,8 @@
 name: spec-driven-development
 description: Create, review, or revise a canonical specification with observable requirements, scope boundaries, acceptance checks, and explicit unresolved decisions. Use when requirements are incomplete, conflicting, spread across sources, or need a durable agreement before planning or changing implementation.
 metadata:
-  version: "2.1.1"
+  version: "2.1.2"
+  last-verified: "2026-09-30T20:31:51+02:00"
 ---
 
 # Spec-Driven Development
