@@ -86,9 +86,9 @@ claiming conformance with the open format, and resolve F-03 through F-05 before
 treating the catalog metadata and client integration guidance as a dependable
 orchestration contract.
 
-**Post-audit update (2026-10-01):** F-01 through F-04 are resolved. The verdict
-above is retained as the conclusion for the audited revision; F-05 remains
-unresolved in that range.
+**Post-audit update (2026-10-01):** F-01 through F-05 are resolved. The verdict
+above is retained as the conclusion for the audited revision; the resolution
+notes under each finding describe the later remediation and its evidence.
 
 ## Findings
 
@@ -447,6 +447,41 @@ without declaring `independent-review`.
   avoid false positives.
 
 ### F-05 — Medium: `ritebook.lock` does not describe the checked-in installed state
+
+**Resolution status — resolved after the audited revision on 2026-10-01.** The
+registered Git-backed index was refreshed to repository revision
+`b0e69e5282ffe84ed0c4dbe9d31dc9c3616bba2d`, whose exact root index digest is
+`sha256:fb7521783128d4ece9b4e354bf261ee5b2be0462c52649df4233d30bbb3708b2`.
+Ritebook 0.1.48 then synchronized the complete `ritebook.toml` installation and
+regenerated `ritebook.lock` with 33 entries: all 32 agnostic skills plus the
+configured writing-and-editing skill. Every entry now records that revision,
+digest, Git URL source, and one synchronization timestamp.
+
+The repository now pins the Ritebook version used by its Make targets and
+provides `make check-ritebook-state`. The read-only checker regenerates the index
+in a temporary directory, compares publisher state while ignoring only
+`generated_at`, expands the complete requirements file, checks canonical and
+installed directory contents, and verifies the lock against the exact index and
+skill bytes at its bound Git revision. The README documents ownership of the
+canonical, generated, installed, and provenance artifacts and distinguishes
+conditional publication from required registry refresh and synchronization.
+
+Post-remediation validation confirmed:
+
+```text
+resolved installations: 33
+source revision: b0e69e5282ffe84ed0c4dbe9d31dc9c3616bba2d
+index digest: sha256:fb7521783128d4ece9b4e354bf261ee5b2be0462c52649df4233d30bbb3708b2
+checker errors: 0
+canonical-to-installed differences: 0
+```
+
+A second forced synchronization preserved the normalized lock fingerprint and
+the complete installed-tree fingerprint. As documented behavior for Ritebook
+0.1.48, only `locked_at` changed between the two lockfiles; all other lock fields
+and all installed bytes remained identical. The original finding and evidence
+below are retained because they accurately describe audited revision
+`6796d13c92bc2616de7913eec680755d3d151550`.
 
 **Locations**
 
