@@ -1,4 +1,4 @@
-RITEBOOK_VERSION ?= 0.1.48
+RITEBOOK_VERSION ?= latest
 RITEBOOK ?= uvx ritebook@$(RITEBOOK_VERSION)
 SKILLS_ROOT ?= skills
 INDEX_NAME ?= ondrej-winter-ritebook-shelf
