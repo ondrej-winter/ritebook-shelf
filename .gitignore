@@ -1,4 +1,5 @@
 .DS_Store
 .cline-logs/
+.ritebook/
 .tmp/cline/
 __pycache__/
