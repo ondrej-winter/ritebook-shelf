@@ -2,8 +2,8 @@
 name: write-pytest-tests
 description: Write or refactor Python tests when pytest-native style, focused scenarios, and deterministic setup are needed.
 metadata:
-  version: "1.1.2"
-  last-verified: "2026-09-30T20:31:51+02:00"
+  version: "1.1.3"
+  last-verified: "2026-11-04T18:59:29Z"
 ---
 
 # Write Pytest Tests
@@ -218,9 +218,9 @@ Do not introduce new:
 
 ### 10. Validate and report the tests
 
-Use the project's configured command to run the narrowest affected tests during
-development, then run the broader relevant suite before handoff. Follow the
-`run-python-tests` skill when it is available and applicable.
+Use the test commands documented in the target project's `AGENTS.md` and
+executable task definitions. Run the narrowest affected tests during development,
+then the broader relevant suite before handoff, preserving configured options.
 
 For a new behavior or regression test, confirm that the test fails for the
 expected reason before the implementation change when practical. Do not weaken,

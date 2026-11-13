@@ -2,8 +2,8 @@
 name: python-add-env-settings-adapter
 description: Add an environment-backed runtime settings adapter to a Python hexagonal vertical-slice app or library, using a configuration slice, application-owned settings DTOs, pydantic-settings adapter validation, and focused tests.
 metadata:
-  version: "1.0.3"
-  last-verified: "2026-09-30T20:31:51+02:00"
+  version: "1.0.4"
+  last-verified: "2026-11-04T18:59:29Z"
 ---
 
 # Add an Environment Settings Adapter
@@ -227,17 +227,10 @@ decision.
 
 ### 11. Validate locally
 
-Run focused tests first, then the repository quality gate.
-
-Preferred order:
-
-1. settings DTO and env adapter tests,
-2. `uv run ruff check .`,
-3. `uv run mypy .`,
-4. `uv run pytest`.
-
-When available, use `run-python-quality-gate` for the full Python validation
-pass.
+Run the settings DTO and environment adapter tests first. Then run the quality
+gate required by the target project's `AGENTS.md` and executable task
+definitions, using its configured lint, type, architecture, and test commands.
+Report any unavailable checks and their limits.
 
 ## Design checklist
 

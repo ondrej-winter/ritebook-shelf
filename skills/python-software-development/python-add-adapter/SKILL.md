@@ -2,8 +2,8 @@
 name: python-add-adapter
 description: Add an inbound or outbound adapter to the owning vertical slice in a Python hexagonal project while keeping business logic in the application layer.
 metadata:
-  version: "1.0.3"
-  last-verified: "2026-09-30T20:31:51+02:00"
+  version: "1.0.4"
+  last-verified: "2026-11-04T18:59:29Z"
 ---
 
 # Add an Adapter
@@ -134,18 +134,11 @@ adapter behavior depends on actual driver, network, or persistence integration.
 
 ## Validation
 
-Run the narrowest tests that cover the adapter first, then the repository's
-normal quality gate when available.
-
-Useful checks often include:
-
-- adapter unit or integration tests for the changed adapter path
-- `uv run ruff check .`
-- `uv run mypy .`
-- `uv run pytest`
-
-When available, use `run-python-quality-gate` for the full Python validation pass
-before handoff.
+Run the narrowest unit or integration tests that cover the changed adapter,
+including mapping and error translation. Then run the quality gate required by
+the target project's `AGENTS.md` and executable task definitions. Use its
+configured lint, type, architecture, and test commands; report any unavailable
+checks and their limits.
 
 ## Related skills
 

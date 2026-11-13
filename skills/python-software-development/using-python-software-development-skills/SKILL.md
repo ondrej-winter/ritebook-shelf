@@ -2,8 +2,8 @@
 name: using-python-software-development-skills
 description: Discover and invoke Python software development skills. Use when starting Python work or deciding which Python-specific implementation, validation, testing, or documentation skill applies.
 metadata:
-  version: "2.1.2"
-  last-verified: "2026-09-30T20:31:51+02:00"
+  version: "3.0.0"
+  last-verified: "2026-11-04T18:59:29Z"
 ---
 
 # Using Python Software Development Skills
@@ -35,10 +35,6 @@ Python task arrives
 - Adding environment-backed configuration: python-add-env-settings-adapter
 - Splitting a growing Python module or package: split-python-module
 - Writing or refactoring Python tests: write-pytest-tests
-- Running Python tests: run-python-tests
-- Formatting Python code: format-python-code
-- Linting or type checking Python code: lint-python-code
-- Running the complete Python quality gate: run-python-quality-gate
 - Adding Python docstrings or useful comments: write-python-docstrings
 ```
 
@@ -53,7 +49,15 @@ Python task arrives
   individual CLI adapter.
 - Use `python-add-env-settings-adapter` for configuration sourced from
   environment variables, `.env` files, or runtime settings objects.
-- Use `write-pytest-tests` for test design and structure, then
-  `run-python-tests` for execution.
-- Use `run-python-quality-gate` for the complete pre-handoff validation sequence.
-- Use `format-python-code` before `lint-python-code` when both are needed.
+- Use `write-pytest-tests` for test design and structure.
+
+## Project validation
+
+Read the target project's `AGENTS.md` and executable task definitions for its
+formatting, linting, type-checking, test, and complete quality-gate commands.
+Run focused checks during development and the required project gate before
+handoff. Keep command details in those project-owned sources rather than loading
+separate skills to invoke tools. Preserve the configured tools, targets, and
+options; report unavailable checks without claiming they passed.
+If a required command or tool is undefined, report the gap rather than selecting
+or installing tooling as part of validation.

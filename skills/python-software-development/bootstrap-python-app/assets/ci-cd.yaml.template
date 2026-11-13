@@ -59,7 +59,9 @@ jobs:
         run: uv build
 
       - name: Smoke test local console package
-        run: uvx --from . <app_name> --help
+        run: |
+          uvx --from . <app_name> --help
+          uvx --from . <app_name> --version
 
       - name: Upload distribution artifacts
         uses: actions/upload-artifact@v7

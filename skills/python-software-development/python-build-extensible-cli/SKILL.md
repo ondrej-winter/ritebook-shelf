@@ -2,8 +2,8 @@
 name: python-build-extensible-cli
 description: Build or refactor an extensible product CLI for a Python hexagonal vertical-slice project, with a feature-neutral shell, feature-owned command contributions, bootstrap-owned composition, stable exit semantics, and tests. Use when multiple feature slices need to contribute commands without leaking parser or process concerns into application or domain code.
 metadata:
-  version: "1.1.2"
-  last-verified: "2026-09-30T20:31:51+02:00"
+  version: "1.1.3"
+  last-verified: "2026-11-04T18:59:29Z"
 ---
 
 # Build an Extensible Python CLI
@@ -224,18 +224,10 @@ surface, a dependency-rule exception, or a new public command contract.
 
 ### 9. Validate before handoff
 
-Run focused checks first, then the project quality gate when available.
-
-Useful checks include:
-
-- targeted CLI unit and integration tests
-- architecture/import-boundary checks
-- `uv run ruff format .`
-- `uv run ruff check .`
-- `uv run ty check .`
-- `uv run pytest`
-
-When available, use `run-python-quality-gate` for the full validation pass.
+Run targeted CLI unit and integration tests plus architecture/import-boundary
+checks first. Then run the quality gate required by the target project's
+`AGENTS.md` and executable task definitions. Use its configured formatting,
+lint, type, and test commands; report any unavailable checks and their limits.
 
 ## Review checklist
 

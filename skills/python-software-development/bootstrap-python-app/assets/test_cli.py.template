@@ -1,0 +1,54 @@
+from importlib.metadata import version
+
+import pytest
+
+from <app_name>.adapters.inbound.cli.__main__ import main
+
+USAGE_ERROR_EXIT_CODE = 2
+
+
+def test_no_arguments_succeeds(monkeypatch: pytest.MonkeyPatch, capsys: pytest.CaptureFixture[str]) -> None:
+    monkeypatch.setattr("sys.argv", ["<app_name>"])
+
+    assert main() == 0
+
+    captured = capsys.readouterr()
+    assert captured.out == ""
+    assert captured.err == ""
+
+
+def test_help_prints_usage(monkeypatch: pytest.MonkeyPatch, capsys: pytest.CaptureFixture[str]) -> None:
+    monkeypatch.setattr("sys.argv", ["<app_name>", "--help"])
+
+    with pytest.raises(SystemExit) as exc_info:
+        main()
+
+    assert exc_info.value.code == 0
+    captured = capsys.readouterr()
+    assert "usage: <app_name>" in captured.out
+    assert "--help" in captured.out
+    assert captured.err == ""
+
+
+def test_version_prints_installed_version(monkeypatch: pytest.MonkeyPatch, capsys: pytest.CaptureFixture[str]) -> None:
+    monkeypatch.setattr("sys.argv", ["<app_name>", "--version"])
+
+    with pytest.raises(SystemExit) as exc_info:
+        main()
+
+    assert exc_info.value.code == 0
+    captured = capsys.readouterr()
+    assert captured.out == f"<app_name> {version('<app_name>')}\n"
+    assert captured.err == ""
+
+
+def test_unknown_argument_fails(monkeypatch: pytest.MonkeyPatch, capsys: pytest.CaptureFixture[str]) -> None:
+    monkeypatch.setattr("sys.argv", ["<app_name>", "--unknown-option"])
+
+    with pytest.raises(SystemExit) as exc_info:
+        main()
+
+    assert exc_info.value.code == USAGE_ERROR_EXIT_CODE
+    captured = capsys.readouterr()
+    assert captured.out == ""
+    assert "unrecognized arguments: --unknown-option" in captured.err

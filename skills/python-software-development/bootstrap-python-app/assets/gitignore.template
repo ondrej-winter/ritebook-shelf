@@ -1,3 +1,8 @@
+# Local dotenv files; only the safe example remains trackable.
+.env
+.env.*
+!.env.example
+
 *.egg-info/
 *.py[cod]
 .coverage

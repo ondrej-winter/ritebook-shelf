@@ -123,9 +123,6 @@ type = "forbidden"
 allow_indirect_imports = true
 source_modules = [
     "<app_name>.adapters.inbound.cli.__main__",
-    "<app_name>.adapters.inbound.cli.options",
-    "<app_name>.adapters.inbound.cli.parser",
-    "<app_name>.adapters.inbound.cli.runner",
 ]
 forbidden_modules = [
     "<app_name>.features",
