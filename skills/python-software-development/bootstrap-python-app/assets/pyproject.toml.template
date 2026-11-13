@@ -132,7 +132,6 @@ forbidden_modules = [
 [tool.pytest.ini_options]
 testpaths = ["tests"]
 addopts = [
-    "-n=auto",
     "--cov=src",
     "--cov-report=term-missing",
 ]

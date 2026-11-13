@@ -68,8 +68,10 @@ Avoid:
 - queues with no backpressure or dead-letter handling
 
 Prefer:
-- maximum size or time-to-live
+- a maximum entry or byte budget with an eviction or admission policy; a
+  time-to-live alone does not cap growth within that lifetime
 - explicit invalidation conditions
+- bounded in-flight fills and defined behavior for simultaneous misses
 - metrics for hit rate, evictions, depth, age, and failures
 ```
 

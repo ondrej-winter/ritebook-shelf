@@ -2,8 +2,8 @@
 name: deprecation-and-migration
 description: Plan and execute safe deprecations, migrations, replacements, and removals by measuring usage, supporting consumers, preserving compatibility, and making evidence-based removal decisions.
 metadata:
-  version: "1.2.4"
-  last-verified: "2026-11-13T17:43:20+00:00"
+  version: "1.3.0"
+  last-verified: "2026-11-13T18:01:59+00:00"
 ---
 
 # Deprecation and Migration
@@ -123,6 +123,12 @@ coexist, who owns writes, and how partial migration is resumed. Shadow or parall
 runs must not duplicate external effects. Before promising rollback, verify that
 the old consumer can still read data and configuration written by the replacement;
 otherwise specify roll-forward or compensation and its limits.
+
+For backfills or parallel runs, define bounded batch size, concurrency, rate and
+retry limits, durable progress checkpoints, and pause/resume behavior. Account
+for the combined load of old, new, and migration work. Measure representative
+throughput and impact on live latency or resource budgets before scaling up;
+pause or throttle when the agreed limits are exceeded.
 
 ### 5. Announce and document
 

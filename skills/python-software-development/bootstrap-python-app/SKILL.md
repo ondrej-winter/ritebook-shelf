@@ -2,8 +2,8 @@
 name: bootstrap-python-app
 description: Initialize a new Python project with a hexagonal vertical-slice architecture layout, core tooling, quality checks, and GitHub Actions CI/CD when starting a Python application from scratch.
 metadata:
-  version: "1.5.1"
-  last-verified: "2026-11-13T17:50:00+00:00"
+  version: "1.6.0"
+  last-verified: "2026-11-13T18:09:02+00:00"
 ---
 
 # Bootstrap a Python Hexagonal Vertical-Slice Application
@@ -198,8 +198,8 @@ for something else.
 
 The template uses Hatchling packaging, a `src/<app_name>` package, a `dev`
 dependency group, Ruff formatting/linting, `ty` type checking, import-linter
-architecture contracts, pytest with parallel execution and coverage, semantic
-patch-release versioning, and a console script named `<app_name>`. Keep runtime
+architecture contracts, pytest with coverage and optional parallel execution,
+semantic patch-release versioning, and a console script named `<app_name>`. Keep runtime
 dependencies in `[project].dependencies` and development-only tools in
 `[dependency-groups].dev`.
 
@@ -213,8 +213,13 @@ Use the generated tool policy as the default quality bar:
   markdown/assets are not treated as application code.
 - `ty` checks `src` and `tests`; the CI and pre-commit commands should use the
   same scope.
-- Pytest runs from `tests`, uses `pytest-xdist` with `-n=auto`, reports missing
-  coverage, and enforces branch coverage through `[tool.coverage.*]`.
+- Pytest runs from `tests` serially by default, reports missing coverage, and
+  enforces branch coverage through `[tool.coverage.*]`. Keep `pytest-xdist`
+  available for explicit parallel runs, such as `uv run pytest -n auto` or a
+  bounded worker count. Measure serial and parallel runs of the same suite with
+  coverage enabled before adopting a parallel default; worker startup can
+  dominate the initial four-test scaffold. Preserve fixture isolation and the
+  coverage floor in either mode.
 - Import-linter contracts should stay generic in the scaffold and be expanded
   only when the new project introduces concrete cross-slice dependencies.
 

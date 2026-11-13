@@ -2,8 +2,8 @@
 name: incremental-implementation
 description: Guide agents to deliver changes incrementally. Use when implementing a feature or change that touches more than one file, when a task feels too large to land in one step, or before writing a large amount of code at once.
 metadata:
-  version: "2.1.4"
-  last-verified: "2026-11-13T17:45:59+00:00"
+  version: "2.2.0"
+  last-verified: "2026-11-13T18:03:49+00:00"
 ---
 
 # Incremental Implementation
@@ -147,7 +147,11 @@ Avoid: Config-driven builder for three small variants
 Prefer: Three clear variants with duplication removed only when the shared concept is proven
 ```
 
-Three similar lines of code is better than a premature abstraction. Implement the naive, obviously-correct version first. Optimize only after correctness is proven with tests.
+Three similar lines of code is better than a premature abstraction. Start with
+the simplest correct version that respects known workload and resource limits.
+Optimize only after correctness checks and a representative baseline identify a
+bottleneck; compare the same workload after the change and retain a suitable
+regression guard. Passing correctness tests alone does not prove performance.
 
 ### Rule 0.5: Scope discipline
 

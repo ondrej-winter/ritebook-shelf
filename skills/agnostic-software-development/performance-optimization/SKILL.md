@@ -2,8 +2,8 @@
 name: performance-optimization
 description: Optimizes software performance using measurement-driven diagnosis, targeted fixes, and regression guards. Use when performance requirements exist, users or monitoring report slow behavior, a regression is suspected, or profiling reveals bottlenecks that need fixing.
 metadata:
-  version: "1.4.5"
-  last-verified: "2026-11-13T17:46:27+00:00"
+  version: "1.5.0"
+  last-verified: "2026-11-13T18:04:39+00:00"
 ---
 
 # Performance Optimization
@@ -92,6 +92,13 @@ variation. Report a suitable summary such as a percentile, range, confidence
 interval, or other distribution measure, and include the sample count instead of
 relying on one unusually fast or slow run.
 
+For load tests, record offered request rate, achieved throughput, concurrency,
+duration, completed/failed/timed-out counts, and the latency boundary, including
+queue wait when relevant. A generator that waits for each response can reduce
+offered load as the system slows; verify that its arrival model matches the
+workload and that the generator itself is not saturated. Do not report only the
+latency of successful requests while omitting overload failures.
+
 Record the baseline in a format that can be compared after the fix:
 
 ```text
@@ -171,8 +178,10 @@ Evidence: <profile, trace, log, test run, dashboard, or benchmark reference>
 ```
 
 If the metric did not improve enough, keep the measurement and repeat the
-workflow. Failed optimizations are useful evidence when they rule out a suspected
-cause.
+workflow. Discard or revise the attempted optimization when it adds cost without
+a demonstrated benefit. Retain it only for a separately justified requirement,
+without claiming a performance win. Failed optimizations are useful evidence
+when they rule out a suspected cause.
 
 ### Step 5: Guard against regression
 
