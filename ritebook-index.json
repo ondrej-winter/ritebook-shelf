@@ -3,7 +3,7 @@
   "index": {
     "name": "ondrej-winter-ritebook-shelf"
   },
-  "generated_at": "2026-10-15T12:17:11.284716Z",
+  "generated_at": "2026-11-13T17:59:28.551640Z",
   "skills_root": "skills",
   "skills": [
     {
@@ -211,18 +211,6 @@
       "description": "Initialize a new Python project with a hexagonal vertical-slice architecture layout, core tooling, quality checks, and GitHub Actions CI/CD when starting a Python application from scratch."
     },
     {
-      "name": "format-python-code",
-      "path": "python-software-development/format-python-code",
-      "skill_file": "python-software-development/format-python-code/SKILL.md",
-      "description": "Format Python code with ruff and apply safe auto-fixes when a Python project needs consistent style before linting, testing, or handoff."
-    },
-    {
-      "name": "lint-python-code",
-      "path": "python-software-development/lint-python-code",
-      "skill_file": "python-software-development/lint-python-code/SKILL.md",
-      "description": "Run project-configured Python linting and type checking with Ruff and mypy when a project uses uv-managed development tooling."
-    },
-    {
       "name": "python-add-adapter",
       "path": "python-software-development/python-add-adapter",
       "skill_file": "python-software-development/python-add-adapter/SKILL.md",
@@ -245,18 +233,6 @@
       "path": "python-software-development/python-build-extensible-cli",
       "skill_file": "python-software-development/python-build-extensible-cli/SKILL.md",
       "description": "Build or refactor an extensible product CLI for a Python hexagonal vertical-slice project, with a feature-neutral shell, feature-owned command contributions, bootstrap-owned composition, stable exit semantics, and tests. Use when multiple feature slices need to contribute commands without leaking parser or process concerns into application or domain code."
-    },
-    {
-      "name": "run-python-quality-gate",
-      "path": "python-software-development/run-python-quality-gate",
-      "skill_file": "python-software-development/run-python-quality-gate/SKILL.md",
-      "description": "Run the full local Python quality gate with formatting, linting, type checking, and tests before handoff or a pull request."
-    },
-    {
-      "name": "run-python-tests",
-      "path": "python-software-development/run-python-tests",
-      "skill_file": "python-software-development/run-python-tests/SKILL.md",
-      "description": "Run pytest-based automated tests when a Python project uses uv-managed development tooling."
     },
     {
       "name": "split-python-module",
