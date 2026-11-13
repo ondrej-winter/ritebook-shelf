@@ -52,6 +52,9 @@ or consumer evidence.
   valid after a call returns.
 - State synchronous or asynchronous behavior, concurrency or thread-safety
   guarantees, cancellation, and callback or re-entrancy rules.
+- For iterators, streams, or subscriptions, define backpressure or buffering
+  limits, who closes the resource, and whether cancellation stops production or
+  only delivery. State how completion and partial failure reach the consumer.
 - Use stable domain types and errors; avoid exposing dependency-specific objects
   unless adopting that dependency is an intentional consumer requirement.
 - Check source, binary, serialization, and runtime compatibility as applicable to

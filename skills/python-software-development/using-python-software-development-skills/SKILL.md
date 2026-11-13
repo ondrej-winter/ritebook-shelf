@@ -2,8 +2,8 @@
 name: using-python-software-development-skills
 description: Discover and invoke Python software development skills. Use when starting Python work or deciding which Python-specific implementation, validation, testing, or documentation skill applies.
 metadata:
-  version: "3.0.0"
-  last-verified: "2026-11-04T18:59:29Z"
+  version: "3.0.1"
+  last-verified: "2026-11-13T17:53:04+00:00"
 ---
 
 # Using Python Software Development Skills
@@ -22,6 +22,16 @@ engineering workflows.
    validation, or documentation skills.
 4. Prefer the most specific matching skill. Use shared skills for general
    workflow guidance and this collection for Python mechanics.
+5. Confirm the selected skill is available and read its execution requirements.
+   If unavailable, report the missing capability and continue only independent
+   work supported by the request and available instructions; do not invent the
+   missing procedure or count skipped execution as complete.
+
+Routes select workflows whose own triggers match; they do not activate every
+listed skill. Preserve the request's edit/review scope and pass canonical paths,
+settled port contracts, unresolved decisions, and validation evidence through
+feature-to-port-to-adapter handoffs. A complete feature needs integration evidence
+beyond the completion of its individual port and adapter procedures.
 
 Use this Python routing guide:
 

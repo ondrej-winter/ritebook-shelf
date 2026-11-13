@@ -91,6 +91,12 @@ configure(parser) -> decode(feature_namespace) -> run(decoded_command, context)
 This lifecycle keeps parsing separate from execution and makes invalid user input
 testable before any business workflow runs.
 
+Keep configuration and decoding free of business effects and expensive dependency
+construction. A registration or decoding failure must not run a command. Treat
+context streams as borrowed: runners may write/read as documented but must not
+close caller-owned streams or replace process globals. Bootstrap owns resources
+it creates and releases them on success, failure, and cancellation.
+
 ## Contract sketch
 
 The exact implementation should follow local Python version and parser-library
@@ -226,10 +232,14 @@ bootstrap.cli.features.<feature_name>
 Lazy construction avoids creating expensive clients, loading credentials, or
 opening resources for commands that were not selected.
 
-For package applications, expose one bootstrap `main(argv: Sequence[str] | None)
+For package applications, expose one bootstrap `main(argv: Sequence[str] | None = None)
 -> int` through the console-script entry and make `__main__.py` call that same
 function. This keeps installed-script and `python -m <app_name>` behavior in
 lockstep.
+
+`None` reads process arguments; an explicit empty sequence means no arguments and
+must not fall back to `sys.argv`. Keep reusable invocations independent so tests
+and embedding callers do not inherit a previous registration or parsed state.
 
 ## Architecture enforcement examples
 

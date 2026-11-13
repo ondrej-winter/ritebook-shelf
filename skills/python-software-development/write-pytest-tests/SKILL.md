@@ -2,8 +2,8 @@
 name: write-pytest-tests
 description: Write or refactor Python tests when pytest-native style, focused scenarios, and deterministic setup are needed.
 metadata:
-  version: "1.1.3"
-  last-verified: "2026-11-04T18:59:29Z"
+  version: "1.1.4"
+  last-verified: "2026-11-13T17:53:17+00:00"
 ---
 
 # Write Pytest Tests
@@ -81,6 +81,11 @@ def test_raises_for_negative_quantity():
     with pytest.raises(ValueError, match="quantity must be non-negative"):
         create_order(quantity)
 ```
+
+Prefer the public exception type and stable code or attributes when those are
+the error contract. Use `match` for text the contract actually promises, and
+remember it is a regular expression; escape literal punctuation when needed.
+Do not freeze incidental wording solely because the implementation emits it.
 
 #### Parametrized scenario matrices
 
@@ -180,6 +185,12 @@ def test_reads_value_from_environment(monkeypatch):
 Use `monkeypatch` for environment and dependency patching. If the project
 allows pytest plugins, `pytest-mock`'s `mocker` can be used, but it is optional
 rather than core `pytest`.
+
+Patch the name where the consumer looks it up and verify the patch affects the
+executed path. Isolate inherited configuration as well as values set by the
+test, including supported alias/case variants and local `.env` lookup. Use
+temporary paths and scoped fixtures that restore state after failures; a test
+that passes only in a clean developer shell is not isolated.
 
 ### 6. Assert observable outcomes
 

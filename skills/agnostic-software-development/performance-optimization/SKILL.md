@@ -2,8 +2,8 @@
 name: performance-optimization
 description: Optimizes software performance using measurement-driven diagnosis, targeted fixes, and regression guards. Use when performance requirements exist, users or monitoring report slow behavior, a regression is suspected, or profiling reveals bottlenecks that need fixing.
 metadata:
-  version: "1.4.4"
-  last-verified: "2026-10-01T09:34:17+02:00"
+  version: "1.4.5"
+  last-verified: "2026-11-13T17:46:27+00:00"
 ---
 
 # Performance Optimization

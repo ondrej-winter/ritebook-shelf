@@ -2,8 +2,8 @@
 name: split-python-module
 description: Split a growing Python module or package while preserving behavior, boundaries, imports, public APIs, and reviewability when code has mixed responsibilities or needs clearer ownership.
 metadata:
-  version: "1.1.2"
-  last-verified: "2026-09-30T20:31:51+02:00"
+  version: "1.1.3"
+  last-verified: "2026-11-13T17:52:46+00:00"
 ---
 
 # Split a Python Module
@@ -60,6 +60,8 @@ Before moving code, identify:
 - string-based references in configuration, plugin registration, or dynamic imports
 - test patch targets and other references to module-qualified names
 - import-time initialization or registration that callers may rely on
+- persisted qualified names, including pickle data, and resource lookups relative
+  to a module or package location
 - any risk of circular imports after the split
 
 Preserve public import paths only when they are intentionally stable. If you
@@ -102,6 +104,12 @@ If the module exposes a public API, verify:
 - documentation or examples still match the visible surface
 
 If a compatibility break is intentional, document it clearly.
+
+A re-export preserves a name lookup but may change class/function module identity,
+newly serialized qualified names, or the location a monkeypatch must intercept.
+Check representative saved data and dynamic callers in each supported upgrade or
+downgrade direction. Verify patch behavior, not just that the old attribute still
+exists. Retain a compatibility shim or define a migration when required.
 
 ### 7. Run focused validation
 

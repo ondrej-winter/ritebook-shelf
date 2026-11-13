@@ -2,8 +2,8 @@
 name: security-and-hardening
 description: Hardens software against vulnerabilities. Use when handling untrusted input, authentication, authorization, sensitive data, dependencies, or external integrations.
 metadata:
-  version: "1.1.8"
-  last-verified: "2026-10-01T09:34:17+02:00"
+  version: "1.1.9"
+  last-verified: "2026-11-13T17:47:23+00:00"
 ---
 
 # Security and Hardening
@@ -170,6 +170,13 @@ class CreateTask:
 Use the validation mechanism idiomatic to the target stack. Keep validation close
 to the boundary and convert untrusted input into typed or structured internal
 data before deeper processing.
+
+When tightening an existing boundary, identify previously accepted inputs and
+supported callers affected by the change. Specify rejection timing, a stable
+caller-actionable error category, and whether any effect can already have
+occurred. Verify that rejected or denied operations leave protected state
+unchanged when the contract promises that. Document migration or an intentional
+compatibility break; compatibility does not justify retaining an unsafe bypass.
 
 ### Files and generated content
 

@@ -2,8 +2,8 @@
 name: using-agnostic-software-development-skills
 description: Discover and invoke technology-agnostic software development skills. Use when starting general engineering work or deciding which reusable workflow skill applies to a task.
 metadata:
-  version: "2.5.3"
-  last-verified: "2026-10-01T09:34:17+02:00"
+  version: "2.5.4"
+  last-verified: "2026-11-13T17:48:52+00:00"
 ---
 
 # Using Agnostic Software Development Skills
@@ -96,6 +96,12 @@ skills:
 Optional related skills are not recursively activated merely because they are
 listed. Activate them only when their own trigger is present or an explicit
 handoff step requires them.
+
+At a handoff, carry the user's scope and existing authorization, canonical
+artifact or revision, settled decisions, unresolved blockers, and verification
+already performed. State the receiving skill's concrete deliverable. Routing
+does not turn a review into edits, a plan into implementation, or local validation
+into permission to publish; preserve those distinctions across workflows.
 
 ## Core Operating Behaviors
 

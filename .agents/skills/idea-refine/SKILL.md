@@ -2,8 +2,8 @@
 name: idea-refine
 description: Refine raw ideas into actionable concepts through divergent exploration, convergent evaluation, assumption testing, and a final one-page brief. Use when an idea is vague, over-scoped, solution-led, or needs pressure-testing before planning or implementation.
 metadata:
-  version: "1.1.2"
-  last-verified: "2026-09-30T20:31:51+02:00"
+  version: "2.0.0"
+  last-verified: "2026-11-13T17:45:40+00:00"
 ---
 
 # Idea Refine
@@ -164,10 +164,26 @@ location. Save only after the user confirms.
 
 ## Optional helper
 
-The script at `scripts/idea-refine.sh` creates an idea brief directory and prints
-a JSON status line. It defaults to `docs/ideas/` and accepts an optional directory
-argument. Use it only when the user wants to persist idea briefs in the current
-workspace.
+The optional `scripts/idea-refine.sh` helper requires a POSIX shell and Python 3.
+Resolve its absolute path from the installed skill directory, then run
+`sh <skill-directory>/scripts/idea-refine.sh [directory]` from the target workspace.
+Use it only when persisting briefs is already authorized. Without Python 3,
+create the authorized directory with available tools; the refinement workflow
+does not depend on this helper.
+
+Omitted or empty `directory` means `docs/ideas`; relative paths resolve against
+the working directory. Success exits 0 and writes one JSON object on stdout:
+`{"status":"ready","directory":"docs/ideas"}`. The directory field preserves
+the selected path, rather than returning a canonical absolute path. Repeated
+runs retain existing contents. Extra arguments exit 2; filesystem failures exit
+1, with diagnostics on stderr and no success object. Missing Python is a shell
+startup failure. A failed creation may leave parent directories; inspect them
+before cleanup. The helper creates no brief and confirms no product decision.
+
+Compatibility: helper callers now need Python 3 and must pass at most one
+argument. Existing success keys are retained; consumers must parse JSON rather
+than depend on whitespace or literal escaping. Shell-only installations can use
+the manual directory-creation fallback.
 
 ## References
 

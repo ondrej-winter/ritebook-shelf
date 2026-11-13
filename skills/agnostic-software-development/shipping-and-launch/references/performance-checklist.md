@@ -9,7 +9,8 @@ Use this checklist before releasing changes that affect page load, request laten
 - Confirm payloads, assets, and bundles are not unexpectedly large.
 - Confirm caching, batching, pagination, or rate limits behave correctly when relevant.
 - Confirm observability is in place for latency, errors, saturation, and throughput.
-- Confirm rollback can be performed if performance degrades.
+- Confirm the chosen recovery or containment strategy can be performed if
+  performance degrades; do not assume rollback is available or data-compatible.
 
 ## Release evidence
 

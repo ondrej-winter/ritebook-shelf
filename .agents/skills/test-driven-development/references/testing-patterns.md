@@ -25,6 +25,11 @@ test command and any broader validation that should run before handoff.
 - Use contract tests at module, service, adapter, or API boundaries.
 - Verify success, failure, and malformed input paths.
 - Avoid coupling the contract test to a single implementation when alternatives are allowed.
+- Run the same applicable observable contract against real adapters and reusable
+  fakes so test doubles do not invent different defaults, errors, ordering, or
+  retry behavior. Identify checks that still require the real integration.
+- Include supported consumer fixtures when evolving a durable schema or API;
+  provider-only success tests do not establish backward compatibility.
 
 ## Anti-patterns
 

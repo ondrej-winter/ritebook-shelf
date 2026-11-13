@@ -2,8 +2,8 @@
 name: documentation-and-adrs
 description: Decide whether durable documentation is needed, choose the right documentation artifact, and route ADR or project documentation work to the appropriate specialized skill.
 metadata:
-  version: "1.3.2"
-  last-verified: "2026-09-30T20:31:51+02:00"
+  version: "1.3.3"
+  last-verified: "2026-11-13T17:43:33+00:00"
 ---
 
 # Documentation and ADRs
@@ -87,6 +87,13 @@ deprecates the old one.
 When routing to a specialized skill, read that skill's `SKILL.md` before editing
 so its format, naming, validation, and handoff requirements govern the concrete
 documentation change.
+
+Pass the selected workflow the reader, source evidence, affected behavior,
+canonical destination, requested edit/review scope, and expected verification.
+If that skill is unavailable, return this routing decision and a bounded writing
+brief; identify the missing capability rather than inventing its procedure or
+reporting the documentation update complete. A request to advise on documentation
+does not itself require creating files.
 
 ### 4. Check cross-document consistency
 

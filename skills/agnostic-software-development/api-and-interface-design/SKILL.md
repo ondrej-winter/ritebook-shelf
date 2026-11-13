@@ -2,8 +2,8 @@
 name: api-and-interface-design
 description: Design or review stable APIs and interfaces that are explicit, compatible, and hard to misuse. Use when creating or changing HTTP, event, library, module, CLI, component, schema, configuration, plugin, or other durable integration contracts.
 metadata:
-  version: "1.3.3"
-  last-verified: "2026-10-15T10:44:21Z"
+  version: "1.3.4"
+  last-verified: "2026-11-13T17:41:20+00:00"
 ---
 
 # API and Interface Design
@@ -149,6 +149,11 @@ included when needed to explain an error and support recovery.
 If callers can retry a state-changing operation, define idempotency, deduplication,
 or conflict behavior. A timeout or lost response does not prove that the provider
 made no change.
+
+Distinguish cancelling the caller's wait from cancelling provider work. State
+whether cancellation is advisory, how callers learn the final outcome, and how
+they reconcile an unknown outcome before retrying. Do not promise rollback merely
+because a deadline expired or a cancellation request was accepted.
 
 ### 6. Specify collections, updates, and concurrency
 

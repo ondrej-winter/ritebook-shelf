@@ -2,8 +2,8 @@
 name: deprecation-and-migration
 description: Plan and execute safe deprecations, migrations, replacements, and removals by measuring usage, supporting consumers, preserving compatibility, and making evidence-based removal decisions.
 metadata:
-  version: "1.2.3"
-  last-verified: "2026-10-01T09:34:17+02:00"
+  version: "1.2.4"
+  last-verified: "2026-11-13T17:43:20+00:00"
 ---
 
 # Deprecation and Migration
@@ -117,6 +117,12 @@ Before broad announcement, confirm the replacement:
 Use incremental migration patterns when risk is high, such as parallel run,
 adapter, compatibility shim, feature flag, canary, staged rollout, or staged
 consumer migration.
+
+For a mixed-version transition, define which old and new readers/writers may
+coexist, who owns writes, and how partial migration is resumed. Shadow or parallel
+runs must not duplicate external effects. Before promising rollback, verify that
+the old consumer can still read data and configuration written by the replacement;
+otherwise specify roll-forward or compensation and its limits.
 
 ### 5. Announce and document
 

@@ -2,8 +2,8 @@
 name: shipping-and-launch
 description: Prepare production launches with risk-based readiness checks, staged rollout, monitoring, and an explicit recovery strategy. Use before deploying a feature, migration, or other production change.
 metadata:
-  version: "1.6.3"
-  last-verified: "2026-10-01T09:34:17+02:00"
+  version: "1.6.4"
+  last-verified: "2026-11-13T17:47:46+00:00"
 ---
 
 # Shipping and Launch
@@ -64,6 +64,11 @@ Before changing production state, confirm that:
 - health checks, telemetry, dashboards, alerts, and ownership are in place
 - user, operator, API, integration, runbook, changelog, and decision documentation is current where relevant
 - security, performance, and accessibility checks are complete when those risks apply
+
+Bind this evidence to the exact release revision and artifact identity. Identify
+supported old/new client, service, schema, and configuration combinations during
+rollout and recovery. Test compatibility before promotion; turning off a feature
+does not reverse data already written or remove a published contract.
 
 Use `references/launch-readiness-checklist.md` for the full cross-cutting
 checklist and monitoring categories. Use the focused security, performance, and

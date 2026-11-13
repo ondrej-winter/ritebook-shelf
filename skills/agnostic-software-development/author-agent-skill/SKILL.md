@@ -2,8 +2,8 @@
 name: author-agent-skill
 description: Create, update, or review Agent Skill directories and SKILL.md files for valid frontmatter, structure, portability, progressive disclosure, and validation readiness.
 metadata:
-  version: "2.1.0"
-  last-verified: "2026-10-15T11:05:37Z"
+  version: "2.1.1"
+  last-verified: "2026-11-13T17:41:34+00:00"
 ---
 
 # Author Agent Skill
@@ -27,6 +27,12 @@ Use actual requests, project artifacts, or demonstrated failures to decide what
 belongs in the skill. Distinguish reusable guidance from repository-, language-,
 or framework-specific requirements. Resolve material unknowns before dependent
 work; do not require an interview when the request already supplies enough context.
+
+Treat activation wording, required inputs, resource paths, helper arguments,
+output formats, and handoffs as the skill's public interface. Before changing
+them, inspect catalog routes, direct invocations, and bundled examples. Record
+which callers still work and which need migration; a version bump alone does not
+repair a renamed resource or changed required output.
 
 Check nearby skill descriptions for overlap. Keep one coherent workflow and add
 an exclusion only when it prevents likely misrouting. Repository-wide agent

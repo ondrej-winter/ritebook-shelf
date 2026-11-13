@@ -2,8 +2,8 @@
 name: write-adr
 description: Create an Architecture Decision Record with the next sequential number, a clear title, and documented consequences when asked to record an architectural decision.
 metadata:
-  version: "1.2.2"
-  last-verified: "2026-09-30T20:31:51+02:00"
+  version: "1.2.3"
+  last-verified: "2026-11-13T17:49:08+00:00"
 ---
 
 # Write an Architecture Decision Record (ADR)
@@ -59,6 +59,10 @@ Derive the slug from the ADR title by converting it to kebab-case. Remove filler
 words only when doing so keeps the title recognizable.
 
 Before writing, confirm that the selected number and path do not already exist.
+Recheck all filenames using that number, including different slugs, immediately
+before creation. If another writer claimed it, recompute the number and repair
+planned links; never overwrite an existing ADR. After a partial failure, inspect
+the ADR and index before retrying so the same decision is not recorded twice.
 
 ### 4. Fill in the ADR template
 
@@ -125,7 +129,8 @@ If the ADR directory already contains an index file such as `README.md` or
 | [<NNNN>](./<NNNN>-<slug>.md) | <Short Title> | <Date> | <Status> |
 ```
 
-- If an index file exists but does not yet contain an ADR table, add one.
+- If an index file uses another navigation format, add the entry in that format
+  rather than creating a competing table. Preserve hand-authored context.
 - If no ADR index file exists, create one such as `README.md` with a header
   like:
 

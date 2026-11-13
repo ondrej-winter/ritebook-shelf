@@ -2,8 +2,8 @@
 name: add-observability
 description: Add logs, metrics, traces, profiling, or operational notes when a workflow needs better runtime visibility or measurable evidence without unsupported performance claims.
 metadata:
-  version: "1.4.0"
-  last-verified: "2026-10-15T10:19:44Z"
+  version: "1.4.1"
+  last-verified: "2026-11-13T17:41:01+00:00"
 ---
 
 # Add Observability
@@ -103,6 +103,12 @@ Be explicit about retries and multi-stage work: distinguish attempts from logica
 operations and define when each measurement starts and ends. Treat existing
 signal names, types, units, and labels as interfaces: inspect dependent queries
 and alerts before changing them.
+
+For a changed signal, record whether existing consumers still interpret it
+correctly. A renamed label, changed histogram boundary, or new outcome can break
+queries even when export still succeeds. Where consumers must migrate, identify
+their owner, transition period, and removal check; avoid counting both old and
+new signals in the same aggregate during that transition.
 
 Keep the contract proportional to the change; a short task note may suffice.
 Use [Telemetry design and validation](references/telemetry-design-checklist.md)

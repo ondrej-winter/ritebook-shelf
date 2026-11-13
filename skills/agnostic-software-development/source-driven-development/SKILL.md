@@ -2,8 +2,8 @@
 name: source-driven-development
 description: Grounds implementation decisions in authoritative sources. Use when building with external APIs, libraries, frameworks, platforms, standards, or tools where current documented behavior matters.
 metadata:
-  version: "1.2.2"
-  last-verified: "2026-09-30T20:31:51+02:00"
+  version: "1.2.3"
+  last-verified: "2026-11-13T17:48:01+00:00"
 ---
 
 # Source-Driven Development
@@ -107,11 +107,17 @@ DOCUMENTED RULE
 - Applies to: <dependency_or_platform> <version_or_range>
 - Relevant guidance: <short quote or paraphrase>
 - Impact: use <chosen_pattern>; avoid <deprecated_or_unsupported_pattern>
+- Evidence status: <documented / source-inspected / runtime-observed; date or revision>
 ```
 
 When official sources conflict, surface the discrepancy and explain which source
 appears to apply to the detected version or context. Ask the user when the tradeoff
 changes behavior, compatibility, or project conventions.
+
+Keep documentation for the detected version separate from guidance for a newer
+release. Do not silently upgrade the target to make an example applicable. If
+sources or runtime access are unavailable, report the specific missing evidence
+and use available local help, schemas, or source with their limits stated.
 
 ### 5. Implement according to the source
 
@@ -147,6 +153,9 @@ Citation rules:
 - Quote the relevant passage for decisions that are easy to dispute or misapply.
 - Include compatibility evidence when recommending platform or runtime features.
 - If no authoritative source exists, mark the decision as unverified.
+- A documentation citation establishes documented support, not successful
+  execution. Report builds, tests, and runtime observations separately and name
+  the actual version and environment exercised.
 
 Example handoff note:
 

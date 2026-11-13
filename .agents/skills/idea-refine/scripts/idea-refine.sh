@@ -1,12 +1,22 @@
 #!/bin/sh
 set -eu
 
-# Initialize the default idea brief directory for this workspace.
+# Resolve this helper from the installed skill directory; run in the target workspace.
+exec python3 - "$@" <<'PY'
+import json
+import os
+import sys
 
-ideas_dir=${1:-docs/ideas}
+if len(sys.argv) > 2:
+    print("usage: idea-refine.sh [directory]", file=sys.stderr)
+    sys.exit(2)
 
-mkdir -p "$ideas_dir"
+ideas_dir = (sys.argv[1] if len(sys.argv) == 2 else "") or "docs/ideas"
+try:
+    os.makedirs(ideas_dir, exist_ok=True)
+except OSError as error:
+    print(f"cannot create idea directory: {error}", file=sys.stderr)
+    sys.exit(1)
 
-escaped_dir=$(printf '%s' "$ideas_dir" | sed 's/\\/\\\\/g; s/"/\\"/g')
-
-printf '{"status":"ready","directory":"%s"}\n' "$escaped_dir"
+print(json.dumps({"status": "ready", "directory": ideas_dir}))
+PY

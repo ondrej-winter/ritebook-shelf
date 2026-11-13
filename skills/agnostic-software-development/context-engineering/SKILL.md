@@ -2,8 +2,8 @@
 name: context-engineering
 description: Curate project, task, source, validation, and conversation context so agent work follows real conventions and stays focused. Use when starting or switching tasks, resolving stale or conflicting assumptions, or recovering from poor output.
 metadata:
-  version: "1.1.5"
-  last-verified: "2026-09-30T20:31:51+02:00"
+  version: "1.1.6"
+  last-verified: "2026-11-13T17:42:40+00:00"
 ---
 
 # Context Engineering
@@ -116,6 +116,7 @@ Use a compact structure such as:
 ```text
 Task: <task_summary>
 Goal: <success_criteria>
+Workspace and state: <repository/root, revision if known, relevant uncommitted work>
 Relevant files:
 - <path>: <why it matters>
 - <path>: <why it matters>
@@ -124,13 +125,18 @@ Patterns to follow:
 Constraints:
 - <constraint>
 Validation:
-- <command_or_manual_check>
+- <command_or_manual_check>: <planned / run and result; revision and environment>
 Open questions:
 - <question_or_none>
 ```
 
 When a task spans multiple domains, update this summary as the active domain
 changes.
+
+Keep source-backed constraints separate from proposals and assumptions. Attach
+source paths or decision references where a receiving agent needs to verify them.
+Do not promote a planned check or an earlier revision's result into evidence for
+the current files; identify what must be refreshed before dependent work.
 
 ### 6. Manage errors and runtime evidence
 

@@ -2,8 +2,8 @@
 name: review-implementation-plan
 description: Review and update an existing implementation plan for completeness, ambiguity, sequencing, risks, dependencies, validation, readiness labeling, and handoff before coding.
 metadata:
-  version: "1.3.2"
-  last-verified: "2026-09-30T20:31:51+02:00"
+  version: "1.3.3"
+  last-verified: "2026-11-13T17:56:36+00:00"
 ---
 
 # Review Implementation Plan
@@ -38,9 +38,14 @@ content, decisions, task identifiers, and completed progress while making the
 smallest revisions needed to resolve gaps in scope, sequencing, dependencies,
 risks, ownership, validation, and handoff.
 
+Honor an explicit review-only or no-edit request: return findings and proposed
+revisions without changing the plan. For a supplied inline plan, return the
+reviewed revision inline unless a destination is already authorized; do not
+require a file merely to review the supplied content.
+
 Use the plan path supplied by the user or established by repository context. Do
-not assume a filename or invent a repository path. If no plan file can be
-identified, ask for its location. When no plan exists and requirements are clear,
+not assume a filename or invent a repository path. If neither a plan file nor
+inline plan is supplied or identifiable, ask for the plan. When no plan exists and requirements are clear,
 use `planning-and-task-breakdown` to create one before reviewing it.
 
 Record unresolved decisions explicitly in the plan rather than inventing
@@ -49,8 +54,13 @@ answers. Every updated plan must include one readiness label:
 - `Ready`: the plan is specific enough to implement with known validation
 - `Needs revision`: the plan has gaps, but they can be resolved without changing
   the core goal
-- `Blocked`: implementation should not start until a missing decision,
-  requirement, dependency, or approval is resolved
+- `Blocked`: the next executable work needs a missing decision, requirement,
+  dependency, or permission; name the condition that unlocks it
+
+Match `planning-and-task-breakdown` readiness semantics. Identify affected task
+IDs so a downstream blocker does not freeze independent ready work. Readiness
+describes the plan's executability, not permission for external actions or proof
+that implementation has passed its checks.
 
 After updating the plan, return a concise handoff organized as:
 
@@ -151,7 +161,7 @@ For each significant risk, note a mitigation, fallback, or question.
 
 ### 7. Update the plan and report the result
 
-Apply the review findings directly to the identified plan file:
+For an editable plan, apply findings directly to its file or supplied inline text:
 
 - preserve valid requirements, decisions, task identifiers, and progress state
 - clarify ambiguous text only when repository evidence supports the revision
@@ -171,7 +181,7 @@ accurately. Then return a concise handoff that includes:
 - required validation commands or checks
 - deferred backlog items that should not block the first pass
 
-Do not recommend implementation while blocking questions remain unresolved.
+Do not recommend affected tasks while their blocking questions remain unresolved.
 Follow the repository or execution environment's approval policy before moving
 from planning to implementation. If no approver is available, hand off the
 updated plan with assumptions and blockers labeled explicitly.
@@ -184,10 +194,12 @@ updated plan with assumptions and blockers labeled explicitly.
 - implementation sequence is reviewable
 - validation strategy is explicit
 - risks, fallback options, and deferred work are documented
-- the identified plan file was updated in place
+- the identified plan was updated in place or inline, or an explicit review-only
+  request received findings without edits
 - valid existing content, task identifiers, and progress state were preserved
 - unresolved questions were recorded without invented answers
-- review findings are reflected in the plan, not only in the handoff
+- review findings are reflected in the revised plan, or in the requested
+  review-only report when edits are excluded
 - the updated plan was re-read after editing
 - exactly one readiness label is present and supported by the findings
 - no implementation work was started

@@ -2,8 +2,8 @@
 name: write-python-docstrings
 description: Write or revise concise Google-style Python docstrings and inline comments when contracts, invariants, or non-obvious behavior need explanation.
 metadata:
-  version: "1.1.2"
-  last-verified: "2026-09-30T20:31:51+02:00"
+  version: "1.1.3"
+  last-verified: "2026-11-13T17:53:28+00:00"
 ---
 
 # Write Python Docstrings
@@ -81,6 +81,12 @@ Good candidates:
 Describe parameters by name without repeating type information already present in
 the signature. Document only exceptions intentionally exposed to callers, and
 state what a returned or yielded value means when its meaning is not obvious.
+
+For iterators, async operations, context managers, or borrowed resources, explain
+when work and failures occur, who closes the resource, and whether values remain
+valid after return or context exit. Distinguish cancelling a wait from undoing
+effects. If omission, `None`, an empty value, or a default have different meanings,
+document them rather than letting the type hint imply equivalence.
 
 ### 6. Keep inline comments rare and useful
 

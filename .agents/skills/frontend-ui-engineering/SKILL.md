@@ -2,8 +2,8 @@
 name: frontend-ui-engineering
 description: Build, review, or refine browser-facing user interfaces so they are accessible, responsive, performant, visually coherent, and aligned with the project design system.
 metadata:
-  version: "1.3.3"
-  last-verified: "2026-10-01T09:34:17+02:00"
+  version: "1.3.4"
+  last-verified: "2026-11-13T17:44:02+00:00"
 ---
 
 # Frontend UI Engineering
@@ -93,6 +93,11 @@ Keep components focused where practical:
 Do not split components mechanically. Split when it improves readability,
 testing, reuse, or accessibility.
 
+For reusable components, inspect callers and define required inputs, defaults,
+state ownership, and callback payloads. State whether a callback reports user
+intent or committed state. Preserve existing prop, event, keyboard, and focus
+contracts or migrate affected callers explicitly.
+
 ### 4. Use the design system intentionally
 
 Avoid generic generated aesthetics. Match the product’s established visual
@@ -140,6 +145,11 @@ Implement the states users can actually encounter:
 
 Empty and error states should tell the user what happened and what they can do
 next.
+
+For asynchronous work, define repeated-submit behavior, stale-response handling,
+optimistic rollback, and what happens after navigation or component removal.
+Cancelling a view's wait does not prove a server mutation was cancelled; reconcile
+its outcome before offering a retry that could duplicate the effect.
 
 ### 7. Design responsive behavior
 

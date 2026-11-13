@@ -30,7 +30,7 @@ class EnvSettings(BaseSettings):
         extra='ignore',
     )
 
-    required_secret: str = Field(alias=REQUIRED_SECRET_ALIAS)
+    required_secret: str = Field(alias=REQUIRED_SECRET_ALIAS, repr=False)
     service_url: str = Field(default=DEFAULT_SERVICE_URL, alias=SERVICE_URL_ALIAS)
     output_path: Path = Field(default=DEFAULT_OUTPUT_PATH, alias=OUTPUT_PATH_ALIAS)
 

@@ -4,6 +4,13 @@ Use the pattern that matches a measured bottleneck. Prefer removing unnecessary
 work before adding caches or complex infrastructure. Adapt examples to the project
 language, framework, and runtime.
 
+Inspect consumers before changing batching, pagination, caching, or payload shape.
+Preserve promised completeness, ordering, freshness, errors, and side effects.
+For example, replacing a full-result operation with a first-page result is a
+contract change even if it is faster. Keep bounded work internal or provide an
+explicit consumer migration; test representative failure and retry behavior as
+well as successful output.
+
 ## Repeated dependent reads
 
 Avoid one dependency or storage call per item when the data can be fetched in a

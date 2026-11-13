@@ -2,8 +2,8 @@
 name: conventional-commits
 description: Write, review, and validate Conventional Commits v1.0.0 messages with correct type, scope, description, body, footer, and breaking-change syntax.
 metadata:
-  version: "1.1.2"
-  last-verified: "2026-09-30T20:31:51+02:00"
+  version: "1.1.3"
+  last-verified: "2026-11-13T17:42:55+00:00"
 ---
 
 # Conventional Commits
@@ -15,6 +15,16 @@ history machine-readable while keeping messages useful to humans.
 This skill focuses on commit message syntax and meaning. Use it with the
 project's existing version-control workflow, release process, and validation
 requirements.
+
+Establish the input before drafting: a supplied message, an explicit change
+summary, or the requested diff scope. For a staged-message request, inspect the
+staged diff and keep unstaged changes out of the message. If evidence is missing,
+request it or label the draft provisional rather than inventing behavior.
+
+Return a ready-to-copy message for drafting tasks, or syntax/meaning findings
+and a corrected message for review tasks. Writing a message does not create a
+commit. Treat release-version implications as conditional on the project's
+actual release tooling and configuration.
 
 ## When to use this skill
 

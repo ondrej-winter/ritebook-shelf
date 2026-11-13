@@ -84,6 +84,6 @@ localize the failure, then use TDD inside the smallest fix slice before review.
 | Ship   | documentation-and-adrs       | Document the why, not just the what                                                                  |
 | Ship   | update-project-docs          | Keep project-facing documentation aligned with behavior, configuration, or workflow changes          |
 | Ship   | write-adr                    | Record durable architectural decisions with context and consequences                                 |
-| Ship   | shipping-and-launch          | Pre-launch checklist, monitoring, rollback plan                                                      |
+| Ship   | shipping-and-launch          | Pre-launch readiness, monitoring, and an explicit recovery strategy                                  |
 | Skill  | author-agent-skill           | Create, update, or review Agent Skill directories and SKILL.md files                                 |
 | Config | author-agents-config         | Create, audit, update, or synchronize repository agent instructions and client adapters              |

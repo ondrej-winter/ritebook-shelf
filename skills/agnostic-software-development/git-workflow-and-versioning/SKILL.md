@@ -2,8 +2,8 @@
 name: git-workflow-and-versioning
 description: Use version control intentionally with small changes, clear branches, atomic commits, safe history operations, useful summaries, and validation before merge or handoff.
 metadata:
-  version: "1.3.2"
-  last-verified: "2026-09-30T20:31:51+02:00"
+  version: "1.3.3"
+  last-verified: "2026-11-13T17:44:17+00:00"
 ---
 
 # Git Workflow and Versioning
@@ -174,6 +174,11 @@ Risks or follow-ups:
 
 Call out assumptions, skipped validation, and potential follow-up work rather than
 silently expanding scope.
+
+Report the final repository/branch and distinguish unstaged, staged, committed,
+and pushed work. Name created commit IDs when applicable. A local commit does
+not establish publication or remote CI success; report remote state only when
+observed. Preserve that distinction when handing work to another agent.
 
 ## Parallel work and worktrees
 

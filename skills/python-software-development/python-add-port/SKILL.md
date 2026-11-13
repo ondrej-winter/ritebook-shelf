@@ -2,8 +2,8 @@
 name: python-add-port
 description: Add a technology-agnostic inbound or outbound application port interface to the owning vertical slice in a Python hexagonal project for a new use case or dependency.
 metadata:
-  version: "1.0.3"
-  last-verified: "2026-09-30T20:31:51+02:00"
+  version: "1.0.4"
+  last-verified: "2026-11-13T17:52:17+00:00"
 ---
 
 # Add a Port
@@ -109,6 +109,14 @@ class CreateInvoicePort(Protocol):
 For outbound ports, follow the same pattern using domain objects or application
 DTOs in the signature.
 
+Document each operation's preconditions, required/optional values, ownership and
+mutability of results, stable application failures, and observable effects.
+Specify sync/async behavior, cleanup, cancellation, retries, atomicity, and
+ordering when relevant. Distinguish absent results from failures and define
+collection bounds rather than leaving adapters to choose incompatible meanings.
+Inspect callers and existing implementations before changing an established
+signature, default, or exception contract; migrate all supported consumers.
+
 Store related command, query, and result DTOs under:
 
 ```
@@ -161,6 +169,12 @@ Test surrounding behavior instead:
 
 If the project uses runtime-checkable protocols or shared contract fixtures, add
 small targeted tests only when they provide clear value.
+
+Use the configured type checker at real call sites or explicit typed assignments
+to verify structural conformance; merely declaring a `Protocol` does not check
+every implementation. Runtime protocol checks do not prove argument types or
+behavioral semantics. Reuse observable contract fixtures across real adapters and
+fakes when their interchangeable behavior matters.
 
 ### 6. Review related changes
 

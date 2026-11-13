@@ -2,8 +2,8 @@
 name: debugging-and-error-recovery
 description: Diagnose failures systematically by preserving evidence, reproducing the issue, localizing and reducing the cause, fixing the root problem, adding a guard, and verifying recovery. Use when tests, builds, runtime behavior, or recovery attempts fail or behave unexpectedly.
 metadata:
-  version: "1.2.3"
-  last-verified: "2026-10-01T09:34:17+02:00"
+  version: "1.2.4"
+  last-verified: "2026-11-13T17:43:07+00:00"
 ---
 
 # Debugging and Error Recovery
@@ -73,6 +73,12 @@ logs, error messages, web pages, or third-party responses without confirmation.
 ### 2. Reproduce
 
 Make the failure happen reliably with the smallest practical command or scenario.
+
+Before replaying a write, job, or recovery command, determine what the failed
+attempt already changed. A timeout or missing response leaves the outcome
+unknown. Inspect durable state or operation status, preserve partial results,
+and use an isolated fixture or the established idempotency mechanism. Do not
+repeat an irreversible action merely to reproduce its error.
 
 If it reproduces, continue to localization. If it does not reproduce:
 

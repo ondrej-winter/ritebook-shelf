@@ -2,8 +2,8 @@
 name: add-hexagonal-feature
 description: Implement a new vertical feature slice or use case in a Python hexagonal project, including domain modeling, ports, application service, adapters when needed, and tests.
 metadata:
-  version: "1.1.2"
-  last-verified: "2026-09-30T20:31:51+02:00"
+  version: "1.1.3"
+  last-verified: "2026-11-13T17:49:24+00:00"
 ---
 
 # Add a Hexagonal Vertical Feature Slice
@@ -77,6 +77,11 @@ contracts for infrastructure.
 If the use case needs command, query, or result objects, create or update them
 under `src/<app_name>/features/<feature_name>/application/dtos/`.
 
+For each use case, record input validation, result ownership, domain failures,
+side effects, atomicity, and retry/concurrency behavior where relevant. Inspect
+existing callers before changing a shared DTO or port; implementation alone does
+not establish consumer compatibility.
+
 ### 4. Implement the application service
 
 Create the use case implementation under
@@ -104,6 +109,11 @@ Rules:
   access.
 - If the feature needs a new adapter implementation for an existing or new
   port, use `python-add-adapter` for that procedure.
+
+Wire the use case and required concrete adapters through the existing composition
+root and the intended inbound entry point. If delivery stops at an application
+contract, label it a partial contract increment and identify the remaining wiring
+rather than reporting a complete vertical slice.
 
 ### 5. Write unit tests
 
@@ -146,6 +156,8 @@ Before handoff, confirm:
 - dependency-direction or architecture checks pass when the project provides them
 - the application service has no direct adapter or infrastructure dependencies
 - any skipped validation is reported with the reason
+- the intended entry point invokes the wired use case and exposes the promised
+  result and failure mapping; fake-only tests do not prove this integration
 
 ## Dependency direction reminder
 

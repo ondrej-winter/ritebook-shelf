@@ -2,8 +2,8 @@
 name: python-add-adapter
 description: Add an inbound or outbound adapter to the owning vertical slice in a Python hexagonal project while keeping business logic in the application layer.
 metadata:
-  version: "1.0.4"
-  last-verified: "2026-11-04T18:59:29Z"
+  version: "1.0.5"
+  last-verified: "2026-11-13T17:50:12+00:00"
 ---
 
 # Add an Adapter
@@ -40,6 +40,11 @@ adapter.
 
 Choose the inbound or outbound adapter path below based on the direction of the
 boundary being implemented.
+
+Inspect the port, its callers, existing implementations, and contract tests first.
+Record validation, defaults, omission/null handling, result ownership, and stable
+failure categories. Preserve promised ordering, atomicity, concurrency, and
+retry behavior; do not infer semantic conformance merely from matching methods.
 
 ## Inbound adapter
 
@@ -122,6 +127,12 @@ __all__ = ["<AdapterName>"]
   configuration inside the adapter package.
 - Update dependency injection, bootstrap, or composition-root wiring when the
   new adapter becomes part of the runtime path.
+- Define who creates and closes clients, sessions, streams, and transactions,
+  including cleanup after failure or cancellation. Match synchronous/asynchronous
+  behavior to the port; do not block an async caller with hidden synchronous I/O.
+- Bound technical timeouts and retries according to the port contract. A lost
+  response may follow a committed write; reconcile unknown outcomes or use the
+  established idempotency mechanism before replaying effects.
 
 ### 3. Test
 

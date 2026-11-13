@@ -2,8 +2,8 @@
 name: code-simplification
 description: Simplify working code without changing behavior by reducing unnecessary complexity, improving names and structure, preserving project conventions, and validating each refactoring step.
 metadata:
-  version: "1.1.5"
-  last-verified: "2026-10-01T09:34:17+02:00"
+  version: "1.1.6"
+  last-verified: "2026-11-13T17:42:26+00:00"
 ---
 
 # Code Simplification
@@ -108,6 +108,12 @@ Answer:
   current shape?
 
 If you cannot answer these questions, read more context before simplifying.
+
+Before renaming or removing apparently internal code, check exports, dynamic
+registration, serialized names, reflection, and configuration references. A
+missing direct call site does not prove there are no consumers. Keep a supported
+name or adapter when required; move an intentional contract change to an explicit
+migration rather than calling it behavior-preserving simplification.
 
 ### 2. Identify concrete simplification opportunities
 

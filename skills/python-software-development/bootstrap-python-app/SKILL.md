@@ -2,8 +2,8 @@
 name: bootstrap-python-app
 description: Initialize a new Python project with a hexagonal vertical-slice architecture layout, core tooling, quality checks, and GitHub Actions CI/CD when starting a Python application from scratch.
 metadata:
-  version: "1.5.0"
-  last-verified: "2026-11-05T13:18:12+01:00"
+  version: "1.5.1"
+  last-verified: "2026-11-13T17:50:00+00:00"
 ---
 
 # Bootstrap a Python Hexagonal Vertical-Slice Application
@@ -35,6 +35,14 @@ Use a valid Python package identifier for `<app_name>` because the template uses
 it as both the distribution name and import package. If the published package
 name should contain hyphens, add a separate distribution-name decision before
 rendering the templates.
+
+Validate the complete input set before creating files: the package name must be
+a Python identifier and not a keyword, the Python and Ruff target versions must
+agree, and coverage must be a percentage from 0 to 100. Resolve all template
+tokens, including release-branch choices, consistently. The destination must be
+new or explicitly selected for safe reconciliation; never apply this scaffold
+over an existing project as an implicit migration. After a partial failure,
+inspect created files and preserve user edits before resuming.
 
 ## Steps
 
@@ -168,6 +176,12 @@ version prints the installed metadata version and exits, while unknown arguments
 fail with a diagnostic. Match the test's metadata lookup to `[project].name` too.
 They isolate `sys.argv` through pytest so the same tests work under xdist. They
 apply with or without a named slice.
+
+The initial CLI contract is: no arguments returns 0 with empty stdout/stderr;
+help and version exit 0 on stdout with empty stderr; invalid arguments exit 2
+with diagnostics on stderr and empty stdout. Help prose may evolve; the version
+line is `<app_name> <installed-version>\n`. Do not treat normal usage errors as
+tracebacks or initialize application dependencies to answer these options.
 
 The initial application contains only this CLI behavior and empty packages, so
 these tests cover all executable application statements and satisfy the default

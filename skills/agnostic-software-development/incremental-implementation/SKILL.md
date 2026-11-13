@@ -2,8 +2,8 @@
 name: incremental-implementation
 description: Guide agents to deliver changes incrementally. Use when implementing a feature or change that touches more than one file, when a task feels too large to land in one step, or before writing a large amount of code at once.
 metadata:
-  version: "2.1.3"
-  last-verified: "2026-10-01T09:34:17+02:00"
+  version: "2.1.4"
+  last-verified: "2026-11-13T17:45:59+00:00"
 ---
 
 # Incremental Implementation
@@ -212,10 +212,16 @@ create record with notify defaulting to false:
 
 Each increment should be independently revertible:
 
-- Additive changes (new files, new functions) are easy to revert
+- Check additive changes against supported consumers; new fields, variants, or
+  side effects can break strict or exhaustive callers
 - Modifications to existing code should be minimal and focused
 - Data migrations should have corresponding rollback or recovery plans
-- Avoid deleting something in one commit and replacing it in the same commit — separate them
+- Keep replacements atomic when separating removal and addition would break the
+  contract; use an adapter or staged consumer migration for larger transitions
+
+For contract-first increments, name supported producer/consumer combinations and
+the integration check that proves them. A disabled UI flag does not hide schema,
+startup, or background effects; verify those independently before checkpointing.
 
 ## Working with agents
 

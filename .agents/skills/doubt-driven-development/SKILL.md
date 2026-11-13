@@ -2,8 +2,8 @@
 name: doubt-driven-development
 description: Cross-examine non-trivial decisions with a fresh, adversarial review loop before they stand, especially when correctness, safety, migration risk, or unfamiliar code makes overconfidence costly.
 metadata:
-  version: "1.2.2"
-  last-verified: "2026-09-30T20:31:51+02:00"
+  version: "1.2.3"
+  last-verified: "2026-11-13T17:43:47+00:00"
 ---
 
 # Doubt-Driven Development
@@ -64,6 +64,8 @@ Include:
 - contract: requirements, constraints, acceptance criteria, invariants, and known
   assumptions
 - specific failure modes to look for
+- snapshot or revision identity and permitted access; review is read-only unless
+  a separate editing assignment is explicitly authorized
 
 Do not pass your reasoning or conclusion as context. Passing the claim can bias
 the reviewer toward agreement.
@@ -107,6 +109,9 @@ finding:
 - noise: the finding is incorrect under verified context
 
 Document accepted trade-offs and contract gaps. Do not rubber-stamp the reviewer.
+If the artifact changed during review, check findings against the current version
+and refresh affected evidence. A finding-free result for an earlier snapshot does
+not verify later edits; keep unresolved findings visible at handoff.
 
 ### 5. Iterate with a stop condition
 

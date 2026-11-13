@@ -2,8 +2,8 @@
 name: python-add-env-settings-adapter
 description: Add an environment-backed runtime settings adapter to a Python hexagonal vertical-slice app or library, using a configuration slice, application-owned settings DTOs, pydantic-settings adapter validation, and focused tests.
 metadata:
-  version: "1.0.4"
-  last-verified: "2026-11-04T18:59:29Z"
+  version: "1.0.5"
+  last-verified: "2026-11-13T17:56:36+00:00"
 ---
 
 # Add an Environment Settings Adapter
@@ -139,6 +139,19 @@ SettingsConfigDict(
 
 Keep `pydantic` and `pydantic-settings` imports inside the adapter package.
 
+Verify source precedence against the installed dependency version. For this
+template's `load()` path, process environment overrides `.env`, then application
+defaults apply. Blank selected values fail validation rather than falling back.
+Aliases are case-insensitive; `populate_by_name=True` also permits field-name
+inputs. Document this accepted surface and check compatibility before tightening
+it. `.env` lookup and relative output paths use the process working directory;
+converting a string to `Path` does not expand `~` or make it absolute.
+
+Keep secrets out of both adapter-model and DTO representations. Suppressing
+`repr` does not redact explicit serialization or field access; callers must not
+log the whole settings object as a dictionary. Catch the application exception
+type rather than parsing its human-readable message.
+
 ### 5. Keep `adapter.py` thin
 
 `adapter.py` should only convert validated `EnvSettings` into `AppSettings`.
@@ -173,6 +186,10 @@ Adapter tests should use `monkeypatch` for environment variables and an autouse
 fixture that changes into `tmp_path` so developer-local `.env` files cannot
 affect test results.
 
+Clear every supported alias and field-name environment spelling, including
+case variants, before each test. Removing only the uppercase alias does not
+isolate a case-insensitive boundary.
+
 Cover at least:
 
 - missing required settings raise `ConfigurationError`,
@@ -180,7 +197,9 @@ Cover at least:
 - explicit values are trimmed and passed through,
 - unset optional values use intended defaults,
 - path-like values become `Path`,
-- unrelated environment variables are ignored.
+- unrelated environment variables are ignored,
+- environment precedence over `.env`, including blank override rejection,
+- secret exclusion from adapter and DTO representations.
 
 ### 8. Document every settings option
 

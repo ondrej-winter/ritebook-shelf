@@ -2,8 +2,8 @@
 name: run-local-quality-gate
 description: Discover and run the project's local formatting, linting, static analysis, test, and build checks before handoff.
 metadata:
-  version: "1.4.2"
-  last-verified: "2026-09-30T20:31:51+02:00"
+  version: "1.4.3"
+  last-verified: "2026-11-13T17:47:08+00:00"
 ---
 
 # Run Local Quality Gate
@@ -65,6 +65,11 @@ inspect the resulting changes and ensure they are related to the task. Do not
 run broad cleanup commands when a narrower project-approved command validates the
 touched area.
 
+For a review-only or no-edit request, use the project's check-only forms and
+leave failures unchanged. Inspect aggregate commands for writes or external
+effects before execution; an aggregate name does not override the requested
+scope. If no non-mutating form exists, report that check unavailable within scope.
+
 Do not use ad hoc flags to bypass the project's configured rules in the final
 validation run.
 
@@ -91,6 +96,12 @@ run the strongest available subset and state the limitation.
 
 Record the commands that passed, failed, or were skipped. Include enough detail
 for the next maintainer to reproduce the result.
+
+Identify the workspace, tested revision or worktree state, working directory,
+and material prerequisites. Report passed only when all required checks passed;
+an observed failure remains failed, and missing required execution makes the
+gate incomplete. List a strongest-available subset as partial evidence rather
+than implying the full gate passed.
 
 ## Output checklist
 

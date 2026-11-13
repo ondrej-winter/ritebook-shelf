@@ -2,8 +2,8 @@
 name: update-project-docs
 description: Update project-facing documentation after a reader-visible behavior, configuration, operation, or developer workflow change.
 metadata:
-  version: "1.3.2"
-  last-verified: "2026-09-30T20:31:51+02:00"
+  version: "1.3.3"
+  last-verified: "2026-11-13T17:48:34+00:00"
 ---
 
 # Update Project Docs
@@ -85,6 +85,12 @@ If the change introduces or modifies configuration, document:
 - default value or absence behavior
 - where the setting is read or applied
 - whether existing users need to change anything
+
+Where multiple sources exist, state precedence and merge behavior. Distinguish
+omission from empty or null values when they differ, describe invalid-value and
+unknown-key handling, and say whether changes require restart or take effect
+dynamically. Verify these statements against the implementation and its callers;
+do not invent defaults to fill documentation gaps.
 
 ### 5. Add operational notes when relevant
 
