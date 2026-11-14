@@ -2,8 +2,8 @@
 name: incremental-implementation
 description: Guide agents to deliver changes incrementally. Use when implementing a feature or change that touches more than one file, when a task feels too large to land in one step, or before writing a large amount of code at once.
 metadata:
-  version: "2.3.1"
-  last-verified: "2026-11-14T19:04:19+00:00"
+  version: "2.3.2"
+  last-verified: "2026-11-14T19:16:20+00:00"
 ---
 
 # Incremental Implementation
@@ -67,9 +67,8 @@ For each slice:
    progress note.
 6. **Move to the next slice**: carry forward; do not restart.
 
-For a behavior-preserving refactor, begin from focused passing tests and keep them
-green. For documentation, formatting, static content, or pure configuration changes
-with no behavioral effect, skip the RED step. Define the expected result before
+For documentation, formatting, static content, or pure configuration changes with
+no behavioral effect, skip the RED step. Define the expected result before
 editing and validate it with the relevant parser, schema check, linter, build, dry
 run, or focused review. If behavior changes but no practical automated test can
 verify it, record that limitation before implementation and name the runtime or
@@ -155,7 +154,7 @@ Avoid: Config-driven builder for three small variants
 Prefer: Three clear variants with duplication removed only when the shared concept is proven
 ```
 
-Three similar lines of code is better than a premature abstraction. Start with
+Three similar lines of code are better than a premature abstraction. Start with
 the simplest correct version that respects known workload and resource limits.
 Optimize only after correctness checks and a representative baseline identify a
 bottleneck; compare the same workload after the change and retain a suitable

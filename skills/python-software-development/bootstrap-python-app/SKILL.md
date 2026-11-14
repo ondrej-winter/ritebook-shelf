@@ -2,8 +2,8 @@
 name: bootstrap-python-app
 description: Initialize a new Python project with a hexagonal vertical-slice architecture layout, core tooling, quality checks, and GitHub Actions CI/CD when starting a Python application from scratch.
 metadata:
-  version: "2.1.0"
-  last-verified: "2026-11-14T18:48:45+00:00"
+  version: "2.1.1"
+  last-verified: "2026-11-14T19:19:22+00:00"
 ---
 
 # Bootstrap a Python Hexagonal Vertical-Slice Application
@@ -183,12 +183,9 @@ application imports, and network access so help/version remain available offline
 When adding commands, parse help/version before constructing their dependencies.
 
 Create `tests/unit/test_cli.py` from
-[test_cli.py.template](assets/test_cli.py.template), replacing `<app_name>`. These smoke tests exercise
-the scaffold's current behavior: no arguments succeed, help prints usage, and
-version prints the installed metadata version and exits, while unknown arguments
-fail with a diagnostic. Match the test's metadata lookup to `[project].name` too.
-They isolate `sys.argv` through pytest so the same tests work under xdist. They
-apply with or without a named slice.
+[test_cli.py.template](assets/test_cli.py.template), replacing `<app_name>`. Match the test's
+metadata lookup to `[project].name`. The tests isolate `sys.argv` through pytest
+so they also work under xdist, with or without a named slice.
 
 The initial CLI contract is: no arguments returns 0 with empty stdout/stderr;
 help and version exit 0 on stdout with empty stderr; invalid arguments exit 2

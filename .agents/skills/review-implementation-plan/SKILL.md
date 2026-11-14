@@ -2,8 +2,8 @@
 name: review-implementation-plan
 description: Review and update an existing implementation plan for completeness, ambiguity, sequencing, risks, dependencies, validation, readiness labeling, and handoff before coding.
 metadata:
-  version: "1.3.4"
-  last-verified: "2026-11-14T19:04:55+00:00"
+  version: "1.3.5"
+  last-verified: "2026-11-14T19:17:17+00:00"
 ---
 
 # Review Implementation Plan
@@ -170,15 +170,10 @@ For an editable plan, apply findings directly to its file or supplied inline tex
 - assign exactly one readiness label based on the unresolved findings
 - do not implement any task from the plan
 
-Re-read the updated plan and verify that the review findings are represented
-accurately. Then return a concise handoff that includes:
-
-- readiness assessment
-- updated plan path and changed sections
-- intended implementation owner or handoff audience when relevant
-- unresolved clarifying questions, blockers, and decisions
-- required validation commands or checks
-- deferred backlog items that should not block the first pass
+Re-read the updated plan and verify that it represents the findings accurately.
+Use the handoff format under Expected output, including the intended
+implementation owner or audience when relevant, unresolved blockers, and deferred
+backlog items that should not block the first pass.
 
 Do not recommend affected tasks while their blocking questions remain unresolved.
 Follow the repository or execution environment's approval policy before moving

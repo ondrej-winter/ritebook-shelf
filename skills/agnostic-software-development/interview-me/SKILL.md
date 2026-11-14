@@ -2,8 +2,8 @@
 name: interview-me
 description: Reduce uncertainty about a user's underlying intent through an adaptive XY-problem interview that scales from concise clarification to a full evidence-based model. Use when an ask is underspecified, solution-led, has material unresolved trade-offs, or the user explicitly requests an interview before idea refinement, specification, planning, or implementation.
 metadata:
-  version: "2.1.1"
-  last-verified: "2026-11-14T18:45:20+00:00"
+  version: "2.1.2"
+  last-verified: "2026-11-14T19:16:37+00:00"
 ---
 
 # Interview Me
@@ -90,13 +90,12 @@ path using an expanded current picture.
 
 ### Full path
 
-Maintain the complete operating model below. Show it through an expanded current
-picture on the first full-mode turn, immediately after escalation, and whenever
-an answer materially changes the hypothesis, XY-risk, primary user, outcome,
-route, or structure of the high-impact unknowns. A readiness step based on
-expected evidence does not by itself require expansion. Use the compact current
-picture on intervening turns where the core model remains stable so orientation
-stays visible without repeating the whole model.
+Maintain the complete operating model below. Expand the current picture on the
+first full-mode turn, immediately after escalation, and whenever an answer
+materially changes the hypothesis, XY-risk, primary user, outcome, route, or
+structure of high-impact unknowns. A readiness step based on expected evidence
+does not itself require expansion. On intervening turns, use the compact picture
+to retain orientation while the core model remains stable.
 
 ```text
 STATED SOLUTION (Y): <requested mechanism, artifact, or approach>

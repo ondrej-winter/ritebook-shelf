@@ -9,7 +9,7 @@ after completing its audit; link findings or verification evidence beside it.
 
 - [x] api-and-interface-design — [review](audits/2026-11-13-api-and-interface-design.md#add-observability)
 - [x] author-agent-skill — [review](audits/2026-11-14-author-agent-skill.md#add-observability)
-- [x] condensed-prose-refactor — [review](audits/2026-11-14-condensed-prose-refactor.md#add-observability)
+- [x] condensed-prose-refactor — [review](audits/2026-11-14-condensed-prose-refactor.md#add-observability) · [second pass](audits/2026-11-14-condensed-prose-refactor-second-pass.md#add-observability)
 - [x] performance-optimization — [review](audits/2026-11-13-performance-optimization.md#add-observability)
 - [x] security-and-hardening — [review](audits/2026-11-13-security-and-hardening.md#add-observability)
 
@@ -17,7 +17,7 @@ after completing its audit; link findings or verification evidence beside it.
 
 - [x] api-and-interface-design — [review](audits/2026-11-13-api-and-interface-design.md#api-and-interface-design)
 - [x] author-agent-skill — [review](audits/2026-11-14-author-agent-skill.md#api-and-interface-design)
-- [x] condensed-prose-refactor — [review](audits/2026-11-14-condensed-prose-refactor.md#api-and-interface-design)
+- [x] condensed-prose-refactor — [review](audits/2026-11-14-condensed-prose-refactor.md#api-and-interface-design) · [second pass](audits/2026-11-14-condensed-prose-refactor-second-pass.md#api-and-interface-design)
 - [x] performance-optimization — [review](audits/2026-11-13-performance-optimization.md#api-and-interface-design)
 - [x] security-and-hardening — [review](audits/2026-11-13-security-and-hardening.md#api-and-interface-design)
 
@@ -25,7 +25,7 @@ after completing its audit; link findings or verification evidence beside it.
 
 - [x] api-and-interface-design — [review](audits/2026-11-13-api-and-interface-design.md#author-agent-skill)
 - [x] author-agent-skill — [review](audits/2026-11-14-author-agent-skill.md#author-agent-skill)
-- [x] condensed-prose-refactor — [review](audits/2026-11-14-condensed-prose-refactor.md#author-agent-skill)
+- [x] condensed-prose-refactor — [review](audits/2026-11-14-condensed-prose-refactor.md#author-agent-skill) · [second pass](audits/2026-11-14-condensed-prose-refactor-second-pass.md#author-agent-skill)
 - [x] performance-optimization — [review](audits/2026-11-13-performance-optimization.md#author-agent-skill)
 - [x] security-and-hardening — [review](audits/2026-11-13-security-and-hardening.md#author-agent-skill)
 
@@ -33,7 +33,7 @@ after completing its audit; link findings or verification evidence beside it.
 
 - [x] api-and-interface-design — [review](audits/2026-11-13-api-and-interface-design.md#author-agents-config)
 - [x] author-agent-skill — [review](audits/2026-11-14-author-agent-skill.md#author-agents-config)
-- [x] condensed-prose-refactor — [review](audits/2026-11-14-condensed-prose-refactor.md#author-agents-config)
+- [x] condensed-prose-refactor — [review](audits/2026-11-14-condensed-prose-refactor.md#author-agents-config) · [second pass](audits/2026-11-14-condensed-prose-refactor-second-pass.md#author-agents-config)
 - [x] performance-optimization — [review](audits/2026-11-13-performance-optimization.md#author-agents-config)
 - [x] security-and-hardening — [review](audits/2026-11-13-security-and-hardening.md#author-agents-config)
 
@@ -41,7 +41,7 @@ after completing its audit; link findings or verification evidence beside it.
 
 - [x] api-and-interface-design — [review](audits/2026-11-13-api-and-interface-design.md#browser-runtime-verification)
 - [x] author-agent-skill — [review](audits/2026-11-14-author-agent-skill.md#browser-runtime-verification)
-- [x] condensed-prose-refactor — [review](audits/2026-11-14-condensed-prose-refactor.md#browser-runtime-verification)
+- [x] condensed-prose-refactor — [review](audits/2026-11-14-condensed-prose-refactor.md#browser-runtime-verification) · [second pass](audits/2026-11-14-condensed-prose-refactor-second-pass.md#browser-runtime-verification)
 - [x] performance-optimization — [review](audits/2026-11-13-performance-optimization.md#browser-runtime-verification)
 - [x] security-and-hardening — [review](audits/2026-11-13-security-and-hardening.md#browser-runtime-verification)
 
@@ -49,7 +49,7 @@ after completing its audit; link findings or verification evidence beside it.
 
 - [x] api-and-interface-design — [review](audits/2026-11-13-api-and-interface-design.md#ci-cd-and-automation)
 - [x] author-agent-skill — [review](audits/2026-11-14-author-agent-skill.md#ci-cd-and-automation)
-- [x] condensed-prose-refactor — [review](audits/2026-11-14-condensed-prose-refactor.md#ci-cd-and-automation)
+- [x] condensed-prose-refactor — [review](audits/2026-11-14-condensed-prose-refactor.md#ci-cd-and-automation) · [second pass](audits/2026-11-14-condensed-prose-refactor-second-pass.md#ci-cd-and-automation)
 - [x] performance-optimization — [review](audits/2026-11-13-performance-optimization.md#ci-cd-and-automation)
 - [x] security-and-hardening — [review](audits/2026-11-13-security-and-hardening.md#ci-cd-and-automation)
 
@@ -57,7 +57,7 @@ after completing its audit; link findings or verification evidence beside it.
 
 - [x] api-and-interface-design — [review](audits/2026-11-13-api-and-interface-design.md#code-review-and-quality)
 - [x] author-agent-skill — [review](audits/2026-11-14-author-agent-skill.md#code-review-and-quality)
-- [x] condensed-prose-refactor — [review](audits/2026-11-14-condensed-prose-refactor.md#code-review-and-quality)
+- [x] condensed-prose-refactor — [review](audits/2026-11-14-condensed-prose-refactor.md#code-review-and-quality) · [second pass](audits/2026-11-14-condensed-prose-refactor-second-pass.md#code-review-and-quality)
 - [x] performance-optimization — [review](audits/2026-11-13-performance-optimization.md#code-review-and-quality)
 - [x] security-and-hardening — [review](audits/2026-11-13-security-and-hardening.md#code-review-and-quality)
 
@@ -65,7 +65,7 @@ after completing its audit; link findings or verification evidence beside it.
 
 - [x] api-and-interface-design — [review](audits/2026-11-13-api-and-interface-design.md#code-simplification)
 - [x] author-agent-skill — [review](audits/2026-11-14-author-agent-skill.md#code-simplification)
-- [x] condensed-prose-refactor — [review](audits/2026-11-14-condensed-prose-refactor.md#code-simplification)
+- [x] condensed-prose-refactor — [review](audits/2026-11-14-condensed-prose-refactor.md#code-simplification) · [second pass](audits/2026-11-14-condensed-prose-refactor-second-pass.md#code-simplification)
 - [x] performance-optimization — [review](audits/2026-11-13-performance-optimization.md#code-simplification)
 - [x] security-and-hardening — [review](audits/2026-11-13-security-and-hardening.md#code-simplification)
 
@@ -73,7 +73,7 @@ after completing its audit; link findings or verification evidence beside it.
 
 - [x] api-and-interface-design — [review](audits/2026-11-13-api-and-interface-design.md#context-engineering)
 - [x] author-agent-skill — [review](audits/2026-11-14-author-agent-skill.md#context-engineering)
-- [x] condensed-prose-refactor — [review](audits/2026-11-14-condensed-prose-refactor.md#context-engineering)
+- [x] condensed-prose-refactor — [review](audits/2026-11-14-condensed-prose-refactor.md#context-engineering) · [second pass](audits/2026-11-14-condensed-prose-refactor-second-pass.md#context-engineering)
 - [x] performance-optimization — [review](audits/2026-11-13-performance-optimization.md#context-engineering)
 - [x] security-and-hardening — [review](audits/2026-11-13-security-and-hardening.md#context-engineering)
 
@@ -81,7 +81,7 @@ after completing its audit; link findings or verification evidence beside it.
 
 - [x] api-and-interface-design — [review](audits/2026-11-13-api-and-interface-design.md#conventional-commits)
 - [x] author-agent-skill — [review](audits/2026-11-14-author-agent-skill.md#conventional-commits)
-- [x] condensed-prose-refactor — [review](audits/2026-11-14-condensed-prose-refactor.md#conventional-commits)
+- [x] condensed-prose-refactor — [review](audits/2026-11-14-condensed-prose-refactor.md#conventional-commits) · [second pass](audits/2026-11-14-condensed-prose-refactor-second-pass.md#conventional-commits)
 - [x] performance-optimization — [review](audits/2026-11-13-performance-optimization.md#conventional-commits)
 - [x] security-and-hardening — [review](audits/2026-11-13-security-and-hardening.md#conventional-commits)
 
@@ -89,7 +89,7 @@ after completing its audit; link findings or verification evidence beside it.
 
 - [x] api-and-interface-design — [review](audits/2026-11-13-api-and-interface-design.md#debugging-and-error-recovery)
 - [x] author-agent-skill — [review](audits/2026-11-14-author-agent-skill.md#debugging-and-error-recovery)
-- [x] condensed-prose-refactor — [review](audits/2026-11-14-condensed-prose-refactor.md#debugging-and-error-recovery)
+- [x] condensed-prose-refactor — [review](audits/2026-11-14-condensed-prose-refactor.md#debugging-and-error-recovery) · [second pass](audits/2026-11-14-condensed-prose-refactor-second-pass.md#debugging-and-error-recovery)
 - [x] performance-optimization — [review](audits/2026-11-13-performance-optimization.md#debugging-and-error-recovery)
 - [x] security-and-hardening — [review](audits/2026-11-13-security-and-hardening.md#debugging-and-error-recovery)
 
@@ -97,7 +97,7 @@ after completing its audit; link findings or verification evidence beside it.
 
 - [x] api-and-interface-design — [review](audits/2026-11-13-api-and-interface-design.md#deprecation-and-migration)
 - [x] author-agent-skill — [review](audits/2026-11-14-author-agent-skill.md#deprecation-and-migration)
-- [x] condensed-prose-refactor — [review](audits/2026-11-14-condensed-prose-refactor.md#deprecation-and-migration)
+- [x] condensed-prose-refactor — [review](audits/2026-11-14-condensed-prose-refactor.md#deprecation-and-migration) · [second pass](audits/2026-11-14-condensed-prose-refactor-second-pass.md#deprecation-and-migration)
 - [x] performance-optimization — [review](audits/2026-11-13-performance-optimization.md#deprecation-and-migration)
 - [x] security-and-hardening — [review](audits/2026-11-13-security-and-hardening.md#deprecation-and-migration)
 
@@ -105,7 +105,7 @@ after completing its audit; link findings or verification evidence beside it.
 
 - [x] api-and-interface-design — [review](audits/2026-11-13-api-and-interface-design.md#documentation-and-adrs)
 - [x] author-agent-skill — [review](audits/2026-11-14-author-agent-skill.md#documentation-and-adrs)
-- [x] condensed-prose-refactor — [review](audits/2026-11-14-condensed-prose-refactor.md#documentation-and-adrs)
+- [x] condensed-prose-refactor — [review](audits/2026-11-14-condensed-prose-refactor.md#documentation-and-adrs) · [second pass](audits/2026-11-14-condensed-prose-refactor-second-pass.md#documentation-and-adrs)
 - [x] performance-optimization — [review](audits/2026-11-13-performance-optimization.md#documentation-and-adrs)
 - [x] security-and-hardening — [review](audits/2026-11-13-security-and-hardening.md#documentation-and-adrs)
 
@@ -113,7 +113,7 @@ after completing its audit; link findings or verification evidence beside it.
 
 - [x] api-and-interface-design — [review](audits/2026-11-13-api-and-interface-design.md#doubt-driven-development)
 - [x] author-agent-skill — [review](audits/2026-11-14-author-agent-skill.md#doubt-driven-development)
-- [x] condensed-prose-refactor — [review](audits/2026-11-14-condensed-prose-refactor.md#doubt-driven-development)
+- [x] condensed-prose-refactor — [review](audits/2026-11-14-condensed-prose-refactor.md#doubt-driven-development) · [second pass](audits/2026-11-14-condensed-prose-refactor-second-pass.md#doubt-driven-development)
 - [x] performance-optimization — [review](audits/2026-11-13-performance-optimization.md#doubt-driven-development)
 - [x] security-and-hardening — [review](audits/2026-11-13-security-and-hardening.md#doubt-driven-development)
 
@@ -121,7 +121,7 @@ after completing its audit; link findings or verification evidence beside it.
 
 - [x] api-and-interface-design — [review](audits/2026-11-13-api-and-interface-design.md#frontend-ui-engineering)
 - [x] author-agent-skill — [review](audits/2026-11-14-author-agent-skill.md#frontend-ui-engineering)
-- [x] condensed-prose-refactor — [review](audits/2026-11-14-condensed-prose-refactor.md#frontend-ui-engineering)
+- [x] condensed-prose-refactor — [review](audits/2026-11-14-condensed-prose-refactor.md#frontend-ui-engineering) · [second pass](audits/2026-11-14-condensed-prose-refactor-second-pass.md#frontend-ui-engineering)
 - [x] performance-optimization — [review](audits/2026-11-13-performance-optimization.md#frontend-ui-engineering)
 - [x] security-and-hardening — [review](audits/2026-11-13-security-and-hardening.md#frontend-ui-engineering)
 
@@ -129,7 +129,7 @@ after completing its audit; link findings or verification evidence beside it.
 
 - [x] api-and-interface-design — [review](audits/2026-11-13-api-and-interface-design.md#git-workflow-and-versioning)
 - [x] author-agent-skill — [review](audits/2026-11-14-author-agent-skill.md#git-workflow-and-versioning)
-- [x] condensed-prose-refactor — [review](audits/2026-11-14-condensed-prose-refactor.md#git-workflow-and-versioning)
+- [x] condensed-prose-refactor — [review](audits/2026-11-14-condensed-prose-refactor.md#git-workflow-and-versioning) · [second pass](audits/2026-11-14-condensed-prose-refactor-second-pass.md#git-workflow-and-versioning)
 - [x] performance-optimization — [review](audits/2026-11-13-performance-optimization.md#git-workflow-and-versioning)
 - [x] security-and-hardening — [review](audits/2026-11-13-security-and-hardening.md#git-workflow-and-versioning)
 
@@ -137,7 +137,7 @@ after completing its audit; link findings or verification evidence beside it.
 
 - [x] api-and-interface-design — [review](audits/2026-11-13-api-and-interface-design.md#hexagonal-vertical-slices)
 - [x] author-agent-skill — [review](audits/2026-11-14-author-agent-skill.md#hexagonal-vertical-slices)
-- [x] condensed-prose-refactor — [review](audits/2026-11-14-condensed-prose-refactor.md#hexagonal-vertical-slices)
+- [x] condensed-prose-refactor — [review](audits/2026-11-14-condensed-prose-refactor.md#hexagonal-vertical-slices) · [second pass](audits/2026-11-14-condensed-prose-refactor-second-pass.md#hexagonal-vertical-slices)
 - [x] performance-optimization — [review](audits/2026-11-13-performance-optimization.md#hexagonal-vertical-slices)
 - [x] security-and-hardening — [review](audits/2026-11-13-security-and-hardening.md#hexagonal-vertical-slices)
 
@@ -145,7 +145,7 @@ after completing its audit; link findings or verification evidence beside it.
 
 - [x] api-and-interface-design — [review](audits/2026-11-13-api-and-interface-design.md#idea-refine)
 - [x] author-agent-skill — [review](audits/2026-11-14-author-agent-skill.md#idea-refine)
-- [x] condensed-prose-refactor — [review](audits/2026-11-14-condensed-prose-refactor.md#idea-refine)
+- [x] condensed-prose-refactor — [review](audits/2026-11-14-condensed-prose-refactor.md#idea-refine) · [second pass](audits/2026-11-14-condensed-prose-refactor-second-pass.md#idea-refine)
 - [x] performance-optimization — [review](audits/2026-11-13-performance-optimization.md#idea-refine)
 - [x] security-and-hardening — [review](audits/2026-11-13-security-and-hardening.md#idea-refine)
 
@@ -153,7 +153,7 @@ after completing its audit; link findings or verification evidence beside it.
 
 - [x] api-and-interface-design — [review](audits/2026-11-13-api-and-interface-design.md#incremental-implementation)
 - [x] author-agent-skill — [review](audits/2026-11-14-author-agent-skill.md#incremental-implementation)
-- [x] condensed-prose-refactor — [review](audits/2026-11-14-condensed-prose-refactor.md#incremental-implementation)
+- [x] condensed-prose-refactor — [review](audits/2026-11-14-condensed-prose-refactor.md#incremental-implementation) · [second pass](audits/2026-11-14-condensed-prose-refactor-second-pass.md#incremental-implementation)
 - [x] performance-optimization — [review](audits/2026-11-13-performance-optimization.md#incremental-implementation)
 - [x] security-and-hardening — [review](audits/2026-11-13-security-and-hardening.md#incremental-implementation)
 
@@ -161,7 +161,7 @@ after completing its audit; link findings or verification evidence beside it.
 
 - [x] api-and-interface-design — [review](audits/2026-11-13-api-and-interface-design.md#interview-me)
 - [x] author-agent-skill — [review](audits/2026-11-14-author-agent-skill.md#interview-me)
-- [x] condensed-prose-refactor — [review](audits/2026-11-14-condensed-prose-refactor.md#interview-me)
+- [x] condensed-prose-refactor — [review](audits/2026-11-14-condensed-prose-refactor.md#interview-me) · [second pass](audits/2026-11-14-condensed-prose-refactor-second-pass.md#interview-me)
 - [x] performance-optimization — [review](audits/2026-11-13-performance-optimization.md#interview-me)
 - [x] security-and-hardening — [review](audits/2026-11-13-security-and-hardening.md#interview-me)
 
@@ -169,7 +169,7 @@ after completing its audit; link findings or verification evidence beside it.
 
 - [x] api-and-interface-design — [review](audits/2026-11-13-api-and-interface-design.md#performance-optimization)
 - [x] author-agent-skill — [review](audits/2026-11-14-author-agent-skill.md#performance-optimization)
-- [x] condensed-prose-refactor — [review](audits/2026-11-14-condensed-prose-refactor.md#performance-optimization)
+- [x] condensed-prose-refactor — [review](audits/2026-11-14-condensed-prose-refactor.md#performance-optimization) · [second pass](audits/2026-11-14-condensed-prose-refactor-second-pass.md#performance-optimization)
 - [x] performance-optimization — [review](audits/2026-11-13-performance-optimization.md#performance-optimization)
 - [x] security-and-hardening — [review](audits/2026-11-13-security-and-hardening.md#performance-optimization)
 
@@ -177,7 +177,7 @@ after completing its audit; link findings or verification evidence beside it.
 
 - [x] api-and-interface-design — [review](audits/2026-11-13-api-and-interface-design.md#planning-and-task-breakdown)
 - [x] author-agent-skill — [review](audits/2026-11-14-author-agent-skill.md#planning-and-task-breakdown)
-- [x] condensed-prose-refactor — [review](audits/2026-11-14-condensed-prose-refactor.md#planning-and-task-breakdown)
+- [x] condensed-prose-refactor — [review](audits/2026-11-14-condensed-prose-refactor.md#planning-and-task-breakdown) · [second pass](audits/2026-11-14-condensed-prose-refactor-second-pass.md#planning-and-task-breakdown)
 - [x] performance-optimization — [review](audits/2026-11-13-performance-optimization.md#planning-and-task-breakdown)
 - [x] security-and-hardening — [review](audits/2026-11-13-security-and-hardening.md#planning-and-task-breakdown)
 
@@ -185,7 +185,7 @@ after completing its audit; link findings or verification evidence beside it.
 
 - [x] api-and-interface-design — [review](audits/2026-11-13-api-and-interface-design.md#review-implementation-plan)
 - [x] author-agent-skill — [review](audits/2026-11-14-author-agent-skill.md#review-implementation-plan)
-- [x] condensed-prose-refactor — [review](audits/2026-11-14-condensed-prose-refactor.md#review-implementation-plan)
+- [x] condensed-prose-refactor — [review](audits/2026-11-14-condensed-prose-refactor.md#review-implementation-plan) · [second pass](audits/2026-11-14-condensed-prose-refactor-second-pass.md#review-implementation-plan)
 - [x] performance-optimization — [review](audits/2026-11-13-performance-optimization.md#review-implementation-plan)
 - [x] security-and-hardening — [review](audits/2026-11-13-security-and-hardening.md#review-implementation-plan)
 
@@ -193,7 +193,7 @@ after completing its audit; link findings or verification evidence beside it.
 
 - [x] api-and-interface-design — [review](audits/2026-11-13-api-and-interface-design.md#run-local-quality-gate)
 - [x] author-agent-skill — [review](audits/2026-11-14-author-agent-skill.md#run-local-quality-gate)
-- [x] condensed-prose-refactor — [review](audits/2026-11-14-condensed-prose-refactor.md#run-local-quality-gate)
+- [x] condensed-prose-refactor — [review](audits/2026-11-14-condensed-prose-refactor.md#run-local-quality-gate) · [second pass](audits/2026-11-14-condensed-prose-refactor-second-pass.md#run-local-quality-gate)
 - [x] performance-optimization — [review](audits/2026-11-13-performance-optimization.md#run-local-quality-gate)
 - [x] security-and-hardening — [review](audits/2026-11-13-security-and-hardening.md#run-local-quality-gate)
 
@@ -201,7 +201,7 @@ after completing its audit; link findings or verification evidence beside it.
 
 - [x] api-and-interface-design — [review](audits/2026-11-13-api-and-interface-design.md#security-and-hardening)
 - [x] author-agent-skill — [review](audits/2026-11-14-author-agent-skill.md#security-and-hardening)
-- [x] condensed-prose-refactor — [review](audits/2026-11-14-condensed-prose-refactor.md#security-and-hardening)
+- [x] condensed-prose-refactor — [review](audits/2026-11-14-condensed-prose-refactor.md#security-and-hardening) · [second pass](audits/2026-11-14-condensed-prose-refactor-second-pass.md#security-and-hardening)
 - [x] performance-optimization — [review](audits/2026-11-13-performance-optimization.md#security-and-hardening)
 - [x] security-and-hardening — [review](audits/2026-11-13-security-and-hardening.md#security-and-hardening)
 
@@ -209,7 +209,7 @@ after completing its audit; link findings or verification evidence beside it.
 
 - [x] api-and-interface-design — [review](audits/2026-11-13-api-and-interface-design.md#shipping-and-launch)
 - [x] author-agent-skill — [review](audits/2026-11-14-author-agent-skill.md#shipping-and-launch)
-- [x] condensed-prose-refactor — [review](audits/2026-11-14-condensed-prose-refactor.md#shipping-and-launch)
+- [x] condensed-prose-refactor — [review](audits/2026-11-14-condensed-prose-refactor.md#shipping-and-launch) · [second pass](audits/2026-11-14-condensed-prose-refactor-second-pass.md#shipping-and-launch)
 - [x] performance-optimization — [review](audits/2026-11-13-performance-optimization.md#shipping-and-launch)
 - [x] security-and-hardening — [review](audits/2026-11-13-security-and-hardening.md#shipping-and-launch)
 
@@ -217,7 +217,7 @@ after completing its audit; link findings or verification evidence beside it.
 
 - [x] api-and-interface-design — [review](audits/2026-11-13-api-and-interface-design.md#source-driven-development)
 - [x] author-agent-skill — [review](audits/2026-11-14-author-agent-skill.md#source-driven-development)
-- [x] condensed-prose-refactor — [review](audits/2026-11-14-condensed-prose-refactor.md#source-driven-development)
+- [x] condensed-prose-refactor — [review](audits/2026-11-14-condensed-prose-refactor.md#source-driven-development) · [second pass](audits/2026-11-14-condensed-prose-refactor-second-pass.md#source-driven-development)
 - [x] performance-optimization — [review](audits/2026-11-13-performance-optimization.md#source-driven-development)
 - [x] security-and-hardening — [review](audits/2026-11-13-security-and-hardening.md#source-driven-development)
 
@@ -225,7 +225,7 @@ after completing its audit; link findings or verification evidence beside it.
 
 - [x] api-and-interface-design — [review](audits/2026-11-13-api-and-interface-design.md#spec-driven-development)
 - [x] author-agent-skill — [review](audits/2026-11-14-author-agent-skill.md#spec-driven-development)
-- [x] condensed-prose-refactor — [review](audits/2026-11-14-condensed-prose-refactor.md#spec-driven-development)
+- [x] condensed-prose-refactor — [review](audits/2026-11-14-condensed-prose-refactor.md#spec-driven-development) · [second pass](audits/2026-11-14-condensed-prose-refactor-second-pass.md#spec-driven-development)
 - [x] performance-optimization — [review](audits/2026-11-13-performance-optimization.md#spec-driven-development)
 - [x] security-and-hardening — [review](audits/2026-11-13-security-and-hardening.md#spec-driven-development)
 
@@ -233,7 +233,7 @@ after completing its audit; link findings or verification evidence beside it.
 
 - [x] api-and-interface-design — [review](audits/2026-11-13-api-and-interface-design.md#test-driven-development)
 - [x] author-agent-skill — [review](audits/2026-11-14-author-agent-skill.md#test-driven-development)
-- [x] condensed-prose-refactor — [review](audits/2026-11-14-condensed-prose-refactor.md#test-driven-development)
+- [x] condensed-prose-refactor — [review](audits/2026-11-14-condensed-prose-refactor.md#test-driven-development) · [second pass](audits/2026-11-14-condensed-prose-refactor-second-pass.md#test-driven-development)
 - [x] performance-optimization — [review](audits/2026-11-13-performance-optimization.md#test-driven-development)
 - [x] security-and-hardening — [review](audits/2026-11-13-security-and-hardening.md#test-driven-development)
 
@@ -241,7 +241,7 @@ after completing its audit; link findings or verification evidence beside it.
 
 - [x] api-and-interface-design — [review](audits/2026-11-13-api-and-interface-design.md#update-project-docs)
 - [x] author-agent-skill — [review](audits/2026-11-14-author-agent-skill.md#update-project-docs)
-- [x] condensed-prose-refactor — [review](audits/2026-11-14-condensed-prose-refactor.md#update-project-docs)
+- [x] condensed-prose-refactor — [review](audits/2026-11-14-condensed-prose-refactor.md#update-project-docs) · [second pass](audits/2026-11-14-condensed-prose-refactor-second-pass.md#update-project-docs)
 - [x] performance-optimization — [review](audits/2026-11-13-performance-optimization.md#update-project-docs)
 - [x] security-and-hardening — [review](audits/2026-11-13-security-and-hardening.md#update-project-docs)
 
@@ -249,7 +249,7 @@ after completing its audit; link findings or verification evidence beside it.
 
 - [x] api-and-interface-design — [review](audits/2026-11-13-api-and-interface-design.md#using-agnostic-software-development-skills)
 - [x] author-agent-skill — [review](audits/2026-11-14-author-agent-skill.md#using-agnostic-software-development-skills)
-- [x] condensed-prose-refactor — [review](audits/2026-11-14-condensed-prose-refactor.md#using-agnostic-software-development-skills)
+- [x] condensed-prose-refactor — [review](audits/2026-11-14-condensed-prose-refactor.md#using-agnostic-software-development-skills) · [second pass](audits/2026-11-14-condensed-prose-refactor-second-pass.md#using-agnostic-software-development-skills)
 - [x] performance-optimization — [review](audits/2026-11-13-performance-optimization.md#using-agnostic-software-development-skills)
 - [x] security-and-hardening — [review](audits/2026-11-13-security-and-hardening.md#using-agnostic-software-development-skills)
 
@@ -257,7 +257,7 @@ after completing its audit; link findings or verification evidence beside it.
 
 - [x] api-and-interface-design — [review](audits/2026-11-13-api-and-interface-design.md#write-adr)
 - [x] author-agent-skill — [review](audits/2026-11-14-author-agent-skill.md#write-adr)
-- [x] condensed-prose-refactor — [review](audits/2026-11-14-condensed-prose-refactor.md#write-adr)
+- [x] condensed-prose-refactor — [review](audits/2026-11-14-condensed-prose-refactor.md#write-adr) · [second pass](audits/2026-11-14-condensed-prose-refactor-second-pass.md#write-adr)
 - [x] performance-optimization — [review](audits/2026-11-13-performance-optimization.md#write-adr)
 - [x] security-and-hardening — [review](audits/2026-11-13-security-and-hardening.md#write-adr)
 
@@ -267,7 +267,7 @@ after completing its audit; link findings or verification evidence beside it.
 
 - [x] api-and-interface-design — [review](audits/2026-11-13-api-and-interface-design.md#add-hexagonal-feature)
 - [x] author-agent-skill — [review](audits/2026-11-14-author-agent-skill.md#add-hexagonal-feature)
-- [x] condensed-prose-refactor — [review](audits/2026-11-14-condensed-prose-refactor.md#add-hexagonal-feature)
+- [x] condensed-prose-refactor — [review](audits/2026-11-14-condensed-prose-refactor.md#add-hexagonal-feature) · [second pass](audits/2026-11-14-condensed-prose-refactor-second-pass.md#add-hexagonal-feature)
 - [x] performance-optimization — [review](audits/2026-11-13-performance-optimization.md#add-hexagonal-feature)
 - [x] security-and-hardening — [review](audits/2026-11-13-security-and-hardening.md#add-hexagonal-feature)
 
@@ -275,7 +275,7 @@ after completing its audit; link findings or verification evidence beside it.
 
 - [x] api-and-interface-design — [review](audits/2026-11-13-api-and-interface-design.md#bootstrap-python-app)
 - [x] author-agent-skill — [review](audits/2026-11-14-author-agent-skill.md#bootstrap-python-app)
-- [x] condensed-prose-refactor — [review](audits/2026-11-14-condensed-prose-refactor.md#bootstrap-python-app)
+- [x] condensed-prose-refactor — [review](audits/2026-11-14-condensed-prose-refactor.md#bootstrap-python-app) · [second pass](audits/2026-11-14-condensed-prose-refactor-second-pass.md#bootstrap-python-app)
 - [x] performance-optimization — [review](audits/2026-11-13-performance-optimization.md#bootstrap-python-app)
 - [x] security-and-hardening — [review](audits/2026-11-13-security-and-hardening.md#bootstrap-python-app)
 
@@ -283,7 +283,7 @@ after completing its audit; link findings or verification evidence beside it.
 
 - [x] api-and-interface-design — [review](audits/2026-11-13-api-and-interface-design.md#python-add-adapter)
 - [x] author-agent-skill — [review](audits/2026-11-14-author-agent-skill.md#python-add-adapter)
-- [x] condensed-prose-refactor — [review](audits/2026-11-14-condensed-prose-refactor.md#python-add-adapter)
+- [x] condensed-prose-refactor — [review](audits/2026-11-14-condensed-prose-refactor.md#python-add-adapter) · [second pass](audits/2026-11-14-condensed-prose-refactor-second-pass.md#python-add-adapter)
 - [x] performance-optimization — [review](audits/2026-11-13-performance-optimization.md#python-add-adapter)
 - [x] security-and-hardening — [review](audits/2026-11-13-security-and-hardening.md#python-add-adapter)
 
@@ -291,7 +291,7 @@ after completing its audit; link findings or verification evidence beside it.
 
 - [x] api-and-interface-design — [review](audits/2026-11-13-api-and-interface-design.md#python-add-env-settings-adapter)
 - [x] author-agent-skill — [review](audits/2026-11-14-author-agent-skill.md#python-add-env-settings-adapter)
-- [x] condensed-prose-refactor — [review](audits/2026-11-14-condensed-prose-refactor.md#python-add-env-settings-adapter)
+- [x] condensed-prose-refactor — [review](audits/2026-11-14-condensed-prose-refactor.md#python-add-env-settings-adapter) · [second pass](audits/2026-11-14-condensed-prose-refactor-second-pass.md#python-add-env-settings-adapter)
 - [x] performance-optimization — [review](audits/2026-11-13-performance-optimization.md#python-add-env-settings-adapter)
 - [x] security-and-hardening — [review](audits/2026-11-13-security-and-hardening.md#python-add-env-settings-adapter)
 
@@ -299,7 +299,7 @@ after completing its audit; link findings or verification evidence beside it.
 
 - [x] api-and-interface-design — [review](audits/2026-11-13-api-and-interface-design.md#python-add-port)
 - [x] author-agent-skill — [review](audits/2026-11-14-author-agent-skill.md#python-add-port)
-- [x] condensed-prose-refactor — [review](audits/2026-11-14-condensed-prose-refactor.md#python-add-port)
+- [x] condensed-prose-refactor — [review](audits/2026-11-14-condensed-prose-refactor.md#python-add-port) · [second pass](audits/2026-11-14-condensed-prose-refactor-second-pass.md#python-add-port)
 - [x] performance-optimization — [review](audits/2026-11-13-performance-optimization.md#python-add-port)
 - [x] security-and-hardening — [review](audits/2026-11-13-security-and-hardening.md#python-add-port)
 
@@ -307,7 +307,7 @@ after completing its audit; link findings or verification evidence beside it.
 
 - [x] api-and-interface-design — [review](audits/2026-11-13-api-and-interface-design.md#python-build-extensible-cli)
 - [x] author-agent-skill — [review](audits/2026-11-14-author-agent-skill.md#python-build-extensible-cli)
-- [x] condensed-prose-refactor — [review](audits/2026-11-14-condensed-prose-refactor.md#python-build-extensible-cli)
+- [x] condensed-prose-refactor — [review](audits/2026-11-14-condensed-prose-refactor.md#python-build-extensible-cli) · [second pass](audits/2026-11-14-condensed-prose-refactor-second-pass.md#python-build-extensible-cli)
 - [x] performance-optimization — [review](audits/2026-11-13-performance-optimization.md#python-build-extensible-cli)
 - [x] security-and-hardening — [review](audits/2026-11-13-security-and-hardening.md#python-build-extensible-cli)
 
@@ -315,7 +315,7 @@ after completing its audit; link findings or verification evidence beside it.
 
 - [x] api-and-interface-design — [review](audits/2026-11-13-api-and-interface-design.md#split-python-module)
 - [x] author-agent-skill — [review](audits/2026-11-14-author-agent-skill.md#split-python-module)
-- [x] condensed-prose-refactor — [review](audits/2026-11-14-condensed-prose-refactor.md#split-python-module)
+- [x] condensed-prose-refactor — [review](audits/2026-11-14-condensed-prose-refactor.md#split-python-module) · [second pass](audits/2026-11-14-condensed-prose-refactor-second-pass.md#split-python-module)
 - [x] performance-optimization — [review](audits/2026-11-13-performance-optimization.md#split-python-module)
 - [x] security-and-hardening — [review](audits/2026-11-13-security-and-hardening.md#split-python-module)
 
@@ -323,7 +323,7 @@ after completing its audit; link findings or verification evidence beside it.
 
 - [x] api-and-interface-design — [review](audits/2026-11-13-api-and-interface-design.md#using-python-software-development-skills)
 - [x] author-agent-skill — [review](audits/2026-11-14-author-agent-skill.md#using-python-software-development-skills)
-- [x] condensed-prose-refactor — [review](audits/2026-11-14-condensed-prose-refactor.md#using-python-software-development-skills)
+- [x] condensed-prose-refactor — [review](audits/2026-11-14-condensed-prose-refactor.md#using-python-software-development-skills) · [second pass](audits/2026-11-14-condensed-prose-refactor-second-pass.md#using-python-software-development-skills)
 - [x] performance-optimization — [review](audits/2026-11-13-performance-optimization.md#using-python-software-development-skills)
 - [x] security-and-hardening — [review](audits/2026-11-13-security-and-hardening.md#using-python-software-development-skills)
 
@@ -331,7 +331,7 @@ after completing its audit; link findings or verification evidence beside it.
 
 - [x] api-and-interface-design — [review](audits/2026-11-13-api-and-interface-design.md#write-pytest-tests)
 - [x] author-agent-skill — [review](audits/2026-11-14-author-agent-skill.md#write-pytest-tests)
-- [x] condensed-prose-refactor — [review](audits/2026-11-14-condensed-prose-refactor.md#write-pytest-tests)
+- [x] condensed-prose-refactor — [review](audits/2026-11-14-condensed-prose-refactor.md#write-pytest-tests) · [second pass](audits/2026-11-14-condensed-prose-refactor-second-pass.md#write-pytest-tests)
 - [x] performance-optimization — [review](audits/2026-11-13-performance-optimization.md#write-pytest-tests)
 - [x] security-and-hardening — [review](audits/2026-11-13-security-and-hardening.md#write-pytest-tests)
 
@@ -339,7 +339,7 @@ after completing its audit; link findings or verification evidence beside it.
 
 - [x] api-and-interface-design — [review](audits/2026-11-13-api-and-interface-design.md#write-python-docstrings)
 - [x] author-agent-skill — [review](audits/2026-11-14-author-agent-skill.md#write-python-docstrings)
-- [x] condensed-prose-refactor — [review](audits/2026-11-14-condensed-prose-refactor.md#write-python-docstrings)
+- [x] condensed-prose-refactor — [review](audits/2026-11-14-condensed-prose-refactor.md#write-python-docstrings) · [second pass](audits/2026-11-14-condensed-prose-refactor-second-pass.md#write-python-docstrings)
 - [x] performance-optimization — [review](audits/2026-11-13-performance-optimization.md#write-python-docstrings)
 - [x] security-and-hardening — [review](audits/2026-11-13-security-and-hardening.md#write-python-docstrings)
 
@@ -349,6 +349,6 @@ after completing its audit; link findings or verification evidence beside it.
 
 - [x] api-and-interface-design — [review](audits/2026-11-13-api-and-interface-design.md#condensed-prose-refactor)
 - [x] author-agent-skill — [review](audits/2026-11-14-author-agent-skill.md#condensed-prose-refactor)
-- [x] condensed-prose-refactor — [review](audits/2026-11-14-condensed-prose-refactor.md#condensed-prose-refactor)
+- [x] condensed-prose-refactor — [review](audits/2026-11-14-condensed-prose-refactor.md#condensed-prose-refactor) · [second pass](audits/2026-11-14-condensed-prose-refactor-second-pass.md#condensed-prose-refactor)
 - [x] performance-optimization — [review](audits/2026-11-13-performance-optimization.md#condensed-prose-refactor)
 - [x] security-and-hardening — [review](audits/2026-11-13-security-and-hardening.md#condensed-prose-refactor)

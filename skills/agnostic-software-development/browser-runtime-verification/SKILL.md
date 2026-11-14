@@ -2,8 +2,8 @@
 name: browser-runtime-verification
 description: Verify browser-facing changes in a real browser using visual checks, console output, network behavior, accessibility basics, and user-flow smoke tests. Use when building, debugging, or validating UI behavior beyond static code and unit tests.
 metadata:
-  version: "1.2.0"
-  last-verified: "2026-10-15T11:20:33Z"
+  version: "1.2.1"
+  last-verified: "2026-11-14T19:13:33+00:00"
 ---
 
 # Browser Runtime Verification
@@ -37,12 +37,11 @@ console and network activity, and inspect accessibility semantics. A DOM snapsho
 does not prove visual layout; resizing a viewport does not prove device coverage.
 
 If the browser or application is unavailable, provide a useful review-only
-scenario plan with expected results and label it runtime-unverified. Report the
-missing capability, environment, or setup that blocks execution. If only some
-capabilities are missing, perform the remaining useful checks and mark the
-unsupported checks unverified. Never turn absent evidence into a pass. Request
-only missing setup information that is necessary; use the established sign-in
-flow rather than asking for passwords or tokens in chat.
+scenario plan with expected results, label it runtime-unverified, and name the
+missing capability, environment, or setup. If only some capabilities are missing,
+run the remaining useful checks and mark unsupported checks unverified. Never
+count absent evidence as a pass. Request only necessary setup information; use
+the established sign-in flow instead of asking for passwords or tokens in chat.
 
 ### 2. Prepare a reproducible, authorized state
 
@@ -99,12 +98,11 @@ intermittent failure.
 
 ### 4. Inspect runtime and network behavior
 
-Review captured console output and runtime errors from loading through completion.
+Review console output and runtime errors from loading through completion.
 Investigate uncaught exceptions, hydration/rendering failures, missing resources,
 and security-policy violations. Explain relevant warnings by source and impact;
-do not treat every warning as a failure or dismiss unexplained warnings as noise.
-Expected diagnostics from an intentionally induced failure should match that
-scenario and its recovery behavior.
+neither fail every warning nor dismiss unexplained warnings as noise. Diagnostics
+from deliberately induced failures should match the scenario and its recovery.
 
 When the scenario loads or mutates data, check:
 

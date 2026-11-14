@@ -2,8 +2,8 @@
 name: code-review-and-quality
 description: Review code, tests, documentation, and configuration across correctness, readability, architecture, security, performance, maintainability, and verification before merging or handing off a change.
 metadata:
-  version: "1.5.0"
-  last-verified: "2026-11-13T18:26:51+00:00"
+  version: "1.5.1"
+  last-verified: "2026-11-14T19:14:02+00:00"
 ---
 
 # Code Review and Quality
@@ -133,11 +133,12 @@ tests execute code from that patch; inspect them before running. Use a disposabl
 environment without production credentials or sensitive files for untrusted
 contributions, and keep captures free of secrets.
 
-Record commands, results, and the tested state. Distinguish checks you ran from
+Record commands, results, and tested state; distinguish your checks from
 author-reported or CI evidence, static reasoning, and checks not run. Investigate
 failures and attribute them to the change, baseline, environment, or an unresolved
-cause. An unavailable tool or service permits a static review with execution
-explicitly unverified; it is neither a passing check nor proof of a defect.
+cause. If a tool or service is unavailable, a static review may proceed with
+execution explicitly unverified; missing access is neither a pass nor proof of a
+defect.
 
 Discard concerns contradicted by evidence. If a plausible concern remains
 unresolved, state the question and missing evidence separately from confirmed
@@ -180,10 +181,10 @@ limitations, and one verdict:
 - **Defer judgment:** missing context, coverage, or verification prevents a
   responsible decision about a material risk. Name what would resolve it.
 
-If no actionable findings remain, say so explicitly. This is not a claim that the
-change is bug-free. State the reviewed scope, checks run and their outcomes,
-reported evidence, unreviewed areas, and relevant residual risks. Attribute risk
-acceptance only to an actual owner decision; otherwise describe it as unresolved.
+State explicitly when no actionable findings remain, without claiming the change
+is bug-free. Report scope, checks run and outcomes, reported evidence, unreviewed
+areas, and relevant residual risks. Attribute risk acceptance only to an actual
+owner decision; otherwise leave it unresolved.
 
 Use the [review template](references/review-template.md) when a reusable Markdown
 report helps. Adapt it to the task; omit empty sections without hiding limitations.

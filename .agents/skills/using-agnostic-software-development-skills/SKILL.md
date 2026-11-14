@@ -2,8 +2,8 @@
 name: using-agnostic-software-development-skills
 description: Discover and invoke technology-agnostic software development skills. Use when starting general engineering work or deciding which reusable workflow skill applies to a task.
 metadata:
-  version: "2.5.6"
-  last-verified: "2026-11-14T19:06:04+00:00"
+  version: "2.5.7"
+  last-verified: "2026-11-14T19:18:48+00:00"
 ---
 
 # Using Agnostic Software Development Skills
@@ -122,7 +122,8 @@ Proceed under a working assumption only where its uncertainty does not invalidat
 the work. Resolve material requirement decisions from evidence or existing
 authority; ask when neither settles them. Silence is not acceptance.
 
-Don't silently fill in ambiguous requirements. The most common failure mode is making wrong assumptions and running with them unchecked. Surface uncertainty early — it's cheaper than rework.
+Unchecked wrong assumptions are the most common failure mode. Do not silently
+fill ambiguous requirements; surface uncertainty early to avoid costlier rework.
 
 ### 2. Manage Confusion Actively
 

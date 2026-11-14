@@ -2,8 +2,8 @@
 name: add-observability
 description: Add logs, metrics, traces, profiling, or operational notes when a workflow needs better runtime visibility or measurable evidence without unsupported performance claims.
 metadata:
-  version: "1.4.2"
-  last-verified: "2026-11-14T19:00:51+00:00"
+  version: "1.4.3"
+  last-verified: "2026-11-14T19:12:17+00:00"
 ---
 
 # Add Observability
@@ -23,12 +23,12 @@ runtime evidence; an exported signal needs evidence from the configured path and
 its consumer. A documentation-only change needs review of its instructions and
 queries, with unexecuted steps identified.
 
-Missing backend or runtime access does not prevent grounded implementation and
-available local checks. Label that result **implemented, verification incomplete**
-and state the remaining checks and access needed. A local capture does not prove
-backend delivery, and an unverified implementation does not satisfy a request for
-operational signals. Report blockers to that outcome while completing independent
-work.
+Grounded implementation and available local checks remain possible without
+backend or runtime access. Label that implementation
+**implemented, verification incomplete** and name the remaining checks and access
+needed. Local capture does not prove backend delivery; unverified implementation
+does not satisfy a request for operational signals. Report those blockers and
+continue independent work.
 
 ## When to use this skill
 
@@ -103,11 +103,11 @@ operations and define when each measurement starts and ends. Treat existing
 signal names, types, units, and labels as interfaces: inspect dependent queries
 and alerts before changing them.
 
-For a changed signal, record whether existing consumers still interpret it
-correctly. A renamed label, changed histogram boundary, or new outcome can break
-queries even when export still succeeds. Where consumers must migrate, identify
-their owner, transition period, and removal check; avoid counting both old and
-new signals in the same aggregate during that transition.
+For each changed signal, record whether existing consumers still interpret it
+correctly. Renamed labels, changed histogram boundaries, and new outcomes can
+break queries even when export succeeds. If consumers must migrate, name the
+owner, transition period, and removal check; avoid counting old and new signals
+in the same aggregate during the transition.
 
 Keep the contract proportional to the change; a short task note may suffice.
 Use [Telemetry design and validation](references/telemetry-design-checklist.md)

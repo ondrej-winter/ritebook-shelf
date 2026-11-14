@@ -2,8 +2,8 @@
 name: python-build-extensible-cli
 description: Build or refactor an extensible product CLI for a Python hexagonal vertical-slice project, with a feature-neutral shell, feature-owned command contributions, bootstrap-owned composition, stable exit semantics, and tests. Use when multiple feature slices need to contribute commands without leaking parser or process concerns into application or domain code.
 metadata:
-  version: "1.2.1"
-  last-verified: "2026-11-14T18:50:24+00:00"
+  version: "1.2.2"
+  last-verified: "2026-11-14T19:20:02+00:00"
 ---
 
 # Build an Extensible Python CLI
@@ -119,10 +119,15 @@ The contract should usually include:
 
 Keep the shell independent of feature slices and bootstrap composition.
 
+The shell must:
+
+- expose a root `--version` option that prints the installed distribution version
+  to stdout, exits successfully, and does not require a subcommand
+- source `--version` from canonical package metadata rather than duplicating a
+  version literal in CLI code
+
 The shell should:
 
-- **Must** expose a root `--version` option that prints the installed distribution version to stdout, exits successfully, and does not require a subcommand
-- **Must** source `--version` from canonical package metadata rather than duplicating a version literal in CLI code
 - build the root parser and add global options once
 - create subparsers and pass a registry to feature registrars
 - validate command names, help text, duplicate registrations, and reserved parser

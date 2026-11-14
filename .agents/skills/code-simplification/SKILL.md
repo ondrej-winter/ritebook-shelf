@@ -2,8 +2,8 @@
 name: code-simplification
 description: Simplify working code without changing behavior by reducing unnecessary complexity, improving names and structure, preserving project conventions, and validating each refactoring step.
 metadata:
-  version: "1.1.7"
-  last-verified: "2026-11-14T19:02:19+00:00"
+  version: "1.1.8"
+  last-verified: "2026-11-14T19:14:16+00:00"
 ---
 
 # Code Simplification
@@ -16,12 +16,11 @@ Every simplification must preserve inputs, outputs, side effects, ordering, erro
 behavior, and compatibility-sensitive contracts unless the user explicitly asks
 for a behavior change.
 
-Completing a simplification requires permission to edit the code and run the
-checks that establish and preserve relevant behavior. If those checks cannot run,
-return a simplification review or proposed diff only when it is independently
-useful, label it review-only and runtime-unverified, and do not apply the refactor
-or claim behavior preservation. If the request requires changed code, report the
-workflow as blocked.
+Completing a simplification requires authorized edits and checks that establish
+and preserve relevant behavior. If those checks cannot run, return a review or
+proposed diff only if independently useful, labeled review-only and
+runtime-unverified. Do not apply the refactor or claim behavior preservation;
+report the workflow as blocked if changed code is required.
 
 ## When to use this skill
 

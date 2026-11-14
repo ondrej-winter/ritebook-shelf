@@ -2,8 +2,8 @@
 name: api-and-interface-design
 description: Design or review stable APIs and interfaces that are explicit, compatible, and hard to misuse. Use when creating or changing HTTP, event, library, module, CLI, component, schema, configuration, plugin, or other durable integration contracts.
 metadata:
-  version: "1.4.2"
-  last-verified: "2026-11-14T19:01:30+00:00"
+  version: "1.4.3"
+  last-verified: "2026-11-14T19:12:31+00:00"
 ---
 
 # API and Interface Design
@@ -100,12 +100,11 @@ Compatibility: <what consumers may ignore or must handle>
 Examples: <success and representative failure>
 ```
 
-Keep creation input, update input, returned output, and internal representation
-separate when they have different ownership or constraints. Do not let callers
-assign or overwrite provider-owned identifiers, timestamps, audit fields, or
-computed values. Callers may still need to return existing resource identifiers
-or opaque version tokens for targeting or concurrency checks; document these
-inputs explicitly.
+Separate creation input, update input, returned output, and internal representation
+when their ownership or constraints differ. Prevent callers from assigning or
+overwriting provider-owned identifiers, timestamps, audit fields, or computed
+values. Document any existing resource identifiers or opaque version tokens that
+callers return for targeting or concurrency checks.
 
 ### 4. Make the contract predictable and hard to misuse
 

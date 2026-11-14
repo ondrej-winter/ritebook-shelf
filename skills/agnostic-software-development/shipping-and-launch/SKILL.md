@@ -2,8 +2,8 @@
 name: shipping-and-launch
 description: Prepare production launches with risk-based readiness checks, staged rollout, monitoring, and an explicit recovery strategy. Use before deploying a feature, migration, or other production change.
 metadata:
-  version: "1.6.6"
-  last-verified: "2026-11-14T19:05:21+00:00"
+  version: "1.6.7"
+  last-verified: "2026-11-14T19:17:45+00:00"
 ---
 
 # Shipping and Launch
@@ -16,14 +16,14 @@ allows it. Define an explicit recovery strategy: rollback, disablement,
 roll-forward, compensation, or documented irreversibility with accepted risk and
 containment measures when no technical reversal is possible.
 
-This workflow has two distinct outcomes. A launch plan can be completed without
-changing production state when it records readiness gaps, rollout stages,
-monitoring thresholds, decision owners, and recovery procedures; label it
-planning-only and not deployed. An executed launch requires explicit
-authorization and production access, followed by deployment and observed
-post-launch evidence. If deployment was requested but authorization, access, or
-required monitoring is unavailable, report the launch as blocked. Never present
-a launch plan or pre-launch review as a completed deployment.
+A launch plan can be complete without changing production state when it records
+readiness gaps, rollout stages, monitoring thresholds, decision owners, and
+recovery procedures. Label it planning-only and not deployed.
+
+An executed launch requires explicit authorization, production access, deployment,
+and observed post-launch evidence. If requested deployment lacks authorization,
+access, or required monitoring, report it as blocked. Never present a launch plan
+or pre-launch review as a completed deployment.
 
 ## When to Use
 

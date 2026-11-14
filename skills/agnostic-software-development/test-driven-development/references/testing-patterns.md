@@ -1,10 +1,9 @@
 # Testing Patterns
 
-Use these patterns when choosing how to make behavior verifiable before or during implementation.
-
-Consult this reference when the main TDD cycle is clear but the test shape is not.
-Choose the narrowest pattern that proves the behavior, then record the focused
-test command and any broader validation that should run before handoff.
+When the main TDD cycle is clear but the test shape is not, use these patterns to
+make behavior verifiable before or during implementation. Choose the narrowest
+pattern that proves the behavior, then record the focused test command and any
+broader validation needed before handoff.
 
 ## Behavior-first tests
 

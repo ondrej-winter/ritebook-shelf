@@ -2,8 +2,8 @@
 name: python-add-adapter
 description: Add an inbound or outbound adapter to the owning vertical slice in a Python hexagonal project while keeping business logic in the application layer.
 metadata:
-  version: "1.2.1"
-  last-verified: "2026-11-14T19:06:34+00:00"
+  version: "1.2.2"
+  last-verified: "2026-11-14T19:19:36+00:00"
 ---
 
 # Add an Adapter
@@ -81,11 +81,10 @@ __all__ = ["router"]
   with the transport's authentication mechanism. Do not trust caller-supplied
   roles or tenant IDs as authority; application policy must authorize the use case.
 - Call the application through its inbound port contract.
-- Map the result or exception back to the external format.
+- Map results and exceptions to the external format, including adapter-level error
+  responses for domain or application exceptions in the caller-visible boundary.
 - Keep credentials, private data and infrastructure diagnostics out of public
   responses and logs; use the project's safe error categories.
-- Map domain or application exceptions to adapter-level error responses when
-  they are part of the caller-visible boundary.
 - Import domain types directly only when the port contract or exception mapping
   requires them; otherwise prefer application DTOs.
 - Do not call domain services, repositories, or outbound adapters directly from

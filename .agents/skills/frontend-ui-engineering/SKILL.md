@@ -2,8 +2,8 @@
 name: frontend-ui-engineering
 description: Build, review, or refine browser-facing user interfaces so they are accessible, responsive, performant, visually coherent, and aligned with the project design system.
 metadata:
-  version: "1.4.2"
-  last-verified: "2026-11-14T19:03:36+00:00"
+  version: "1.4.3"
+  last-verified: "2026-11-14T19:15:32+00:00"
 ---
 
 # Frontend UI Engineering
@@ -17,13 +17,14 @@ Keep guidance specific to browser, UI, accessibility, responsive layout, and
 interaction without assuming a framework, component library, styling system, or
 state-management tool.
 
-A completed UI implementation requires repository access plus evidence from a
-real browser runtime, gathered manually or through browser automation, for the
-changed rendering, interaction, responsive, and accessibility behavior. If that
-execution is unavailable, return a UI design or code review only when it is
-independently useful, label it design- or review-only and runtime-unverified, and
-do not apply or report a UI change as complete. If implementation was requested,
-report the workflow as blocked.
+Completing UI implementation requires repository access and real-browser
+evidence, gathered manually or through automation, for changed rendering,
+interaction, responsive, and accessibility behavior.
+
+Without that execution, return a UI design or code review only if independently
+useful, labeled design- or review-only and runtime-unverified. Do not apply or
+report a UI change as complete; report the workflow as blocked if implementation
+was requested.
 
 ## When to use this skill
 

@@ -2,8 +2,8 @@
 name: deprecation-and-migration
 description: Plan and execute safe deprecations, migrations, replacements, and removals by measuring usage, supporting consumers, preserving compatibility, and making evidence-based removal decisions.
 metadata:
-  version: "1.4.1"
-  last-verified: "2026-11-14T19:03:03+00:00"
+  version: "1.4.2"
+  last-verified: "2026-11-14T19:15:05+00:00"
 ---
 
 # Deprecation and Migration
@@ -17,15 +17,19 @@ Deprecation is the decision and communication process. Migration is the work of
 moving consumers safely from the old path to the new one. Removal happens only
 after usage evidence, observation limits, and residual risk have been evaluated.
 
-This workflow has distinct completion states. A deprecation or migration plan may
-be complete when it records evidence gaps, owners, support windows, migration
-steps, removal gates, and verification methods; label it planning-only and not
-executed. An executed migration requires changing each in-scope consumer and
-verifying compatibility. A removal requires the applicable evidence, approvals,
-cleanup, and post-removal validation. If execution was requested but the required
-repository, telemetry, consumer, or approval access is unavailable, report the
-affected phase as blocked. Never report a plan as a completed migration or
-removal.
+Keep completion states distinct:
+
+- A deprecation or migration plan may be complete when it records evidence gaps,
+  owners, support windows, migration steps, removal gates, and verification
+  methods. Label it planning-only and not executed.
+- An executed migration requires changing each in-scope consumer and verifying
+  compatibility.
+- A removal requires the applicable evidence, approvals, cleanup, and
+  post-removal validation.
+
+If requested execution lacks required repository, telemetry, consumer, or approval
+access, report the affected phase as blocked. Never report a plan as a completed
+migration or removal.
 
 ## When to use this skill
 

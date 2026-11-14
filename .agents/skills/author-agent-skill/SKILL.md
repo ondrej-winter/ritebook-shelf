@@ -2,8 +2,8 @@
 name: author-agent-skill
 description: Create, update, or review Agent Skill directories and SKILL.md files for valid frontmatter, structure, portability, progressive disclosure, and validation readiness.
 metadata:
-  version: "2.2.1"
-  last-verified: "2026-11-14T19:01:33+00:00"
+  version: "2.2.2"
+  last-verified: "2026-11-14T19:13:02+00:00"
 ---
 
 # Author Agent Skill
@@ -29,10 +29,10 @@ or framework-specific requirements. Resolve material unknowns before dependent
 work; do not require an interview when the request already supplies enough context.
 
 Treat activation wording, required inputs, resource paths, helper arguments,
-output formats, and handoffs as the skill's public interface. Before changing
-them, inspect catalog routes, direct invocations, and bundled examples. Record
-which callers still work and which need migration; a version bump alone does not
-repair a renamed resource or changed required output.
+output formats, and handoffs as public interfaces. Before changing them, inspect
+catalog routes, direct invocations, and bundled examples; record which callers
+still work and which need migration. A version bump alone cannot repair a renamed
+resource or changed required output.
 
 Check nearby skill descriptions for overlap. Keep one coherent workflow and add
 an exclusion only when it prevents likely misrouting. Repository-wide agent
@@ -90,11 +90,11 @@ instructions, metadata, scripts, references, or assets change:
 - minor: new guidance, optional resources, or compatible workflow improvements
 - major: breaking changes to activation, required structure, workflow, or outputs
 
-Advance `last-verified` only after checking the instructions and supporting files
-for consistency, portability, and validation readiness. Use the actual review time
-as an ISO 8601 timestamp with an explicit timezone. An edit, version bump, or commit
-timestamp does not establish verification. Report the checks and their limits
-separately; the timestamp does not certify runtime behavior in every host.
+Advance `last-verified` only after checking instructions and supporting files for
+consistency, portability, and validation readiness. Record the actual review time
+in ISO 8601 with an explicit timezone. Edits, version bumps, and commit timestamps
+do not establish verification. Report checks and limits separately; the timestamp
+does not certify runtime behavior in every host.
 
 ### 3. Write an executable workflow
 
