@@ -2,8 +2,8 @@
 name: python-build-extensible-cli
 description: Build or refactor an extensible product CLI for a Python hexagonal vertical-slice project, with a feature-neutral shell, feature-owned command contributions, bootstrap-owned composition, stable exit semantics, and tests. Use when multiple feature slices need to contribute commands without leaking parser or process concerns into application or domain code.
 metadata:
-  version: "1.1.4"
-  last-verified: "2026-11-13T17:52:34+00:00"
+  version: "1.2.0"
+  last-verified: "2026-11-13T18:34:53+00:00"
 ---
 
 # Build an Extensible Python CLI
@@ -53,6 +53,12 @@ Keep the shell's public extension API intentionally small. Export command
 contracts such as `Command`, `CommandRegistry`, `CommandContext`, `UsageError`,
 and the shell runner, but keep parser construction, registry implementations,
 namespace splitting, and runtime invocation types private to the shell package.
+
+Registrars, configurers, decoders and runners execute trusted application code;
+namespace isolation is not a plugin sandbox. Do not load modules or callbacks
+from user-controlled paths or names without a separate approved plugin trust
+design. CLI flags and frozen values do not establish identity or permission:
+protected commands still require application authorization.
 
 ## Steps
 
@@ -182,6 +188,12 @@ Bootstrap should:
   selected command
 - translate registration/configuration failures at the process boundary into a
   clear stderr diagnostic and documented exit code
+
+Keep credentials out of argv, help, parser errors and verbose dumps; use the
+project's secret store or protected input mechanism. Sanitize diagnostics and
+untrusted terminal output, including control sequences where relevant, without
+changing promised machine-readable output. Unexpected errors must follow the
+project's disclosure policy rather than automatically dumping sensitive locals.
 
 Expose the command through the project's normal script entrypoint, for example a
 `[project.scripts]` entry in `pyproject.toml`. When the package supports

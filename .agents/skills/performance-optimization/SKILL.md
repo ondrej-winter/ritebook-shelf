@@ -2,8 +2,8 @@
 name: performance-optimization
 description: Optimizes software performance using measurement-driven diagnosis, targeted fixes, and regression guards. Use when performance requirements exist, users or monitoring report slow behavior, a regression is suspected, or profiling reveals bottlenecks that need fixing.
 metadata:
-  version: "1.5.0"
-  last-verified: "2026-11-13T18:04:39+00:00"
+  version: "1.6.0"
+  last-verified: "2026-11-13T18:29:09+00:00"
 ---
 
 # Performance Optimization
@@ -86,6 +86,11 @@ Use complementary measurement sources when possible:
 - synthetic benchmarks or repeatable tests to isolate causes
 - profiles, traces, logs, query plans, and resource metrics to locate bottlenecks
 - representative fixtures, datasets, network conditions, and concurrency levels
+
+Use synthetic or minimized data and protect profiles, traces and heap captures
+from exposing secrets or personal data. Run load tests against an isolated or
+explicitly authorized target, with bounded load and stopping thresholds; a
+measurement request does not authorize disrupting production or third parties.
 
 For noisy metrics, run enough repetitions to distinguish the change from normal
 variation. Report a suitable summary such as a percentile, range, confidence

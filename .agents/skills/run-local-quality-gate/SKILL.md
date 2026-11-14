@@ -2,8 +2,8 @@
 name: run-local-quality-gate
 description: Discover and run the project's local formatting, linting, static analysis, test, and build checks before handoff.
 metadata:
-  version: "1.4.3"
-  last-verified: "2026-11-13T17:47:08+00:00"
+  version: "1.5.0"
+  last-verified: "2026-11-13T18:29:33+00:00"
 ---
 
 # Run Local Quality Gate
@@ -41,6 +41,13 @@ Do not install dependencies, update lockfiles, or modify the runtime environment
 unless the project documents that step as part of the local gate or the user has
 approved it. If required setup is unavailable or out of scope, report the
 limitation before running dependent checks.
+
+Inspect the commands and invoked hooks before execution, especially in an
+untrusted checkout: tests, build backends and dependency lifecycle scripts run
+project code. Use an isolated disposable environment without production
+credentials or sensitive files for untrusted code. Do not weaken sandbox or
+approval controls to make a gate run; report the unavailable check and continue
+independent safe checks. Sanitize output before sharing diagnostics.
 
 ### 2. Decide the validation sequence
 

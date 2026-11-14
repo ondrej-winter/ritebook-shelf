@@ -1,6 +1,7 @@
 from __future__ import annotations
 
 import os
+import traceback
 from typing import TYPE_CHECKING
 
 import pytest
@@ -49,6 +50,19 @@ def test_missing_required_secret_raises_configuration_error(monkeypatch: pytest.
 
     with pytest.raises(ConfigurationError, match='Invalid runtime configuration'):
         EnvSettingsAdapter().load()
+
+
+def test_invalid_configuration_traceback_does_not_expose_input(tmp_path: Path) -> None:
+    sensitive_value = 'test-secret-42'
+    (tmp_path / '.env').write_text(f'UNRELATED_SECRET={sensitive_value}\n', encoding='utf-8')
+
+    with pytest.raises(ConfigurationError) as exc_info:
+        EnvSettingsAdapter().load()
+
+    rendered = ''.join(traceback.format_exception(exc_info.value))
+    assert sensitive_value not in rendered
+    assert 'ValidationError' not in rendered
+    assert 'Invalid runtime configuration' in rendered
 
 
 @pytest.mark.parametrize('raw_value', ['', '   '])

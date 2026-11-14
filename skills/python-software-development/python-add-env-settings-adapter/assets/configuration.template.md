@@ -26,4 +26,7 @@ settings tests.
   messages.
 - Secret fields are excluded from object representations; explicit dictionary
   serialization and direct access still contain the secret and must not be logged.
+- Configuration errors suppress input-bearing validation chains. Explicit error
+  serialization, exception context inspection and traceback-local capture may
+  still expose values; do not log them.
 - Use `.env.example` as the starting point for local configuration.

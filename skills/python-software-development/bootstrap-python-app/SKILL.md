@@ -2,8 +2,8 @@
 name: bootstrap-python-app
 description: Initialize a new Python project with a hexagonal vertical-slice architecture layout, core tooling, quality checks, and GitHub Actions CI/CD when starting a Python application from scratch.
 metadata:
-  version: "1.6.0"
-  last-verified: "2026-11-13T18:09:02+00:00"
+  version: "2.0.0"
+  last-verified: "2026-11-13T18:32:59+00:00"
 ---
 
 # Bootstrap a Python Hexagonal Vertical-Slice Application
@@ -14,7 +14,8 @@ quality gates, and GitHub Actions CI/CD that mirrors the generated local checks.
 The scaffold is intentionally strict by default: Ruff selects all rules with a
 small documented ignore set, `ty` checks both `src` and `tests`, import-linter
 guards architectural boundaries, pytest runs with coverage, and CI creates
-semantic patch releases only after the quality job passes.
+semantic patch releases only after explicit release opt-in and a passing quality
+job. Fresh scaffolds run quality checks without publishing.
 
 ## Prerequisites
 
@@ -43,6 +44,12 @@ tokens, including release-branch choices, consistently. The destination must be
 new or explicitly selected for safe reconciliation; never apply this scaffold
 over an existing project as an implicit migration. After a partial failure,
 inspect created files and preserve user edits before resuming.
+
+Treat template inputs as data: validate names used in package/file/shell contexts,
+check the branch with Git's branch-name rules, and serialize URLs and branch
+values for their TOML/YAML/expression contexts rather than raw substitution.
+Reject control characters and unresolved tokens. Never execute a command formed
+from unvalidated input or follow a destination symlink outside the selected root.
 
 ## Steps
 
@@ -282,7 +289,7 @@ The workflow mirrors the local quality gate and release behavior:
   and `uvx --from . <app_name> --version`
 - uploads `dist/` as a CI artifact
 - creates a semantic patch release on non-bot pushes to `<default_branch>` after
-  quality succeeds
+  quality succeeds, only when repository variable `ENABLE_PYPI_RELEASE` is `true`
 - updates `pyproject.toml` and `uv.lock`, commits `chore(release): v{version}`,
   creates a `v{version}` tag, and builds distribution artifacts through
   `python-semantic-release`
@@ -299,8 +306,23 @@ Before relying on the release job, configure the repository and PyPI project:
   branch but do not recursively trigger another release
 - branch protection allows the release job to push version/tag updates, or the
   project intentionally uses a separate approved release mechanism
-- automatic PyPI publication is disabled or deferred until trusted publishing is
-  configured; do not use long-lived PyPI tokens in repository secrets by default
+- leave `ENABLE_PYPI_RELEASE` unset or `false` until release execution is explicitly
+  authorized and trusted publishing, environment protection and branch policy are
+  configured; then set this repository variable to the string `true`
+- do not use long-lived PyPI tokens in repository secrets by default
+
+The job-level opt-in uses a repository/organization variable available before
+environment selection; an environment-only variable is insufficient. See
+[GitHub contexts](https://docs.github.com/en/actions/reference/workflows-and-actions/contexts).
+The template pins actions to upstream commit IDs resolved on 2026-11-13. Review
+their source and update pins deliberately; tags in comments are provenance hints,
+not update instructions. Quality checkout does not persist its token for project
+tests/build hooks. Apply [GitHub secure-use guidance](https://docs.github.com/en/actions/reference/security/secure-use)
+when adapting permissions, caches, events and privileged release execution.
+
+Migration from the previous scaffold: existing automatic publishers must add the
+repository opt-in after reviewing their release policy; this is an intentional
+safe-default change. Local quality commands and the CLI contract are unchanged.
 
 ### 8. Verify the setup
 
@@ -342,8 +364,8 @@ Write a `README.md` that includes:
 - How to run quality checks (`uv run ruff format .`, `uv run ruff check .`, `uv run ty check src tests`, `uv run lint-imports`, `uv run pytest`).
 - How to use `make quality`, `make pre-commit`, and the dependency inspection
   targets when the generated Makefile is included.
-- How CI/CD runs in GitHub Actions and how patch releases are published from
-  `<default_branch>` to PyPI.
+- How CI/CD runs in GitHub Actions and how `ENABLE_PYPI_RELEASE` explicitly enables
+  patch releases from `<default_branch>` to PyPI after setup and authorization.
 - A high-level architecture overview (features / domain / application / adapters).
 
 ## Hexagonal vertical-slice architecture conventions

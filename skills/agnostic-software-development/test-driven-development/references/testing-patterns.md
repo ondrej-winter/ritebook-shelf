@@ -31,6 +31,18 @@ test command and any broader validation that should run before handoff.
 - Include supported consumer fixtures when evolving a durable schema or API;
   provider-only success tests do not establish backward compatibility.
 
+## Security boundaries
+
+- For protected operations, test denied, cross-tenant and malformed input as well
+  as success, including that rejection leaves protected state unchanged when
+  promised. Exercise the real enforcement boundary; a mock returning "denied"
+  does not prove authorization works.
+- Use synthetic credentials and private-data fixtures. Check redaction in
+  observable output without copying live secrets into tests or failure reports.
+- Run side-effectful integration tests against isolated fixtures and authorized
+  test services; preferring real implementations does not authorize production
+  writes or disclosure of real data.
+
 ## Anti-patterns
 
 - Testing private implementation details instead of behavior.

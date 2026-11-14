@@ -2,8 +2,8 @@
 name: split-python-module
 description: Split a growing Python module or package while preserving behavior, boundaries, imports, public APIs, and reviewability when code has mixed responsibilities or needs clearer ownership.
 metadata:
-  version: "1.1.3"
-  last-verified: "2026-11-13T17:52:46+00:00"
+  version: "1.2.0"
+  last-verified: "2026-11-13T18:35:02+00:00"
 ---
 
 # Split a Python Module
@@ -110,6 +110,12 @@ newly serialized qualified names, or the location a monkeypatch must intercept.
 Check representative saved data and dynamic callers in each supported upgrade or
 downgrade direction. Verify patch behavior, not just that the old attribute still
 exists. Retain a compatibility shim or define a migration when required.
+
+Use trusted synthetic fixtures for serialization compatibility checks. Never
+unpickle an untrusted saved object or import a user-supplied plugin merely to
+verify its old module path; both can execute code. Preserve validation and
+authorization entry points when relocating code, and keep their rejection tests
+at the public boundary.
 
 ### 7. Run focused validation
 

@@ -2,8 +2,8 @@
 name: update-project-docs
 description: Update project-facing documentation after a reader-visible behavior, configuration, operation, or developer workflow change.
 metadata:
-  version: "1.3.3"
-  last-verified: "2026-11-13T17:48:34+00:00"
+  version: "1.4.0"
+  last-verified: "2026-11-13T18:30:49+00:00"
 ---
 
 # Update Project Docs
@@ -75,6 +75,12 @@ Make focused edits that preserve the existing structure and style.
 - Avoid broad rewrites unless the existing section is misleading.
 - Remove or update stale instructions that conflict with the change.
 - Keep examples short, accurate, and runnable when possible.
+- Use placeholders for credentials and synthetic personal data. Document secret
+  references and approved configuration mechanisms rather than live values;
+  sanitize copied logs, URLs and screenshots before persisting them.
+- Inspect command side effects before validating examples. Use disposable
+  fixtures for writes; documentation validation does not authorize deployment,
+  publication or changes to shared data.
 
 ### 4. Document configuration changes explicitly
 

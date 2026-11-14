@@ -28,6 +28,7 @@ class EnvSettings(BaseSettings):
         case_sensitive=False,
         populate_by_name=True,
         extra='ignore',
+        hide_input_in_errors=True,
     )
 
     required_secret: str = Field(alias=REQUIRED_SECRET_ALIAS, repr=False)
@@ -61,5 +62,5 @@ def load_settings_from_env() -> EnvSettings:
     """Load and validate environment-backed settings."""
     try:
         return EnvSettings()  # type: ignore[call-arg]
-    except ValidationError as exc:
-        raise ConfigurationError(INVALID_CONFIGURATION_ERROR) from exc
+    except ValidationError:
+        raise ConfigurationError(INVALID_CONFIGURATION_ERROR) from None

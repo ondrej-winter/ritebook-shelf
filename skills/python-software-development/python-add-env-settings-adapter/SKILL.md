@@ -2,8 +2,8 @@
 name: python-add-env-settings-adapter
 description: Add an environment-backed runtime settings adapter to a Python hexagonal vertical-slice app or library, using a configuration slice, application-owned settings DTOs, pydantic-settings adapter validation, and focused tests.
 metadata:
-  version: "1.0.5"
-  last-verified: "2026-11-13T17:56:36+00:00"
+  version: "1.1.0"
+  last-verified: "2026-11-13T18:34:29+00:00"
 ---
 
 # Add an Environment Settings Adapter
@@ -134,6 +134,7 @@ SettingsConfigDict(
     case_sensitive=False,
     populate_by_name=True,
     extra="ignore",
+    hide_input_in_errors=True,
 )
 ```
 
@@ -151,6 +152,15 @@ Keep secrets out of both adapter-model and DTO representations. Suppressing
 `repr` does not redact explicit serialization or field access; callers must not
 log the whole settings object as a dictionary. Catch the application exception
 type rather than parsing its human-readable message.
+
+Suppress the original validation exception when translating it to the safe
+application error (`raise ConfigurationError(...) from None`). A chained
+`ValidationError` can include configuration input in ordinary tracebacks.
+`hide_input_in_errors` protects displayed validation messages, not `.errors()`,
+exception context inspection or traceback tools that capture locals. Do not
+serialize these diagnostics or settings values into logs. See the
+[Pydantic configuration reference](https://docs.pydantic.dev/latest/api/config/#pydantic.config.ConfigDict.hide_input_in_errors)
+and [Python exception chaining](https://docs.python.org/3/reference/simple_stmts.html#the-raise-statement).
 
 ### 5. Keep `adapter.py` thin
 
@@ -200,6 +210,8 @@ Cover at least:
 - unrelated environment variables are ignored,
 - environment precedence over `.env`, including blank override rejection,
 - secret exclusion from adapter and DTO representations.
+- sanitized configuration error tracebacks, including unrelated secret-bearing
+  `.env` values when a required field is missing.
 
 ### 8. Document every settings option
 

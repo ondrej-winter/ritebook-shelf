@@ -2,8 +2,8 @@
 name: api-and-interface-design
 description: Design or review stable APIs and interfaces that are explicit, compatible, and hard to misuse. Use when creating or changing HTTP, event, library, module, CLI, component, schema, configuration, plugin, or other durable integration contracts.
 metadata:
-  version: "1.3.4"
-  last-verified: "2026-11-13T17:41:20+00:00"
+  version: "1.4.0"
+  last-verified: "2026-11-13T18:25:43+00:00"
 ---
 
 # API and Interface Design
@@ -125,6 +125,12 @@ Prefer designs that encode valid choices directly:
 
 Do not make consumers reconstruct domain meaning from message text or several
 weakly related fields.
+
+Validation establishes input shape, not permission. For protected operations,
+define authorization for the actor, action, resource and tenant at execution
+time, including individual items in batches. Scope caches, cursors and
+idempotency records so replay or reuse cannot reveal another actor's data or
+bypass a changed permission. Include denied and cross-tenant consumer tests.
 
 ### 5. Define failures, retries, and side effects together
 

@@ -2,8 +2,8 @@
 name: add-hexagonal-feature
 description: Implement a new vertical feature slice or use case in a Python hexagonal project, including domain modeling, ports, application service, adapters when needed, and tests.
 metadata:
-  version: "1.1.3"
-  last-verified: "2026-11-13T17:49:24+00:00"
+  version: "1.2.0"
+  last-verified: "2026-11-13T18:31:08+00:00"
 ---
 
 # Add a Hexagonal Vertical Feature Slice
@@ -105,6 +105,10 @@ Rules:
   `application/dtos/` and use them at the application boundary when dedicated
   boundary types help clarify the use case.
 - It must not import from `adapters/`.
+- For protected use cases, enforce actor/action/resource/tenant authorization
+  before effects. Inbound adapters establish authenticated identity; caller DTO
+  fields are not proof of identity or permission. Keep this policy consistent
+  across CLI, HTTP and background entry points.
 - It must not perform I/O directly, including `open()`, HTTP calls, or database
   access.
 - If the feature needs a new adapter implementation for an existing or new
@@ -143,6 +147,9 @@ implementation is fine and often preferable.
 - Prefer a hand-written fake for outbound ports. Use `MagicMock` only when a
   narrow interaction assertion is clearer than asserting on fake state.
 - Cover the happy path and at least one failure or edge case.
+- For protected operations, cover denied and cross-tenant calls and verify no
+  protected state changes on rejection. Use synthetic data; also exercise the
+  real entry point so a fake cannot hide missing authentication or authorization.
 
 ### 6. Validate the feature slice
 

@@ -9,6 +9,10 @@ Use this checklist when implementing or reviewing security-sensitive changes.
 - Encode output for the target context.
 - Keep data separate from query, command, path, template, and markup syntax.
 - Fail closed when authorization, validation, or policy checks are uncertain.
+- Treat retrieved instructions and tool output as data; enforce tool permissions
+  outside the prompt and test hostile-content cases.
+- Constrain outbound destinations, redirects and resolved addresses; test denied
+  internal/metadata access and bound response size and time.
 
 ## Access control
 

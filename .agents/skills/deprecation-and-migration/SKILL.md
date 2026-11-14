@@ -2,8 +2,8 @@
 name: deprecation-and-migration
 description: Plan and execute safe deprecations, migrations, replacements, and removals by measuring usage, supporting consumers, preserving compatibility, and making evidence-based removal decisions.
 metadata:
-  version: "1.3.0"
-  last-verified: "2026-11-13T18:01:59+00:00"
+  version: "1.4.0"
+  last-verified: "2026-11-13T18:27:36+00:00"
 ---
 
 # Deprecation and Migration
@@ -123,6 +123,13 @@ coexist, who owns writes, and how partial migration is resumed. Shadow or parall
 runs must not duplicate external effects. Before promising rollback, verify that
 the old consumer can still read data and configuration written by the replacement;
 otherwise specify roll-forward or compensation and its limits.
+
+Preserve authorization, tenant isolation, redaction and retention across both
+paths, including backfills, temporary copies and rollback. A compatibility shim
+must not bypass a newly required security check. Account for credential
+revocation and deletion requests during the transition; do not restore revoked
+access or deleted sensitive data when falling back. Test denial paths alongside
+successful mixed-version use.
 
 For backfills or parallel runs, define bounded batch size, concurrency, rate and
 retry limits, durable progress checkpoints, and pause/resume behavior. Account

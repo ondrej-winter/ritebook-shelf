@@ -2,8 +2,8 @@
 name: python-add-port
 description: Add a technology-agnostic inbound or outbound application port interface to the owning vertical slice in a Python hexagonal project for a new use case or dependency.
 metadata:
-  version: "1.0.4"
-  last-verified: "2026-11-13T17:52:17+00:00"
+  version: "1.1.0"
+  last-verified: "2026-11-13T18:34:42+00:00"
 ---
 
 # Add a Port
@@ -116,6 +116,13 @@ ordering when relevant. Distinguish absent results from failures and define
 collection bounds rather than leaving adapters to choose incompatible meanings.
 Inspect callers and existing implementations before changing an established
 signature, default, or exception contract; migrate all supported consumers.
+
+For protected operations, state how authenticated actor and tenant context
+arrive, where resource/action authorization is enforced, and what a denial
+returns without exposing sensitive state. A typed DTO or structural `Protocol`
+does not validate input or prove permission. Include denial and cross-tenant
+cases in the application/adapter contract checks without importing transport
+authentication types into the port.
 
 Store related command, query, and result DTOs under:
 

@@ -2,8 +2,8 @@
 name: frontend-ui-engineering
 description: Build, review, or refine browser-facing user interfaces so they are accessible, responsive, performant, visually coherent, and aligned with the project design system.
 metadata:
-  version: "1.3.4"
-  last-verified: "2026-11-13T17:44:02+00:00"
+  version: "1.4.0"
+  last-verified: "2026-11-13T18:28:07+00:00"
 ---
 
 # Frontend UI Engineering
@@ -145,6 +145,13 @@ Implement the states users can actually encounter:
 
 Empty and error states should tell the user what happened and what they can do
 next.
+
+Render user and remote content through context-aware escaping. Avoid raw HTML
+or scriptable URLs; when rich content is required, use the project's reviewed
+sanitizer and allowed URL schemes. Keep secrets out of client bundles, URLs and
+browser logs. Hidden or disabled controls are presentation only: the server must
+authorize protected reads and mutations. Include malicious-content and denied
+access cases in verification when these boundaries change.
 
 For asynchronous work, define repeated-submit behavior, stale-response handling,
 optimistic rollback, and what happens after navigation or component removal.

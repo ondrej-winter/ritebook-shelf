@@ -2,8 +2,8 @@
 name: write-pytest-tests
 description: Write or refactor Python tests when pytest-native style, focused scenarios, and deterministic setup are needed.
 metadata:
-  version: "1.1.4"
-  last-verified: "2026-11-13T17:53:17+00:00"
+  version: "1.2.0"
+  last-verified: "2026-11-13T18:35:19+00:00"
 ---
 
 # Write Pytest Tests
@@ -214,6 +214,12 @@ that passes only in a clean developer shell is not isolated.
 - Add regression tests for bugs before or alongside the fix.
 - Keep tests readable and direct; do not duplicate production logic inside
   assertions or helpers.
+- For security boundaries, include denied/cross-tenant cases and verify protected
+  state remains unchanged on rejection where promised. Do not mock away the
+  enforcement being tested.
+- Use synthetic secrets and personal data. Parametrized IDs, assertion diffs,
+  captured logs and tracebacks can expose fixture values; never use live
+  credentials or production records as regression inputs.
 
 ### 9. Avoid pytest anti-patterns
 

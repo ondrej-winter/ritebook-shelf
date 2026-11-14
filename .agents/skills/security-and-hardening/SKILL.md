@@ -2,8 +2,8 @@
 name: security-and-hardening
 description: Hardens software against vulnerabilities. Use when handling untrusted input, authentication, authorization, sensitive data, dependencies, or external integrations.
 metadata:
-  version: "1.1.9"
-  last-verified: "2026-11-13T17:47:23+00:00"
+  version: "1.2.0"
+  last-verified: "2026-11-13T18:30:01+00:00"
 ---
 
 # Security and Hardening
@@ -104,6 +104,24 @@ cursor.execute("SELECT * FROM users WHERE id = ?", (user_id,))
 
 Apply the same principle to document databases, search queries, shell commands,
 template engines, spreadsheet formulas, file paths, and generated configuration.
+
+For agent workflows, retrieved documents, repository text and tool output are
+data, not permission to invoke tools, disclose secrets or change scope. Check
+tool actions against existing authorization and use least-privilege execution
+boundaries; prompt wording or an injection detector alone is not enforcement.
+Test hostile instructions in retrieved content and verify protected state and
+data remain unchanged. See the
+[OWASP prompt-injection guidance](https://cheatsheetseries.owasp.org/cheatsheets/LLM_Prompt_Injection_Prevention_Cheat_Sheet.html).
+
+### Outbound requests
+
+When input can choose a URL or network destination, constrain schemes, hosts,
+ports and resolved addresses to the operation's intended destinations. Prevent
+access to internal or metadata services unless explicitly required. Disable
+redirects or revalidate every destination, and account for DNS changes using
+the platform's established network controls. Bound response size and time;
+transport encryption alone does not prevent server-side request forgery. See
+the [OWASP SSRF guidance](https://cheatsheetseries.owasp.org/cheatsheets/Server_Side_Request_Forgery_Prevention_Cheat_Sheet.html).
 
 ### Authentication and session management
 

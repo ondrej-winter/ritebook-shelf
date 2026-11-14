@@ -2,8 +2,8 @@
 name: python-add-adapter
 description: Add an inbound or outbound adapter to the owning vertical slice in a Python hexagonal project while keeping business logic in the application layer.
 metadata:
-  version: "1.0.5"
-  last-verified: "2026-11-13T17:50:12+00:00"
+  version: "1.1.0"
+  last-verified: "2026-11-13T18:33:27+00:00"
 ---
 
 # Add an Adapter
@@ -71,8 +71,13 @@ __all__ = ["router"]
 ### 2. Implement
 
 - Accept external input and map it to an application command or query DTO.
+- Validate external shape, size and encoding before mapping; establish identity
+  with the transport's authentication mechanism. Do not trust caller-supplied
+  roles or tenant IDs as authority; application policy must authorize the use case.
 - Call the application through its inbound port contract.
 - Map the result or exception back to the external format.
+- Keep credentials, private data and infrastructure diagnostics out of public
+  responses and logs; use the project's safe error categories.
 - Map domain or application exceptions to adapter-level error responses when
   they are part of the caller-visible boundary.
 - Import domain types directly only when the port contract or exception mapping
@@ -133,6 +138,9 @@ __all__ = ["<AdapterName>"]
 - Bound technical timeouts and retries according to the port contract. A lost
   response may follow a committed write; reconcile unknown outcomes or use the
   established idempotency mechanism before replaying effects.
+- Keep data separate from SQL, subprocess, path and template syntax using the
+  appropriate safe APIs. Constrain caller-selected network destinations and
+  redirects; preserve tenant scope and use least-privilege credentials.
 
 ### 3. Test
 
@@ -150,6 +158,11 @@ including mapping and error translation. Then run the quality gate required by
 the target project's `AGENTS.md` and executable task definitions. Use its
 configured lint, type, architecture, and test commands; report any unavailable
 checks and their limits.
+
+Include malformed and oversized input, missing/forged identity, denied resource
+access and redacted failure output where relevant. Pair adapter tests with the
+real use-case enforcement path for authorization claims; a stubbed port cannot
+prove the application denies access. Use isolated test services for effects.
 
 ## Related skills
 

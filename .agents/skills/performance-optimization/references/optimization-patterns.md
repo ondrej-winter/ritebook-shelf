@@ -61,6 +61,11 @@ for item in items:
 
 Caches and queues should have clear bounds, invalidation, and fallback behavior.
 
+For protected data, preserve authorization and tenant scope in cache keys and
+batch results. Define invalidation for permission changes and deletion, not only
+freshness. Test cross-user access and revoked permissions after a cache hit;
+reusing a previously authorized result must not bypass current access policy.
+
 ```text
 Avoid:
 - unlimited cache growth

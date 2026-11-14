@@ -2,8 +2,8 @@
 name: incremental-implementation
 description: Guide agents to deliver changes incrementally. Use when implementing a feature or change that touches more than one file, when a task feels too large to land in one step, or before writing a large amount of code at once.
 metadata:
-  version: "2.2.0"
-  last-verified: "2026-11-13T18:03:49+00:00"
+  version: "2.3.0"
+  last-verified: "2026-11-13T18:28:42+00:00"
 ---
 
 # Incremental Implementation
@@ -201,6 +201,12 @@ else:
 ```
 
 This lets you merge small increments to the main branch without exposing incomplete work.
+
+A flag is not an authorization boundary. Before an increment exposes a protected
+read, write or background effect, include the required authentication,
+authorization, input validation and secret handling in that increment. Test
+denied or malformed requests alongside success; do not defer these controls to
+a later hardening slice or rely on a hidden UI to protect an active endpoint.
 
 ### Rule 4: Safe defaults
 

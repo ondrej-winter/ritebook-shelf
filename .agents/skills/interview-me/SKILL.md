@@ -2,8 +2,8 @@
 name: interview-me
 description: Reduce uncertainty about a user's underlying intent through an adaptive XY-problem interview that scales from concise clarification to a full evidence-based model. Use when an ask is underspecified, solution-led, has material unresolved trade-offs, or the user explicitly requests an interview before idea refinement, specification, planning, or implementation.
 metadata:
-  version: "2.0.1"
-  last-verified: "2026-10-01T21:27:59+02:00"
+  version: "2.1.0"
+  last-verified: "2026-11-13T18:28:54+00:00"
 ---
 
 # Interview Me
@@ -236,6 +236,12 @@ A working guess must be falsifiable, evidence-based where possible, and
 non-manipulative. It tests the model; it does not steer the user toward a preferred
 answer. Do not batch questions. Wait for the answer before selecting the next
 highest-value unknown.
+
+Ask for the minimum information needed for the decision. Do not request
+passwords, tokens, private keys or raw personal records; use redacted examples,
+roles and data categories. If the user supplies sensitive values, do not repeat
+them in the current picture, final artifact or downstream handoff. Clarify
+permissions and privacy constraints without collecting the protected data itself.
 
 ### 3. Update from evidence and escalate when needed
 
