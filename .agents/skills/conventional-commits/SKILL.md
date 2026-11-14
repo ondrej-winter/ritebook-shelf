@@ -2,14 +2,14 @@
 name: conventional-commits
 description: Write, review, and validate Conventional Commits v1.0.0 messages with correct type, scope, description, body, footer, and breaking-change syntax.
 metadata:
-  version: "1.1.3"
-  last-verified: "2026-11-13T17:42:55+00:00"
+  version: "1.1.4"
+  last-verified: "2026-11-14T18:42:45+00:00"
 ---
 
 # Conventional Commits
 
 Use this skill when writing, reviewing, or correcting commit messages that should
-follow the Conventional Commits v1.0.0 specification. The goal is to make commit
+follow the [Conventional Commits v1.0.0 specification](https://www.conventionalcommits.org/en/v1.0.0/). The goal is to make commit
 history machine-readable while keeping messages useful to humans.
 
 This skill focuses on commit message syntax and meaning. Use it with the

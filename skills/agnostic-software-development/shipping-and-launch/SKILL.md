@@ -2,8 +2,8 @@
 name: shipping-and-launch
 description: Prepare production launches with risk-based readiness checks, staged rollout, monitoring, and an explicit recovery strategy. Use before deploying a feature, migration, or other production change.
 metadata:
-  version: "1.6.4"
-  last-verified: "2026-11-13T17:47:46+00:00"
+  version: "1.6.5"
+  last-verified: "2026-11-14T18:46:29+00:00"
 ---
 
 # Shipping and Launch
@@ -70,7 +70,7 @@ supported old/new client, service, schema, and configuration combinations during
 rollout and recovery. Test compatibility before promotion; turning off a feature
 does not reverse data already written or remove a published contract.
 
-Use `references/launch-readiness-checklist.md` for the full cross-cutting
+Use [launch readiness checklist](references/launch-readiness-checklist.md) for the full cross-cutting
 checklist and monitoring categories. Use the focused security, performance, and
 accessibility references when those risks apply. Record skipped checks, reasons,
 accepted risk, and owners.
@@ -110,7 +110,7 @@ thresholds, and retain the ability to stop or reduce exposure at every stage.
 Execute the recovery plan when a release-specific threshold is missed or a new
 severe failure, data-integrity risk, or security issue appears. For a worked rollout
 sequence and example decision table, see
-`references/launch-planning-examples.md`.
+[launch planning examples](references/launch-planning-examples.md).
 
 ## Monitoring and Observability
 
@@ -153,16 +153,16 @@ and how operators will contain or repair harm.
 Document project-derived triggers, decision ownership, commands or runbooks, data
 and state handling, verification, communication, and recovery or containment time
 targets. Dry-run the mechanism when practical. For a reusable template, see
-`references/launch-planning-examples.md`.
+[launch planning examples](references/launch-planning-examples.md).
 
 ## See Also
 
 - For the detailed cross-cutting readiness checklist, see
-  `references/launch-readiness-checklist.md`
-- For security pre-launch checks, see `references/security-checklist.md`
-- For performance pre-launch checklist, see `references/performance-checklist.md`
-- For accessibility verification before launch, see `references/accessibility-checklist.md`
-- For worked rollout and recovery examples, see `references/launch-planning-examples.md`
+  [launch readiness checklist](references/launch-readiness-checklist.md)
+- For security pre-launch checks, see [security checklist](references/security-checklist.md)
+- For performance pre-launch checklist, see [performance checklist](references/performance-checklist.md)
+- For accessibility verification before launch, see [accessibility checklist](references/accessibility-checklist.md)
+- For worked rollout and recovery examples, see [launch planning examples](references/launch-planning-examples.md)
 
 ## Common Rationalizations
 

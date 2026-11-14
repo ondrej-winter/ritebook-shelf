@@ -2,8 +2,8 @@
 name: python-add-env-settings-adapter
 description: Add an environment-backed runtime settings adapter to a Python hexagonal vertical-slice app or library, using a configuration slice, application-owned settings DTOs, pydantic-settings adapter validation, and focused tests.
 metadata:
-  version: "1.1.0"
-  last-verified: "2026-11-13T18:34:29+00:00"
+  version: "1.2.0"
+  last-verified: "2026-11-14T18:49:40+00:00"
 ---
 
 # Add an Environment Settings Adapter
@@ -21,7 +21,8 @@ This skill follows a concrete env settings adapter pattern:
   application DTO,
 - tests isolate the process environment and `.env` lookup.
 
-Use `assets/` templates as starting points, then adapt fields, aliases,
+Resolve the linked assets from the installed skill directory, separately from
+the target project. Use templates as starting points, then adapt fields, aliases,
 defaults, validation rules, and package paths to the target project.
 
 ## Prerequisites
@@ -74,7 +75,7 @@ existing test layout. Keep the same responsibilities and dependency direction.
 
 Create or update
 `src/<app_name>/features/runtime_configuration/application/dtos/app_settings.py`
-from `assets/app_settings.template.py`.
+from [app_settings.template.py](assets/app_settings.template.py).
 
 The DTO should:
 
@@ -86,14 +87,17 @@ The DTO should:
 
 If the project exposes DTOs from the configuration slice's
 `application/dtos/__init__.py`, export `AppSettings` there following the local
-pattern.
+pattern. Otherwise change the adapter and test imports to the concrete
+`application.dtos.app_settings` module; the bundled templates assume the
+package-level export. Inspect the actual package and existing configuration
+before rendering; do not replace established settings or expose live values.
 
 ### 2. Add or reuse a configuration exception
 
 If the project does not already have an application-level configuration error,
 add one to
 `src/<app_name>/features/runtime_configuration/application/exceptions.py` using
-`assets/exceptions.template.py` as a guide.
+[exceptions.template.py](assets/exceptions.template.py) as a guide.
 
 The adapter should translate `pydantic` validation failures into this exception
 so callers do not depend on adapter library exception types.
@@ -104,9 +108,9 @@ Create
 `src/<app_name>/features/runtime_configuration/adapters/inbound/env_settings_adapter/`
 with:
 
-- `__init__.py` from `assets/env_settings_adapter_init.template.py`,
-- `adapter.py` from `assets/env_settings_adapter_adapter.template.py`,
-- `settings.py` from `assets/env_settings_adapter_settings.template.py`.
+- `__init__.py` from [env_settings_adapter_init.template.py](assets/env_settings_adapter_init.template.py),
+- `adapter.py` from [env_settings_adapter_adapter.template.py](assets/env_settings_adapter_adapter.template.py),
+- `settings.py` from [env_settings_adapter_settings.template.py](assets/env_settings_adapter_settings.template.py).
 
 Replace the example `example_app` package, `example app` display name,
 `EXAMPLE_APP` environment prefix, aliases, defaults, and field names with
@@ -189,8 +193,8 @@ the codebase once this adapter exists.
 
 Create or update tests from:
 
-- `assets/test_app_settings.template.py`,
-- `assets/test_env_settings.template.py`.
+- [test_app_settings.template.py](assets/test_app_settings.template.py),
+- [test_env_settings.template.py](assets/test_env_settings.template.py).
 
 Adapter tests should use `monkeypatch` for environment variables and an autouse
 fixture that changes into `tmp_path` so developer-local `.env` files cannot
@@ -217,7 +221,7 @@ Cover at least:
 
 When adding or changing the settings model, create or update a canonical settings
 reference under `docs/`, such as `docs/configuration.md`, using
-`assets/configuration.template.md` as a starting point.
+[configuration.template.md](assets/configuration.template.md) as a starting point.
 
 The settings reference should list every option exposed by `EnvSettings` and
 include:
@@ -234,7 +238,7 @@ Keep this file synchronized with `settings.py`, `AppSettings`, and tests.
 
 ### 9. Maintain `.env.example`
 
-Create or update the root `.env.example` from `assets/env.example.template`.
+Create or update the root `.env.example` from [env.example.template](assets/env.example.template).
 
 The example file should list all supported environment variables, including
 optional variables with defaults. Use safe placeholders for secret values and do
@@ -244,7 +248,7 @@ not include real credentials, tokens, private keys, or production URLs.
 
 Add or update a short configuration section in the main project documentation,
 usually root `README.md`, using
-`assets/readme_configuration_section.template.md` as a guide.
+[readme_configuration_section.template.md](assets/readme_configuration_section.template.md) as a guide.
 
 The README section should point readers to the canonical settings reference and
 the `.env.example` file rather than duplicating the full settings table.

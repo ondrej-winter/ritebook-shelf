@@ -8,7 +8,7 @@ after completing its audit; link findings or verification evidence beside it.
 ### [add-observability](skills/agnostic-software-development/add-observability/SKILL.md)
 
 - [x] api-and-interface-design — [review](audits/2026-11-13-api-and-interface-design.md#add-observability)
-- [ ] author-agent-skill
+- [x] author-agent-skill — [review](audits/2026-11-14-author-agent-skill.md#add-observability)
 - [ ] condensed-prose-refactor
 - [x] performance-optimization — [review](audits/2026-11-13-performance-optimization.md#add-observability)
 - [x] security-and-hardening — [review](audits/2026-11-13-security-and-hardening.md#add-observability)
@@ -16,7 +16,7 @@ after completing its audit; link findings or verification evidence beside it.
 ### [api-and-interface-design](skills/agnostic-software-development/api-and-interface-design/SKILL.md)
 
 - [x] api-and-interface-design — [review](audits/2026-11-13-api-and-interface-design.md#api-and-interface-design)
-- [ ] author-agent-skill
+- [x] author-agent-skill — [review](audits/2026-11-14-author-agent-skill.md#api-and-interface-design)
 - [ ] condensed-prose-refactor
 - [x] performance-optimization — [review](audits/2026-11-13-performance-optimization.md#api-and-interface-design)
 - [x] security-and-hardening — [review](audits/2026-11-13-security-and-hardening.md#api-and-interface-design)
@@ -24,7 +24,7 @@ after completing its audit; link findings or verification evidence beside it.
 ### [author-agent-skill](skills/agnostic-software-development/author-agent-skill/SKILL.md)
 
 - [x] api-and-interface-design — [review](audits/2026-11-13-api-and-interface-design.md#author-agent-skill)
-- [ ] author-agent-skill
+- [x] author-agent-skill — [review](audits/2026-11-14-author-agent-skill.md#author-agent-skill)
 - [ ] condensed-prose-refactor
 - [x] performance-optimization — [review](audits/2026-11-13-performance-optimization.md#author-agent-skill)
 - [x] security-and-hardening — [review](audits/2026-11-13-security-and-hardening.md#author-agent-skill)
@@ -32,7 +32,7 @@ after completing its audit; link findings or verification evidence beside it.
 ### [author-agents-config](skills/agnostic-software-development/author-agents-config/SKILL.md)
 
 - [x] api-and-interface-design — [review](audits/2026-11-13-api-and-interface-design.md#author-agents-config)
-- [ ] author-agent-skill
+- [x] author-agent-skill — [review](audits/2026-11-14-author-agent-skill.md#author-agents-config)
 - [ ] condensed-prose-refactor
 - [x] performance-optimization — [review](audits/2026-11-13-performance-optimization.md#author-agents-config)
 - [x] security-and-hardening — [review](audits/2026-11-13-security-and-hardening.md#author-agents-config)
@@ -40,7 +40,7 @@ after completing its audit; link findings or verification evidence beside it.
 ### [browser-runtime-verification](skills/agnostic-software-development/browser-runtime-verification/SKILL.md)
 
 - [x] api-and-interface-design — [review](audits/2026-11-13-api-and-interface-design.md#browser-runtime-verification)
-- [ ] author-agent-skill
+- [x] author-agent-skill — [review](audits/2026-11-14-author-agent-skill.md#browser-runtime-verification)
 - [ ] condensed-prose-refactor
 - [x] performance-optimization — [review](audits/2026-11-13-performance-optimization.md#browser-runtime-verification)
 - [x] security-and-hardening — [review](audits/2026-11-13-security-and-hardening.md#browser-runtime-verification)
@@ -48,7 +48,7 @@ after completing its audit; link findings or verification evidence beside it.
 ### [ci-cd-and-automation](skills/agnostic-software-development/ci-cd-and-automation/SKILL.md)
 
 - [x] api-and-interface-design — [review](audits/2026-11-13-api-and-interface-design.md#ci-cd-and-automation)
-- [ ] author-agent-skill
+- [x] author-agent-skill — [review](audits/2026-11-14-author-agent-skill.md#ci-cd-and-automation)
 - [ ] condensed-prose-refactor
 - [x] performance-optimization — [review](audits/2026-11-13-performance-optimization.md#ci-cd-and-automation)
 - [x] security-and-hardening — [review](audits/2026-11-13-security-and-hardening.md#ci-cd-and-automation)
@@ -56,7 +56,7 @@ after completing its audit; link findings or verification evidence beside it.
 ### [code-review-and-quality](skills/agnostic-software-development/code-review-and-quality/SKILL.md)
 
 - [x] api-and-interface-design — [review](audits/2026-11-13-api-and-interface-design.md#code-review-and-quality)
-- [ ] author-agent-skill
+- [x] author-agent-skill — [review](audits/2026-11-14-author-agent-skill.md#code-review-and-quality)
 - [ ] condensed-prose-refactor
 - [x] performance-optimization — [review](audits/2026-11-13-performance-optimization.md#code-review-and-quality)
 - [x] security-and-hardening — [review](audits/2026-11-13-security-and-hardening.md#code-review-and-quality)
@@ -64,7 +64,7 @@ after completing its audit; link findings or verification evidence beside it.
 ### [code-simplification](skills/agnostic-software-development/code-simplification/SKILL.md)
 
 - [x] api-and-interface-design — [review](audits/2026-11-13-api-and-interface-design.md#code-simplification)
-- [ ] author-agent-skill
+- [x] author-agent-skill — [review](audits/2026-11-14-author-agent-skill.md#code-simplification)
 - [ ] condensed-prose-refactor
 - [x] performance-optimization — [review](audits/2026-11-13-performance-optimization.md#code-simplification)
 - [x] security-and-hardening — [review](audits/2026-11-13-security-and-hardening.md#code-simplification)
@@ -72,7 +72,7 @@ after completing its audit; link findings or verification evidence beside it.
 ### [context-engineering](skills/agnostic-software-development/context-engineering/SKILL.md)
 
 - [x] api-and-interface-design — [review](audits/2026-11-13-api-and-interface-design.md#context-engineering)
-- [ ] author-agent-skill
+- [x] author-agent-skill — [review](audits/2026-11-14-author-agent-skill.md#context-engineering)
 - [ ] condensed-prose-refactor
 - [x] performance-optimization — [review](audits/2026-11-13-performance-optimization.md#context-engineering)
 - [x] security-and-hardening — [review](audits/2026-11-13-security-and-hardening.md#context-engineering)
@@ -80,7 +80,7 @@ after completing its audit; link findings or verification evidence beside it.
 ### [conventional-commits](skills/agnostic-software-development/conventional-commits/SKILL.md)
 
 - [x] api-and-interface-design — [review](audits/2026-11-13-api-and-interface-design.md#conventional-commits)
-- [ ] author-agent-skill
+- [x] author-agent-skill — [review](audits/2026-11-14-author-agent-skill.md#conventional-commits)
 - [ ] condensed-prose-refactor
 - [x] performance-optimization — [review](audits/2026-11-13-performance-optimization.md#conventional-commits)
 - [x] security-and-hardening — [review](audits/2026-11-13-security-and-hardening.md#conventional-commits)
@@ -88,7 +88,7 @@ after completing its audit; link findings or verification evidence beside it.
 ### [debugging-and-error-recovery](skills/agnostic-software-development/debugging-and-error-recovery/SKILL.md)
 
 - [x] api-and-interface-design — [review](audits/2026-11-13-api-and-interface-design.md#debugging-and-error-recovery)
-- [ ] author-agent-skill
+- [x] author-agent-skill — [review](audits/2026-11-14-author-agent-skill.md#debugging-and-error-recovery)
 - [ ] condensed-prose-refactor
 - [x] performance-optimization — [review](audits/2026-11-13-performance-optimization.md#debugging-and-error-recovery)
 - [x] security-and-hardening — [review](audits/2026-11-13-security-and-hardening.md#debugging-and-error-recovery)
@@ -96,7 +96,7 @@ after completing its audit; link findings or verification evidence beside it.
 ### [deprecation-and-migration](skills/agnostic-software-development/deprecation-and-migration/SKILL.md)
 
 - [x] api-and-interface-design — [review](audits/2026-11-13-api-and-interface-design.md#deprecation-and-migration)
-- [ ] author-agent-skill
+- [x] author-agent-skill — [review](audits/2026-11-14-author-agent-skill.md#deprecation-and-migration)
 - [ ] condensed-prose-refactor
 - [x] performance-optimization — [review](audits/2026-11-13-performance-optimization.md#deprecation-and-migration)
 - [x] security-and-hardening — [review](audits/2026-11-13-security-and-hardening.md#deprecation-and-migration)
@@ -104,7 +104,7 @@ after completing its audit; link findings or verification evidence beside it.
 ### [documentation-and-adrs](skills/agnostic-software-development/documentation-and-adrs/SKILL.md)
 
 - [x] api-and-interface-design — [review](audits/2026-11-13-api-and-interface-design.md#documentation-and-adrs)
-- [ ] author-agent-skill
+- [x] author-agent-skill — [review](audits/2026-11-14-author-agent-skill.md#documentation-and-adrs)
 - [ ] condensed-prose-refactor
 - [x] performance-optimization — [review](audits/2026-11-13-performance-optimization.md#documentation-and-adrs)
 - [x] security-and-hardening — [review](audits/2026-11-13-security-and-hardening.md#documentation-and-adrs)
@@ -112,7 +112,7 @@ after completing its audit; link findings or verification evidence beside it.
 ### [doubt-driven-development](skills/agnostic-software-development/doubt-driven-development/SKILL.md)
 
 - [x] api-and-interface-design — [review](audits/2026-11-13-api-and-interface-design.md#doubt-driven-development)
-- [ ] author-agent-skill
+- [x] author-agent-skill — [review](audits/2026-11-14-author-agent-skill.md#doubt-driven-development)
 - [ ] condensed-prose-refactor
 - [x] performance-optimization — [review](audits/2026-11-13-performance-optimization.md#doubt-driven-development)
 - [x] security-and-hardening — [review](audits/2026-11-13-security-and-hardening.md#doubt-driven-development)
@@ -120,7 +120,7 @@ after completing its audit; link findings or verification evidence beside it.
 ### [frontend-ui-engineering](skills/agnostic-software-development/frontend-ui-engineering/SKILL.md)
 
 - [x] api-and-interface-design — [review](audits/2026-11-13-api-and-interface-design.md#frontend-ui-engineering)
-- [ ] author-agent-skill
+- [x] author-agent-skill — [review](audits/2026-11-14-author-agent-skill.md#frontend-ui-engineering)
 - [ ] condensed-prose-refactor
 - [x] performance-optimization — [review](audits/2026-11-13-performance-optimization.md#frontend-ui-engineering)
 - [x] security-and-hardening — [review](audits/2026-11-13-security-and-hardening.md#frontend-ui-engineering)
@@ -128,7 +128,7 @@ after completing its audit; link findings or verification evidence beside it.
 ### [git-workflow-and-versioning](skills/agnostic-software-development/git-workflow-and-versioning/SKILL.md)
 
 - [x] api-and-interface-design — [review](audits/2026-11-13-api-and-interface-design.md#git-workflow-and-versioning)
-- [ ] author-agent-skill
+- [x] author-agent-skill — [review](audits/2026-11-14-author-agent-skill.md#git-workflow-and-versioning)
 - [ ] condensed-prose-refactor
 - [x] performance-optimization — [review](audits/2026-11-13-performance-optimization.md#git-workflow-and-versioning)
 - [x] security-and-hardening — [review](audits/2026-11-13-security-and-hardening.md#git-workflow-and-versioning)
@@ -136,7 +136,7 @@ after completing its audit; link findings or verification evidence beside it.
 ### [hexagonal-vertical-slices](skills/agnostic-software-development/hexagonal-vertical-slices/SKILL.md)
 
 - [x] api-and-interface-design — [review](audits/2026-11-13-api-and-interface-design.md#hexagonal-vertical-slices)
-- [ ] author-agent-skill
+- [x] author-agent-skill — [review](audits/2026-11-14-author-agent-skill.md#hexagonal-vertical-slices)
 - [ ] condensed-prose-refactor
 - [x] performance-optimization — [review](audits/2026-11-13-performance-optimization.md#hexagonal-vertical-slices)
 - [x] security-and-hardening — [review](audits/2026-11-13-security-and-hardening.md#hexagonal-vertical-slices)
@@ -144,7 +144,7 @@ after completing its audit; link findings or verification evidence beside it.
 ### [idea-refine](skills/agnostic-software-development/idea-refine/SKILL.md)
 
 - [x] api-and-interface-design — [review](audits/2026-11-13-api-and-interface-design.md#idea-refine)
-- [ ] author-agent-skill
+- [x] author-agent-skill — [review](audits/2026-11-14-author-agent-skill.md#idea-refine)
 - [ ] condensed-prose-refactor
 - [x] performance-optimization — [review](audits/2026-11-13-performance-optimization.md#idea-refine)
 - [x] security-and-hardening — [review](audits/2026-11-13-security-and-hardening.md#idea-refine)
@@ -152,7 +152,7 @@ after completing its audit; link findings or verification evidence beside it.
 ### [incremental-implementation](skills/agnostic-software-development/incremental-implementation/SKILL.md)
 
 - [x] api-and-interface-design — [review](audits/2026-11-13-api-and-interface-design.md#incremental-implementation)
-- [ ] author-agent-skill
+- [x] author-agent-skill — [review](audits/2026-11-14-author-agent-skill.md#incremental-implementation)
 - [ ] condensed-prose-refactor
 - [x] performance-optimization — [review](audits/2026-11-13-performance-optimization.md#incremental-implementation)
 - [x] security-and-hardening — [review](audits/2026-11-13-security-and-hardening.md#incremental-implementation)
@@ -160,7 +160,7 @@ after completing its audit; link findings or verification evidence beside it.
 ### [interview-me](skills/agnostic-software-development/interview-me/SKILL.md)
 
 - [x] api-and-interface-design — [review](audits/2026-11-13-api-and-interface-design.md#interview-me)
-- [ ] author-agent-skill
+- [x] author-agent-skill — [review](audits/2026-11-14-author-agent-skill.md#interview-me)
 - [ ] condensed-prose-refactor
 - [x] performance-optimization — [review](audits/2026-11-13-performance-optimization.md#interview-me)
 - [x] security-and-hardening — [review](audits/2026-11-13-security-and-hardening.md#interview-me)
@@ -168,7 +168,7 @@ after completing its audit; link findings or verification evidence beside it.
 ### [performance-optimization](skills/agnostic-software-development/performance-optimization/SKILL.md)
 
 - [x] api-and-interface-design — [review](audits/2026-11-13-api-and-interface-design.md#performance-optimization)
-- [ ] author-agent-skill
+- [x] author-agent-skill — [review](audits/2026-11-14-author-agent-skill.md#performance-optimization)
 - [ ] condensed-prose-refactor
 - [x] performance-optimization — [review](audits/2026-11-13-performance-optimization.md#performance-optimization)
 - [x] security-and-hardening — [review](audits/2026-11-13-security-and-hardening.md#performance-optimization)
@@ -176,7 +176,7 @@ after completing its audit; link findings or verification evidence beside it.
 ### [planning-and-task-breakdown](skills/agnostic-software-development/planning-and-task-breakdown/SKILL.md)
 
 - [x] api-and-interface-design — [review](audits/2026-11-13-api-and-interface-design.md#planning-and-task-breakdown)
-- [ ] author-agent-skill
+- [x] author-agent-skill — [review](audits/2026-11-14-author-agent-skill.md#planning-and-task-breakdown)
 - [ ] condensed-prose-refactor
 - [x] performance-optimization — [review](audits/2026-11-13-performance-optimization.md#planning-and-task-breakdown)
 - [x] security-and-hardening — [review](audits/2026-11-13-security-and-hardening.md#planning-and-task-breakdown)
@@ -184,7 +184,7 @@ after completing its audit; link findings or verification evidence beside it.
 ### [review-implementation-plan](skills/agnostic-software-development/review-implementation-plan/SKILL.md)
 
 - [x] api-and-interface-design — [review](audits/2026-11-13-api-and-interface-design.md#review-implementation-plan)
-- [ ] author-agent-skill
+- [x] author-agent-skill — [review](audits/2026-11-14-author-agent-skill.md#review-implementation-plan)
 - [ ] condensed-prose-refactor
 - [x] performance-optimization — [review](audits/2026-11-13-performance-optimization.md#review-implementation-plan)
 - [x] security-and-hardening — [review](audits/2026-11-13-security-and-hardening.md#review-implementation-plan)
@@ -192,7 +192,7 @@ after completing its audit; link findings or verification evidence beside it.
 ### [run-local-quality-gate](skills/agnostic-software-development/run-local-quality-gate/SKILL.md)
 
 - [x] api-and-interface-design — [review](audits/2026-11-13-api-and-interface-design.md#run-local-quality-gate)
-- [ ] author-agent-skill
+- [x] author-agent-skill — [review](audits/2026-11-14-author-agent-skill.md#run-local-quality-gate)
 - [ ] condensed-prose-refactor
 - [x] performance-optimization — [review](audits/2026-11-13-performance-optimization.md#run-local-quality-gate)
 - [x] security-and-hardening — [review](audits/2026-11-13-security-and-hardening.md#run-local-quality-gate)
@@ -200,7 +200,7 @@ after completing its audit; link findings or verification evidence beside it.
 ### [security-and-hardening](skills/agnostic-software-development/security-and-hardening/SKILL.md)
 
 - [x] api-and-interface-design — [review](audits/2026-11-13-api-and-interface-design.md#security-and-hardening)
-- [ ] author-agent-skill
+- [x] author-agent-skill — [review](audits/2026-11-14-author-agent-skill.md#security-and-hardening)
 - [ ] condensed-prose-refactor
 - [x] performance-optimization — [review](audits/2026-11-13-performance-optimization.md#security-and-hardening)
 - [x] security-and-hardening — [review](audits/2026-11-13-security-and-hardening.md#security-and-hardening)
@@ -208,7 +208,7 @@ after completing its audit; link findings or verification evidence beside it.
 ### [shipping-and-launch](skills/agnostic-software-development/shipping-and-launch/SKILL.md)
 
 - [x] api-and-interface-design — [review](audits/2026-11-13-api-and-interface-design.md#shipping-and-launch)
-- [ ] author-agent-skill
+- [x] author-agent-skill — [review](audits/2026-11-14-author-agent-skill.md#shipping-and-launch)
 - [ ] condensed-prose-refactor
 - [x] performance-optimization — [review](audits/2026-11-13-performance-optimization.md#shipping-and-launch)
 - [x] security-and-hardening — [review](audits/2026-11-13-security-and-hardening.md#shipping-and-launch)
@@ -216,7 +216,7 @@ after completing its audit; link findings or verification evidence beside it.
 ### [source-driven-development](skills/agnostic-software-development/source-driven-development/SKILL.md)
 
 - [x] api-and-interface-design — [review](audits/2026-11-13-api-and-interface-design.md#source-driven-development)
-- [ ] author-agent-skill
+- [x] author-agent-skill — [review](audits/2026-11-14-author-agent-skill.md#source-driven-development)
 - [ ] condensed-prose-refactor
 - [x] performance-optimization — [review](audits/2026-11-13-performance-optimization.md#source-driven-development)
 - [x] security-and-hardening — [review](audits/2026-11-13-security-and-hardening.md#source-driven-development)
@@ -224,7 +224,7 @@ after completing its audit; link findings or verification evidence beside it.
 ### [spec-driven-development](skills/agnostic-software-development/spec-driven-development/SKILL.md)
 
 - [x] api-and-interface-design — [review](audits/2026-11-13-api-and-interface-design.md#spec-driven-development)
-- [ ] author-agent-skill
+- [x] author-agent-skill — [review](audits/2026-11-14-author-agent-skill.md#spec-driven-development)
 - [ ] condensed-prose-refactor
 - [x] performance-optimization — [review](audits/2026-11-13-performance-optimization.md#spec-driven-development)
 - [x] security-and-hardening — [review](audits/2026-11-13-security-and-hardening.md#spec-driven-development)
@@ -232,7 +232,7 @@ after completing its audit; link findings or verification evidence beside it.
 ### [test-driven-development](skills/agnostic-software-development/test-driven-development/SKILL.md)
 
 - [x] api-and-interface-design — [review](audits/2026-11-13-api-and-interface-design.md#test-driven-development)
-- [ ] author-agent-skill
+- [x] author-agent-skill — [review](audits/2026-11-14-author-agent-skill.md#test-driven-development)
 - [ ] condensed-prose-refactor
 - [x] performance-optimization — [review](audits/2026-11-13-performance-optimization.md#test-driven-development)
 - [x] security-and-hardening — [review](audits/2026-11-13-security-and-hardening.md#test-driven-development)
@@ -240,7 +240,7 @@ after completing its audit; link findings or verification evidence beside it.
 ### [update-project-docs](skills/agnostic-software-development/update-project-docs/SKILL.md)
 
 - [x] api-and-interface-design — [review](audits/2026-11-13-api-and-interface-design.md#update-project-docs)
-- [ ] author-agent-skill
+- [x] author-agent-skill — [review](audits/2026-11-14-author-agent-skill.md#update-project-docs)
 - [ ] condensed-prose-refactor
 - [x] performance-optimization — [review](audits/2026-11-13-performance-optimization.md#update-project-docs)
 - [x] security-and-hardening — [review](audits/2026-11-13-security-and-hardening.md#update-project-docs)
@@ -248,7 +248,7 @@ after completing its audit; link findings or verification evidence beside it.
 ### [using-agnostic-software-development-skills](skills/agnostic-software-development/using-agnostic-software-development-skills/SKILL.md)
 
 - [x] api-and-interface-design — [review](audits/2026-11-13-api-and-interface-design.md#using-agnostic-software-development-skills)
-- [ ] author-agent-skill
+- [x] author-agent-skill — [review](audits/2026-11-14-author-agent-skill.md#using-agnostic-software-development-skills)
 - [ ] condensed-prose-refactor
 - [x] performance-optimization — [review](audits/2026-11-13-performance-optimization.md#using-agnostic-software-development-skills)
 - [x] security-and-hardening — [review](audits/2026-11-13-security-and-hardening.md#using-agnostic-software-development-skills)
@@ -256,7 +256,7 @@ after completing its audit; link findings or verification evidence beside it.
 ### [write-adr](skills/agnostic-software-development/write-adr/SKILL.md)
 
 - [x] api-and-interface-design — [review](audits/2026-11-13-api-and-interface-design.md#write-adr)
-- [ ] author-agent-skill
+- [x] author-agent-skill — [review](audits/2026-11-14-author-agent-skill.md#write-adr)
 - [ ] condensed-prose-refactor
 - [x] performance-optimization — [review](audits/2026-11-13-performance-optimization.md#write-adr)
 - [x] security-and-hardening — [review](audits/2026-11-13-security-and-hardening.md#write-adr)
@@ -266,7 +266,7 @@ after completing its audit; link findings or verification evidence beside it.
 ### [add-hexagonal-feature](skills/python-software-development/add-hexagonal-feature/SKILL.md)
 
 - [x] api-and-interface-design — [review](audits/2026-11-13-api-and-interface-design.md#add-hexagonal-feature)
-- [ ] author-agent-skill
+- [x] author-agent-skill — [review](audits/2026-11-14-author-agent-skill.md#add-hexagonal-feature)
 - [ ] condensed-prose-refactor
 - [x] performance-optimization — [review](audits/2026-11-13-performance-optimization.md#add-hexagonal-feature)
 - [x] security-and-hardening — [review](audits/2026-11-13-security-and-hardening.md#add-hexagonal-feature)
@@ -274,7 +274,7 @@ after completing its audit; link findings or verification evidence beside it.
 ### [bootstrap-python-app](skills/python-software-development/bootstrap-python-app/SKILL.md)
 
 - [x] api-and-interface-design — [review](audits/2026-11-13-api-and-interface-design.md#bootstrap-python-app)
-- [ ] author-agent-skill
+- [x] author-agent-skill — [review](audits/2026-11-14-author-agent-skill.md#bootstrap-python-app)
 - [ ] condensed-prose-refactor
 - [x] performance-optimization — [review](audits/2026-11-13-performance-optimization.md#bootstrap-python-app)
 - [x] security-and-hardening — [review](audits/2026-11-13-security-and-hardening.md#bootstrap-python-app)
@@ -282,7 +282,7 @@ after completing its audit; link findings or verification evidence beside it.
 ### [python-add-adapter](skills/python-software-development/python-add-adapter/SKILL.md)
 
 - [x] api-and-interface-design — [review](audits/2026-11-13-api-and-interface-design.md#python-add-adapter)
-- [ ] author-agent-skill
+- [x] author-agent-skill — [review](audits/2026-11-14-author-agent-skill.md#python-add-adapter)
 - [ ] condensed-prose-refactor
 - [x] performance-optimization — [review](audits/2026-11-13-performance-optimization.md#python-add-adapter)
 - [x] security-and-hardening — [review](audits/2026-11-13-security-and-hardening.md#python-add-adapter)
@@ -290,7 +290,7 @@ after completing its audit; link findings or verification evidence beside it.
 ### [python-add-env-settings-adapter](skills/python-software-development/python-add-env-settings-adapter/SKILL.md)
 
 - [x] api-and-interface-design — [review](audits/2026-11-13-api-and-interface-design.md#python-add-env-settings-adapter)
-- [ ] author-agent-skill
+- [x] author-agent-skill — [review](audits/2026-11-14-author-agent-skill.md#python-add-env-settings-adapter)
 - [ ] condensed-prose-refactor
 - [x] performance-optimization — [review](audits/2026-11-13-performance-optimization.md#python-add-env-settings-adapter)
 - [x] security-and-hardening — [review](audits/2026-11-13-security-and-hardening.md#python-add-env-settings-adapter)
@@ -298,7 +298,7 @@ after completing its audit; link findings or verification evidence beside it.
 ### [python-add-port](skills/python-software-development/python-add-port/SKILL.md)
 
 - [x] api-and-interface-design — [review](audits/2026-11-13-api-and-interface-design.md#python-add-port)
-- [ ] author-agent-skill
+- [x] author-agent-skill — [review](audits/2026-11-14-author-agent-skill.md#python-add-port)
 - [ ] condensed-prose-refactor
 - [x] performance-optimization — [review](audits/2026-11-13-performance-optimization.md#python-add-port)
 - [x] security-and-hardening — [review](audits/2026-11-13-security-and-hardening.md#python-add-port)
@@ -306,7 +306,7 @@ after completing its audit; link findings or verification evidence beside it.
 ### [python-build-extensible-cli](skills/python-software-development/python-build-extensible-cli/SKILL.md)
 
 - [x] api-and-interface-design — [review](audits/2026-11-13-api-and-interface-design.md#python-build-extensible-cli)
-- [ ] author-agent-skill
+- [x] author-agent-skill — [review](audits/2026-11-14-author-agent-skill.md#python-build-extensible-cli)
 - [ ] condensed-prose-refactor
 - [x] performance-optimization — [review](audits/2026-11-13-performance-optimization.md#python-build-extensible-cli)
 - [x] security-and-hardening — [review](audits/2026-11-13-security-and-hardening.md#python-build-extensible-cli)
@@ -314,7 +314,7 @@ after completing its audit; link findings or verification evidence beside it.
 ### [split-python-module](skills/python-software-development/split-python-module/SKILL.md)
 
 - [x] api-and-interface-design — [review](audits/2026-11-13-api-and-interface-design.md#split-python-module)
-- [ ] author-agent-skill
+- [x] author-agent-skill — [review](audits/2026-11-14-author-agent-skill.md#split-python-module)
 - [ ] condensed-prose-refactor
 - [x] performance-optimization — [review](audits/2026-11-13-performance-optimization.md#split-python-module)
 - [x] security-and-hardening — [review](audits/2026-11-13-security-and-hardening.md#split-python-module)
@@ -322,7 +322,7 @@ after completing its audit; link findings or verification evidence beside it.
 ### [using-python-software-development-skills](skills/python-software-development/using-python-software-development-skills/SKILL.md)
 
 - [x] api-and-interface-design — [review](audits/2026-11-13-api-and-interface-design.md#using-python-software-development-skills)
-- [ ] author-agent-skill
+- [x] author-agent-skill — [review](audits/2026-11-14-author-agent-skill.md#using-python-software-development-skills)
 - [ ] condensed-prose-refactor
 - [x] performance-optimization — [review](audits/2026-11-13-performance-optimization.md#using-python-software-development-skills)
 - [x] security-and-hardening — [review](audits/2026-11-13-security-and-hardening.md#using-python-software-development-skills)
@@ -330,7 +330,7 @@ after completing its audit; link findings or verification evidence beside it.
 ### [write-pytest-tests](skills/python-software-development/write-pytest-tests/SKILL.md)
 
 - [x] api-and-interface-design — [review](audits/2026-11-13-api-and-interface-design.md#write-pytest-tests)
-- [ ] author-agent-skill
+- [x] author-agent-skill — [review](audits/2026-11-14-author-agent-skill.md#write-pytest-tests)
 - [ ] condensed-prose-refactor
 - [x] performance-optimization — [review](audits/2026-11-13-performance-optimization.md#write-pytest-tests)
 - [x] security-and-hardening — [review](audits/2026-11-13-security-and-hardening.md#write-pytest-tests)
@@ -338,7 +338,7 @@ after completing its audit; link findings or verification evidence beside it.
 ### [write-python-docstrings](skills/python-software-development/write-python-docstrings/SKILL.md)
 
 - [x] api-and-interface-design — [review](audits/2026-11-13-api-and-interface-design.md#write-python-docstrings)
-- [ ] author-agent-skill
+- [x] author-agent-skill — [review](audits/2026-11-14-author-agent-skill.md#write-python-docstrings)
 - [ ] condensed-prose-refactor
 - [x] performance-optimization — [review](audits/2026-11-13-performance-optimization.md#write-python-docstrings)
 - [x] security-and-hardening — [review](audits/2026-11-13-security-and-hardening.md#write-python-docstrings)
@@ -348,7 +348,7 @@ after completing its audit; link findings or verification evidence beside it.
 ### [condensed-prose-refactor](skills/writing-and-editing/condensed-prose-refactor/SKILL.md)
 
 - [x] api-and-interface-design — [review](audits/2026-11-13-api-and-interface-design.md#condensed-prose-refactor)
-- [ ] author-agent-skill
+- [x] author-agent-skill — [review](audits/2026-11-14-author-agent-skill.md#condensed-prose-refactor)
 - [ ] condensed-prose-refactor
 - [x] performance-optimization — [review](audits/2026-11-13-performance-optimization.md#condensed-prose-refactor)
 - [x] security-and-hardening — [review](audits/2026-11-13-security-and-hardening.md#condensed-prose-refactor)

@@ -2,8 +2,8 @@
 name: add-hexagonal-feature
 description: Implement a new vertical feature slice or use case in a Python hexagonal project, including domain modeling, ports, application service, adapters when needed, and tests.
 metadata:
-  version: "1.2.0"
-  last-verified: "2026-11-13T18:31:08+00:00"
+  version: "1.3.0"
+  last-verified: "2026-11-14T18:48:11+00:00"
 ---
 
 # Add a Hexagonal Vertical Feature Slice
@@ -24,7 +24,19 @@ it here.
 - The relevant inbound port already exists, or creating it is part of the same
   change through `python-add-port`.
 
+Before editing, inspect repository instructions, the working tree, an adjacent
+slice, composition wiring, and configured checks. Resolve `<app_name>` to the
+actual import package; adapt example paths to established project ownership.
+If the required layout or behavior is missing, report the prerequisite and
+continue only independent design or inspection. Check that a specialized port
+or adapter skill is available before handing work to it; if missing, report
+that dependency and leave the affected procedure incomplete.
+
 ## Steps
+
+When `test-driven-development` is selected, apply its RED-GREEN-REFACTOR cycle
+inside each behavior increment. The sections below describe responsibilities,
+not permission to delay a required failing test until after implementation.
 
 ### 1. Name the slice and use case
 

@@ -2,8 +2,8 @@
 name: interview-me
 description: Reduce uncertainty about a user's underlying intent through an adaptive XY-problem interview that scales from concise clarification to a full evidence-based model. Use when an ask is underspecified, solution-led, has material unresolved trade-offs, or the user explicitly requests an interview before idea refinement, specification, planning, or implementation.
 metadata:
-  version: "2.1.0"
-  last-verified: "2026-11-13T18:28:54+00:00"
+  version: "2.1.1"
+  last-verified: "2026-11-14T18:45:20+00:00"
 ---
 
 # Interview Me
@@ -208,8 +208,8 @@ mode using the criteria above; an explicit request for an interview always uses
 the full path.
 
 Do not invent evidence. Label inferences as guesses and user statements as
-evidence. See `references/interview-examples.md` for the normative scenario
-matrix and worked examples.
+evidence. Read the [interview examples](references/interview-examples.md)
+when selecting interview depth or checking turn presentation.
 
 ### 2. Choose the next question by information gain
 

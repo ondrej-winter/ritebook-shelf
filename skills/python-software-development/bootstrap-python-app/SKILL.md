@@ -2,8 +2,8 @@
 name: bootstrap-python-app
 description: Initialize a new Python project with a hexagonal vertical-slice architecture layout, core tooling, quality checks, and GitHub Actions CI/CD when starting a Python application from scratch.
 metadata:
-  version: "2.0.0"
-  last-verified: "2026-11-13T18:32:59+00:00"
+  version: "2.1.0"
+  last-verified: "2026-11-14T18:48:45+00:00"
 ---
 
 # Bootstrap a Python Hexagonal Vertical-Slice Application
@@ -50,6 +50,12 @@ check the branch with Git's branch-name rules, and serialize URLs and branch
 values for their TOML/YAML/expression contexts rather than raw substitution.
 Reject control characters and unresolved tokens. Never execute a command formed
 from unvalidated input or follow a destination symlink outside the selected root.
+
+Resolve bundled asset paths from this installed skill directory, independently
+of the target project working directory. If uv, the selected Python runtime, or
+required dependency access is unavailable, report the affected step and missing
+prerequisite. A rendered scaffold may be handed off as unverified, but do not
+claim initialization, quality checks, or installed-wheel behavior passed.
 
 ## Steps
 
@@ -177,7 +183,7 @@ application imports, and network access so help/version remain available offline
 When adding commands, parse help/version before constructing their dependencies.
 
 Create `tests/unit/test_cli.py` from
-`assets/test_cli.py.template`, replacing `<app_name>`. These smoke tests exercise
+[test_cli.py.template](assets/test_cli.py.template), replacing `<app_name>`. These smoke tests exercise
 the scaffold's current behavior: no arguments succeed, help prints usage, and
 version prints the installed metadata version and exits, while unknown arguments
 fail with a diagnostic. Match the test's metadata lookup to `[project].name` too.
@@ -197,7 +203,7 @@ for it; do not lower the threshold or exclude application code to keep passing.
 
 ### 3. Configure pyproject.toml
 
-Create or update `pyproject.toml` from `assets/pyproject.toml.template`.
+Create or update `pyproject.toml` from [pyproject.toml.template](assets/pyproject.toml.template).
 Replace `<app_name>`, `<python_version>`, `<python_version_nodot>`,
 `<repository_url>`, and `<coverage_fail_under>`. Keep the values `uv init`
 already set for `name`, `version`, and `requires-python` unless the user asked
@@ -246,7 +252,7 @@ uv run pre-commit install
 ```
 
 Create `.pre-commit-config.yaml` from
-`assets/pre-commit-config.yaml.template`. Replace `<python_version>` with the
+[pre-commit-config.yaml.template](assets/pre-commit-config.yaml.template). Replace `<python_version>` with the
 selected Python version, for example `3.13`, so the generated value is
 `python3.13`.
 
@@ -255,7 +261,7 @@ as the project quality gate, including import-linter architecture validation.
 
 ### 6. Add local automation and ignore rules
 
-Create `Makefile` from `assets/Makefile.template`. The generated targets mirror
+Create `Makefile` from [Makefile.template](assets/Makefile.template). The generated targets mirror
 the local and CI quality gate:
 
 - `make format` -> `uv run ruff format .`
@@ -267,7 +273,7 @@ the local and CI quality gate:
 - `make pre-commit` -> all configured pre-commit hooks
 - dependency inspection targets for tree, outdated, and vulnerability review
 
-Create `.gitignore` from `assets/gitignore.template`. Keep generated caches,
+Create `.gitignore` from [gitignore.template](assets/gitignore.template). Keep generated caches,
 virtual environments, build outputs, coverage files, import-linter caches, and
 temporary audit files out of version control. Ignore `.env` and every `.env.*`
 variant at any directory depth, with `.env.example` as the only exception. Keep
@@ -276,7 +282,7 @@ tracked dotenv files remain the responsibility of the project's maintainers.
 
 ### 7. Add GitHub Actions CI/CD
 
-Create `.github/workflows/ci-cd.yaml` from `assets/ci-cd.yaml.template`.
+Create `.github/workflows/ci-cd.yaml` from [ci-cd.yaml.template](assets/ci-cd.yaml.template).
 Replace `<app_name>`, `<python_version>`, and `<default_branch>`.
 
 The workflow mirrors the local quality gate and release behavior:

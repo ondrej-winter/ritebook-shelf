@@ -100,7 +100,10 @@ it creates and releases them on success, failure, and cancellation.
 ## Contract sketch
 
 The exact implementation should follow local Python version and parser-library
-conventions. A typical `argparse` contract is:
+conventions. The sketch uses Python 3.12+ type-alias and generic-parameter
+syntax. For an older supported runtime, express the same contract with
+`TypeVar`, `Generic`, and assignment-style aliases; do not upgrade the project
+merely to copy the example. A typical `argparse` contract is:
 
 ```python
 from collections.abc import Callable

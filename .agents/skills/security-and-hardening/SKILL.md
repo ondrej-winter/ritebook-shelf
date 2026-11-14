@@ -2,8 +2,8 @@
 name: security-and-hardening
 description: Hardens software against vulnerabilities. Use when handling untrusted input, authentication, authorization, sensitive data, dependencies, or external integrations.
 metadata:
-  version: "1.2.0"
-  last-verified: "2026-11-13T18:30:01+00:00"
+  version: "1.2.1"
+  last-verified: "2026-11-14T18:46:16+00:00"
 ---
 
 # Security and Hardening
@@ -283,7 +283,7 @@ Use this quick checklist before handoff:
 - [ ] Error responses and observability do not expose sensitive internals.
 - [ ] Any accepted risk has an owner, reason, mitigation, and review date.
 
-For a focused companion checklist, see `references/security-checklist.md`.
+For a focused companion checklist, see [security checklist](references/security-checklist.md).
 
 ## Red flags
 

@@ -71,27 +71,30 @@ resolved boundary.
 Request:
 
 ```text
-Build a dashboard for support leads.
+Build a dashboard for support leads to prioritize daily ticket triage.
+We have not decided whether to emphasize overdue tickets or new arrivals.
 ```
 
-Start light because a focused contrast may identify the primary outcome:
+Start light because the primary user and outcome are explicit, and one focused
+question can resolve the remaining priority. This is medium XY-risk; a dashboard
+request without an outcome would start full under the high-risk rule:
 
 ```md
 ### Current picture
 
-- **Mode / status:** Light · exploring
-- **Outcome:** Help support leads make a recurring support decision
-- **Confirmed:** Support leads are the named audience and review support work regularly
-- **Open:** Whether the primary decision is daily triage or recurring-issue analysis
-- **Risks / assumptions:** A dashboard is still a candidate solution because its required outcome is unconfirmed
+- **Mode / status:** Light · narrowing
+- **Outcome:** Help support leads prioritize daily ticket triage
+- **Confirmed:** Support leads are the named audience; daily ticket triage is the stated outcome
+- **Open:** Whether overdue tickets or new arrivals should take priority
+- **Risks / assumptions:** A dashboard remains a candidate interface; its necessity has not been established
 
 ### Current question
 
-- **Focus:** Identify the primary decision
-- **Context:** Daily triage and recurring-issue analysis require different data and workflows
-- **Why it matters:** The answer determines the primary outcome and whether a dashboard is an appropriate solution
-- **Question:** Should it primarily help leads triage today's tickets or identify recurring product issues?
-- **Working guess:** Triage is the first priority because the audience works from the queue regularly; please reject that if trend analysis is more valuable
+- **Focus:** Identify the first triage priority
+- **Context:** Overdue tickets and new arrivals compete for attention within daily triage
+- **Why it matters:** The answer determines which triage information needs initial emphasis
+- **Question:** Should the initial triage view emphasize overdue tickets or new arrivals?
+- **Working guess:** Overdue tickets may need initial emphasis because delay is already accumulating; please reject that if new arrivals are more urgent
 ```
 
 Suppose the user replies:

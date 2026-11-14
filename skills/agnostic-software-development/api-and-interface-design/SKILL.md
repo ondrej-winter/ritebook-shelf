@@ -2,8 +2,8 @@
 name: api-and-interface-design
 description: Design or review stable APIs and interfaces that are explicit, compatible, and hard to misuse. Use when creating or changing HTTP, event, library, module, CLI, component, schema, configuration, plugin, or other durable integration contracts.
 metadata:
-  version: "1.4.0"
-  last-verified: "2026-11-13T18:25:43+00:00"
+  version: "1.4.1"
+  last-verified: "2026-11-14T18:41:18+00:00"
 ---
 
 # API and Interface Design
@@ -211,7 +211,7 @@ removal.
 
 ### 8. Check concerns specific to the boundary kind
 
-Read only the relevant section of `references/boundary-checklist.md` for HTTP or
+Read only the relevant section of the [boundary checklist](references/boundary-checklist.md) for HTTP or
 RPC, messages and events, libraries and plugins, CLI, UI components, or schemas
 and configuration. Local project and protocol conventions take precedence over
 generic examples.

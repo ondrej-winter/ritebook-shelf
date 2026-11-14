@@ -2,8 +2,8 @@
 name: python-add-port
 description: Add a technology-agnostic inbound or outbound application port interface to the owning vertical slice in a Python hexagonal project for a new use case or dependency.
 metadata:
-  version: "1.1.0"
-  last-verified: "2026-11-13T18:34:42+00:00"
+  version: "1.2.0"
+  last-verified: "2026-11-14T18:50:08+00:00"
 ---
 
 # Add a Port
@@ -59,6 +59,11 @@ Examples:
 - `OrderRepositoryPort`
 - `EmailSenderPort`
 - `PaymentGatewayPort`
+
+Before creating files, inspect repository instructions, working-tree changes,
+the actual package root, and an existing port. Confirm the use-case contract
+and adapt paths and Protocol/ABC choices to the project. If the layout or
+required DTO decisions are missing, report that prerequisite before dependent work.
 
 ## Steps
 
@@ -198,3 +203,13 @@ follow-up work instead of embedding adapter logic into the port.
 If the overall change is a complete end-to-end use case spanning domain,
 application service, and tests, use `add-hexagonal-feature` as the primary
 feature workflow and use this skill only for the port-definition part.
+
+## Validation and handoff
+
+Run the project's configured focused contract tests, type checker, and
+architecture checks where applicable. Report the port path, consumers and
+implementations, promised semantics, wiring or adapter work still needed, and
+commands/results. A port declaration alone is not an integrated use case.
+If checks or a required follow-up skill are unavailable, identify the dependency
+and label the affected verification or integration incomplete; do not invent
+the missing procedure or claim structural typing proves runtime behavior.

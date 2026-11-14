@@ -2,8 +2,8 @@
 name: frontend-ui-engineering
 description: Build, review, or refine browser-facing user interfaces so they are accessible, responsive, performant, visually coherent, and aligned with the project design system.
 metadata:
-  version: "1.4.0"
-  last-verified: "2026-11-13T18:28:07+00:00"
+  version: "1.4.1"
+  last-verified: "2026-11-14T18:43:50+00:00"
 ---
 
 # Frontend UI Engineering
@@ -128,7 +128,8 @@ For interactive UI, confirm:
 - status changes are perceivable when needed
 - modals, menus, popovers, and overlays manage focus intentionally
 
-Use `references/accessibility-checklist.md` for a focused accessibility review.
+Use the [accessibility checklist](references/accessibility-checklist.md)
+for a focused review of interactive UI changes.
 
 ### 6. Handle all user-visible states
 

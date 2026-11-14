@@ -2,8 +2,8 @@
 name: idea-refine
 description: Refine raw ideas into actionable concepts through divergent exploration, convergent evaluation, assumption testing, and a final one-page brief. Use when an idea is vague, over-scoped, solution-led, or needs pressure-testing before planning or implementation.
 metadata:
-  version: "2.0.0"
-  last-verified: "2026-11-13T17:45:40+00:00"
+  version: "2.0.1"
+  last-verified: "2026-11-14T18:44:33+00:00"
 ---
 
 # Idea Refine
@@ -84,7 +84,7 @@ Use lenses such as:
 - combination: what adjacent idea makes this stronger?
 - expert lens: what would a domain expert find obvious that outsiders miss?
 
-Use `references/frameworks.md` for additional ideation lenses. Select the few that
+Use the [frameworks reference](references/frameworks.md) for additional ideation lenses. Select the few that
 fit the idea; do not run every framework mechanically.
 
 ### 3. Converge on directions
@@ -99,7 +99,7 @@ Evaluate each direction against:
 - feasibility: what is hard technically, operationally, legally, or socially?
 - differentiation: why would someone choose this over the current workaround?
 
-Use `references/refinement-criteria.md` for the fuller rubric when the trade-off is
+Use the [refinement criteria](references/refinement-criteria.md) for the fuller rubric when the trade-off is
 not obvious.
 
 Be honest rather than merely supportive. If a direction is weak, say why with
@@ -164,7 +164,7 @@ location. Save only after the user confirms.
 
 ## Optional helper
 
-The optional `scripts/idea-refine.sh` helper requires a POSIX shell and Python 3.
+The optional [idea directory helper](scripts/idea-refine.sh) requires a POSIX shell and Python 3.
 Resolve its absolute path from the installed skill directory, then run
 `sh <skill-directory>/scripts/idea-refine.sh [directory]` from the target workspace.
 Use it only when persisting briefs is already authorized. Without Python 3,
@@ -187,9 +187,9 @@ the manual directory-creation fallback.
 
 ## References
 
-- `references/frameworks.md` lists optional ideation frameworks.
-- `references/refinement-criteria.md` provides a convergence evaluation rubric.
-- `references/examples.md` shows example sessions and one-page briefs.
+- Read the [frameworks reference](references/frameworks.md) when more ideation lenses are needed.
+- Read the [refinement criteria](references/refinement-criteria.md) for difficult convergence trade-offs.
+- Read the [examples](references/examples.md) when calibrating session flow or brief depth.
 
 ## Red flags
 

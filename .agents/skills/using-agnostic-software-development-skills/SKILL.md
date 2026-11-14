@@ -2,8 +2,8 @@
 name: using-agnostic-software-development-skills
 description: Discover and invoke technology-agnostic software development skills. Use when starting general engineering work or deciding which reusable workflow skill applies to a task.
 metadata:
-  version: "2.5.4"
-  last-verified: "2026-11-13T17:48:52+00:00"
+  version: "2.5.5"
+  last-verified: "2026-11-14T18:47:36+00:00"
 ---
 
 # Using Agnostic Software Development Skills
@@ -105,7 +105,8 @@ into permission to publish; preserve those distinctions across workflows.
 
 ## Core Operating Behaviors
 
-These behaviors apply at all times, across all skills. They are non-negotiable.
+Apply these behaviors within the selected workflow and current task scope.
+They do not override higher-priority instructions or existing authorization.
 
 ### 1. Surface Assumptions
 
@@ -116,8 +117,13 @@ Assumptions I am making:
 1. [assumption about requirements]
 2. [assumption about architecture]
 3. [assumption about scope]
-Correct me now or I will proceed with these.
+Basis and impact: <evidence, delegated authority, and work affected if false>
+Resolution: <non-blocking working assumption, settled decision, or required decision>
 ```
+
+Proceed under a working assumption only where its uncertainty does not invalidate
+the work. Resolve material requirement decisions from evidence or existing
+authority; ask when neither settles them. Silence is not acceptance.
 
 Don't silently fill in ambiguous requirements. The most common failure mode is making wrong assumptions and running with them unchecked. Surface uncertainty early — it's cheaper than rework.
 
@@ -125,10 +131,10 @@ Don't silently fill in ambiguous requirements. The most common failure mode is m
 
 When you encounter inconsistencies, conflicting requirements, or unclear specifications:
 
-1. Stop and do not proceed with a guess.
+1. Pause work that depends on the unresolved decision.
 2. Name the specific confusion.
 3. Present the tradeoff or ask the clarifying question.
-4. Wait for resolution before continuing.
+4. Wait for resolution before dependent work; continue independent work.
 
 **Bad:** Silently picking one interpretation and hoping it's right.
 **Good:** "I see X in the spec but Y in the existing code. Which takes precedence?"
@@ -203,4 +209,4 @@ These are the subtle errors that look like productivity but create problems:
 
 Not every task needs every skill. Compose only the workflows whose triggers are
 present. For a conditional lifecycle graph and the full phase-by-phase skill
-table, see `references/catalog-reference.md`.
+table, read the [catalog reference](references/catalog-reference.md).

@@ -2,8 +2,8 @@
 name: python-add-adapter
 description: Add an inbound or outbound adapter to the owning vertical slice in a Python hexagonal project while keeping business logic in the application layer.
 metadata:
-  version: "1.1.0"
-  last-verified: "2026-11-13T18:33:27+00:00"
+  version: "1.2.0"
+  last-verified: "2026-11-14T18:49:21+00:00"
 ---
 
 # Add an Adapter
@@ -35,6 +35,13 @@ Use this skill when you need to:
 
 If the port does not exist yet, use `python-add-port` before implementing the
 adapter.
+
+Inspect repository instructions, working-tree changes, the actual package root,
+and neighboring adapters before creating files; adapt the example paths to the
+project. Confirm prerequisites and any required specialist skill are available.
+If a port, chosen library, or required capability is missing, report that
+dependency and continue independent inspection or design. Label an unwired or
+untested adapter as incomplete rather than claiming working integration.
 
 ## Steps
 

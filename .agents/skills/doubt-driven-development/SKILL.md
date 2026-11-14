@@ -2,8 +2,8 @@
 name: doubt-driven-development
 description: Cross-examine non-trivial decisions with a fresh, adversarial review loop before they stand, especially when correctness, safety, migration risk, or unfamiliar code makes overconfidence costly.
 metadata:
-  version: "1.3.0"
-  last-verified: "2026-11-13T18:27:56+00:00"
+  version: "1.3.1"
+  last-verified: "2026-11-14T18:43:36+00:00"
 ---
 
 # Doubt-Driven Development
@@ -36,7 +36,8 @@ This skill is for the main session or coordinating agent. Specialist reviewers
 should receive a narrow artifact and contract, then return findings. They should
 not recursively spawn more reviewers.
 
-For orchestration details, see `references/orchestration-patterns.md`.
+When coordinating a fresh-context review, read the
+[orchestration patterns](references/orchestration-patterns.md).
 
 If the optional `independent-review` capability is unavailable, use a degraded
 self-review fallback only when necessary and label it as degraded.

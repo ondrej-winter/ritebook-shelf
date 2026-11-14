@@ -2,8 +2,8 @@
 name: performance-optimization
 description: Optimizes software performance using measurement-driven diagnosis, targeted fixes, and regression guards. Use when performance requirements exist, users or monitoring report slow behavior, a regression is suspected, or profiling reveals bottlenecks that need fixing.
 metadata:
-  version: "1.6.0"
-  last-verified: "2026-11-13T18:29:09+00:00"
+  version: "1.6.1"
+  last-verified: "2026-11-14T18:45:42+00:00"
 ---
 
 # Performance Optimization
@@ -158,7 +158,7 @@ Prefer removing unnecessary work before adding caches or complex infrastructure.
 Common targets include repeated dependent reads, unbounded processing, repeated
 expensive computation, unbounded caches or queues, and oversized artifacts or
 payloads. Apply only the pattern supported by the measurements. For detailed
-technology-neutral examples, see `references/optimization-patterns.md`.
+technology-neutral examples, see [optimization patterns](references/optimization-patterns.md).
 
 ### Step 4: Verify the fix
 
@@ -211,7 +211,7 @@ Use placeholders for project-specific commands:
 ## Domain-specific guidance
 
 Load domain guidance only when it matches the measured system. For browser-facing
-work, see `references/web-performance.md` for web metrics and investigation
+work, see [web performance](references/web-performance.md) for web metrics and investigation
 examples.
 
 ## Performance budgets
@@ -235,11 +235,11 @@ benchmarking tool.
 ## See also
 
 - For a concise planning and verification checklist, see
-  `references/performance-checklist.md`.
+  [performance checklist](references/performance-checklist.md).
 - For common bottleneck-removal patterns, see
-  `references/optimization-patterns.md`.
+  [optimization patterns](references/optimization-patterns.md).
 - For browser-specific metrics and investigation prompts, see
-  `references/web-performance.md`.
+  [web performance](references/web-performance.md).
 
 ## Common rationalizations
 
