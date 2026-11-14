@@ -3,7 +3,7 @@
   "index": {
     "name": "ondrej-winter-ritebook-shelf"
   },
-  "generated_at": "2026-11-14T19:28:51.266605Z",
+  "generated_at": "2026-11-14T19:55:19.808463Z",
   "skills_root": "skills",
   "skills": [
     {
@@ -197,6 +197,12 @@
       "path": "agnostic-software-development/write-adr",
       "skill_file": "agnostic-software-development/write-adr/SKILL.md",
       "description": "Create an Architecture Decision Record with the next sequential number, a clear title, and documented consequences when asked to record an architectural decision."
+    },
+    {
+      "name": "watchos-app-development",
+      "path": "apple-development/watchos-app-development",
+      "skill_file": "apple-development/watchos-app-development/SKILL.md",
+      "description": "Design, develop, review, test, and maintain watchOS applications using current Apple APIs and Human Interface Guidelines. Use for Apple Watch SwiftUI interfaces, complications and Smart Stack widgets, background execution, independent operation, phone connectivity, and watch-specific integrations. Not for an iOS-only change with no Apple Watch behavior."
     },
     {
       "name": "add-hexagonal-feature",
