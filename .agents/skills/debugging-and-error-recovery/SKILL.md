@@ -2,8 +2,8 @@
 name: debugging-and-error-recovery
 description: Diagnose failures systematically by preserving evidence, reproducing the issue, localizing and reducing the cause, fixing the root problem, adding a guard, and verifying recovery. Use when tests, builds, runtime behavior, or recovery attempts fail or behave unexpectedly.
 metadata:
-  version: "1.3.1"
-  last-verified: "2026-11-14T18:43:02+00:00"
+  version: "1.3.2"
+  last-verified: "2026-11-14T19:02:51+00:00"
 ---
 
 # Debugging and Error Recovery
@@ -15,10 +15,10 @@ unrelated changes.
 
 A completed recovery requires reproduction or equivalent direct evidence, a
 supported root-cause explanation, a fix or explicit recovery action, and rerun
-evidence. When the environment, data, credentials, or command access needed to
-reproduce the issue is unavailable, return a diagnosis-only triage artifact only
-when it is useful: preserve the evidence, identify the missing access, and propose
-the next reproduction step. Label the result unresolved and runtime-unverified;
+evidence. When required environment, data, credentials, or command access is
+unavailable, provide diagnosis-only triage if useful: preserve the evidence,
+identify the missing access, and propose the next reproduction step. Label the
+result unresolved and runtime-unverified;
 do not claim a root cause, fix, or recovery. If the request requires a completed
 fix, report the workflow as blocked.
 

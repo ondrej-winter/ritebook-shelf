@@ -2,8 +2,8 @@
 name: add-hexagonal-feature
 description: Implement a new vertical feature slice or use case in a Python hexagonal project, including domain modeling, ports, application service, adapters when needed, and tests.
 metadata:
-  version: "1.3.0"
-  last-verified: "2026-11-14T18:48:11+00:00"
+  version: "1.3.1"
+  last-verified: "2026-11-14T19:06:15+00:00"
 ---
 
 # Add a Hexagonal Vertical Feature Slice
@@ -80,11 +80,10 @@ Identify the application boundaries the feature needs:
 - one or more outbound ports when the application needs infrastructure
   dependencies such as repositories, publishers, or gateways
 
-If a required port does not exist yet, use `python-add-port` for the detailed
-procedure. In this skill, keep the focus on deciding which boundaries the
-feature needs. Inbound adapters should depend on inbound port contracts;
-application services should satisfy those contracts and depend on outbound port
-contracts for infrastructure.
+Use `python-add-port` for the detailed procedure when a required port is missing.
+Here, decide which boundaries the feature needs. Inbound adapters should depend
+on inbound port contracts; application services should satisfy those contracts
+and depend on outbound port contracts for infrastructure.
 
 If the use case needs command, query, or result objects, create or update them
 under `src/<app_name>/features/<feature_name>/application/dtos/`.

@@ -2,17 +2,16 @@
 name: shipping-and-launch
 description: Prepare production launches with risk-based readiness checks, staged rollout, monitoring, and an explicit recovery strategy. Use before deploying a feature, migration, or other production change.
 metadata:
-  version: "1.6.5"
-  last-verified: "2026-11-14T18:46:29+00:00"
+  version: "1.6.6"
+  last-verified: "2026-11-14T19:05:21+00:00"
 ---
 
 # Shipping and Launch
 
 ## Overview
 
-Ship with confidence. The goal is not just to deploy, but to deploy safely, with
-monitoring in place, a recovery plan ready, and a clear understanding of what
-success looks like. Make each launch observable and incremental when the system
+Deploy safely with monitoring in place, a recovery plan ready, and clear success
+criteria. Make each launch observable and incremental when the system
 allows it. Define an explicit recovery strategy: rollback, disablement,
 roll-forward, compensation, or documented irreversibility with accepted risk and
 containment measures when no technical reversal is possible.

@@ -2,8 +2,8 @@
 name: source-driven-development
 description: Grounds implementation decisions in authoritative sources. Use when building with external APIs, libraries, frameworks, platforms, standards, or tools where current documented behavior matters.
 metadata:
-  version: "1.3.0"
-  last-verified: "2026-11-13T18:30:17+00:00"
+  version: "1.3.1"
+  last-verified: "2026-11-14T19:05:33+00:00"
 ---
 
 # Source-Driven Development
@@ -16,8 +16,8 @@ Do not rely on memory when documented behavior, version compatibility, or curren
 recommended practice matters. APIs change, examples age, and implementation
 details vary by version.
 
-The expected outcome is implementation guidance or code that can be traced to
-current, relevant sources the user can verify.
+Produce implementation guidance or code traceable to current, relevant sources
+the user can verify.
 
 ## When to use this skill
 

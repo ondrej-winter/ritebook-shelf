@@ -2,8 +2,8 @@
 name: hexagonal-vertical-slices
 description: Design, review, or refactor systems that use hexagonal architecture organized by vertical feature slices, keeping business logic isolated from frameworks and infrastructure.
 metadata:
-  version: "1.2.1"
-  last-verified: "2026-10-01T22:08:01+02:00"
+  version: "1.2.2"
+  last-verified: "2026-11-14T19:03:52+00:00"
 ---
 
 # Hexagonal Vertical Slices
@@ -15,9 +15,9 @@ This skill is technology-agnostic. Follow the target project conventions for
 language, framework, naming, packages, and testing when they are more specific
 than the examples here.
 
-The expected output is an architecture decision or review that identifies slice
-ownership, boundary contracts, dependency direction, consistency and failure
-semantics, migration steps when refactoring, and verification evidence.
+Produce an architecture decision or review identifying slice ownership, boundary
+contracts, dependency direction, consistency and failure semantics, migration
+steps when refactoring, and verification evidence.
 
 ## When to use this skill
 

@@ -2,8 +2,8 @@
 name: deprecation-and-migration
 description: Plan and execute safe deprecations, migrations, replacements, and removals by measuring usage, supporting consumers, preserving compatibility, and making evidence-based removal decisions.
 metadata:
-  version: "1.4.0"
-  last-verified: "2026-11-13T18:27:36+00:00"
+  version: "1.4.1"
+  last-verified: "2026-11-14T19:03:03+00:00"
 ---
 
 # Deprecation and Migration
@@ -71,9 +71,9 @@ replacement before announcing removal.
 
 ### 2. Measure usage and ownership
 
-Do not rely on guesses. Gather evidence from available sources such as metrics,
-logs, dependency analysis, repository search, configuration, support tickets,
-runtime traces, docs, and owner interviews.
+Gather usage evidence from available metrics, logs, dependency analysis,
+repository search, configuration, support tickets, runtime traces, docs, and
+owner interviews.
 
 Record:
 

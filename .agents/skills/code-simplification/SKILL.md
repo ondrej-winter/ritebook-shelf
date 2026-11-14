@@ -2,8 +2,8 @@
 name: code-simplification
 description: Simplify working code without changing behavior by reducing unnecessary complexity, improving names and structure, preserving project conventions, and validating each refactoring step.
 metadata:
-  version: "1.1.6"
-  last-verified: "2026-11-13T17:42:26+00:00"
+  version: "1.1.7"
+  last-verified: "2026-11-14T19:02:19+00:00"
 ---
 
 # Code Simplification
@@ -132,8 +132,6 @@ Avoid vague claims such as “clean this up” without naming what will become e
 to understand.
 
 ### 3. Make one reviewable change at a time
-
-Apply simplifications incrementally.
 
 For each simplification:
 

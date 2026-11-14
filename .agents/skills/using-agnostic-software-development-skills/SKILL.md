@@ -2,8 +2,8 @@
 name: using-agnostic-software-development-skills
 description: Discover and invoke technology-agnostic software development skills. Use when starting general engineering work or deciding which reusable workflow skill applies to a task.
 metadata:
-  version: "2.5.5"
-  last-verified: "2026-11-14T18:47:36+00:00"
+  version: "2.5.6"
+  last-verified: "2026-11-14T19:06:04+00:00"
 ---
 
 # Using Agnostic Software Development Skills
@@ -17,9 +17,6 @@ technology-specific collection catalog alongside this one when the task also
 needs language or platform mechanics.
 
 ## Steps
-
-At the start of a task, identify the development phase and apply the corresponding
-skill.
 
 1. Classify the task by the user's current need.
 2. Select the primary skill that matches the first applicable phase.
@@ -173,8 +170,6 @@ Do not:
 - Refactor adjacent systems as a side effect
 - Delete code that seems unused without explicit approval
 - Add features not in the spec because they "seem useful"
-
-Your job is surgical precision, not unsolicited renovation.
 
 ### 6. Verify, Don't Assume
 

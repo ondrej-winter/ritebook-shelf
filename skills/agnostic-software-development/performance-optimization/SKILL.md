@@ -2,19 +2,18 @@
 name: performance-optimization
 description: Optimizes software performance using measurement-driven diagnosis, targeted fixes, and regression guards. Use when performance requirements exist, users or monitoring report slow behavior, a regression is suspected, or profiling reveals bottlenecks that need fixing.
 metadata:
-  version: "1.6.1"
-  last-verified: "2026-11-14T18:45:42+00:00"
+  version: "1.6.2"
+  last-verified: "2026-11-14T19:04:36+00:00"
 ---
 
 # Performance Optimization
 
 ## Overview
 
-Measure before optimizing. Performance work without measurement is guessing, and
-guessing leads to premature optimization that adds complexity without improving
-what matters. Establish a baseline, identify the actual bottleneck, apply the
-smallest targeted fix, measure again, and add a guard so the issue does not
-return.
+Measure before optimizing. Without measurement, guesswork leads to premature
+optimization that adds complexity without improving what matters. Establish a
+baseline, identify the actual bottleneck, apply the smallest targeted fix, measure
+again, and add a guard so the issue does not return.
 
 Use concrete technology guidance only after identifying the system type and the
 metric that matters. A web page, batch job, API, database query, command-line

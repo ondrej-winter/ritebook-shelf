@@ -2,8 +2,8 @@
 name: author-agent-skill
 description: Create, update, or review Agent Skill directories and SKILL.md files for valid frontmatter, structure, portability, progressive disclosure, and validation readiness.
 metadata:
-  version: "2.2.0"
-  last-verified: "2026-11-13T18:26:14+00:00"
+  version: "2.2.1"
+  last-verified: "2026-11-14T19:01:33+00:00"
 ---
 
 # Author Agent Skill
@@ -16,7 +16,7 @@ selection, instructions, and outputs also need evidence.
 
 ### 1. Establish scope and ownership
 
-Identify whether the request calls for creation, revision, or review only. For an
+Determine whether the request is for creation, revision, or review only. For an
 existing skill, inspect its instructions, supporting files, callers, applicable
 repository rules, and working-tree changes before editing. Find the authored
 source and any generated or installed copies. Preserve unrelated changes and
@@ -144,8 +144,8 @@ not those limits. Use plain Markdown. This shelf uses one top-level heading afte
 frontmatter, concise sections, and no decorative formatting; the open format does
 not mandate a body layout.
 
-Add supporting files only when they improve execution or let the agent load
-conditional detail on demand:
+Add supporting files only to improve execution or load conditional detail on
+demand:
 
 - `scripts/`: reusable executable helpers with dependencies, invocation, and failure
   behavior documented. Run new or changed helpers on representative safe inputs.

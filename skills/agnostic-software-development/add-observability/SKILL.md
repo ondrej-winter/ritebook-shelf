@@ -2,15 +2,14 @@
 name: add-observability
 description: Add logs, metrics, traces, profiling, or operational notes when a workflow needs better runtime visibility or measurable evidence without unsupported performance claims.
 metadata:
-  version: "1.4.1"
-  last-verified: "2026-11-13T17:41:01+00:00"
+  version: "1.4.2"
+  last-verified: "2026-11-14T19:00:51+00:00"
 ---
 
 # Add Observability
 
-Use this skill to make runtime behavior diagnosable and operationally useful with
-the smallest safe set of logs, metrics, traces, profiles, dashboards, alerts, or
-runbook notes.
+Make runtime behavior diagnosable and operationally useful with the smallest safe
+set of logs, metrics, traces, profiles, dashboards, alerts, or runbook notes.
 
 ## Execution boundary
 
@@ -137,7 +136,7 @@ reporting before adding manual signals.
 
 ### 5. Implement the smallest useful signal set
 
-Choose signals according to the question rather than adding every signal type.
+Choose the signal types needed to answer the question.
 
 - **Logs:** Use stable event names, structured fields, intentional severity, and
   safe correlation context. Log decisions, state transitions, and actionable

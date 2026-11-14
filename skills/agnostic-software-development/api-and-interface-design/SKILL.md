@@ -2,8 +2,8 @@
 name: api-and-interface-design
 description: Design or review stable APIs and interfaces that are explicit, compatible, and hard to misuse. Use when creating or changing HTTP, event, library, module, CLI, component, schema, configuration, plugin, or other durable integration contracts.
 metadata:
-  version: "1.4.1"
-  last-verified: "2026-11-14T18:41:18+00:00"
+  version: "1.4.2"
+  last-verified: "2026-11-14T19:01:30+00:00"
 ---
 
 # API and Interface Design
@@ -13,9 +13,9 @@ or automated process depends on. The goal is a contract that consumers can
 understand, providers can verify, and maintainers can evolve without accidental
 breakage.
 
-The expected output is a contract proposal or change review that identifies the
-boundary and consumers, defines observable behavior, classifies compatibility,
-records unresolved decisions, and names consumer-facing verification.
+Produce a contract proposal or change review that identifies the boundary and
+consumers, defines observable behavior, classifies compatibility, records
+unresolved decisions, and names consumer-facing verification.
 
 Do not use this skill to standardize private helper shapes with no durable
 consumer or independently observable behavior.

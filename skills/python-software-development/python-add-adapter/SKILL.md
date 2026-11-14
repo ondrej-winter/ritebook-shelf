@@ -2,8 +2,8 @@
 name: python-add-adapter
 description: Add an inbound or outbound adapter to the owning vertical slice in a Python hexagonal project while keeping business logic in the application layer.
 metadata:
-  version: "1.2.0"
-  last-verified: "2026-11-14T18:49:21+00:00"
+  version: "1.2.1"
+  last-verified: "2026-11-14T19:06:34+00:00"
 ---
 
 # Add an Adapter
@@ -45,8 +45,7 @@ untested adapter as incomplete rather than claiming working integration.
 
 ## Steps
 
-Choose the inbound or outbound adapter path below based on the direction of the
-boundary being implemented.
+Choose the inbound or outbound path to match the boundary's direction.
 
 Inspect the port, its callers, existing implementations, and contract tests first.
 Record validation, defaults, omission/null handling, result ownership, and stable

@@ -2,8 +2,8 @@
 name: frontend-ui-engineering
 description: Build, review, or refine browser-facing user interfaces so they are accessible, responsive, performant, visually coherent, and aligned with the project design system.
 metadata:
-  version: "1.4.1"
-  last-verified: "2026-11-14T18:43:50+00:00"
+  version: "1.4.2"
+  last-verified: "2026-11-14T19:03:36+00:00"
 ---
 
 # Frontend UI Engineering
@@ -13,9 +13,9 @@ components, layouts, states, or interaction flows. The goal is a UI that feels
 intentional, accessible, and consistent with the product rather than generic or
 template-driven.
 
-This skill is intentionally frontend-specific. Keep browser, UI, accessibility,
-responsive layout, and interaction guidance, but avoid assuming a particular
-framework, component library, styling system, or state-management tool.
+Keep guidance specific to browser, UI, accessibility, responsive layout, and
+interaction without assuming a framework, component library, styling system, or
+state-management tool.
 
 A completed UI implementation requires repository access plus evidence from a
 real browser runtime, gathered manually or through browser automation, for the

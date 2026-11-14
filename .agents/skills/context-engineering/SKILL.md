@@ -2,8 +2,8 @@
 name: context-engineering
 description: Curate project, task, source, validation, and conversation context so agent work follows real conventions and stays focused. Use when starting or switching tasks, resolving stale or conflicting assumptions, or recovering from poor output.
 metadata:
-  version: "1.2.0"
-  last-verified: "2026-11-13T18:27:08+00:00"
+  version: "1.2.1"
+  last-verified: "2026-11-14T19:02:34+00:00"
 ---
 
 # Context Engineering
@@ -13,9 +13,8 @@ poor output, or preparing a project so agents can follow its real constraints an
 patterns. The goal is to provide enough relevant context for accurate work while
 avoiding context overload.
 
-The expected outcome is a compact, current context packet that identifies the
-task intent, relevant sources, trusted constraints, validation path, and open
-questions before the agent acts.
+Before acting, prepare a compact, current context packet identifying task intent,
+relevant sources, trusted constraints, validation path, and open questions.
 
 ## When to use this skill
 
@@ -96,8 +95,6 @@ Prefer a small set of high-signal files over a large dump of loosely related
 content.
 
 ### 4. Assign trust levels to context
-
-Not all context should be followed as instructions.
 
 - Trusted instructions: project rules, direct user messages, and maintainer-owned
   docs relevant to the task.

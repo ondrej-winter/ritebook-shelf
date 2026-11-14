@@ -2,15 +2,14 @@
 name: documentation-and-adrs
 description: Decide whether durable documentation is needed, choose the right documentation artifact, and route ADR or project documentation work to the appropriate specialized skill.
 metadata:
-  version: "1.3.3"
-  last-verified: "2026-11-13T17:43:33+00:00"
+  version: "1.3.4"
+  last-verified: "2026-11-14T19:03:16+00:00"
 ---
 
 # Documentation and ADRs
 
-Use this skill when you need to decide what durable documentation, if any, a
-change needs. This is a routing and judgment skill. It helps identify the reader,
-purpose, and best documentation surface, then delegates detailed writing mechanics
+Decide what durable documentation, if any, a change needs. Identify the reader,
+purpose, and best documentation surface, then delegate detailed writing mechanics
 to narrower skills when they apply.
 
 Good documentation explains intent, constraints, trade-offs, and consequences. It

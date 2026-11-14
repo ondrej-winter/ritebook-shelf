@@ -2,8 +2,8 @@
 name: idea-refine
 description: Refine raw ideas into actionable concepts through divergent exploration, convergent evaluation, assumption testing, and a final one-page brief. Use when an idea is vague, over-scoped, solution-led, or needs pressure-testing before planning or implementation.
 metadata:
-  version: "2.0.1"
-  last-verified: "2026-11-14T18:44:33+00:00"
+  version: "2.0.2"
+  last-verified: "2026-11-14T19:04:04+00:00"
 ---
 
 # Idea Refine
@@ -102,8 +102,8 @@ Evaluate each direction against:
 Use the [refinement criteria](references/refinement-criteria.md) for the fuller rubric when the trade-off is
 not obvious.
 
-Be honest rather than merely supportive. If a direction is weak, say why with
-specificity and offer a sharper alternative.
+Be honest rather than merely supportive. If a direction is weak, give specific
+reasons and offer a sharper alternative.
 
 ### 4. Audit assumptions
 

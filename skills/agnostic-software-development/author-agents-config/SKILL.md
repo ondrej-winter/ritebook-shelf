@@ -2,8 +2,8 @@
 name: author-agents-config
 description: Initialize, audit, update, or synchronize a repository's coding-agent instructions and client adapters. Use for AGENTS.md, scoped instructions, CLAUDE.md, .clinerules, .cline/rules, Copilot instructions, or migrations between agent configuration layouts. Keep shared policy canonical and adapters minimal. Not for authoring reusable SKILL.md capabilities, defining agent personas, ordinary application changes, or configuring runtime permissions.
 metadata:
-  version: "1.3.0"
-  last-verified: "2026-10-15T11:16:26Z"
+  version: "1.3.1"
+  last-verified: "2026-11-14T19:01:51+00:00"
 ---
 
 # Author agents config
@@ -112,9 +112,9 @@ installing clients, creating hooks, or changing application/CI behavior.
 
 ## 4. Author canonical instructions — init/update only
 
-Keep only information that is important for correct work and not better owned
-elsewhere. Include relevant orientation, supported command entry points,
-non-obvious constraints, validation obligations, and completion evidence.
+Keep only information needed for correct work that is not better owned elsewhere.
+Include relevant orientation, supported command entry points, non-obvious
+constraints, validation obligations, and completion evidence.
 
 Use exact repository-relative paths and commands supported by inspected sources.
 State prerequisites and working directories when material. Link to authoritative

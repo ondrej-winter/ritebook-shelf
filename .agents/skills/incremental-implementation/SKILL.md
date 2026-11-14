@@ -2,15 +2,23 @@
 name: incremental-implementation
 description: Guide agents to deliver changes incrementally. Use when implementing a feature or change that touches more than one file, when a task feels too large to land in one step, or before writing a large amount of code at once.
 metadata:
-  version: "2.3.0"
-  last-verified: "2026-11-13T18:28:42+00:00"
+  version: "2.3.1"
+  last-verified: "2026-11-14T19:04:19+00:00"
 ---
 
 # Incremental Implementation
 
 ## Overview
 
-Build in thin, independently verifiable increments. Prefer complete vertical slices that produce an observable outcome through the relevant path. For behavior-changing slices, apply test-first execution inside the increment: define one behavior, observe the focused test fail, implement the smallest passing change, then verify before expanding. Use contract-first or risk-first increments only when a complete vertical path is not yet the right unit, and label them explicitly. Each increment should leave the system in a working state.
+Build in thin, independently verifiable increments. Prefer complete vertical
+slices that produce an observable outcome through the relevant path. For
+behavior-changing slices, use test-first execution: define one behavior, observe
+the focused test fail, implement the smallest passing change, then verify before
+expanding.
+
+Use contract-first or risk-first increments only when a complete vertical path is
+not yet the right unit, and label them explicitly. Each increment should leave
+the system in a working state.
 
 Completing an increment requires access to make its changes and gather its named
 verification evidence. If that execution is unavailable, return a bounded slice

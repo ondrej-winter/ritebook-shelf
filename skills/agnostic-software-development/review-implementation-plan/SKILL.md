@@ -2,8 +2,8 @@
 name: review-implementation-plan
 description: Review and update an existing implementation plan for completeness, ambiguity, sequencing, risks, dependencies, validation, readiness labeling, and handoff before coding.
 metadata:
-  version: "1.3.3"
-  last-verified: "2026-11-13T17:56:36+00:00"
+  version: "1.3.4"
+  last-verified: "2026-11-14T19:04:55+00:00"
 ---
 
 # Review Implementation Plan
@@ -13,11 +13,10 @@ or is being proposed for a non-trivial change. The goal is to catch ambiguity,
 missing work, unsafe sequencing, and validation gaps before code or content
 changes begin.
 
-When those optional skills are available, use `spec-driven-development` first
-when the plan lacks clear requirements, success criteria, assumptions, or scope
-boundaries. Use `planning-and-task-breakdown` first when requirements are clear
-but the plan is too coarse and needs to be decomposed into ordered, verifiable
-implementation tasks.
+When available, use `spec-driven-development` first if the plan lacks clear
+requirements, success criteria, assumptions, or scope boundaries. Use
+`planning-and-task-breakdown` first if requirements are clear but the plan needs
+decomposition into ordered, verifiable implementation tasks.
 
 ## When to use this skill
 
