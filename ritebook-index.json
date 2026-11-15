@@ -3,7 +3,7 @@
   "index": {
     "name": "ondrej-winter-ritebook-shelf"
   },
-  "generated_at": "2026-11-14T19:55:19.808463Z",
+  "generated_at": "2026-11-15T12:53:56.426993Z",
   "skills_root": "skills",
   "skills": [
     {
@@ -197,6 +197,12 @@
       "path": "agnostic-software-development/write-adr",
       "skill_file": "agnostic-software-development/write-adr/SKILL.md",
       "description": "Create an Architecture Decision Record with the next sequential number, a clear title, and documented consequences when asked to record an architectural decision."
+    },
+    {
+      "name": "ios-app-development",
+      "path": "apple-development/ios-app-development",
+      "skill_file": "apple-development/ios-app-development/SKILL.md",
+      "description": "Design, develop, review, test, and maintain native iOS applications using current Apple APIs and Human Interface Guidelines. Use for iPhone SwiftUI or UIKit interfaces, app lifecycle, concurrency, persistence, networking, privacy, system integrations, and iOS release readiness. Not for a watchOS-only change or a browser-only interface."
     },
     {
       "name": "watchos-app-development",
